@@ -1,0 +1,8 @@
+---
+layout: default
+img: fcma.png
+category: Analyses
+title: The analysis to end all analyses:<br>Full correlation matrix analysis (FCMA)
+description: |
+---
+  OMG!!1 GREAT PAPER! Link [here](http://www.cs.princeton.edu/~yidawang/paper/Wang_TR.pdf).
