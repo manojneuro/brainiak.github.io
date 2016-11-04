@@ -31,9 +31,20 @@ h6 {
     padding-bottom: 50px;
     text-align: center;
     color: #f8f8f8;
-    background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url(../img/hero-bg.jpg);
+    /*background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url(/assets/img/hero-bg.jpg);*/
+    background-color: #2980b9;
     background-position: no-repeat center center;
     background-size: cover;
+}
+
+.page-header {
+  padding-top: 50px;
+  color: #f8f8f8;
+  font-size: 36px;
+  font-weight: 500;
+  background-color: #2980b9;
+  /*background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url(/assets/img/hero-bg.jpg);*/
+  margin-bottom: 0px;
 }
 
 .intro-message {
@@ -113,7 +124,8 @@ h6 {
 .banner {
     padding: 100px 0;
     color: #f8f8f8;
-    background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url(../img/footer-bg.jpg);
+    background-color: #2980b9;
+    /*background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url(/assets/img/footer-bg.jpg);*/
     background-position: center center;
     background-size: cover;
 }
@@ -161,6 +173,14 @@ h6 {
 footer {
     padding: 50px 0;
     background-color: #f8f8f8;
+}
+
+footer li {
+  margin-left: 10px;
+}
+
+footer li.first-link {
+  margin-left: 0px;
 }
 
 p.copyright {

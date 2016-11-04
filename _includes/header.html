@@ -9,23 +9,12 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand page-scroll" href="#home">{{ site.title }}</a>
+            <a class="navbar-brand page-scroll" href="/">{{ site.title }}</a>
         </div>
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right">
-              <li>
-                <a href="https://github.com/IntelPNI/brainiak">Installation</a>
-              </li>
-              <li>
-                <a href="https://github.com/IntelPNI/brainiak/tree/master/examples">Tutorials</a>
-              </li>
-              <li>
-                <a href="https://github.com/IntelPNI/brainiak/tree/master/brainiak">Analyses</a>
-              </li>
-            	<li>
-                    <a href="http://pythonhosted.org/brainiak/">API Documentation</a>
-              </li>
+              {% include links.html %}
             </ul>
         </div>
         <!-- /.navbar-collapse -->
