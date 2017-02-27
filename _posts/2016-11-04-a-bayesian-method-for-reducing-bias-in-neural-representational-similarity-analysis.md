@@ -6,4 +6,4 @@ description: |
 tags:
 - publications
 ---
-Link [here](http://biorxiv.org/content/early/2016/09/07/073932.article-metrics).
+Link [here](http://papers.nips.cc/paper/6131-a-bayesian-method-for-reducing-bias-in-neural-representational-similarity-analysis)
