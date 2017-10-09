@@ -8,6 +8,7 @@ email: dsuo@cs.princeton.edu
 author: Daniel Suo
 description: The Brain Imaging Analysis Kit is a package of Python modules useful for neuroscience, primarily focused on functional Magnetic Resonance Imaging (fMRI) analysis.
 copyright: 'Copyright &copy; 2017 Intel Corporation and Princeton University. All Rights Reserved.'
+google_analytics: UA-107810401-1
 
 # ----------------------- #
 #    Jekyll & Plugins     #
