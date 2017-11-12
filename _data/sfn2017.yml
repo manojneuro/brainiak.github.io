@@ -3,7 +3,8 @@
   authors: Cameron T. Ellis, Michael Lesnick, Bryn Keller, Chris Baldassano, Anna Schapiro, Jonathan D. Cohen
   contact: cameron.ellis@yale.edu
   pdf: 260.04.pdf
-  example: "https://github.com/CameronTEllis/brainiak/blob/master/examples/utils/fmrisim_example.py"
+  example: "https://github.com/brainiak/brainiak/blob/master/examples/utils/fmrisim_multivariate_example.ipynb
+"
 - id: 260.05
   title: "When temporal similarity is mistaken for representational similarity: A Bayesian approach to reduce bias in RSA of fMRI data"
   authors: Ming Bo Cai, Nicolas W. Schuck, Jonathan W. Pillow, Yael Niv
