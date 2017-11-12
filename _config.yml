@@ -17,6 +17,8 @@ google_analytics: UA-107810401-1
 # Build settings
 markdown: kramdown
 permalink: pretty
+include: ["_static", "_source"]
+keep_files: ["docs"]
 
 # ----------------------- #
 #   3rd Party Settings    #
@@ -24,4 +26,4 @@ permalink: pretty
 
 social:
   - title: github
-    url: https://github.com/IntelPNI/brainiak
+    url: https://github.com/brainiak/brainiak

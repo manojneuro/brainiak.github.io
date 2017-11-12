@@ -1,0 +1,1227 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>brainiak.fcma package &mdash; brainiak 0.6 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+        <link rel="search" title="Search" href="search.html"/>
+    <link rel="top" title="brainiak 0.6 documentation" href="index.html"/>
+        <link rel="up" title="brainiak package" href="brainiak.html"/>
+        <link rel="next" title="brainiak.funcalign package" href="brainiak.funcalign.html"/>
+        <link rel="prev" title="brainiak.factoranalysis package" href="brainiak.factoranalysis.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> brainiak
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.6
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="release_notes.html">Release notes</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="api.html">API</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="api.html#brainiak">brainiak</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="brainiak.html">brainiak package</a><ul class="current">
+<li class="toctree-l4 current"><a class="reference internal" href="brainiak.html#subpackages">Subpackages</a></li>
+<li class="toctree-l4"><a class="reference internal" href="brainiak.html#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="brainiak.html#module-brainiak.image">brainiak.image module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="brainiak.html#module-brainiak.io">brainiak.io module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="brainiak.html#module-brainiak.isfc">brainiak.isfc module</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="contributing.html">Contributing</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">brainiak</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="api.html">API</a> &raquo;</li>
+        
+          <li><a href="brainiak.html">brainiak package</a> &raquo;</li>
+        
+      <li>brainiak.fcma package</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/brainiak.fcma.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-brainiak.fcma">
+<span id="brainiak-fcma-package"></span><h1>brainiak.fcma package<a class="headerlink" href="#module-brainiak.fcma" title="Permalink to this headline">¶</a></h1>
+<p>Full correlation matrix analysis</p>
+<p>The implementation is based on the work in <a class="reference internal" href="#wang2015-1" id="id1">[Wang2015-1]</a> and <a class="reference internal" href="#wang2015-2" id="id2">[Wang2015-2]</a>.</p>
+<table class="docutils citation" frame="void" id="wang2015-1" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id1">[Wang2015-1]</a></td><td>Full correlation matrix analysis (FCMA): An unbiased method for
+task-related functional connectivity”,
+Yida Wang, Jonathan D Cohen, Kai Li, Nicholas B Turk-Browne.
+Journal of Neuroscience Methods, 2015.</td></tr>
+</tbody>
+</table>
+<table class="docutils citation" frame="void" id="wang2015-2" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id2">[Wang2015-2]</a></td><td>“Full correlation matrix analysis of fMRI data on Intel® Xeon
+Phi™ coprocessors”,
+Yida Wang, Michael J. Anderson, Jonathan D. Cohen, Alexander Heinecke,
+Kai Li, Nadathur Satish, Narayanan Sundaram, Nicholas B. Turk-Browne,
+Theodore L. Willke.
+In Proceedings of the International Conference for
+High Performance Computing,
+Networking, Storage and Analysis. 2015.</td></tr>
+</tbody>
+</table>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-brainiak.fcma.classifier">
+<span id="brainiak-fcma-classifier-module"></span><h2>brainiak.fcma.classifier module<a class="headerlink" href="#module-brainiak.fcma.classifier" title="Permalink to this headline">¶</a></h2>
+<p>Full Correlation Matrix Analysis (FCMA)</p>
+<p>Correlation-based training and prediction</p>
+<dl class="class">
+<dt id="brainiak.fcma.classifier.Classifier">
+<em class="property">class </em><code class="descclassname">brainiak.fcma.classifier.</code><code class="descname">Classifier</code><span class="sig-paren">(</span><em>clf</em>, <em>num_processed_voxels=2000</em>, <em>epochs_per_subj=0</em><span class="sig-paren">)</span><a class="headerlink" href="#brainiak.fcma.classifier.Classifier" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">sklearn.base.BaseEstimator</span></code></p>
+<p>Correlation-based classification component of FCMA</p>
+<p>The classifier first computes correlation of the input data,
+and normalizes them if needed, then uses the given classifier
+to train and/or predict the correlation data.
+NOTE: if the classifier is sklearn.svm.SVC with precomputed kernel,
+the test data may be provided in the fit method to compute
+the kernel matrix together with the training data to save the memory usage,
+but the test data will NEVER be seen in the model training.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>clf</strong> (<em>class</em>) – The classifier used, normally a classifier class of sklearn</li>
+<li><strong>num_processed_voxels</strong> (<em>int</em><em>, </em><em>default 2000</em>) – Used for SVM with precomputed kernel,
+every time it only computes correlation between num_process_voxels and
+the whole mask to aggregate the kernel matrices.
+This is to save the memory
+so as to handle correlations at a larger scale.</li>
+<li><strong>epochs_per_subj</strong> (<em>int</em><em>, </em><em>default 0</em>) – The number of epochs of each subject
+within-subject normalization will be performed during
+classifier training if epochs_per_subj is specified
+default 0 means no within-subject normalization</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="attribute">
+<dt id="brainiak.fcma.classifier.Classifier.training_data_">
+<code class="descname">training_data_</code><a class="headerlink" href="#brainiak.fcma.classifier.Classifier.training_data_" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>2D numpy array in shape [num_samples, num_features]</em> – training_data_ is None except clf is SVM.SVC with precomputed kernel,
+in which case training data is needed to compute
+the similarity vector for each sample to be classified.
+However, if the test samples are also provided during the fit,
+the similarity vectors can be precomputed too
+and then training_datais None</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="brainiak.fcma.classifier.Classifier.test_raw_data_">
+<code class="descname">test_raw_data_</code><a class="headerlink" href="#brainiak.fcma.classifier.Classifier.test_raw_data_" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>a list of 2D array in shape [num_TRs, num_voxels]</em> – default None
+test_raw_data_ is set after a prediction is called,
+if the new input data equals test_raw_data_,
+test_data_ can be reused</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="brainiak.fcma.classifier.Classifier.test_data_">
+<code class="descname">test_data_</code><a class="headerlink" href="#brainiak.fcma.classifier.Classifier.test_data_" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>2D numpy array in shape [num_samples, num_features]</em> – default None
+test_data_ is set after a prediction is called,
+so that the test data does not need to be regenerated in the
+subsequent operations, e.g. getting decision values of the prediction.
+test_data_ may also be set in the fit method
+if sklearn.svm.SVC with precomputed kernel
+and the test samples are known.
+NOTE: the test samples will never be used to fit the model.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="brainiak.fcma.classifier.Classifier.num_voxels_">
+<code class="descname">num_voxels_</code><a class="headerlink" href="#brainiak.fcma.classifier.Classifier.num_voxels_" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>int</em> – The number of voxels of the first brain region used in the classifier.
+The first brain region is always large. When training, this region may
+be divided to compute the correlation portion by portion.
+The brain regions are defined by the applied mask, e.g. the top voxels
+selected by FCMA voxel selection</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="brainiak.fcma.classifier.Classifier.num_features_">
+<code class="descname">num_features_</code><a class="headerlink" href="#brainiak.fcma.classifier.Classifier.num_features_" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>int</em> – The dimension of correlation data, normally is the product of
+the number of voxels of brain region 1 and
+the number of voxels of brain region 2.
+num_features_ must be consistent in both training and classification</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="brainiak.fcma.classifier.Classifier.num_samples_">
+<code class="descname">num_samples_</code><a class="headerlink" href="#brainiak.fcma.classifier.Classifier.num_samples_" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>int</em> – The number of samples</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="brainiak.fcma.classifier.Classifier.num_digits_">
+<code class="descname">num_digits_</code><a class="headerlink" href="#brainiak.fcma.classifier.Classifier.num_digits_" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>int</em> – The number of digits of the first value of the kernel matrix,
+for normalizing the kernel values accordingly</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="brainiak.fcma.classifier.Classifier.decision_function">
+<code class="descname">decision_function</code><span class="sig-paren">(</span><em>X=None</em><span class="sig-paren">)</span><a class="headerlink" href="#brainiak.fcma.classifier.Classifier.decision_function" title="Permalink to this definition">¶</a></dt>
+<dd><p>Output the decision value of the prediction.</p>
+<p>if X is not equal to self.test_raw_data_, i.e. predict is not called,
+first generate the test_data
+after getting the test_data, get the decision value via self.clf.
+if X is None, test_data_ is ready to be used</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>X</strong> (<em>Optional</em><em>[</em><em>list of tuple</em><em> (</em><em>data1</em><em>, </em><em>data2</em><em>)</em><em>]</em>) – data1 and data2 are numpy array in shape [num_TRs, num_voxels]
+to be computed for correlation.
+default None, meaning that the data to be predicted
+have been processed in the fit method.
+Otherwise, X contains the activity data filtered by ROIs
+and prepared for correlation computation.
+len(X) is the number of test samples.
+if len(X) &gt; 1: normalization is done on all test samples.
+Within list, all data1s must have the same num_voxels value,
+all data2s must have the same num_voxels value.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><strong>confidence</strong></td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">the predictions confidence values of X, in shape [len(X),]</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="brainiak.fcma.classifier.Classifier.fit">
+<code class="descname">fit</code><span class="sig-paren">(</span><em>X</em>, <em>y</em>, <em>num_training_samples=None</em><span class="sig-paren">)</span><a class="headerlink" href="#brainiak.fcma.classifier.Classifier.fit" title="Permalink to this definition">¶</a></dt>
+<dd><p>Use correlation data to train a model.</p>
+<p>First compute the correlation of the input data,
+and then normalize within subject
+if more than one sample in one subject,
+and then fit to a model defined by self.clf.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>X</strong> (<em>list of tuple</em><em> (</em><em>data1</em><em>, </em><em>data2</em><em>)</em>) – data1 and data2 are numpy array in shape [num_TRs, num_voxels]
+to be computed for correlation.
+They contain the activity data filtered by ROIs
+and prepared for correlation computation.
+Within list, all data1s must have the same num_voxels value,
+all data2s must have the same num_voxels value.</li>
+<li><strong>y</strong> (<em>1D numpy array</em>) – labels, len(X) equals len(y)</li>
+<li><strong>num_training_samples</strong> (<em>Optional</em><em>[</em><em>int</em><em>]</em>) – The number of samples used in the training.
+Set it to construct the kernel matrix
+portion by portion so the similarity vectors of the
+test data have to be computed here.
+Only set num_training_samples when sklearn.svm.SVC with
+precomputed kernel is used.
+If it is set, only those samples will be used to fit the model.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">self.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference internal" href="#brainiak.fcma.classifier.Classifier" title="brainiak.fcma.classifier.Classifier">Classifier</a></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="brainiak.fcma.classifier.Classifier.predict">
+<code class="descname">predict</code><span class="sig-paren">(</span><em>X=None</em><span class="sig-paren">)</span><a class="headerlink" href="#brainiak.fcma.classifier.Classifier.predict" title="Permalink to this definition">¶</a></dt>
+<dd><p>Use a trained model to predict correlation data.</p>
+<p>first compute the correlation of the input data,
+and then normalize across all samples in the list
+if there are more than one sample,
+and then predict via self.clf.
+If X is None, use the similarity vectors produced in fit
+to predict</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>X</strong> (<em>Optional</em><em>[</em><em>list of tuple</em><em> (</em><em>data1</em><em>, </em><em>data2</em><em>)</em><em>]</em>) – data1 and data2 are numpy array in shape [num_TRs, num_voxels]
+to be computed for correlation.
+default None, meaning that the data to be predicted
+have been processed in the fit method.
+Otherwise, X contains the activity data filtered by ROIs
+and prepared for correlation computation.
+len(X) is the number of test samples.
+if len(X) &gt; 1: normalization is done on all test samples.
+Within list, all data1s must have the same num_voxels value,
+all data2s must have the same num_voxels value.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><strong>y_pred</strong></td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">the predicted label of X, in shape [len(X),]</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="brainiak.fcma.classifier.Classifier.score">
+<code class="descname">score</code><span class="sig-paren">(</span><em>X</em>, <em>y</em>, <em>sample_weight=None</em><span class="sig-paren">)</span><a class="headerlink" href="#brainiak.fcma.classifier.Classifier.score" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the mean accuracy on the given test data and labels.</p>
+<p>NOTE: In the condition of sklearn.svm.SVC with precomputed kernel
+when the kernel matrix is computed portion by portion, the function
+will ignore the first input argument X.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>X</strong> (<em>list of tuple</em><em> (</em><em>data1</em><em>, </em><em>data2</em><em>)</em>) – data1 and data2 are numpy array in shape [num_TRs, num_voxels]
+to be computed for correlation.
+They are test samples.
+They contain the activity data filtered by ROIs
+and prepared for correlation computation.
+Within list, all data1s must have the same num_voxels value,
+all data2s must have the same num_voxels value.
+len(X) is the number of test samples.</li>
+<li><strong>y</strong> (<em>1D numpy array</em>) – labels, len(X) equals len(y), which is num_samples</li>
+<li><strong>sample_weight</strong> (<em>1D array in shape</em><em> [</em><em>num_samples</em><em>]</em><em>, </em><em>optional</em>) – Sample weights.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>score</strong> – Mean accuracy of self.predict(X) wrt. y.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">float</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-brainiak.fcma.cython_blas">
+<span id="brainiak-fcma-cython-blas-module"></span><h2>brainiak.fcma.cython_blas module<a class="headerlink" href="#module-brainiak.fcma.cython_blas" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="brainiak.fcma.cython_blas.compute_corr_vectors">
+<code class="descclassname">brainiak.fcma.cython_blas.</code><code class="descname">compute_corr_vectors</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#brainiak.fcma.cython_blas.compute_corr_vectors" title="Permalink to this definition">¶</a></dt>
+<dd><p>use blas API gemm wrapped by scipy to construct a correlation vector</p>
+<p>The correlation vector is essentially correlation matrices computed
+from two activity matrices. It will be placed in the corresponding place
+of the resulting correlation data set.
+The blas APIs process matrices in column-major,
+but our matrices are in row-major, so we play the transpose trick here,
+i.e. A*B=(B^T*A^T)^T</p>
+<p>py_trans_a: str
+do transpose or not for the first matrix A</p>
+<p>py_trans_b: str
+do transpose or not for the first matrix B</p>
+<p>py_m: int
+the row of the resulting matrix C</p>
+<p>py_n: int
+the column of the resulting matrix C</p>
+<p>py_k: int
+the collapsed dimension of the multiplying matrices
+i.e. the column of the first matrix after transpose if necessary
+the row of the second matrix after transpose if necessary</p>
+<p>py_alpha: float
+the weight applied to the input matrix A</p>
+<p>py_a: 2D array</p>
+<p>py_lda: int
+the stride of the input matrix A</p>
+<p>py_b: 2D array</p>
+<p>py_ldb: int
+the stride of the input matrix B</p>
+<p>py_beta: float
+the weight applied to the resulting matrix C</p>
+<p>py_c: 2D array
+in shape [py_m, py_n] of column-major
+in fact it is
+in shape [py_n, py_m] of row-major</p>
+<p>py_ldc: int
+the stride of the resulting matrix</p>
+<p>py_start_voxel: int
+the starting voxel of assigned voxels
+used to locate the second matrix B</p>
+<p>py_start_sample: int
+the processed sample
+used to locate the resulting matrix C</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><ul class="simple">
+<li><strong>py_c</strong> (<em>2D array</em>)</li>
+<li><em>in shape [py_m, py_n] of column-major</em></li>
+<li><em>write the resulting matrix to the place indicated by py_start_sample</em></li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="brainiak.fcma.cython_blas.compute_kernel_matrix">
+<code class="descclassname">brainiak.fcma.cython_blas.</code><code class="descname">compute_kernel_matrix</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#brainiak.fcma.cython_blas.compute_kernel_matrix" title="Permalink to this definition">¶</a></dt>
+<dd><p>use blas API syrk wrapped by scipy to compute kernel matrix of SVM</p>
+<p>The blas APIs process matrices in column-major, but our matrices are
+in row-major, so we play the transpose trick here, i.e. A*B=(B^T*A^T)^T</p>
+<p>In SVM with linear kernel, the distance of two samples
+is essentially the dot product of them.
+Therefore, the kernel matrix can be obtained by matrix multiplication.
+Since the kernel matrix is symmetric, ssyrk is used,
+the other half of the matrix is assigned later.
+In our case, the dimension of samples is much larger than
+the number samples, so we proportionally shrink the values of
+the kernel matrix for getting more robust alpha values in SVM iteration.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>py_uplo</strong> (<em>str</em>) – </li>
+<li><strong>the upper</strong><strong> or </strong><strong>lower triangle of the matrix</strong> (<em>getting</em>) – </li>
+<li><strong>py_trans</strong> (<em>str</em>) – </li>
+<li><strong>transpose</strong><strong> or </strong><strong>not for the input matrix A</strong> (<em>do</em>) – </li>
+<li><strong>py_n</strong> (<em>int</em>) – </li>
+<li><strong>row and column of the resulting matrix C</strong> (<em>the</em>) – </li>
+<li><strong>our case</strong><strong>, </strong><strong>is num_epochs</strong> (<em>in</em>) – </li>
+<li><strong>py_k</strong> (<em>int</em>) – </li>
+<li><strong>collapsed dimension of the multiplying matrices</strong> (<em>the</em>) – </li>
+<li><strong>the column of the first matrix after transpose if necessary</strong> (<em>i.e.</em>) – </li>
+<li><strong>row of the second matrix after transpose if necessary</strong> (<em>the</em>) – </li>
+<li><strong>our case</strong><strong>, </strong><strong>is num_voxels</strong> (<em>in</em>) – </li>
+<li><strong>py_alpha</strong> (<em>float</em>) – </li>
+<li><strong>weight applied to the input matrix A</strong> (<em>the</em>) – </li>
+<li><strong>py_a</strong> (<em>3D array in shape</em><em> [</em><em>num_assigned_voxels</em><em>, </em><em>num_epochs</em><em>, </em><em>num_voxels</em><em>]</em>) – </li>
+<li><strong>our case the normalized correlation values of a voxel</strong> (<em>in</em>) – </li>
+<li><strong>py_start_voxel</strong> (<em>int</em>) – </li>
+<li><strong>processed voxel</strong> (<em>the</em>) – </li>
+<li><strong>to locate the input matrix A</strong> (<em>used</em>) – </li>
+<li><strong>py_lda</strong> (<em>int</em>) – </li>
+<li><strong>stride of the input matrix A</strong> (<em>the</em>) – </li>
+<li><strong>py_beta</strong> (<em>float</em>) – </li>
+<li><strong>weight applied to the resulting matrix C</strong> (<em>the</em>) – </li>
+<li><strong>py_c</strong> (<em>2D array in shape</em><em> [</em><em>num_epochs</em><em>, </em><em>num_epochs</em><em>]</em>) – </li>
+<li><strong>to store the resulting kernel matrix</strong> (<em>place</em>) – </li>
+<li><strong>py_ldc</strong> (<em>int</em>) – </li>
+<li><strong>stride of the resulting matrix</strong> (<em>the</em>) – </li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"><ul class="simple">
+<li><strong>py_c</strong> (<em>2D array in shape [num_epochs, num_epochs]</em>)</li>
+<li><em>write the resulting kernel_matrix</em></li>
+<li><em>for the processing voxel</em></li>
+</ul>
+</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="brainiak.fcma.cython_blas.compute_self_corr_for_voxel_sel">
+<code class="descclassname">brainiak.fcma.cython_blas.</code><code class="descname">compute_self_corr_for_voxel_sel</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#brainiak.fcma.cython_blas.compute_self_corr_for_voxel_sel" title="Permalink to this definition">¶</a></dt>
+<dd><p>use blas API sgemm wrapped by scipy to compute correlation</p>
+<p>This method is limited to process self-correlation.
+The blas APIs process matrices in column-major,
+but our matrices are in row-major,
+so we play the transpose trick here, i.e. A*B=(B^T*A^T)^T.
+The resulting matrix in shape [num_assigned_voxels, num_voxels]
+is stored in an alternate way to make sure that
+the correlation vectors of the same voxel stored continuously</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>py_trans_a</strong> (<em>str</em>) – </li>
+<li><strong>transpose</strong><strong> or </strong><strong>not for the first matrix A</strong> (<em>do</em>) – </li>
+<li><strong>py_trans_b</strong> (<em>str</em>) – </li>
+<li><strong>transpose</strong><strong> or </strong><strong>not for the first matrix B</strong> (<em>do</em>) – </li>
+<li><strong>py_m</strong> (<em>int</em>) – </li>
+<li><strong>row of the resulting matrix C</strong> (<em>the</em>) – </li>
+<li><strong>our case</strong><strong>, </strong><strong>is num_voxels</strong> (<em>in</em>) – </li>
+<li><strong>py_n</strong> (<em>int</em>) – </li>
+<li><strong>column of the resulting matrix C</strong> (<em>the</em>) – </li>
+<li><strong>our case</strong><strong>, </strong><strong>is num_assigned_voxels</strong> (<em>in</em>) – </li>
+<li><strong>py_k</strong> (<em>int</em>) – </li>
+<li><strong>collapsed dimension of the multiplying matrices</strong> (<em>the</em>) – </li>
+<li><strong>the column of the first matrix after transpose if necessary</strong> (<em>i.e.</em>) – </li>
+<li><strong>row of the second matrix after transpose if necessary</strong> (<em>the</em>) – </li>
+<li><strong>py_alpha</strong> (<em>float</em>) – </li>
+<li><strong>weight applied to the first matrix A</strong> (<em>the</em>) – </li>
+<li><strong>py_a</strong> (<em>2D array in shape</em><em> [</em><em>epoch_length</em><em>, </em><em>num_voxels</em><em>]</em>) – </li>
+<li><strong>is the activity data of an epoch</strong><strong>, </strong><strong>part 1 of the data to be</strong> (<em>It</em>) – </li>
+<li><strong>with. Note that py_a can point to the same location of py_b.</strong> (<em>correlated</em>) – </li>
+<li><strong>py_lda</strong> (<em>int</em>) – </li>
+<li><strong>stride of the first matrix A</strong> (<em>the</em>) – </li>
+<li><strong>py_start_voxel</strong> (<em>int</em>) – </li>
+<li><strong>starting voxel of assigned voxels</strong> (<em>the</em>) – </li>
+<li><strong>to locate the second matrix B</strong> (<em>used</em>) – </li>
+<li><strong>py_b</strong> (<em>2D array in shape</em><em> [</em><em>epoch_length</em><em>, </em><em>num_voxels</em><em>]</em>) – </li>
+<li><strong>is the activity data of an epoch</strong><strong>, </strong><strong>part 2 of the data to be</strong> (<em>It</em>) – </li>
+<li><strong>with. Note that py_a can point to the same location of py_b.</strong> – </li>
+<li><strong>py_ldb</strong> (<em>int</em>) – </li>
+<li><strong>stride of the second matrix B</strong> (<em>the</em>) – </li>
+<li><strong>py_beta</strong> (<em>float</em>) – </li>
+<li><strong>weight applied to the resulting matrix C</strong> (<em>the</em>) – </li>
+<li><strong>py_c</strong> (<em>3D array in shape</em><em> [</em><em>num_selected_voxels</em><em>, </em><em>num_epochs</em><em>, </em><em>num_voxels</em><em>]</em>) – </li>
+<li><strong>to store the resulting correlation values</strong> (<em>place</em>) – </li>
+<li><strong>py_ldc</strong> (<em>int</em>) – </li>
+<li><strong>stride of the resulting matrix</strong> (<em>the</em>) – </li>
+<li><strong>our case</strong><strong>, </strong><strong>num_voxels*num_epochs</strong> (<em>in</em>) – </li>
+<li><strong>py_start_epoch</strong> (<em>int</em>) – </li>
+<li><strong>epoch over which the correlation is computed</strong> (<em>the</em>) – </li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"><ul class="simple">
+<li><strong>py_c</strong> (<em>3D array in shape [num_selected_voxels, num_epochs, num_voxels]</em>)</li>
+<li><em>write the resulting correlation values in an alternate way</em></li>
+<li><em>for the processing epoch</em></li>
+</ul>
+</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="brainiak.fcma.cython_blas.compute_single_matrix_multiplication">
+<code class="descclassname">brainiak.fcma.cython_blas.</code><code class="descname">compute_single_matrix_multiplication</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#brainiak.fcma.cython_blas.compute_single_matrix_multiplication" title="Permalink to this definition">¶</a></dt>
+<dd><p>use blas API gemm wrapped by scipy to do matrix multiplication</p>
+<p>This is to compute the matrix multiplication.
+The blas APIs process matrices in column-major,
+but our matrices are in row-major, so we play the transpose trick here,
+i.e. A*B=(B^T*A^T)^T</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>py_trans_a</strong> (<em>str</em>) – </li>
+<li><strong>transpose</strong><strong> or </strong><strong>not for the first matrix A</strong> (<em>do</em>) – </li>
+<li><strong>py_trans_b</strong> (<em>str</em>) – </li>
+<li><strong>transpose</strong><strong> or </strong><strong>not for the first matrix B</strong> (<em>do</em>) – </li>
+<li><strong>py_m</strong> (<em>int</em>) – </li>
+<li><strong>row of the resulting matrix C</strong> (<em>the</em>) – </li>
+<li><strong>py_n</strong> (<em>int</em>) – </li>
+<li><strong>column of the resulting matrix C</strong> (<em>the</em>) – </li>
+<li><strong>py_k</strong> (<em>int</em>) – </li>
+<li><strong>collapsed dimension of the multiplying matrices</strong> (<em>the</em>) – </li>
+<li><strong>the column of the first matrix after transpose if necessary</strong> (<em>i.e.</em>) – </li>
+<li><strong>row of the second matrix after transpose if necessary</strong> (<em>the</em>) – </li>
+<li><strong>py_alpha</strong> (<em>float</em>) – </li>
+<li><strong>weight applied to the input matrix A</strong> (<em>the</em>) – </li>
+<li><strong>py_a</strong> (<em>2D array</em>) – </li>
+<li><strong>py_lda</strong> (<em>int</em>) – </li>
+<li><strong>stride of the input matrix A</strong> (<em>the</em>) – </li>
+<li><strong>py_b</strong> (<em>2D array</em>) – </li>
+<li><strong>py_ldb</strong> (<em>int</em>) – </li>
+<li><strong>stride of the input matrix B</strong> (<em>the</em>) – </li>
+<li><strong>py_beta</strong> (<em>float</em>) – </li>
+<li><strong>weight applied to the resulting matrix C</strong> (<em>the</em>) – </li>
+<li><strong>py_c</strong> (<em>2D array</em>) – </li>
+<li><strong>shape</strong><strong> [</strong><strong>py_m</strong><strong>, </strong><strong>py_n</strong><strong>] </strong><strong>of column-major</strong> (<em>in</em>) – </li>
+<li><strong>fact it is</strong> (<em>in</em>) – </li>
+<li><strong>shape</strong><strong> [</strong><strong>py_n</strong><strong>, </strong><strong>py_m</strong><strong>] </strong><strong>of row-major</strong> (<em>in</em>) – </li>
+<li><strong>py_ldc</strong> (<em>int</em>) – </li>
+<li><strong>stride of the resulting matrix</strong> (<em>the</em>) – </li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"><ul class="simple">
+<li><strong>py_c</strong> (<em>2D array</em>)</li>
+<li><em>in shape [py_m, py_n] of column-major</em></li>
+<li><em>write the resulting matrix</em></li>
+</ul>
+</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="brainiak.fcma.cython_blas.compute_single_self_corr_gemm">
+<code class="descclassname">brainiak.fcma.cython_blas.</code><code class="descname">compute_single_self_corr_gemm</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#brainiak.fcma.cython_blas.compute_single_self_corr_gemm" title="Permalink to this definition">¶</a></dt>
+<dd><p>use blas API gemm wrapped by scipy to compute correlation matrix</p>
+<p>This is to compute the correlation between selected voxels for
+final training and classification. Although the resulting correlation
+matrix is symmetric, in most cases, gemm performs better than syrk.
+Here we assume that the resulting matrix is stored in a compact way,
+i.e. py_ldc == py_n.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>py_trans_a</strong> (<em>str</em>) – </li>
+<li><strong>transpose</strong><strong> or </strong><strong>not for the first matrix A</strong> (<em>do</em>) – </li>
+<li><strong>py_trans_b</strong> (<em>str</em>) – </li>
+<li><strong>transpose</strong><strong> or </strong><strong>not for the first matrix B</strong> (<em>do</em>) – </li>
+<li><strong>py_m</strong> (<em>int</em>) – </li>
+<li><strong>row of the resulting matrix C</strong> (<em>the</em>) – </li>
+<li><strong>our case</strong><strong>, </strong><strong>is num_selected_voxels</strong> (<em>in</em>) – </li>
+<li><strong>py_n</strong> (<em>int</em>) – </li>
+<li><strong>column of the resulting matrix C</strong> (<em>the</em>) – </li>
+<li><strong>our case</strong><strong>, </strong><strong>is num_selected_voxels</strong> – </li>
+<li><strong>py_k</strong> (<em>int</em>) – </li>
+<li><strong>collapsed dimension of the multiplying matrices</strong> (<em>the</em>) – </li>
+<li><strong>the column of the first matrix after transpose if necessary</strong> (<em>i.e.</em>) – </li>
+<li><strong>row of the second matrix after transpose if necessary</strong> (<em>the</em>) – </li>
+<li><strong>our case</strong><strong>, </strong><strong>is num_TRs</strong> (<em>in</em>) – </li>
+<li><strong>py_alpha</strong> (<em>float</em>) – </li>
+<li><strong>weight applied to the input matrix A</strong> (<em>the</em>) – </li>
+<li><strong>py_a</strong> (<em>2D array in shape</em><em> [</em><em>num_TRs</em><em>, </em><em>num_selected_voxels</em><em>]</em>) – </li>
+<li><strong>our case the normalized activity values</strong> (<em>in</em>) – </li>
+<li><strong>multipliers are specified here as the same one</strong> (<em>both</em>) – </li>
+<li><strong>py_lda</strong> (<em>int</em>) – </li>
+<li><strong>stride of the input matrix A</strong> (<em>the</em>) – </li>
+<li><strong>py_ldb</strong> (<em>int</em>) – </li>
+<li><strong>stride of the input matrix B</strong> (<em>the</em>) – </li>
+<li><strong>our case</strong><strong>, </strong><strong>the same as py_lda</strong> (<em>in</em>) – </li>
+<li><strong>py_beta</strong> (<em>float</em>) – </li>
+<li><strong>weight applied to the resulting matrix C</strong> (<em>the</em>) – </li>
+<li><strong>py_c</strong> (<em>3D array</em>) – </li>
+<li><strong>shape</strong><strong> [</strong><strong>num_samples</strong><strong>, </strong><strong>num_selected_voxels</strong><strong>, </strong><strong>num_selected_voxels</strong><strong>]</strong> (<em>in</em>) – </li>
+<li><strong>to store the resulting kernel matrix</strong> (<em>place</em>) – </li>
+<li><strong>py_ldc</strong> (<em>int</em>) – </li>
+<li><strong>stride of the resulting matrix</strong> (<em>the</em>) – </li>
+<li><strong>py_start_sample</strong> (<em>int</em>) – </li>
+<li><strong>processed sample</strong> (<em>the</em>) – </li>
+<li><strong>to locate the resulting matrix C</strong> (<em>used</em>) – </li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"><ul class="simple">
+<li><strong>py_c</strong> (<em>3D array</em>)</li>
+<li><em>in shape [num_samples, num_selected_voxels, num_selected_voxels]</em></li>
+<li><em>write the resulting correlation matrices</em></li>
+<li><em>for the processed sample</em></li>
+</ul>
+</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="brainiak.fcma.cython_blas.compute_single_self_corr_syrk">
+<code class="descclassname">brainiak.fcma.cython_blas.</code><code class="descname">compute_single_self_corr_syrk</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#brainiak.fcma.cython_blas.compute_single_self_corr_syrk" title="Permalink to this definition">¶</a></dt>
+<dd><p>use blas API syrk wrapped by scipy to compute correlation matrix</p>
+<p>This is to compute the correlation between selected voxels for
+final training and classification. Since the resulting correlation
+matrix is symmetric, syrk is used. However, it looks like that in most
+cases, syrk performs much worse than gemm (the next function).
+Here we assume that the resulting matrix is stored in a compact way,
+i.e. py_ldc == py_n.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>py_uplo</strong> (<em>str</em>) – </li>
+<li><strong>the upper</strong><strong> or </strong><strong>lower triangle of the matrix</strong> (<em>getting</em>) – </li>
+<li><strong>py_trans</strong> (<em>str</em>) – </li>
+<li><strong>transpose</strong><strong> or </strong><strong>not for the input matrix A</strong> (<em>do</em>) – </li>
+<li><strong>py_n</strong> (<em>int</em>) – </li>
+<li><strong>row and column of the resulting matrix C</strong> (<em>the</em>) – </li>
+<li><strong>our case</strong><strong>, </strong><strong>is num_selected_voxels</strong> (<em>in</em>) – </li>
+<li><strong>py_k</strong> (<em>int</em>) – </li>
+<li><strong>collapsed dimension of the multiplying matrices</strong> (<em>the</em>) – </li>
+<li><strong>the column of the first matrix after transpose if necessary</strong> (<em>i.e.</em>) – </li>
+<li><strong>row of the second matrix after transpose if necessary</strong> (<em>the</em>) – </li>
+<li><strong>our case</strong><strong>, </strong><strong>is num_TRs</strong> (<em>in</em>) – </li>
+<li><strong>py_alpha</strong> (<em>float</em>) – </li>
+<li><strong>weight applied to the input matrix A</strong> (<em>the</em>) – </li>
+<li><strong>py_a</strong> (<em>2D array in shape</em><em> [</em><em>num_TRs</em><em>, </em><em>num_selected_voxels</em><em>]</em>) – </li>
+<li><strong>our case the normalized activity values</strong> (<em>in</em>) – </li>
+<li><strong>py_lda</strong> (<em>int</em>) – </li>
+<li><strong>stride of the input matrix A</strong> (<em>the</em>) – </li>
+<li><strong>py_beta</strong> (<em>float</em>) – </li>
+<li><strong>weight applied to the resulting matrix C</strong> (<em>the</em>) – </li>
+<li><strong>py_c</strong> (<em>3D array</em>) – </li>
+<li><strong>shape</strong><strong> [</strong><strong>num_samples</strong><strong>, </strong><strong>num_selected_voxels</strong><strong>, </strong><strong>num_selected_voxels</strong><strong>]</strong> (<em>in</em>) – </li>
+<li><strong>to store the resulting kernel matrix</strong> (<em>place</em>) – </li>
+<li><strong>py_ldc</strong> (<em>int</em>) – </li>
+<li><strong>stride of the resulting matrix</strong> (<em>the</em>) – </li>
+<li><strong>py_start_sample</strong> (<em>int</em>) – </li>
+<li><strong>processed sample</strong> (<em>the</em>) – </li>
+<li><strong>to locate the resulting matrix C</strong> (<em>used</em>) – </li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"><ul class="simple">
+<li><strong>py_c</strong> (<em>3D array</em>)</li>
+<li><em>in shape [num_samples, num_selected_voxels, num_selected_voxels]</em></li>
+<li><em>write the resulting correlation matrices</em></li>
+<li><em>for the processed sample</em></li>
+</ul>
+</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="module-brainiak.fcma.mvpa_voxelselector">
+<span id="brainiak-fcma-mvpa-voxelselector-module"></span><h2>brainiak.fcma.mvpa_voxelselector module<a class="headerlink" href="#module-brainiak.fcma.mvpa_voxelselector" title="Permalink to this headline">¶</a></h2>
+<p>Full Correlation Matrix Analysis (FCMA)</p>
+<p>Activity-based voxel selection</p>
+<dl class="class">
+<dt id="brainiak.fcma.mvpa_voxelselector.MVPAVoxelSelector">
+<em class="property">class </em><code class="descclassname">brainiak.fcma.mvpa_voxelselector.</code><code class="descname">MVPAVoxelSelector</code><span class="sig-paren">(</span><em>data</em>, <em>mask</em>, <em>labels</em>, <em>num_folds</em>, <em>sl</em><span class="sig-paren">)</span><a class="headerlink" href="#brainiak.fcma.mvpa_voxelselector.MVPAVoxelSelector" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<p>Activity-based voxel selection component of FCMA</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>data</strong> (<em>4D array in shape</em><em> [</em><em>brain 3D + epoch</em><em>]</em>) – contains the averaged and normalized brain data epoch by epoch.
+It is generated by .io.prepare_searchlight_mvpa_data</li>
+<li><strong>mask</strong> (<em>3D array</em>) – </li>
+<li><strong>labels</strong> (<em>1D array</em>) – contains the labels of the epochs.
+It is generated by .io.prepare_searchlight_mvpa_data</li>
+<li><strong>num_folds</strong> (<em>int</em>) – the number of folds to be conducted in the cross validation</li>
+<li><strong>sl</strong> (<a class="reference internal" href="brainiak.searchlight.html#brainiak.searchlight.searchlight.Searchlight" title="brainiak.searchlight.searchlight.Searchlight"><em>Searchlight</em></a>) – the distributed Searchlight object</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="brainiak.fcma.mvpa_voxelselector.MVPAVoxelSelector.run">
+<code class="descname">run</code><span class="sig-paren">(</span><em>clf</em><span class="sig-paren">)</span><a class="headerlink" href="#brainiak.fcma.mvpa_voxelselector.MVPAVoxelSelector.run" title="Permalink to this definition">¶</a></dt>
+<dd><p>run activity-based voxel selection</p>
+<p>Sort the voxels based on the cross-validation accuracy
+of their activity vectors within the searchlight</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>clf</strong> (<em>classification function</em>) – the classifier to be used in cross validation</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><ul class="simple">
+<li><strong>result_volume</strong> (<em>3D array of accuracy numbers</em>) – contains the voxelwise accuracy numbers obtained via Searchlight</li>
+<li><strong>results</strong> (<em>list of tuple (voxel_id, accuracy)</em>) – the accuracy numbers of all voxels, in accuracy descending order
+the length of array equals the number of voxels</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-brainiak.fcma.preprocessing">
+<span id="brainiak-fcma-preprocessing-module"></span><h2>brainiak.fcma.preprocessing module<a class="headerlink" href="#module-brainiak.fcma.preprocessing" title="Permalink to this headline">¶</a></h2>
+<p>FCMA preprocessing.</p>
+<dl class="class">
+<dt id="brainiak.fcma.preprocessing.RandomType">
+<em class="property">class </em><code class="descclassname">brainiak.fcma.preprocessing.</code><code class="descname">RandomType</code><a class="headerlink" href="#brainiak.fcma.preprocessing.RandomType" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">enum.Enum</span></code></p>
+<p>Define the random types as enumeration</p>
+<p>NORANDOM means do not randomize the data;
+REPRODUCIBLE means randomize the data with a fixed seed so that the
+permutation holds between different runs;
+UNREPRODUCIBLE means truly randomize the data which returns different
+results in different runs.</p>
+<dl class="attribute">
+<dt id="brainiak.fcma.preprocessing.RandomType.NORANDOM">
+<code class="descname">NORANDOM</code><em class="property"> = 0</em><a class="headerlink" href="#brainiak.fcma.preprocessing.RandomType.NORANDOM" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="brainiak.fcma.preprocessing.RandomType.REPRODUCIBLE">
+<code class="descname">REPRODUCIBLE</code><em class="property"> = 1</em><a class="headerlink" href="#brainiak.fcma.preprocessing.RandomType.REPRODUCIBLE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="brainiak.fcma.preprocessing.RandomType.UNREPRODUCIBLE">
+<code class="descname">UNREPRODUCIBLE</code><em class="property"> = 2</em><a class="headerlink" href="#brainiak.fcma.preprocessing.RandomType.UNREPRODUCIBLE" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="brainiak.fcma.preprocessing.prepare_fcma_data">
+<code class="descclassname">brainiak.fcma.preprocessing.</code><code class="descname">prepare_fcma_data</code><span class="sig-paren">(</span><em>images</em>, <em>conditions</em>, <em>mask1</em>, <em>mask2=None</em>, <em>random=&lt;RandomType.NORANDOM: 0&gt;</em>, <em>comm=&lt;mpi4py.MPI.Intracomm object&gt;</em><span class="sig-paren">)</span><a class="headerlink" href="#brainiak.fcma.preprocessing.prepare_fcma_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Prepare data for correlation-based computation and analysis.</p>
+<p>Generate epochs of interests, then broadcast to all workers.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>images</strong> (<em>Iterable</em><em>[</em><em>SpatialImage</em><em>]</em>) – Data.</li>
+<li><strong>conditions</strong> (<em>List</em><em>[</em><em>UniqueLabelConditionSpec</em><em>]</em>) – Condition specification.</li>
+<li><strong>mask1</strong> (<em>np.ndarray</em>) – Mask to apply to each image.</li>
+<li><strong>mask2</strong> (<em>Optional</em><em>[</em><em>np.ndarray</em><em>]</em>) – Mask to apply to each image.
+If it is not specified, the method will assign None to the returning
+variable raw_data2 and the self-correlation on raw_data1 will be
+computed</li>
+<li><strong>random</strong> (<em>Optional</em><em>[</em><a class="reference internal" href="#brainiak.fcma.preprocessing.RandomType" title="brainiak.fcma.preprocessing.RandomType"><em>RandomType</em></a><em>]</em>) – Randomize the data within subject or not.
+Default NORANDOM</li>
+<li><strong>comm</strong> (<em>MPI.Comm</em>) – MPI communicator to use for MPI operations.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"><ul class="simple">
+<li><strong>raw_data1</strong> (<em>list of 2D array in shape [epoch length, nVoxels]</em>) – the data organized in epochs, specified by the first mask.
+len(raw_data) equals the number of epochs</li>
+<li><strong>raw_data2</strong> (<em>Optional, list of 2D array in shape [epoch length, nVoxels]</em>) – the data organized in epochs, specified by the second mask if any.
+len(raw_data2) equals the number of epochs</li>
+<li><strong>labels</strong> (<em>list of 1D array</em>) – the condition labels of the epochs
+len(labels) labels equals the number of epochs</li>
+</ul>
+</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="brainiak.fcma.preprocessing.generate_epochs_info">
+<code class="descclassname">brainiak.fcma.preprocessing.</code><code class="descname">generate_epochs_info</code><span class="sig-paren">(</span><em>epoch_list</em><span class="sig-paren">)</span><a class="headerlink" href="#brainiak.fcma.preprocessing.generate_epochs_info" title="Permalink to this definition">¶</a></dt>
+<dd><p>use epoch_list to generate epoch_info defined below</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>epoch_list</strong> (<em>list of 3D</em><em> (</em><em>binary</em><em>) </em><em>array in shape</em><em> [</em><em>condition</em><em>, </em><em>nEpochs</em><em>, </em><em>nTRs</em><em>]</em>) – Contains specification of epochs and conditions, assuming
+1. all subjects have the same number of epochs;
+2. len(epoch_list) equals the number of subjects;
+3. an epoch is always a continuous time course.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><strong>epoch_info</strong> – label is the condition labels of the epochs;
+sid is the subject id, corresponding to the index of raw_data;
+start is the start TR of an epoch (inclusive);
+end is the end TR of an epoch(exclusive).
+Assuming len(labels) labels equals the number of epochs and
+the epochs of the same sid are adjacent in epoch_info</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">list of tuple (label, sid, start, end)</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="brainiak.fcma.preprocessing.prepare_mvpa_data">
+<code class="descclassname">brainiak.fcma.preprocessing.</code><code class="descname">prepare_mvpa_data</code><span class="sig-paren">(</span><em>images</em>, <em>conditions</em>, <em>mask</em><span class="sig-paren">)</span><a class="headerlink" href="#brainiak.fcma.preprocessing.prepare_mvpa_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Prepare data for activity-based model training and prediction.</p>
+<p>Average the activity within epochs and z-scoring within subject.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>images</strong> (<em>Iterable</em><em>[</em><em>SpatialImage</em><em>]</em>) – Data.</li>
+<li><strong>conditions</strong> (<em>List</em><em>[</em><em>UniqueLabelConditionSpec</em><em>]</em>) – Condition specification.</li>
+<li><strong>mask</strong> (<em>np.ndarray</em>) – Mask to apply to each image.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"><ul class="simple">
+<li><strong>processed_data</strong> (<em>2D array in shape [num_voxels, num_epochs]</em>) – averaged epoch by epoch processed data</li>
+<li><strong>labels</strong> (<em>1D array</em>) – contains labels of the data</li>
+</ul>
+</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="brainiak.fcma.preprocessing.prepare_searchlight_mvpa_data">
+<code class="descclassname">brainiak.fcma.preprocessing.</code><code class="descname">prepare_searchlight_mvpa_data</code><span class="sig-paren">(</span><em>images</em>, <em>conditions</em>, <em>data_type=&lt;class 'numpy.float32'&gt;</em>, <em>random=&lt;RandomType.NORANDOM: 0&gt;</em><span class="sig-paren">)</span><a class="headerlink" href="#brainiak.fcma.preprocessing.prepare_searchlight_mvpa_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>obtain the data for activity-based voxel selection using Searchlight</p>
+<p>Average the activity within epochs and z-scoring within subject,
+while maintaining the 3D brain structure. In order to save memory,
+the data is processed subject by subject instead of reading all in before
+processing. Assuming all subjects live in the identical cube.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>images</strong> (<em>Iterable</em><em>[</em><em>SpatialImage</em><em>]</em>) – Data.</li>
+<li><strong>conditions</strong> (<em>List</em><em>[</em><em>UniqueLabelConditionSpec</em><em>]</em>) – Condition specification.</li>
+<li><strong>data_type</strong> – Type to cast image to.</li>
+<li><strong>random</strong> (<em>Optional</em><em>[</em><a class="reference internal" href="#brainiak.fcma.preprocessing.RandomType" title="brainiak.fcma.preprocessing.RandomType"><em>RandomType</em></a><em>]</em>) – Randomize the data within subject or not.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"><ul class="simple">
+<li><strong>processed_data</strong> (<em>4D array in shape [brain 3D + epoch]</em>) – averaged epoch by epoch processed data</li>
+<li><strong>labels</strong> (<em>1D array</em>) – contains labels of the data</li>
+</ul>
+</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="module-brainiak.fcma.util">
+<span id="brainiak-fcma-util-module"></span><h2>brainiak.fcma.util module<a class="headerlink" href="#module-brainiak.fcma.util" title="Permalink to this headline">¶</a></h2>
+<p>Full Correlation Matrix Analysis (FCMA)</p>
+<p>Correlation related high performance routines</p>
+<dl class="function">
+<dt id="brainiak.fcma.util.compute_correlation">
+<code class="descclassname">brainiak.fcma.util.</code><code class="descname">compute_correlation</code><span class="sig-paren">(</span><em>matrix1</em>, <em>matrix2</em><span class="sig-paren">)</span><a class="headerlink" href="#brainiak.fcma.util.compute_correlation" title="Permalink to this definition">¶</a></dt>
+<dd><p>compute correlation between two sets of variables</p>
+<p>Correlate the rows of matrix1 with the rows of matrix2.
+If matrix1 == matrix2, it is auto-correlation computation
+resulting in a symmetric correlation matrix.
+The number of columns MUST agree between set1 and set2.
+The correlation being computed here is
+the Pearson’s correlation coefficient, which can be expressed as</p>
+<div class="math">
+\[corr(X, Y) = \frac{cov(X, Y)}{\sigma_X\sigma_Y}\]</div>
+<p>where cov(X, Y) is the covariance of variable X and Y, and</p>
+<div class="math">
+\[\sigma_X\]</div>
+<p>is the standard deviation of variable X</p>
+<p>Reducing the correlation computation to matrix multiplication
+and using BLAS GEMM API wrapped by Scipy can speedup the numpy built-in
+correlation computation (numpy.corrcoef) by one order of magnitude</p>
+<div class="math">
+\[\begin{split}corr(X, Y)
+&amp;= \frac{\sum\limits_{i=1}^n (x_i-\bar{x})(y_i-\bar{y})}{(n-1)
+\sqrt{\frac{\sum\limits_{j=1}^n x_j^2-n\bar{x}}{n-1}}
+\sqrt{\frac{\sum\limits_{j=1}^{n} y_j^2-n\bar{y}}{n-1}}}\\
+&amp;= \sum\limits_{i=1}^n(\frac{(x_i-\bar{x})}
+{\sqrt{\sum\limits_{j=1}^n x_j^2-n\bar{x}}}
+\frac{(y_i-\bar{y})}{\sqrt{\sum\limits_{j=1}^n y_j^2-n\bar{y}}})\end{split}\]</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>matrix1</strong> (<em>2D array in shape</em><em> [</em><em>r1</em><em>, </em><em>c</em><em>]</em>) – MUST be continuous and row-major</li>
+<li><strong>matrix2</strong> (<em>2D array in shape</em><em> [</em><em>r2</em><em>, </em><em>c</em><em>]</em>) – MUST be continuous and row-major</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>corr_data</strong> – continuous and row-major in np.float32</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">2D array in shape [r1, r2]</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="module-brainiak.fcma.voxelselector">
+<span id="brainiak-fcma-voxelselector-module"></span><h2>brainiak.fcma.voxelselector module<a class="headerlink" href="#module-brainiak.fcma.voxelselector" title="Permalink to this headline">¶</a></h2>
+<p>Full Correlation Matrix Analysis (FCMA)</p>
+<p>Correlation-based voxel selection</p>
+<dl class="class">
+<dt id="brainiak.fcma.voxelselector.VoxelSelector">
+<em class="property">class </em><code class="descclassname">brainiak.fcma.voxelselector.</code><code class="descname">VoxelSelector</code><span class="sig-paren">(</span><em>labels</em>, <em>epochs_per_subj</em>, <em>num_folds</em>, <em>raw_data</em>, <em>raw_data2=None</em>, <em>voxel_unit=64</em>, <em>process_num=4</em>, <em>master_rank=0</em><span class="sig-paren">)</span><a class="headerlink" href="#brainiak.fcma.voxelselector.VoxelSelector" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<p>Correlation-based voxel selection component of FCMA.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>labels</strong> (<em>list of 1D array</em>) – the condition labels of the epochs
+len(labels) labels equals the number of epochs</li>
+<li><strong>epochs_per_subj</strong> (<em>int</em>) – The number of epochs of each subject</li>
+<li><strong>num_folds</strong> (<em>int</em>) – The number of folds to be conducted in the cross validation</li>
+<li><strong>raw_data</strong> (<em>list of 2D array in shape</em><em> [</em><em>epoch length</em><em>, </em><em>nVoxels</em><em>]</em>) – <dl class="docutils">
+<dt>Assumption: 1. all activity data contains the same number of voxels</dt>
+<dd><ol class="first last arabic" start="2">
+<li>the activity data has been z-scored,
+ready to compute correlation as matrix multiplication</li>
+<li>all subjects have the same number of epochs</li>
+<li>epochs belonging to the same subject are adjacent
+in the list</li>
+<li>if MPI jobs are running on multiple nodes, the path
+used must be on a filesystem shared by all nodes</li>
+</ol>
+</dd>
+</dl>
+</li>
+<li><strong>raw_data2</strong> (<em>Optional</em><em>, </em><em>list of 2D array in shape</em><em> [</em><em>epoch length</em><em>, </em><em>nVoxels</em><em>]</em>) – raw_data2 shares the data structure of the assumptions of raw_data
+If raw_data2 is None, the correlation will be computed as
+raw_data by raw_data.
+If raw_data2 is specified, len(raw_data) MUST equal len(raw_data2),
+the correlation will be computed as raw_data by raw_data2.</li>
+<li><strong>voxel_unit</strong> (<em>int</em><em>, </em><em>default 64</em>) – The number of voxels assigned to a worker each time</li>
+<li><strong>process_num</strong> (<em>Optional</em><em>[</em><em>int</em><em>]</em>) – The maximum number of processes used in cross validation.
+If None, the number of processes will equal
+the number of available hardware threads, considering cpusets
+restrictions.
+If 0, cross validation will not use python multiprocessing.</li>
+<li><strong>master_rank</strong> (<em>int</em><em>, </em><em>default 0</em>) – The process which serves as the master</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="brainiak.fcma.voxelselector.VoxelSelector.run">
+<code class="descname">run</code><span class="sig-paren">(</span><em>clf</em><span class="sig-paren">)</span><a class="headerlink" href="#brainiak.fcma.voxelselector.VoxelSelector.run" title="Permalink to this definition">¶</a></dt>
+<dd><p>Run correlation-based voxel selection in master-worker model.</p>
+<p>Sort the voxels based on the cross-validation accuracy
+of their correlation vectors</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>clf</strong> (<em>classification function</em>) – the classifier to be used in cross validation</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><strong>results</strong> – the accuracy numbers of all voxels, in accuracy descending order
+the length of array equals the number of voxels</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">list of tuple (voxel_id, accuracy)</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="brainiak.funcalign.html" class="btn btn-neutral float-right" title="brainiak.funcalign package" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="brainiak.factoranalysis.html" class="btn btn-neutral" title="brainiak.factoranalysis package" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016, Princeton Neuroscience Institute and Intel Corporation.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'0.6',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

@@ -1,0 +1,20 @@
+brainiak\.reprsimil package
+===========================
+
+.. automodule:: brainiak.reprsimil
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+Submodules
+----------
+
+brainiak\.reprsimil\.brsa module
+--------------------------------
+
+.. automodule:: brainiak.reprsimil.brsa
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+

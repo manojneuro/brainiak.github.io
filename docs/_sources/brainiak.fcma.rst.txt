@@ -1,0 +1,60 @@
+brainiak\.fcma package
+======================
+
+.. automodule:: brainiak.fcma
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+Submodules
+----------
+
+brainiak\.fcma\.classifier module
+---------------------------------
+
+.. automodule:: brainiak.fcma.classifier
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+brainiak\.fcma\.cython\_blas module
+-----------------------------------
+
+.. automodule:: brainiak.fcma.cython_blas
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+brainiak\.fcma\.mvpa\_voxelselector module
+------------------------------------------
+
+.. automodule:: brainiak.fcma.mvpa_voxelselector
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+brainiak\.fcma\.preprocessing module
+------------------------------------
+
+.. automodule:: brainiak.fcma.preprocessing
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+brainiak\.fcma\.util module
+---------------------------
+
+.. automodule:: brainiak.fcma.util
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+brainiak\.fcma\.voxelselector module
+------------------------------------
+
+.. automodule:: brainiak.fcma.voxelselector
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+

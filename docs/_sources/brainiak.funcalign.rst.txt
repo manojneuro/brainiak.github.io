@@ -1,0 +1,28 @@
+brainiak\.funcalign package
+===========================
+
+.. automodule:: brainiak.funcalign
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+Submodules
+----------
+
+brainiak\.funcalign\.srm module
+-------------------------------
+
+.. automodule:: brainiak.funcalign.srm
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+brainiak\.funcalign\.sssrm module
+---------------------------------
+
+.. automodule:: brainiak.funcalign.sssrm
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+

@@ -1,0 +1,460 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>brainiak.eventseg package &mdash; brainiak 0.6 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+        <link rel="search" title="Search" href="search.html"/>
+    <link rel="top" title="brainiak 0.6 documentation" href="index.html"/>
+        <link rel="up" title="brainiak package" href="brainiak.html"/>
+        <link rel="next" title="brainiak.factoranalysis package" href="brainiak.factoranalysis.html"/>
+        <link rel="prev" title="brainiak package" href="brainiak.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> brainiak
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.6
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="release_notes.html">Release notes</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="api.html">API</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="api.html#brainiak">brainiak</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="brainiak.html">brainiak package</a><ul class="current">
+<li class="toctree-l4 current"><a class="reference internal" href="brainiak.html#subpackages">Subpackages</a></li>
+<li class="toctree-l4"><a class="reference internal" href="brainiak.html#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="brainiak.html#module-brainiak.image">brainiak.image module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="brainiak.html#module-brainiak.io">brainiak.io module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="brainiak.html#module-brainiak.isfc">brainiak.isfc module</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="contributing.html">Contributing</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">brainiak</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="api.html">API</a> &raquo;</li>
+        
+          <li><a href="brainiak.html">brainiak package</a> &raquo;</li>
+        
+      <li>brainiak.eventseg package</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/brainiak.eventseg.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-brainiak.eventseg">
+<span id="brainiak-eventseg-package"></span><h1>brainiak.eventseg package<a class="headerlink" href="#module-brainiak.eventseg" title="Permalink to this headline">¶</a></h1>
+<p>Event segmentation of continuous data + event transfer between datasets.</p>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-brainiak.eventseg.event">
+<span id="brainiak-eventseg-event-module"></span><h2>brainiak.eventseg.event module<a class="headerlink" href="#module-brainiak.eventseg.event" title="Permalink to this headline">¶</a></h2>
+<p>Event segmentation using a Hidden Markov Model</p>
+<p>Given an ROI timeseries, this class uses an annealed fitting procedure to
+segment the timeseries into events with stable activity patterns. After
+learning the signature activity pattern of each event, the model can then be
+applied to other datasets to identify a corresponding sequence of events.</p>
+<p>Full details are available in the bioRxiv preprint:
+Christopher Baldassano, Janice Chen, Asieh Zadbood,
+Jonathan W Pillow, Uri Hasson, Kenneth A Norman
+Discovering event structure in continuous narrative perception and memory
+Neuron, Volume 95, Issue 3, 709 - 721.e5
+<a class="reference external" href="http://www.cell.com/neuron/abstract/S0896-6273(17)30593-7">http://www.cell.com/neuron/abstract/S0896-6273(17)30593-7</a></p>
+<dl class="class">
+<dt id="brainiak.eventseg.event.EventSegment">
+<em class="property">class </em><code class="descclassname">brainiak.eventseg.event.</code><code class="descname">EventSegment</code><span class="sig-paren">(</span><em>n_events=2</em>, <em>step_var=&lt;function EventSegment._default_var_schedule&gt;</em>, <em>n_iter=500</em><span class="sig-paren">)</span><a class="headerlink" href="#brainiak.eventseg.event.EventSegment" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">sklearn.base.BaseEstimator</span></code></p>
+<p>Class for event segmentation of continuous fMRI data</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>n_events</strong> (<em>int</em>) – Number of segments to learn</li>
+<li><strong>step_var</strong> (<em>Callable</em><em>[</em><em>[</em><em>int</em><em>]</em><em>, </em><em>float</em><em>] </em><em>: default 4 *</em><em> (</em><em>0.98 **</em><em> (</em><em>step - 1</em><em>)</em><em>)</em>) – The Gaussian variance to use during fitting, as a function of the
+number of steps. Should decrease slowly over time.</li>
+<li><strong>n_iter</strong> (<em>int : default 500</em>) – Maximum number of steps to run during fitting</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="attribute">
+<dt>
+<code class="descname">p_start, p_end</code></dt>
+<dd><p><em>length n_events+1 ndarray</em> – initial and final prior distributions over events</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="brainiak.eventseg.event.EventSegment.P">
+<code class="descname">P</code><a class="headerlink" href="#brainiak.eventseg.event.EventSegment.P" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>n_events+1 by n_events+1 ndarray</em> – HMM transition matrix</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="brainiak.eventseg.event.EventSegment.ll_">
+<code class="descname">ll_</code><a class="headerlink" href="#brainiak.eventseg.event.EventSegment.ll_" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>ndarray with length = number of training datasets</em> – Log-likelihood for training datasets over the course of training</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="brainiak.eventseg.event.EventSegment.segments_">
+<code class="descname">segments_</code><a class="headerlink" href="#brainiak.eventseg.event.EventSegment.segments_" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>list of (time by event) ndarrays</em> – Learned (soft) segmentation for training datasets</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="brainiak.eventseg.event.EventSegment.event_var_">
+<code class="descname">event_var_</code><a class="headerlink" href="#brainiak.eventseg.event.EventSegment.event_var_" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>float</em> – Gaussian variance at the end of learning</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="brainiak.eventseg.event.EventSegment.event_pat_">
+<code class="descname">event_pat_</code><a class="headerlink" href="#brainiak.eventseg.event.EventSegment.event_pat_" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>voxel by event ndarray</em> – Learned mean patterns for each event</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="brainiak.eventseg.event.EventSegment.calc_weighted_event_var">
+<code class="descname">calc_weighted_event_var</code><span class="sig-paren">(</span><em>D</em>, <em>weights</em>, <em>event_pat</em><span class="sig-paren">)</span><a class="headerlink" href="#brainiak.eventseg.event.EventSegment.calc_weighted_event_var" title="Permalink to this definition">¶</a></dt>
+<dd><p>Computes normalized weighted variance around event pattern</p>
+<p>Utility function for computing variance in a training set of weighted
+event examples. For each event, the sum of squared differences for all
+timepoints from the event pattern is computed, and then the weights
+specify how much each of these differences contributes to the
+variance (normalized by the number of voxels).</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>D</strong> (<em>timepoint by voxel ndarray</em>) – fMRI data for which to compute event variances</li>
+<li><strong>weights</strong> (<em>timepoint by event ndarray</em>) – specifies relative weights of timepoints for each event</li>
+<li><strong>event_pat</strong> (<em>voxel by event ndarray</em>) – mean event patterns to compute variance around</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>ev_var</strong></p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">ndarray of variances for each event</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="brainiak.eventseg.event.EventSegment.find_events">
+<code class="descname">find_events</code><span class="sig-paren">(</span><em>testing_data</em>, <em>var=None</em>, <em>scramble=False</em><span class="sig-paren">)</span><a class="headerlink" href="#brainiak.eventseg.event.EventSegment.find_events" title="Permalink to this definition">¶</a></dt>
+<dd><p>Applies learned event segmentation to new testing dataset</p>
+<p>After fitting an event segmentation using fit() or setting event
+patterns directly using set_event_patterns(), this function finds the
+same sequence of event patterns in a new testing dataset.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>testing_data</strong> (<em>timepoint by voxel ndarray</em>) – fMRI data to segment based on previously-learned event patterns</li>
+<li><strong>var</strong> (<em>float</em><em> or </em><em>1D ndarray of length equal to the number of events</em>) – default: uses variance that maximized training log-likelihood
+Variance of the event Gaussians. If scalar, all events are
+assumed to have the same variance. If fit() has not previously
+been run, this must be specifed (cannot be None).</li>
+<li><strong>scramble</strong> (<em>bool : default False</em>) – If true, the order of the learned events are shuffled before
+fitting, to give a null distribution</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"><ul class="simple">
+<li><strong>segments</strong> (<em>time by event ndarray</em>) – The resulting soft segmentation. segments[t,e] = probability
+that timepoint t is in event e</li>
+<li><strong>test_ll</strong> (<em>float</em>) – Log-likelihood of model fit</li>
+</ul>
+</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="brainiak.eventseg.event.EventSegment.fit">
+<code class="descname">fit</code><span class="sig-paren">(</span><em>X</em>, <em>y=None</em><span class="sig-paren">)</span><a class="headerlink" href="#brainiak.eventseg.event.EventSegment.fit" title="Permalink to this definition">¶</a></dt>
+<dd><p>Learn a segmentation on training data</p>
+<p>Fits event patterns and a segmentation to training data. After
+running this function, the learned event patterns can be used to
+segment other datasets using find_events</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>X</strong> (<em>time by voxel ndarray</em><em>, or </em><em>a list of such ndarrays</em>) – fMRI data to be segmented. If a list is given, then all datasets
+are segmented simultaneously with the same event patterns</li>
+<li><strong>y</strong> (<em>not used</em><em> (</em><em>added to comply with BaseEstimator definition</em><em>)</em>) – </li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>self</strong></p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">the EventSegment object</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="brainiak.eventseg.event.EventSegment.predict">
+<code class="descname">predict</code><span class="sig-paren">(</span><em>X</em><span class="sig-paren">)</span><a class="headerlink" href="#brainiak.eventseg.event.EventSegment.predict" title="Permalink to this definition">¶</a></dt>
+<dd><p>Applies learned event segmentation to new testing dataset</p>
+<p>Alternative function for segmenting a new dataset after using
+fit() to learn a sequence of events, to comply with the sklearn
+Classifier interface</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>X</strong> (<em>timepoint by voxel ndarray</em>) – fMRI data to segment based on previously-learned event patterns</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"></td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">Event label for each timepoint</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="brainiak.eventseg.event.EventSegment.set_event_patterns">
+<code class="descname">set_event_patterns</code><span class="sig-paren">(</span><em>event_pat</em><span class="sig-paren">)</span><a class="headerlink" href="#brainiak.eventseg.event.EventSegment.set_event_patterns" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set HMM event patterns manually</p>
+<p>Rather than fitting the event patterns automatically using fit(), this
+function allows them to be set explicitly. They can then be used to
+find corresponding events in a new dataset, using find_events().</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>event_pat</strong> (<em>voxel by event ndarray</em>) – </td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="brainiak.factoranalysis.html" class="btn btn-neutral float-right" title="brainiak.factoranalysis package" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="brainiak.html" class="btn btn-neutral" title="brainiak package" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016, Princeton Neuroscience Institute and Intel Corporation.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'0.6',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

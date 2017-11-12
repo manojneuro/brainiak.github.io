@@ -1,0 +1,662 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>brainiak.funcalign package &mdash; brainiak 0.6 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+        <link rel="search" title="Search" href="search.html"/>
+    <link rel="top" title="brainiak 0.6 documentation" href="index.html"/>
+        <link rel="up" title="brainiak package" href="brainiak.html"/>
+        <link rel="next" title="brainiak.hyperparamopt package" href="brainiak.hyperparamopt.html"/>
+        <link rel="prev" title="brainiak.fcma package" href="brainiak.fcma.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> brainiak
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.6
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="release_notes.html">Release notes</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="api.html">API</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="api.html#brainiak">brainiak</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="brainiak.html">brainiak package</a><ul class="current">
+<li class="toctree-l4 current"><a class="reference internal" href="brainiak.html#subpackages">Subpackages</a></li>
+<li class="toctree-l4"><a class="reference internal" href="brainiak.html#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="brainiak.html#module-brainiak.image">brainiak.image module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="brainiak.html#module-brainiak.io">brainiak.io module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="brainiak.html#module-brainiak.isfc">brainiak.isfc module</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="contributing.html">Contributing</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">brainiak</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="api.html">API</a> &raquo;</li>
+        
+          <li><a href="brainiak.html">brainiak package</a> &raquo;</li>
+        
+      <li>brainiak.funcalign package</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/brainiak.funcalign.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-brainiak.funcalign">
+<span id="brainiak-funcalign-package"></span><h1>brainiak.funcalign package<a class="headerlink" href="#module-brainiak.funcalign" title="Permalink to this headline">¶</a></h1>
+<p>Functional alignment of volumes from different subjects.</p>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-brainiak.funcalign.srm">
+<span id="brainiak-funcalign-srm-module"></span><h2>brainiak.funcalign.srm module<a class="headerlink" href="#module-brainiak.funcalign.srm" title="Permalink to this headline">¶</a></h2>
+<p>Shared Response Model (SRM)</p>
+<p>The implementations are based on the following publications:</p>
+<table class="docutils citation" frame="void" id="chen2015" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label">[Chen2015]</td><td><em>(<a class="fn-backref" href="#id1">1</a>, <a class="fn-backref" href="#id3">2</a>)</em> “A Reduced-Dimension fMRI Shared Response Model”,
+P.-H. Chen, J. Chen, Y. Yeshurun-Dishon, U. Hasson, J. Haxby, P. Ramadge
+Advances in Neural Information Processing Systems (NIPS), 2015.
+<a class="reference external" href="http://papers.nips.cc/paper/5855-a-reduced-dimension-fmri-shared-response-model">http://papers.nips.cc/paper/5855-a-reduced-dimension-fmri-shared-response-model</a></td></tr>
+</tbody>
+</table>
+<table class="docutils citation" frame="void" id="anderson2016" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id2">[Anderson2016]</a></td><td>“Enabling Factor Analysis on Thousand-Subject Neuroimaging
+Datasets”,
+Michael J. Anderson, Mihai Capotă, Javier S. Turek, Xia Zhu, Theodore L.
+Willke, Yida Wang, Po-Hsuan Chen, Jeremy R. Manning, Peter J. Ramadge,
+Kenneth A. Norman,
+IEEE International Conference on Big Data, 2016.
+<a class="reference external" href="https://doi.org/10.1109/BigData.2016.7840719">https://doi.org/10.1109/BigData.2016.7840719</a></td></tr>
+</tbody>
+</table>
+<dl class="class">
+<dt id="brainiak.funcalign.srm.SRM">
+<em class="property">class </em><code class="descclassname">brainiak.funcalign.srm.</code><code class="descname">SRM</code><span class="sig-paren">(</span><em>n_iter=10</em>, <em>features=50</em>, <em>rand_seed=0</em>, <em>comm=&lt;mpi4py.MPI.Intracomm object&gt;</em><span class="sig-paren">)</span><a class="headerlink" href="#brainiak.funcalign.srm.SRM" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">sklearn.base.BaseEstimator</span></code>, <code class="xref py py-class docutils literal"><span class="pre">sklearn.base.TransformerMixin</span></code></p>
+<p>Probabilistic Shared Response Model (SRM)</p>
+<p>Given multi-subject data, factorize it as a shared response S among all
+subjects and an orthogonal transform W per subject:</p>
+<div class="math">
+\[X_i \approx W_i S, \forall i=1 \dots N\]</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>n_iter</strong> (<em>int</em><em>, </em><em>default: 10</em>) – Number of iterations to run the algorithm.</li>
+<li><strong>features</strong> (<em>int</em><em>, </em><em>default: 50</em>) – Number of features to compute.</li>
+<li><strong>rand_seed</strong> (<em>int</em><em>, </em><em>default: 0</em>) – Seed for initializing the random number generator.</li>
+<li><strong>comm</strong> (<em>mpi4py.MPI.Intracomm</em>) – The MPI communicator containing the data</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="attribute">
+<dt id="brainiak.funcalign.srm.SRM.w_">
+<code class="descname">w_</code><a class="headerlink" href="#brainiak.funcalign.srm.SRM.w_" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>list of array, element i has shape=[voxels_i, features]</em> – The orthogonal transforms (mappings) for each subject.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="brainiak.funcalign.srm.SRM.s_">
+<code class="descname">s_</code><a class="headerlink" href="#brainiak.funcalign.srm.SRM.s_" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>array, shape=[features, samples]</em> – The shared response.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="brainiak.funcalign.srm.SRM.sigma_s_">
+<code class="descname">sigma_s_</code><a class="headerlink" href="#brainiak.funcalign.srm.SRM.sigma_s_" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>array, shape=[features, features]</em> – The covariance of the shared response Normal distribution.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="brainiak.funcalign.srm.SRM.mu_">
+<code class="descname">mu_</code><a class="headerlink" href="#brainiak.funcalign.srm.SRM.mu_" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>list of array, element i has shape=[voxels_i]</em> – The voxel means over the samples for each subject.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="brainiak.funcalign.srm.SRM.rho2_">
+<code class="descname">rho2_</code><a class="headerlink" href="#brainiak.funcalign.srm.SRM.rho2_" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>array, shape=[subjects]</em> – The estimated noise variance <span class="math">\(\rho_i^2\)</span> for each subject</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="brainiak.funcalign.srm.SRM.comm">
+<code class="descname">comm</code><a class="headerlink" href="#brainiak.funcalign.srm.SRM.comm" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>mpi4py.MPI.Intracomm</em> – The MPI communicator containing the data</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="brainiak.funcalign.srm.SRM.random_state_">
+<code class="descname">random_state_</code><a class="headerlink" href="#brainiak.funcalign.srm.SRM.random_state_" title="Permalink to this definition">¶</a></dt>
+<dd><p><code class="xref py py-obj docutils literal"><span class="pre">RandomState</span></code> – Random number generator initialized using rand_seed</p>
+</dd></dl>
+
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>The number of voxels may be different between subjects. However, the
+number of samples must be the same across subjects.</p>
+<p>The probabilistic Shared Response Model is approximated using the
+Expectation Maximization (EM) algorithm proposed in <a class="reference internal" href="#chen2015" id="id1">[Chen2015]</a>. The
+implementation follows the optimizations published in <a class="reference internal" href="#anderson2016" id="id2">[Anderson2016]</a>.</p>
+<p>This is a single node version.</p>
+<p class="last">The run-time complexity is <span class="math">\(O(I (V T K + V K^2 + K^3))\)</span> and the
+memory complexity is <span class="math">\(O(V T)\)</span> with I - the number of iterations,
+V - the sum of voxels from all subjects, T - the number of samples, and
+K - the number of features (typically, <span class="math">\(V \gg T \gg K\)</span>).</p>
+</div>
+<dl class="method">
+<dt id="brainiak.funcalign.srm.SRM.fit">
+<code class="descname">fit</code><span class="sig-paren">(</span><em>X</em>, <em>y=None</em><span class="sig-paren">)</span><a class="headerlink" href="#brainiak.funcalign.srm.SRM.fit" title="Permalink to this definition">¶</a></dt>
+<dd><p>Compute the probabilistic Shared Response Model</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>X</strong> (<em>list of 2D arrays</em><em>, </em><em>element i has shape=</em><em>[</em><em>voxels_i</em><em>, </em><em>samples</em><em>]</em>) – Each element in the list contains the fMRI data of one subject.</li>
+<li><strong>y</strong> (<em>not used</em>) – </li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="brainiak.funcalign.srm.SRM.transform">
+<code class="descname">transform</code><span class="sig-paren">(</span><em>X</em>, <em>y=None</em><span class="sig-paren">)</span><a class="headerlink" href="#brainiak.funcalign.srm.SRM.transform" title="Permalink to this definition">¶</a></dt>
+<dd><p>Use the model to transform matrix to Shared Response space</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>X</strong> (<em>list of 2D arrays</em><em>, </em><em>element i has shape=</em><em>[</em><em>voxels_i</em><em>, </em><em>samples_i</em><em>]</em>) – Each element in the list contains the fMRI data of one subject
+note that number of voxels and samples can vary across subjects</li>
+<li><strong>y</strong> (<em>not used</em><em> (</em><em>as it is unsupervised learning</em><em>)</em>) – </li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>s</strong> – Shared responses from input data (X)</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">list of 2D arrays, element i has shape=[features_i, samples_i]</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="brainiak.funcalign.srm.DetSRM">
+<em class="property">class </em><code class="descclassname">brainiak.funcalign.srm.</code><code class="descname">DetSRM</code><span class="sig-paren">(</span><em>n_iter=10</em>, <em>features=50</em>, <em>rand_seed=0</em><span class="sig-paren">)</span><a class="headerlink" href="#brainiak.funcalign.srm.DetSRM" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">sklearn.base.BaseEstimator</span></code>, <code class="xref py py-class docutils literal"><span class="pre">sklearn.base.TransformerMixin</span></code></p>
+<p>Deterministic Shared Response Model (DetSRM)</p>
+<p>Given multi-subject data, factorize it as a shared response S among all
+subjects and an orthogonal transform W per subject:</p>
+<div class="math">
+\[X_i \approx W_i S, \forall i=1 \dots N\]</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>n_iter</strong> (<em>int</em><em>, </em><em>default: 10</em>) – Number of iterations to run the algorithm.</li>
+<li><strong>features</strong> (<em>int</em><em>, </em><em>default: 50</em>) – Number of features to compute.</li>
+<li><strong>rand_seed</strong> (<em>int</em><em>, </em><em>default: 0</em>) – Seed for initializing the random number generator.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="attribute">
+<dt id="brainiak.funcalign.srm.DetSRM.w_">
+<code class="descname">w_</code><a class="headerlink" href="#brainiak.funcalign.srm.DetSRM.w_" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>list of array, element i has shape=[voxels_i, features]</em> – The orthogonal transforms (mappings) for each subject.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="brainiak.funcalign.srm.DetSRM.s_">
+<code class="descname">s_</code><a class="headerlink" href="#brainiak.funcalign.srm.DetSRM.s_" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>array, shape=[features, samples]</em> – The shared response.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="brainiak.funcalign.srm.DetSRM.random_state_">
+<code class="descname">random_state_</code><a class="headerlink" href="#brainiak.funcalign.srm.DetSRM.random_state_" title="Permalink to this definition">¶</a></dt>
+<dd><p><code class="xref py py-obj docutils literal"><span class="pre">RandomState</span></code> – Random number generator initialized using rand_seed</p>
+</dd></dl>
+
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>The number of voxels may be different between subjects. However, the
+number of samples must be the same across subjects.</p>
+<p>The Deterministic Shared Response Model is approximated using the
+Block Coordinate Descent (BCD) algorithm proposed in <a class="reference internal" href="#chen2015" id="id3">[Chen2015]</a>.</p>
+<p>This is a single node version.</p>
+<p class="last">The run-time complexity is <span class="math">\(O(I (V T K + V K^2))\)</span> and the memory
+complexity is <span class="math">\(O(V T)\)</span> with I - the number of iterations, V - the
+sum of voxels from all subjects, T - the number of samples, K - the
+number of features (typically, <span class="math">\(V \gg T \gg K\)</span>), and N - the
+number of subjects.</p>
+</div>
+<dl class="method">
+<dt id="brainiak.funcalign.srm.DetSRM.fit">
+<code class="descname">fit</code><span class="sig-paren">(</span><em>X</em>, <em>y=None</em><span class="sig-paren">)</span><a class="headerlink" href="#brainiak.funcalign.srm.DetSRM.fit" title="Permalink to this definition">¶</a></dt>
+<dd><p>Compute the Deterministic Shared Response Model</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>X</strong> (<em>list of 2D arrays</em><em>, </em><em>element i has shape=</em><em>[</em><em>voxels_i</em><em>, </em><em>samples</em><em>]</em>) – Each element in the list contains the fMRI data of one subject.</li>
+<li><strong>y</strong> (<em>not used</em>) – </li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="brainiak.funcalign.srm.DetSRM.transform">
+<code class="descname">transform</code><span class="sig-paren">(</span><em>X</em>, <em>y=None</em><span class="sig-paren">)</span><a class="headerlink" href="#brainiak.funcalign.srm.DetSRM.transform" title="Permalink to this definition">¶</a></dt>
+<dd><p>Use the model to transform data to the Shared Response subspace</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>X</strong> (<em>list of 2D arrays</em><em>, </em><em>element i has shape=</em><em>[</em><em>voxels_i</em><em>, </em><em>samples_i</em><em>]</em>) – Each element in the list contains the fMRI data of one subject.</li>
+<li><strong>y</strong> (<em>not used</em>) – </li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>s</strong> – Shared responses from input data (X)</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">list of 2D arrays, element i has shape=[features_i, samples_i]</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-brainiak.funcalign.sssrm">
+<span id="brainiak-funcalign-sssrm-module"></span><h2>brainiak.funcalign.sssrm module<a class="headerlink" href="#module-brainiak.funcalign.sssrm" title="Permalink to this headline">¶</a></h2>
+<p>Semi-Supervised Shared Response Model (SS-SRM)</p>
+<p>The implementations are based on the following publications:</p>
+<table class="docutils citation" frame="void" id="turek2016" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label">[Turek2016]</td><td><em>(<a class="fn-backref" href="#id4">1</a>, <a class="fn-backref" href="#id5">2</a>)</em> “A Semi-Supervised Method for Multi-Subject fMRI Functional
+Alignment”,
+J. Turek, T. Willke, P.-H. Chen, P. Ramadge
+under review, 2016.</td></tr>
+</tbody>
+</table>
+<dl class="class">
+<dt id="brainiak.funcalign.sssrm.SSSRM">
+<em class="property">class </em><code class="descclassname">brainiak.funcalign.sssrm.</code><code class="descname">SSSRM</code><span class="sig-paren">(</span><em>n_iter=10</em>, <em>features=50</em>, <em>gamma=1.0</em>, <em>alpha=0.5</em>, <em>rand_seed=0</em><span class="sig-paren">)</span><a class="headerlink" href="#brainiak.funcalign.sssrm.SSSRM" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">sklearn.base.BaseEstimator</span></code>, <code class="xref py py-class docutils literal"><span class="pre">sklearn.base.ClassifierMixin</span></code>, <code class="xref py py-class docutils literal"><span class="pre">sklearn.base.TransformerMixin</span></code></p>
+<p>Semi-Supervised Shared Response Model (SS-SRM)</p>
+<p>Given multi-subject data, factorize it as a shared response S among all
+subjects and an orthogonal transform W per subject, using also labeled
+data to train a Multinomial Logistic Regression (MLR) classifier (with
+l2 regularization) in a semi-supervised manner:</p>
+<div class="math" id="equation-sssrm-eq">
+<span class="eqno">(1)<a class="headerlink" href="#equation-sssrm-eq" title="Permalink to this equation">¶</a></span>\[(1-\alpha) Loss_{SRM}(W_i,S;X_i)
++ \alpha/\gamma Loss_{MLR}(\theta, bias; {(W_i^T \times Z_i, y_i})
++ R(\theta)\]</div>
+<p>(see Equations (1) and (4) in <a class="reference internal" href="#turek2016" id="id4">[Turek2016]</a>).</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>n_iter</strong> (<em>int</em><em>, </em><em>default: 10</em>) – Number of iterations to run the algorithm.</li>
+<li><strong>features</strong> (<em>int</em><em>, </em><em>default: 50</em>) – Number of features to compute.</li>
+<li><strong>gamma</strong> (<em>float</em><em>, </em><em>default: 1.0</em>) – Regularization parameter for the classifier.</li>
+<li><strong>alpha</strong> (<em>float</em><em>, </em><em>default: 0.5</em>) – Balance parameter between the SRM term and the MLR term.</li>
+<li><strong>rand_seed</strong> (<em>int</em><em>, </em><em>default: 0</em>) – Seed for initializing the random number generator.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="attribute">
+<dt id="brainiak.funcalign.sssrm.SSSRM.w_">
+<code class="descname">w_</code><a class="headerlink" href="#brainiak.funcalign.sssrm.SSSRM.w_" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>list of array, element i has shape=[voxels_i, features]</em> – The orthogonal transforms (mappings) for each subject.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="brainiak.funcalign.sssrm.SSSRM.s_">
+<code class="descname">s_</code><a class="headerlink" href="#brainiak.funcalign.sssrm.SSSRM.s_" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>array, shape=[features, samples]</em> – The shared response.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="brainiak.funcalign.sssrm.SSSRM.theta_">
+<code class="descname">theta_</code><a class="headerlink" href="#brainiak.funcalign.sssrm.SSSRM.theta_" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>array, shape=[classes, features]</em> – The MLR class plane parameters.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="brainiak.funcalign.sssrm.SSSRM.bias_">
+<code class="descname">bias_</code><a class="headerlink" href="#brainiak.funcalign.sssrm.SSSRM.bias_" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>array, shape=[classes]</em> – The MLR class biases.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="brainiak.funcalign.sssrm.SSSRM.classes_">
+<code class="descname">classes_</code><a class="headerlink" href="#brainiak.funcalign.sssrm.SSSRM.classes_" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>array of int, shape=[classes]</em> – Mapping table for each classes to original class label.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="brainiak.funcalign.sssrm.SSSRM.random_state_">
+<code class="descname">random_state_</code><a class="headerlink" href="#brainiak.funcalign.sssrm.SSSRM.random_state_" title="Permalink to this definition">¶</a></dt>
+<dd><p><code class="xref py py-obj docutils literal"><span class="pre">RandomState</span></code> – Random number generator initialized using rand_seed</p>
+</dd></dl>
+
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>The number of voxels may be different between subjects. However, the
+number of samples for the alignment data must be the same across
+subjects. The number of labeled samples per subject can be different.</p>
+<p>The Semi-Supervised Shared Response Model is approximated using the
+Block-Coordinate Descent (BCD) algorithm proposed in <a class="reference internal" href="#turek2016" id="id5">[Turek2016]</a>.</p>
+<p class="last">This is a single node version.</p>
+</div>
+<dl class="method">
+<dt id="brainiak.funcalign.sssrm.SSSRM.fit">
+<code class="descname">fit</code><span class="sig-paren">(</span><em>X</em>, <em>y</em>, <em>Z</em><span class="sig-paren">)</span><a class="headerlink" href="#brainiak.funcalign.sssrm.SSSRM.fit" title="Permalink to this definition">¶</a></dt>
+<dd><p>Compute the Semi-Supervised Shared Response Model</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>X</strong> (<em>list of 2D arrays</em><em>, </em><em>element i has shape=</em><em>[</em><em>voxels_i</em><em>, </em><em>n_align</em><em>]</em>) – Each element in the list contains the fMRI data for alignment of
+one subject. There are n_align samples for each subject.</li>
+<li><strong>y</strong> (<em>list of arrays of int</em><em>, </em><em>element i has shape=</em><em>[</em><em>samples_i</em><em>]</em>) – Each element in the list contains the labels for the data samples
+in Z.</li>
+<li><strong>Z</strong> (<em>list of 2D arrays</em><em>, </em><em>element i has shape=</em><em>[</em><em>voxels_i</em><em>, </em><em>samples_i</em><em>]</em>) – Each element in the list contains the fMRI data of one subject
+for training the MLR classifier.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="brainiak.funcalign.sssrm.SSSRM.predict">
+<code class="descname">predict</code><span class="sig-paren">(</span><em>X</em><span class="sig-paren">)</span><a class="headerlink" href="#brainiak.funcalign.sssrm.SSSRM.predict" title="Permalink to this definition">¶</a></dt>
+<dd><p>Classify the output for given data</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>X</strong> (<em>list of 2D arrays</em><em>, </em><em>element i has shape=</em><em>[</em><em>voxels_i</em><em>, </em><em>samples_i</em><em>]</em>) – Each element in the list contains the fMRI data of one subject
+The number of voxels should be according to each subject at
+the moment of training the model.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><strong>p</strong> – Predictions for each data sample.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">list of arrays, element i has shape=[samples_i]</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="brainiak.funcalign.sssrm.SSSRM.transform">
+<code class="descname">transform</code><span class="sig-paren">(</span><em>X</em>, <em>y=None</em><span class="sig-paren">)</span><a class="headerlink" href="#brainiak.funcalign.sssrm.SSSRM.transform" title="Permalink to this definition">¶</a></dt>
+<dd><p>Use the model to transform matrix to Shared Response space</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>X</strong> (<em>list of 2D arrays</em><em>, </em><em>element i has shape=</em><em>[</em><em>voxels_i</em><em>, </em><em>samples_i</em><em>]</em>) – Each element in the list contains the fMRI data of one subject
+note that number of voxels and samples can vary across subjects.</li>
+<li><strong>y</strong> (<em>not used as it only applies the mappings</em>) – </li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>s</strong> – Shared responses from input data (X)</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">list of 2D arrays, element i has shape=[features_i, samples_i]</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="brainiak.hyperparamopt.html" class="btn btn-neutral float-right" title="brainiak.hyperparamopt package" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="brainiak.fcma.html" class="btn btn-neutral" title="brainiak.fcma package" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016, Princeton Neuroscience Institute and Intel Corporation.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'0.6',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>
