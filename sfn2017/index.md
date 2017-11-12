@@ -12,8 +12,8 @@ title: Society for Neuroscience 2017
 <h2 class='section-heading'>BrainIAK at SfN 2017</h2>
 <div class='row text'>
 <div class='col-lg-6'>
-BrainIAK is a Python package for high-performance neuroimaging analysis. Below are the six posters associated with the BrainIAK project that will appear at SfN 2017, along with example code for most posters.
-The easiest way to get started is via a Docker <a href='https://www.docker.com/what-container'>container</a>:
+BrainIAK is a Python package for high-performance neuroimaging analysis. Below are the six posters associated with the BrainIAK project that will appear at SfN 2017 along with several code examples.
+The easiest way to get started with the examples is via a Docker <a href='https://www.docker.com/what-container'>container</a>:
 <ol>
    <li>Install Docker (<a href='https://www.docker.com/docker-windows#availability'>Windows</a>, <a href='https://www.docker.com/docker-mac#availability'>macOS</a>, or <a href='https://www.docker.com/docker-ubuntu#availability'>Ubuntu</a>).</li>
    <li>Run the following commands in your terminal (or follow the <a href='/docs/#docker'>documentation</a>):
