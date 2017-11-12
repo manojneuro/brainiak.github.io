@@ -1,0 +1,37 @@
+- id: 260.04
+  title: Using realistic, synthetic fMRI data to validate Topological Data Analysis as a tool for fMRI
+  authors: Cameron T. Ellis, Michael Lesnick, Bryn Keller, Chris Baldassano, Anna Schapiro, Jonathan D. Cohen
+  contact: cameron.ellis@yale.edu
+  pdf: 260.04.pdf
+  example: "https://github.com/CameronTEllis/brainiak/blob/master/examples/utils/fmrisim_example.py"
+- id: 260.05
+  title: "When temporal similarity is mistaken for representational similarity: A Bayesian approach to reduce bias in RSA of fMRI data"
+  authors: Ming Bo Cai, Nicolas W. Schuck, Jonathan W. Pillow, Yael Niv
+  contact: mcai@princeton.edu
+  pdf: 260.05.pdf
+  example: "https://github.com/lcnature/brainiak/tree/brsa_example/examples/reprsimil"
+- id: 260.06
+  title: Real-time fMRI analysis in the cloud
+  authors: Daniel C. Suo, J. Benjamin Hutchinson, Megan T. DeBettencourt, Anne C. Mennen, Yida Wang, Theodore L. Willke, Nicholas B. Turk-Browne, Kenneth A. Norman, Jonathan D. Cohen, Kai Li
+  contact: dsuo@cs.princeton.edu
+  pdf: 260.06.pdf
+  example: "https://github.com/brainiak/rtcloud"
+- id: 260.07
+  title: "Brain Imaging Analysis Kit: Advanced fMRI analysis at scale"
+  authors: Mihai Capot&#259;, Theadore L. Willke, Kenneth A. Norman, Jonathan D. Cohen, Nicholas B. Turk-Browne
+  contact: mihai.capota@intel.com
+  pdf: 260.07.pdf
+  notes: "Searchlight figure details: Configuration: 2 Intel Xeon® CPUs E5-2699 v4 (22 cores, 44 hardware threads each), 128 GiB RAM, Intel® Omni-Path Card (100 Gbit/s), Intel® SSD 540s Series (480 GB), CentOS 7.2.1511 (with Linux 3.10), Intel® MPI Library 2017 Update 2, Python 3.4.<br><br>Intel and Xeon are trademarks of Intel Corporation or its subsidiaries in the U.S. and/or other countries."
+  example: "https://github.com/brainiak/brainiak/tree/master/examples"
+- id: 260.08
+  title: Multi-subject fMRI data factor analysis using BrainIAK
+  authors: Hejia Zhang, Po-Hsuan Chen, Peter J. Ramadge
+  contact: hejiaz@princeton.edu
+  pdf: 260.08.pdf
+  paper: "https://arxiv.org/abs/1609.09432"
+- id: 260.09
+  title: Matrix-normal models for fMRI analysis
+  authors: Michael Shvartsman, Narayanan Sundaram, Mikio C. Aoi, Adam Charles, Theodore L. Willke, Jonathan D. Cohen
+  contact: ms44@princeton.edu
+  pdf: 260.09.pdf
+  paper: "https://arxiv.org/abs/1711.03058"
