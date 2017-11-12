@@ -1,0 +1,7 @@
+brainiak
+========
+
+.. toctree::
+   :maxdepth: 4
+
+   brainiak

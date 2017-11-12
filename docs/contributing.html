@@ -1,0 +1,518 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Contributing &mdash; brainiak 0.6 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+        <link rel="search" title="Search" href="search.html"/>
+    <link rel="top" title="brainiak 0.6 documentation" href="index.html"/>
+        <link rel="prev" title="brainiak.utils package" href="brainiak.utils.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> brainiak
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.6
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="release_notes.html">Release notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api.html">API</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Contributing</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#goals">Goals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#how-to-contribute">How to contribute</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#tools">Tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#standards">Standards</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#testing">Testing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#folder-layout">Folder layout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#making-a-release">Making a release</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">brainiak</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Contributing</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/contributing.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="contributing">
+<h1>Contributing<a class="headerlink" href="#contributing" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="goals">
+<h2>Goals<a class="headerlink" href="#goals" title="Permalink to this headline">¶</a></h2>
+<p>We’re building a Python toolkit to support neuroscience. This effort is
+complementary to others in this space, such as nilearn, nipy, and similar. We
+are primarily working on new research efforts in processing and understanding
+functional Magnetic Resonance Imaging (fMRI) data sets.</p>
+<p>We provide high performance algorithms, typically implemented in C/C++, along
+with convenient Python wrapper modules that make these advanced tools available
+for easy use. These are some of the design goals that contributors should keep
+in mind:</p>
+<ul class="simple">
+<li>We do not intend to duplicate existing functionality, either in the C++ side,
+or the Python side. For example, we do not provide any tools for parsing Nifti
+files, even though BrainIAK heavily depends on them. Nibabel already has
+perfectly good tools for this.</li>
+<li>We try to make the C++ libraries usable outside of Python as well, so that
+they could be used directly in your C++ project, or accessed from other
+languages. However this is a secondary goal, our primary goal is to produce a
+solid, highly usable, very high performance toolkit for Python.</li>
+<li>Every algorithm should be capable of running on a single machine, and if there
+is an appropriate distributed algorithm, it should also be capable of running
+at cluster scale. It is understood that the single-machine version of an
+algorithm will need to work with smaller datasets than the cluster version.</li>
+</ul>
+</div>
+<div class="section" id="how-to-contribute">
+<h2>How to contribute<a class="headerlink" href="#how-to-contribute" title="Permalink to this headline">¶</a></h2>
+<p>We use GitHub pull requests (PRs) to make improvements to the repository. You
+should make a fork, create a new branch for each new feature you develop, and
+make a PR to merge your branch into the master branch of the official
+repository. There are several workflows you could follow. Here is a concise
+step-by-step description of our recommended workflow:</p>
+<ol class="arabic">
+<li><p class="first">Fork the official BrainIAK repository on GitHub.</p>
+</li>
+<li><p class="first">Clone your fork:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">yourgithubusername</span><span class="o">/</span><span class="n">brainiak</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Add the official BrainIAK repository as the <code class="docutils literal"><span class="pre">upstream</span></code> remote:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">remote</span> <span class="n">add</span> <span class="n">upstream</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">brainiak</span><span class="o">/</span><span class="n">brainiak</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Set the <code class="docutils literal"><span class="pre">master</span></code> branch to track the <code class="docutils literal"><span class="pre">upstream</span></code> remote:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">fetch</span> <span class="n">upstream</span>
+<span class="n">git</span> <span class="n">branch</span> <span class="o">-</span><span class="n">u</span> <span class="n">upstream</span><span class="o">/</span><span class="n">master</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Whenever there are commits in the official repository, pull them to keep
+your <code class="docutils literal"><span class="pre">master</span></code> branch up to date:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">pull</span> <span class="o">--</span><span class="n">ff</span><span class="o">-</span><span class="n">only</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Always create a new branch when you start working on a new feature; we only
+update the <code class="docutils literal"><span class="pre">master</span></code> branch via pull requests from feature branches; never
+commit directly to the <code class="docutils literal"><span class="pre">master</span></code> branch:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">checkout</span> <span class="o">-</span><span class="n">b</span> <span class="n">new</span><span class="o">-</span><span class="n">feature</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Make changes and commit them. Include a news fragment for the release notes
+in <code class="docutils literal"><span class="pre">docs/newsfragments</span></code> if your changes are visible to users (see <a class="reference external" href="https://pip.pypa.io/en/latest/development/#adding-a-news-entry">Pip’s
+documentation</a> and our news types in <code class="docutils literal"><span class="pre">pyproject.toml</span></code>).</p>
+</li>
+<li><p class="first">Push your feature branch to your fork:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">push</span> <span class="o">--</span><span class="nb">set</span><span class="o">-</span><span class="n">upstream</span> <span class="n">origin</span> <span class="n">new</span><span class="o">-</span><span class="n">feature</span>  <span class="c1"># only for the first push</span>
+<span class="n">git</span> <span class="n">push</span>  <span class="c1"># for all subsequent pushes</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">When your feature is ready, make a pull request on GitHub. After your
+feature is accepted, update your <code class="docutils literal"><span class="pre">master</span></code> branch and delete your feature
+branch:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">checkout</span> <span class="n">master</span>
+<span class="n">git</span> <span class="n">pull</span> <span class="o">--</span><span class="n">ff</span><span class="o">-</span><span class="n">only</span>
+<span class="n">git</span> <span class="n">branch</span> <span class="o">-</span><span class="n">d</span> <span class="n">new</span><span class="o">-</span><span class="n">feature</span>
+<span class="n">git</span> <span class="n">push</span> <span class="o">--</span><span class="n">delete</span> <span class="n">origin</span> <span class="n">new</span><span class="o">-</span><span class="n">feature</span>  <span class="c1"># or use delete button in GitHub PR</span>
+</pre></div>
+</div>
+</li>
+</ol>
+<p>Please see the <a class="reference external" href="https://help.github.com/categories/collaborating-on-projects-using-issues-and-pull-requests/">GitHub help for collaborating on projects using issues and pull
+requests</a> for more information.</p>
+<p>All pull requests are automatically tested using the <code class="docutils literal"><span class="pre">pr-check.sh</span></code> script.
+You should test you contributions yourself on your computer using
+<code class="docutils literal"><span class="pre">pr-check.sh</span></code> before creating a PR. The script performs several checks in a
+Python virtual environment, which is isolated from your normal Python
+environment for reproducibility.</p>
+<p>During development, you may wish to run some of the individual checks in
+<code class="docutils literal"><span class="pre">pr-check.sh</span></code> repeatedly until you get everything right, without waiting for
+the virtual environment to be set up every time. You can run the individual
+checks from <code class="docutils literal"><span class="pre">pr-check.sh</span></code> using the steps bellow:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="c1"># do not run this if using Anaconda, because Anaconda is not compatible with</span>
+<span class="c1"># venv; instead, look at pr-check.sh to see how to run the individual</span>
+<span class="c1"># checks that are part of pr-check.sh using Anaconda</span>
+
+<span class="c1"># optional, but highly recommended: create a virtual environment</span>
+<span class="n">python3</span> <span class="o">-</span><span class="n">m</span> <span class="n">venv</span> <span class="o">../</span><span class="n">brainiak_pr_venv</span>
+<span class="n">source</span> <span class="o">../</span><span class="n">brainiak_pr_venv</span><span class="o">/</span><span class="nb">bin</span><span class="o">/</span><span class="n">activate</span>
+
+<span class="c1"># install brainiak in editable mode and developer dependencies</span>
+<span class="n">python3</span> <span class="o">-</span><span class="n">m</span> <span class="n">pip</span> <span class="n">install</span> <span class="o">-</span><span class="n">U</span> <span class="o">-</span><span class="n">r</span> <span class="n">requirements</span><span class="o">-</span><span class="n">dev</span><span class="o">.</span><span class="n">txt</span>
+
+<span class="c1"># static analysis</span>
+<span class="o">./</span><span class="n">run</span><span class="o">-</span><span class="n">checks</span><span class="o">.</span><span class="n">sh</span>
+
+<span class="c1"># run tests</span>
+<span class="o">./</span><span class="n">run</span><span class="o">-</span><span class="n">tests</span><span class="o">.</span><span class="n">sh</span>
+
+<span class="c1"># build documentation</span>
+<span class="n">cd</span> <span class="n">docs</span>
+<span class="n">make</span>
+<span class="n">cd</span> <span class="o">-</span>
+
+<span class="c1"># optional: remove the virtual environment, if you created one</span>
+<span class="n">deactivate</span>
+<span class="n">rm</span> <span class="o">-</span><span class="n">r</span> <span class="o">../</span><span class="n">brainiak_pr_venv</span>
+</pre></div>
+</div>
+<p>When you are ready to submit your PR, run <code class="docutils literal"><span class="pre">pr-check.sh</span></code> even if you were
+using the steps above to run the individual checks in <code class="docutils literal"><span class="pre">pr-check.sh</span></code> during
+development.</p>
+<p>If you want to obtain early feedback for your work, ask people to look at your
+fork. Alternatively, you can open a PR before your work is ready; in this case,
+you should start the PR title with <code class="docutils literal"><span class="pre">WIP:</span></code>, to let people know your PR is work
+in progress.</p>
+</div>
+<div class="section" id="tools">
+<h2>Tools<a class="headerlink" href="#tools" title="Permalink to this headline">¶</a></h2>
+<p>We primarily use PyCharm (or equivalently, IDEA with Python plugin). You’re free
+to use whatever you like to develop, but bear in mind that if you use the same
+tools as the rest of the group, more people will be able to help if something
+goes wrong.</p>
+<p>The development requirements are listed in <code class="docutils literal"><span class="pre">requirements-dev.txt</span></code>. You can
+install them with:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">python3</span> <span class="o">-</span><span class="n">m</span> <span class="n">pip</span> <span class="n">install</span> <span class="o">-</span><span class="n">U</span> <span class="o">-</span><span class="n">r</span> <span class="n">requirements</span><span class="o">-</span><span class="n">dev</span><span class="o">.</span><span class="n">txt</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="standards">
+<h2>Standards<a class="headerlink" href="#standards" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Python code should follow the <a class="reference external" href="http://scikit-learn.org/stable/developers/contributing.html#coding-guidelines">Scikit-learn coding guidelines</a> with the
+exception that we target Python 3 only.</li>
+</ul>
+<ul class="simple">
+<li>Python docstrings should be formatted according to the NumPy docstring
+standard as implemented by the <a class="reference external" href="http://www.sphinx-doc.org/en/stable/ext/napoleon.html">Sphinx Napoleon extension</a> (see also the
+<a class="reference external" href="http://www.sphinx-doc.org/en/stable/ext/example_numpy.html">Sphinx NumPy example</a>). In particular, note that type annotations must
+follow <a class="reference external" href="https://www.python.org/dev/peps/pep-0484/">PEP 484</a>. Please also read the <a class="reference external" href="https://github.com/numpy/numpy/blob/master/doc/HOWTO_DOCUMENT.rst.txt">NumPy documentation guide</a>, but
+note that we consider Sphinx authoritative.</li>
+</ul>
+<ul class="simple">
+<li>C++ code should follow the <a class="reference external" href="https://google.github.io/styleguide/cppguide.html">WebKit code style guidelines</a>.</li>
+</ul>
+<ul class="simple">
+<li>All code exposed through public APIs must have documentation that explains
+what the code does, what its parameters mean, and what its return values can
+be, at a minimum.</li>
+<li>All code must have repeatable automated unit tests, and most code should
+have integration tests as well.</li>
+<li>Where possible, transformations and classifiers should be made compatible
+with Scikit-learn Pipelines by implementing <code class="docutils literal"><span class="pre">fit</span></code>, <code class="docutils literal"><span class="pre">transform</span></code> and
+<code class="docutils literal"><span class="pre">fit_transform</span></code> methods as described in the <a class="reference external" href="http://scikit-learn.org/stable/modules/generated/sklearn.pipeline.Pipeline.html">Scikit-learn pipeline
+documentation</a>.</li>
+</ul>
+<ul class="simple">
+<li>All code using random numbers should allow reproducible execution using the
+<a class="reference external" href="http://scikit-learn.org/stable/developers/contributing.html#random-numbers">Scikit-learn random numbers guidelines</a>.</li>
+</ul>
+<ul>
+<li><p class="first">Use <code class="docutils literal"><span class="pre">logging</span></code> to record debug messages with a logger obtained using:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Use <code class="docutils literal"><span class="pre">warnings</span></code> to show warning messages to users. Do not use <code class="docutils literal"><span class="pre">print</span></code>. See
+the <a class="reference external" href="https://docs.python.org/3/howto/logging.html">Python Logging Tutorial</a> for details.</p>
+</li>
+</ul>
+<ul class="simple">
+<li>Create usage examples for new modules in the examples directory. Add a
+<code class="docutils literal"><span class="pre">requirements.txt</span></code> file to help users install the packages your examples
+require. If your example requires software that is not available in PyPI,
+document it in a <code class="docutils literal"><span class="pre">README.rst</span></code> and also update the BrainIAK Dockerfile.</li>
+<li>Remove the output of example Jupyter notebooks before committing them, using
+<a class="reference external" href="https://pypi.python.org/pypi/nbstripout">nbstripout</a>.</li>
+</ul>
+</div>
+<div class="section" id="testing">
+<h2>Testing<a class="headerlink" href="#testing" title="Permalink to this headline">¶</a></h2>
+<p>Unit tests are small tests that execute very quickly, seconds or less. They are
+the first line of defense against software errors, and you must include some
+whenever you add code to BrainIAK. We use a tool called “pytest” to run tests;
+please read the <a class="reference external" href="http://pytest.org/latest/contents.html">Pytest documentation</a>.  You should put your tests in a
+<code class="docutils literal"><span class="pre">test_*.py</span></code> file in the test folder, following the structure of the
+<code class="docutils literal"><span class="pre">brainiak</span></code> folder. So for example, if you have your code in
+<code class="docutils literal"><span class="pre">brainiak/funcalign/srm.py</span></code> you should have tests in
+<code class="docutils literal"><span class="pre">tests/funcalign/test_srm.py</span></code>. The unit tests for a subpackage should not
+take more than one minute in total on our testing service, <a class="reference external" href="https://travis-ci.org">Travis CI</a>.</p>
+<p>You must install the package in editable mode before running the tests:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">python3</span> <span class="o">-</span><span class="n">m</span> <span class="n">pip</span> <span class="n">install</span> <span class="o">-</span><span class="n">e</span> <span class="o">.</span>
+</pre></div>
+</div>
+<p>You can run <code class="docutils literal"><span class="pre">./run-tests.sh</span></code> to run all the unit tests, or you can use the
+<code class="docutils literal"><span class="pre">py.test</span> <span class="pre">&lt;your-test-file.py&gt;</span></code> command to run your tests only, at a more
+granular level.</p>
+<p>Next to the test results, you will also see a code coverage report. New code
+should have at least 90% coverage.</p>
+<p>Note that you can only obtain test coverage data when the package is installed
+in editable mode or the test command is called from the <code class="docutils literal"><span class="pre">test</span></code> directory. If
+the package is installed normally and the test command is called from the
+project root directory, the coverage program will fail to report the coverage
+of the installed code, because it will look for the code in the current
+directory, which is not executed.</p>
+</div>
+<div class="section" id="folder-layout">
+<h2>Folder layout<a class="headerlink" href="#folder-layout" title="Permalink to this headline">¶</a></h2>
+<p>Since BrainIAK is primarily published as a Python package, it is largely
+organized according to the <a class="reference external" href="https://packaging.python.org/distributing/">Python Packaging User Guide</a>.</p>
+<p>Python code goes in the <code class="docutils literal"><span class="pre">brainiak</span></code> package, usually with a subpackage for
+each major research initiative. If an algorithm can be implemented in a single
+module, place the module directly in the <code class="docutils literal"><span class="pre">brainiak</span></code> package, do not create a
+subpackage.</p>
+<p>Name subpackages and modules using short names describing their functionality,
+e.g., <code class="docutils literal"><span class="pre">tda</span></code> for the subpackage containing topological data analysis work and
+<code class="docutils literal"><span class="pre">htfa.py</span></code> for the module implementing hierarchical topographical factor
+analysis.</p>
+</div>
+<div class="section" id="making-a-release">
+<h2>Making a release<a class="headerlink" href="#making-a-release" title="Permalink to this headline">¶</a></h2>
+<p>This information is only of interest to the core contributors who have the
+right to make releases.</p>
+<ol class="arabic">
+<li><p class="first">Choose a release number, <code class="docutils literal"><span class="pre">v</span></code>. We follow <a class="reference external" href="http://semver.org">Semantic Versioning</a>, although we omit the patch number when it is 0.</p>
+</li>
+<li><p class="first">Prepare the release notes:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">checkout</span> <span class="o">-</span><span class="n">b</span> <span class="n">release</span><span class="o">-</span><span class="n">v</span><span class="o">&lt;</span><span class="n">v</span><span class="o">&gt;</span>
+<span class="n">towncrier</span> <span class="o">--</span><span class="n">version</span> <span class="o">&lt;</span><span class="n">v</span><span class="o">&gt;</span>
+<span class="o">./</span><span class="n">pr</span><span class="o">-</span><span class="n">check</span><span class="o">.</span><span class="n">sh</span>
+<span class="n">git</span> <span class="n">commit</span> <span class="o">-</span><span class="n">a</span> <span class="o">-</span><span class="n">m</span> <span class="s2">&quot;Add release notes for v&lt;v&gt;&quot;</span>
+<span class="n">git</span> <span class="n">push</span> <span class="o">--</span><span class="nb">set</span><span class="o">-</span><span class="n">upstream</span> <span class="n">origin</span> <span class="n">release</span><span class="o">-</span><span class="n">v</span><span class="o">&lt;</span><span class="n">v</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="n">Create</span> <span class="n">a</span> <span class="n">PR</span><span class="p">;</span> <span class="n">merge</span> <span class="n">the</span> <span class="n">PR</span><span class="o">.&gt;</span>
+<span class="n">git</span> <span class="n">checkout</span> <span class="n">master</span>
+<span class="n">git</span> <span class="n">pull</span> <span class="o">--</span><span class="n">ff</span><span class="o">-</span><span class="n">only</span>
+<span class="n">git</span> <span class="n">branch</span> <span class="o">-</span><span class="n">d</span> <span class="n">release</span><span class="o">-</span><span class="n">v</span><span class="o">&lt;</span><span class="n">v</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Tag the release:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">tag</span> <span class="n">v</span><span class="o">&lt;</span><span class="n">v</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Create and test the distribution package:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">python3</span> <span class="n">setup</span><span class="o">.</span><span class="n">py</span> <span class="n">sdist</span>
+<span class="n">tar</span> <span class="o">-</span><span class="n">xf</span> <span class="n">dist</span><span class="o">/</span><span class="n">brainiak</span><span class="o">-&lt;</span><span class="n">v</span><span class="o">&gt;.</span><span class="n">tar</span><span class="o">.</span><span class="n">gz</span>
+<span class="n">cd</span> <span class="n">brainiak</span><span class="o">-&lt;</span><span class="n">v</span><span class="o">&gt;</span>
+<span class="o">./</span><span class="n">pr</span><span class="o">-</span><span class="n">check</span><span class="o">.</span><span class="n">sh</span>
+<span class="n">cd</span> <span class="o">-</span>
+<span class="n">rm</span> <span class="o">-</span><span class="n">r</span> <span class="n">brainiak</span><span class="o">-&lt;</span><span class="n">v</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Push release:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">tag</span> <span class="o">--</span><span class="n">push</span>
+<span class="n">twine</span> <span class="n">upload</span> <span class="n">dist</span><span class="o">/</span><span class="n">brainiak</span><span class="o">-&lt;</span><span class="n">v</span><span class="o">&gt;.</span><span class="n">tar</span><span class="o">.</span><span class="n">gz</span>
+</pre></div>
+</div>
+</li>
+</ol>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="brainiak.utils.html" class="btn btn-neutral" title="brainiak.utils package" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016, Princeton Neuroscience Institute and Intel Corporation.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'0.6',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

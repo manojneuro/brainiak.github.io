@@ -1,0 +1,485 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>brainiak.hyperparamopt package &mdash; brainiak 0.6 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+        <link rel="search" title="Search" href="search.html"/>
+    <link rel="top" title="brainiak 0.6 documentation" href="index.html"/>
+        <link rel="up" title="brainiak package" href="brainiak.html"/>
+        <link rel="next" title="brainiak.reprsimil package" href="brainiak.reprsimil.html"/>
+        <link rel="prev" title="brainiak.funcalign package" href="brainiak.funcalign.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> brainiak
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.6
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="release_notes.html">Release notes</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="api.html">API</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="api.html#brainiak">brainiak</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="brainiak.html">brainiak package</a><ul class="current">
+<li class="toctree-l4 current"><a class="reference internal" href="brainiak.html#subpackages">Subpackages</a></li>
+<li class="toctree-l4"><a class="reference internal" href="brainiak.html#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="brainiak.html#module-brainiak.image">brainiak.image module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="brainiak.html#module-brainiak.io">brainiak.io module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="brainiak.html#module-brainiak.isfc">brainiak.isfc module</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="contributing.html">Contributing</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">brainiak</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="api.html">API</a> &raquo;</li>
+        
+          <li><a href="brainiak.html">brainiak package</a> &raquo;</li>
+        
+      <li>brainiak.hyperparamopt package</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/brainiak.hyperparamopt.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-brainiak.hyperparamopt">
+<span id="brainiak-hyperparamopt-package"></span><h1>brainiak.hyperparamopt package<a class="headerlink" href="#module-brainiak.hyperparamopt" title="Permalink to this headline">¶</a></h1>
+<p>Hyper parameter optimization package</p>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-brainiak.hyperparamopt.hpo">
+<span id="brainiak-hyperparamopt-hpo-module"></span><h2>brainiak.hyperparamopt.hpo module<a class="headerlink" href="#module-brainiak.hyperparamopt.hpo" title="Permalink to this headline">¶</a></h2>
+<p>Hyper Parameter Optimization (HPO)</p>
+<p>This implementation is based on the work in <a class="reference internal" href="#bergstra2011" id="id1">[Bergstra2011]</a> and
+<a class="reference internal" href="#bergstra2013" id="id2">[Bergstra2013]</a>.</p>
+<table class="docutils citation" frame="void" id="bergstra2011" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id1">[Bergstra2011]</a></td><td>“Algorithms for Hyper-Parameter Optimization”,
+James S. Bergstra and Bardenet, Rémi and Bengio, Yoshua
+and Kégl, Balázs. NIPS 2011</td></tr>
+</tbody>
+</table>
+<table class="docutils citation" frame="void" id="bergstra2013" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label">[Bergstra2013]</td><td><em>(<a class="fn-backref" href="#id2">1</a>, <a class="fn-backref" href="#id3">2</a>)</em> “Making a Science of Model Search:
+Hyperparameter Optimization in Hundreds of Dimensions for
+Vision Architectures”, James Bergstra, Daniel Yamins, David Cox.
+JMLR W&amp;CP 28 (1) : 115–123, 2013</td></tr>
+</tbody>
+</table>
+<dl class="function">
+<dt id="brainiak.hyperparamopt.hpo.fmin">
+<code class="descclassname">brainiak.hyperparamopt.hpo.</code><code class="descname">fmin</code><span class="sig-paren">(</span><em>loss_fn</em>, <em>space</em>, <em>max_evals</em>, <em>trials</em>, <em>init_random_evals=30</em>, <em>explore_prob=0.2</em><span class="sig-paren">)</span><a class="headerlink" href="#brainiak.hyperparamopt.hpo.fmin" title="Permalink to this definition">¶</a></dt>
+<dd><p>Find the minimum of function through hyper parameter optimization.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>loss_fn</strong> (<code class="docutils literal"><span class="pre">function(*args)</span> <span class="pre">-&gt;</span> <span class="pre">float</span></code>) – Function that takes in a dictionary and returns a real value.
+This is the function to be minimized.</li>
+<li><strong>space</strong> (<em>dictionary</em>) – Custom dictionary specifying the range and distribution of
+the hyperparamters.
+E.g. <code class="docutils literal"><span class="pre">space</span> <span class="pre">=</span> <span class="pre">{'x':</span> <span class="pre">{'dist':scipy.stats.uniform(0,1),</span>
+<span class="pre">'lo':0,</span> <span class="pre">'hi':1}}</span></code>
+for a 1-dimensional space with variable x in range [0,1]</li>
+<li><strong>max_evals</strong> (<em>int</em>) – Maximum number of evaluations of loss_fn allowed</li>
+<li><strong>trials</strong> (<em>list</em>) – Holds the output of the optimization trials.
+Need not be empty to begin with, new trials are appended
+at the end.</li>
+<li><strong>init_random_evals</strong> (<em>Optional</em><em>[</em><em>int</em><em>]</em><em>, </em><em>default 30</em>) – Number of random trials to initialize the
+optimization.</li>
+<li><strong>explore_prob</strong> (<em>Optional</em><em>[</em><em>float</em><em>]</em><em>, </em><em>default 0.2</em>) – Controls the exploration-vs-exploitation ratio. Value should
+be in [0,1]. By default, 20% of trails are random samples.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Best hyperparameter setting found.
+E.g. {‘x’: 5.6, ‘loss’ : 0.5} where x is the best hyparameter
+value found and loss is the value of the function for the
+best hyperparameter value(s).</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first">trial entry (dictionary of hyperparameters)</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Raises:</th><td class="field-body"><p class="first last"><code class="xref py py-exc docutils literal"><span class="pre">ValueError</span></code> – If the distribution specified in space does not support a <code class="docutils literal"><span class="pre">rvs()</span></code>
+method to generate random numbers, a ValueError is raised.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="brainiak.hyperparamopt.hpo.get_next_sample">
+<code class="descclassname">brainiak.hyperparamopt.hpo.</code><code class="descname">get_next_sample</code><span class="sig-paren">(</span><em>x</em>, <em>y</em>, <em>min_limit=-inf</em>, <em>max_limit=inf</em><span class="sig-paren">)</span><a class="headerlink" href="#brainiak.hyperparamopt.hpo.get_next_sample" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the next point to try, given the previous samples.</p>
+<p>We use <a class="reference internal" href="#bergstra2013" id="id3">[Bergstra2013]</a> to compute the point that gives the largest
+Expected improvement (EI) in the optimization function. This model fits 2
+different GMMs - one for points that have loss values in the bottom 15%
+and another for the rest. Then we sample from the former distribution
+and estimate EI as the ratio of the likelihoods of the 2 distributions.
+We pick the point with the best EI among the samples that is also not
+very close to a point we have sampled earlier.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>x</strong> (<em>1D array</em>) – Samples generated from the distribution so far</li>
+<li><strong>y</strong> (<em>1D array</em>) – Loss values at the corresponding samples</li>
+<li><strong>min_limit</strong> (<em>float</em><em>, </em><em>default : -inf</em>) – Minimum limit for the distribution</li>
+<li><strong>max_limit</strong> (<em>float</em><em>, </em><em>default : +inf</em>) – Maximum limit for the distribution</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Next value to use for HPO</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">float</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="brainiak.hyperparamopt.hpo.get_sigma">
+<code class="descclassname">brainiak.hyperparamopt.hpo.</code><code class="descname">get_sigma</code><span class="sig-paren">(</span><em>x</em>, <em>min_limit=-inf</em>, <em>max_limit=inf</em><span class="sig-paren">)</span><a class="headerlink" href="#brainiak.hyperparamopt.hpo.get_sigma" title="Permalink to this definition">¶</a></dt>
+<dd><p>Compute the standard deviations around the points for a 1D GMM.</p>
+<p>We take the distance from the nearest left and right neighbors
+for each point, then use the max as the estimate of standard
+deviation for the gaussian mixture around that point.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>x</strong> (<em>1D array</em>) – Set of points to create the GMM</li>
+<li><strong>min_limit</strong> (<em>Optional</em><em>[</em><em>float</em><em>]</em><em>, </em><em>default : -inf</em>) – Minimum limit for the distribution</li>
+<li><strong>max_limit</strong> (<em>Optional</em><em>[</em><em>float</em><em>]</em><em>, </em><em>default : inf</em>) – maximum limit for the distribution</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Array of standard deviations</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">1D array</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="class">
+<dt id="brainiak.hyperparamopt.hpo.gmm_1d_distribution">
+<em class="property">class </em><code class="descclassname">brainiak.hyperparamopt.hpo.</code><code class="descname">gmm_1d_distribution</code><span class="sig-paren">(</span><em>x</em>, <em>min_limit=-inf</em>, <em>max_limit=inf</em>, <em>weights=1.0</em><span class="sig-paren">)</span><a class="headerlink" href="#brainiak.hyperparamopt.hpo.gmm_1d_distribution" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<p>GMM 1D distribution.</p>
+<p>Given a set of points, we create this object so that we
+can calculate likelihoods and generate samples from this
+1D Gaussian mixture model.</p>
+<dl class="attribute">
+<dt id="brainiak.hyperparamopt.hpo.gmm_1d_distribution.points">
+<code class="descname">points</code><a class="headerlink" href="#brainiak.hyperparamopt.hpo.gmm_1d_distribution.points" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>1D array</em> – Set of points to create the GMM</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="brainiak.hyperparamopt.hpo.gmm_1d_distribution.N">
+<code class="descname">N</code><a class="headerlink" href="#brainiak.hyperparamopt.hpo.gmm_1d_distribution.N" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>int</em> – Number of points to create the GMM</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="brainiak.hyperparamopt.hpo.gmm_1d_distribution.min_limit">
+<code class="descname">min_limit</code><a class="headerlink" href="#brainiak.hyperparamopt.hpo.gmm_1d_distribution.min_limit" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>Optional[float], default : -inf</em> – Minimum limit for the distribution</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="brainiak.hyperparamopt.hpo.gmm_1d_distribution.max_limit">
+<code class="descname">max_limit</code><a class="headerlink" href="#brainiak.hyperparamopt.hpo.gmm_1d_distribution.max_limit" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>Optional[float], default : inf</em> – Maximum limit for the distribution</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="brainiak.hyperparamopt.hpo.gmm_1d_distribution.weights">
+<code class="descname">weights</code><a class="headerlink" href="#brainiak.hyperparamopt.hpo.gmm_1d_distribution.weights" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>Optional[1D array], default : array of ones</em> – Used to weight the points non-uniformly if required</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="brainiak.hyperparamopt.hpo.gmm_1d_distribution.__call__">
+<code class="descname">__call__</code><span class="sig-paren">(</span><em>x</em><span class="sig-paren">)</span><a class="headerlink" href="#brainiak.hyperparamopt.hpo.gmm_1d_distribution.__call__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the GMM likelihood for given point(s).</p>
+<p>See <a class="reference internal" href="#equation-gmm-likelihood">(1)</a>.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>x</strong> (<em>scalar</em><em> (</em><em>or</em><em>) </em><em>1D array of reals</em>) – Point(s) at which likelihood needs to be computed</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Likelihood values at the given point(s)</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">scalar (or) 1D array</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="brainiak.hyperparamopt.hpo.gmm_1d_distribution.get_gmm_pdf">
+<code class="descname">get_gmm_pdf</code><span class="sig-paren">(</span><em>x</em><span class="sig-paren">)</span><a class="headerlink" href="#brainiak.hyperparamopt.hpo.gmm_1d_distribution.get_gmm_pdf" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculate the GMM likelihood for a single point.</p>
+<div class="math" id="equation-gmm-likelihood">
+<span class="eqno">(1)<a class="headerlink" href="#equation-gmm-likelihood" title="Permalink to this equation">¶</a></span>\[y = \sum_{i=1}^{N} w_i
+\times \text{normpdf}(x, x_i, \sigma_i)/\sum_{i=1}^{N} w_i\]</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>x</strong> (<em>float</em>) – Point at which likelihood needs to be computed</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Likelihood value at x</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">float</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="brainiak.hyperparamopt.hpo.gmm_1d_distribution.get_samples">
+<code class="descname">get_samples</code><span class="sig-paren">(</span><em>n</em><span class="sig-paren">)</span><a class="headerlink" href="#brainiak.hyperparamopt.hpo.gmm_1d_distribution.get_samples" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sample the GMM distribution.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>n</strong> (<em>int</em>) – Number of samples needed</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Samples from the distribution</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">1D array</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="brainiak.reprsimil.html" class="btn btn-neutral float-right" title="brainiak.reprsimil package" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="brainiak.funcalign.html" class="btn btn-neutral" title="brainiak.funcalign package" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016, Princeton Neuroscience Institute and Intel Corporation.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'0.6',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

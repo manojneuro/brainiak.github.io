@@ -17,6 +17,7 @@ google_analytics: UA-107810401-1
 # Build settings
 markdown: kramdown
 permalink: pretty
+keep_files: ["docs"]
 
 # ----------------------- #
 #   3rd Party Settings    #

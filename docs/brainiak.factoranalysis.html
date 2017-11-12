@@ -1,0 +1,875 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>brainiak.factoranalysis package &mdash; brainiak 0.6 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+        <link rel="search" title="Search" href="search.html"/>
+    <link rel="top" title="brainiak 0.6 documentation" href="index.html"/>
+        <link rel="up" title="brainiak package" href="brainiak.html"/>
+        <link rel="next" title="brainiak.fcma package" href="brainiak.fcma.html"/>
+        <link rel="prev" title="brainiak.eventseg package" href="brainiak.eventseg.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> brainiak
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.6
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="release_notes.html">Release notes</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="api.html">API</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="api.html#brainiak">brainiak</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="brainiak.html">brainiak package</a><ul class="current">
+<li class="toctree-l4 current"><a class="reference internal" href="brainiak.html#subpackages">Subpackages</a></li>
+<li class="toctree-l4"><a class="reference internal" href="brainiak.html#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="brainiak.html#module-brainiak.image">brainiak.image module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="brainiak.html#module-brainiak.io">brainiak.io module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="brainiak.html#module-brainiak.isfc">brainiak.isfc module</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="contributing.html">Contributing</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">brainiak</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="api.html">API</a> &raquo;</li>
+        
+          <li><a href="brainiak.html">brainiak package</a> &raquo;</li>
+        
+      <li>brainiak.factoranalysis package</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/brainiak.factoranalysis.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-brainiak.factoranalysis">
+<span id="brainiak-factoranalysis-package"></span><h1>brainiak.factoranalysis package<a class="headerlink" href="#module-brainiak.factoranalysis" title="Permalink to this headline">¶</a></h1>
+<p>Factor analysis.</p>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-brainiak.factoranalysis.htfa">
+<span id="brainiak-factoranalysis-htfa-module"></span><h2>brainiak.factoranalysis.htfa module<a class="headerlink" href="#module-brainiak.factoranalysis.htfa" title="Permalink to this headline">¶</a></h2>
+<p>Hierarchical Topographical Factor Analysis (HTFA)</p>
+<p>This implementation is based on the work in <a class="reference internal" href="#manning2014-1" id="id1">[Manning2014-1]</a>, <a class="reference internal" href="#manning2014-2" id="id2">[Manning2014-2]</a>,
+and <a class="reference internal" href="#andersonmj2016" id="id3">[AndersonMJ2016]</a>.</p>
+<table class="docutils citation" frame="void" id="manning2014-1" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id1">[Manning2014-1]</a></td><td>“Topographic factor analysis: a bayesian model for
+inferring brain networks from neural data”, J. R. Manning,
+R. Ranganath, K. A. Norman, and D. M. Blei. PLoS One, vol. 9, no. 5,
+2014.</td></tr>
+</tbody>
+</table>
+<table class="docutils citation" frame="void" id="manning2014-2" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id2">[Manning2014-2]</a></td><td>“Hierarchical topographic factor analysis”, Jeremy. R.
+Manning, R. Ranganath, W. Keung, N. B. Turk-Browne, J. D.Cohen,
+K. A. Norman, and D. M. Blei. Pattern Recognition in Neuroimaging,
+2014 International Workshop on, June 2014.</td></tr>
+</tbody>
+</table>
+<table class="docutils citation" frame="void" id="andersonmj2016" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id3">[AndersonMJ2016]</a></td><td>“Enabling Factor Analysis on Thousand-Subject Neuroimaging
+Datasets”,
+Michael J. Anderson, Mihai Capotă, Javier S. Turek, Xia Zhu, Theodore L.
+Willke, Yida Wang, Po-Hsuan Chen, Jeremy R. Manning, Peter J. Ramadge,
+Kenneth A. Norman,
+IEEE International Conference on Big Data, 2016.
+<a class="reference external" href="https://doi.org/10.1109/BigData.2016.7840719">https://doi.org/10.1109/BigData.2016.7840719</a></td></tr>
+</tbody>
+</table>
+<dl class="class">
+<dt id="brainiak.factoranalysis.htfa.HTFA">
+<em class="property">class </em><code class="descclassname">brainiak.factoranalysis.htfa.</code><code class="descname">HTFA</code><span class="sig-paren">(</span><em>K</em>, <em>n_subj</em>, <em>max_global_iter=10</em>, <em>max_local_iter=10</em>, <em>threshold=0.01</em>, <em>nlss_method='trf'</em>, <em>nlss_loss='soft_l1'</em>, <em>jac='2-point'</em>, <em>x_scale='jac'</em>, <em>tr_solver=None</em>, <em>weight_method='rr'</em>, <em>upper_ratio=1.8</em>, <em>lower_ratio=0.02</em>, <em>voxel_ratio=0.25</em>, <em>tr_ratio=0.1</em>, <em>max_voxel=5000</em>, <em>max_tr=500</em>, <em>comm=&lt;mpi4py.MPI.Intracomm object&gt;</em>, <em>verbose=False</em><span class="sig-paren">)</span><a class="headerlink" href="#brainiak.factoranalysis.htfa.HTFA" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#brainiak.factoranalysis.tfa.TFA" title="brainiak.factoranalysis.tfa.TFA"><code class="xref py py-class docutils literal"><span class="pre">brainiak.factoranalysis.tfa.TFA</span></code></a></p>
+<p>Hierarchical Topographical Factor Analysis (HTFA)</p>
+<p>Given multi-subject data, HTFA factorizes data from each subject as a
+spatial factor F and a weight matrix W per subject. Also at top
+level, it estimates global template across subjects:</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>K</strong> (<em>int</em>) – Number of factors to compute.</li>
+<li><strong>n_subj</strong> (<em>int</em>) – Total number of subjects in dataset.</li>
+<li><strong>max_global_iter</strong> (<em>int</em><em>, </em><em>default: 10</em>) – Number of global iterations to run the algorithm.</li>
+<li><strong>max_local_iter</strong> (<em>int</em><em>, </em><em>default: 10</em>) – Number of local iterations to run on each subject within each
+global interation.</li>
+<li><strong>threshold</strong> (<em>float</em><em>, </em><em>default: 1.0</em>) – Tolerance for terminate the parameter estimation</li>
+<li><strong>nlss_method</strong> (<em>{'trf'</em><em>, </em><em>'dogbox'</em><em>, </em><em>'lm'}</em><em>, </em><em>default: 'trf'</em>) – Non-Linear Least Square (NLSS) algorithm used by scipy.least_suqares to
+perform minimization. More information at
+<a class="reference external" href="http://docs.scipy.org/doc/scipy-0.17.0/reference/generated/scipy.optimize.least_squares.html">http://docs.scipy.org/doc/scipy-0.17.0/reference/generated/scipy.optimize.least_squares.html</a></li>
+<li><strong>nlss_loss</strong> (<em>str</em><em> or </em><em>callable</em><em>, </em><em>default: 'linear'</em>) – Loss function used by scipy.least_squares.
+More information at
+<a class="reference external" href="http://docs.scipy.org/doc/scipy-0.17.0/reference/generated/scipy.optimize.least_squares.html">http://docs.scipy.org/doc/scipy-0.17.0/reference/generated/scipy.optimize.least_squares.html</a></li>
+<li><strong>jac</strong> (<em>{'2-point'</em><em>, </em><em>'3-point'</em><em>, </em><em>'cs'</em><em>, </em><em>callable}</em><em>, </em><em>default: '2-point'</em>) – Method of computing the Jacobian matrix.
+More information at
+<a class="reference external" href="http://docs.scipy.org/doc/scipy-0.17.0/reference/generated/scipy.optimize.least_squares.html">http://docs.scipy.org/doc/scipy-0.17.0/reference/generated/scipy.optimize.least_squares.html</a></li>
+<li><strong>x_scale</strong> (<em>float</em><em> or </em><em>array_like</em><em> or </em><em>'jac'</em><em>, </em><em>default: 1.0</em>) – Characteristic scale of each variable for scipy.least_suqares.
+More information at
+<a class="reference external" href="http://docs.scipy.org/doc/scipy-0.17.0/reference/generated/scipy.optimize.least_squares.html">http://docs.scipy.org/doc/scipy-0.17.0/reference/generated/scipy.optimize.least_squares.html</a></li>
+<li><strong>tr_solver</strong> (<em>{None</em><em>, </em><em>'exact'</em><em>, </em><em>'lsmr'}</em><em>, </em><em>default: None</em>) – Method for solving trust-region subproblems, relevant only for ‘trf’
+and ‘dogbox’ methods.
+More information at
+<a class="reference external" href="http://docs.scipy.org/doc/scipy-0.17.0/reference/generated/scipy.optimize.least_squares.html">http://docs.scipy.org/doc/scipy-0.17.0/reference/generated/scipy.optimize.least_squares.html</a></li>
+<li><strong>weight_method</strong> (<em>{'rr'</em><em>,</em><em>'ols'}</em><em>, </em><em>default: 'rr'</em>) – Method for estimating weight matrix W given X and F.
+‘rr’ means ridge regression, ‘ols’ means ordinary least square.</li>
+<li><strong>upper_ratio</strong> (<em>float</em><em>, </em><em>default: 1.8</em>) – The upper bound of the ratio between factor’s width and brain diameter.</li>
+<li><strong>lower_ratio</strong> (<em>float</em><em>, </em><em>default: 0.02</em>) – The lower bound of the ratio between factor’s width and brain diameter.</li>
+<li><strong>voxel_ratio</strong> (<em>float</em><em>, </em><em>default: 0.25</em>) – The percentage of voxels to sample in each inner iteration.</li>
+<li><strong>tr_ratio</strong> (<em>float</em><em>, </em><em>default: 0.1</em>) – The percentage of trs to sample in each inner iteration.</li>
+<li><strong>max_voxel</strong> (<em>int</em><em>, </em><em>default: 5000</em>) – The maximum number of voxels to sample in each inner iteration.</li>
+<li><strong>max_tr</strong> (<em>int</em><em>, </em><em>default: 500</em>) – The maximum number of trs to sample in each inner iteration.</li>
+<li><strong>comm</strong> (<em>Intracomm</em>) – MPI communication group, default MPI.COMM_WORLD</li>
+<li><strong>verbose</strong> (<em>boolean</em><em>, </em><em>default: False</em>) – Verbose mode flag.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="attribute">
+<dt id="brainiak.factoranalysis.htfa.HTFA.global_prior_">
+<code class="descname">global_prior_</code><a class="headerlink" href="#brainiak.factoranalysis.htfa.HTFA.global_prior_" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>1D array</em> – The global prior on mean and variance of centers and widths.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="brainiak.factoranalysis.htfa.HTFA.global_posterior_">
+<code class="descname">global_posterior_</code><a class="headerlink" href="#brainiak.factoranalysis.htfa.HTFA.global_posterior_" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>1D array</em> – The global posterior on mean and variance of centers and widths.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="brainiak.factoranalysis.htfa.HTFA.local_posterior_">
+<code class="descname">local_posterior_</code><a class="headerlink" href="#brainiak.factoranalysis.htfa.HTFA.local_posterior_" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>1D array</em> – Local posterior on centers and widths of subjects allocated
+to this process.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="brainiak.factoranalysis.htfa.HTFA.local_weights_">
+<code class="descname">local_weights_</code><a class="headerlink" href="#brainiak.factoranalysis.htfa.HTFA.local_weights_" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>1D array</em> – Local posterior on weights allocated to this process.</p>
+</dd></dl>
+
+<p class="rubric">Notes</p>
+<p>We recommend to use data in MNI space to better interpret global template</p>
+<dl class="method">
+<dt id="brainiak.factoranalysis.htfa.HTFA.fit">
+<code class="descname">fit</code><span class="sig-paren">(</span><em>X</em>, <em>R</em><span class="sig-paren">)</span><a class="headerlink" href="#brainiak.factoranalysis.htfa.HTFA.fit" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="docutils">
+<dt>Compute Hierarchical Topographical Factor Analysis Model</dt>
+<dd>[Manning2014-1][Manning2014-2]</dd>
+</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>X</strong> (<em>list of 2D arrays</em><em>, </em><em>element i has shape=</em><em>[</em><em>voxels_i</em><em>, </em><em>samples</em><em>]</em>) – Each element in the list contains the fMRI data of one subject.</li>
+<li><strong>R</strong> (<em>list of 2D arrays</em><em>, </em><em>element i has shape=</em><em>[</em><em>n_voxel</em><em>, </em><em>n_dim</em><em>]</em>) – Each element in the list contains the scanner coordinate matrix
+of fMRI data of one subject.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Returns the instance itself.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference internal" href="#brainiak.factoranalysis.htfa.HTFA" title="brainiak.factoranalysis.htfa.HTFA">HTFA</a></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-brainiak.factoranalysis.tfa">
+<span id="brainiak-factoranalysis-tfa-module"></span><h2>brainiak.factoranalysis.tfa module<a class="headerlink" href="#module-brainiak.factoranalysis.tfa" title="Permalink to this headline">¶</a></h2>
+<p>Topographical Factor Analysis (TFA)</p>
+<p>This implementation is based on the work in <a class="reference internal" href="#manning2014" id="id4">[Manning2014]</a> and
+<a class="reference internal" href="#andersonm2016" id="id5">[AndersonM2016]</a>.</p>
+<table class="docutils citation" frame="void" id="manning2014" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id4">[Manning2014]</a></td><td>“Topographic factor analysis: a bayesian model for inferring
+brain networks from neural data”, J. R. Manning, R. Ranganath, K. A. Norman,
+and D. M. Blei.PLoS One, vol. 9, no. 5, 2014.</td></tr>
+</tbody>
+</table>
+<table class="docutils citation" frame="void" id="andersonm2016" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id5">[AndersonM2016]</a></td><td>“Scaling Up Multi-Subject Neuroimaging Factor Analysis”
+Michael J. Anderson, Mihai Capota, Javier S. Turek, Xia Zhu,
+Theodore L. Willke, Yida Wang, Po-Hsuan Chen, Jeremy R. Manning,
+Peter J. Ramadge, and Kenneth A. Norman
+2016.</td></tr>
+</tbody>
+</table>
+<dl class="class">
+<dt id="brainiak.factoranalysis.tfa.TFA">
+<em class="property">class </em><code class="descclassname">brainiak.factoranalysis.tfa.</code><code class="descname">TFA</code><span class="sig-paren">(</span><em>max_iter=10</em>, <em>threshold=1.0</em>, <em>K=50</em>, <em>nlss_method='trf'</em>, <em>nlss_loss='soft_l1'</em>, <em>jac='2-point'</em>, <em>x_scale='jac'</em>, <em>tr_solver=None</em>, <em>weight_method='rr'</em>, <em>upper_ratio=1.8</em>, <em>lower_ratio=0.02</em>, <em>max_num_tr=500</em>, <em>max_num_voxel=5000</em>, <em>seed=100</em>, <em>verbose=False</em><span class="sig-paren">)</span><a class="headerlink" href="#brainiak.factoranalysis.tfa.TFA" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">sklearn.base.BaseEstimator</span></code></p>
+<p>Topographical Factor Analysis (TFA)</p>
+<p>Given data from one subject, factorize it as a spatial factor F and
+a weight matrix W.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>max_iter</strong> (<em>int</em><em>, </em><em>default: 10</em>) – Number of iterations to run the algorithm.</li>
+<li><strong>threshold</strong> (<em>float</em><em>, </em><em>default: 1.0</em>) – Tolerance for terminating the parameter estimation</li>
+<li><strong>K</strong> (<em>int</em><em>, </em><em>default: 50</em>) – Number of factors to compute</li>
+<li><strong>nlss_method</strong> (<em>{'trf'</em><em>, </em><em>'dogbox'</em><em>, </em><em>'lm'}</em><em>, </em><em>default: 'trf'</em>) – Non-Linear Least Square (NLSS) algorithm used by scipy.least_suqares to
+perform minimization. More information at
+<a class="reference external" href="http://docs.scipy.org/doc/scipy-0.17.0/reference/generated/scipy.optimize.least_squares.html">http://docs.scipy.org/doc/scipy-0.17.0/reference/generated/scipy.optimize.least_squares.html</a></li>
+<li><strong>nlss_loss</strong> (<em>str</em><em> or </em><em>callable</em><em>, </em><em>default: 'linear'</em>) – Loss function used by scipy.least_squares.
+More information at
+<a class="reference external" href="http://docs.scipy.org/doc/scipy-0.17.0/reference/generated/scipy.optimize.least_squares.html">http://docs.scipy.org/doc/scipy-0.17.0/reference/generated/scipy.optimize.least_squares.html</a></li>
+<li><strong>jac</strong> (<em>{'2-point'</em><em>, </em><em>'3-point'</em><em>, </em><em>'cs'</em><em>, </em><em>callable}</em><em>, </em><em>default: '2-point'</em>) – Method of computing the Jacobian matrix.
+More information at
+<a class="reference external" href="http://docs.scipy.org/doc/scipy-0.17.0/reference/generated/scipy.optimize.least_squares.html">http://docs.scipy.org/doc/scipy-0.17.0/reference/generated/scipy.optimize.least_squares.html</a></li>
+<li><strong>x_scale</strong> (<em>float</em><em> or </em><em>array_like</em><em> or </em><em>'jac'</em><em>, </em><em>default: 1.0</em>) – Characteristic scale of each variable for scipy.least_suqares.
+More information at
+<a class="reference external" href="http://docs.scipy.org/doc/scipy-0.17.0/reference/generated/scipy.optimize.least_squares.html">http://docs.scipy.org/doc/scipy-0.17.0/reference/generated/scipy.optimize.least_squares.html</a></li>
+<li><strong>tr_solver</strong> (<em>{None</em><em>, </em><em>'exact'</em><em>, </em><em>'lsmr'}</em><em>, </em><em>default: None</em>) – Method for solving trust-region subproblems, relevant only for ‘trf’
+and ‘dogbox’ methods.
+More information at
+<a class="reference external" href="http://docs.scipy.org/doc/scipy-0.17.0/reference/generated/scipy.optimize.least_squares.html">http://docs.scipy.org/doc/scipy-0.17.0/reference/generated/scipy.optimize.least_squares.html</a></li>
+<li><strong>weight_method</strong> (<em>{'rr'</em><em>,</em><em>'ols'}</em><em>, </em><em>default: 'rr'</em>) – Method for estimating weight matrix W given X and F.
+‘rr’ means ridge regression, ‘ols’ means ordinary least square.</li>
+<li><strong>upper_ratio</strong> (<em>float</em><em>, </em><em>default: 1.8</em>) – The upper bound of the ratio between factor’s width
+and maximum sigma of scanner coordinates.</li>
+<li><strong>lower_ratio</strong> (<em>float</em><em>, </em><em>default: 0.02</em>) – The lower bound of the ratio between factor’s width
+and maximum sigma of scanner coordinates.</li>
+<li><strong>max_num_voxel</strong> (<em>int</em><em>, </em><em>default: 5000</em>) – The maximum number of voxels to subsample.</li>
+<li><strong>max_num_tr</strong> (<em>int</em><em>, </em><em>default: 500</em>) – The maximum number of TRs to subsample.</li>
+<li><strong>seed</strong> (<em>int</em><em>, </em><em>default: 100</em>) – Seed for subsampling voxels and trs.</li>
+<li><strong>verbose</strong> (<em>boolean</em><em>, </em><em>default: False</em>) – Verbose mode flag.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="attribute">
+<dt id="brainiak.factoranalysis.tfa.TFA.local_posterior_">
+<code class="descname">local_posterior_</code><a class="headerlink" href="#brainiak.factoranalysis.tfa.TFA.local_posterior_" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>1D array</em> – Local posterior on subject’s centers and widths</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="brainiak.factoranalysis.tfa.TFA.F_">
+<code class="descname">F_</code><a class="headerlink" href="#brainiak.factoranalysis.tfa.TFA.F_" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>2D array, in shape [n_voxel, K]</em> – Latent factors of the subject</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="brainiak.factoranalysis.tfa.TFA.W_">
+<code class="descname">W_</code><a class="headerlink" href="#brainiak.factoranalysis.tfa.TFA.W_" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>2D array, in shape [K, n_tr]</em> – Weight matrix of the subject</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="brainiak.factoranalysis.tfa.TFA.fit">
+<code class="descname">fit</code><span class="sig-paren">(</span><em>X</em>, <em>R</em>, <em>template_prior=None</em><span class="sig-paren">)</span><a class="headerlink" href="#brainiak.factoranalysis.tfa.TFA.fit" title="Permalink to this definition">¶</a></dt>
+<dd><p>Topographical Factor Analysis (TFA)[Manning2014]</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>X</strong> (<em>2D array</em><em>, </em><em>in shape</em><em> [</em><em>n_voxel</em><em>, </em><em>n_sample</em><em>]</em>) – The fMRI data of one subject</li>
+<li><strong>R</strong> (<em>2D array</em><em>, </em><em>in shape</em><em> [</em><em>n_voxel</em><em>, </em><em>n_dim</em><em>]</em>) – The voxel coordinate matrix of fMRI data</li>
+<li><strong>template_prior</strong> (<em>None</em><em> or </em><em>1D array</em>) – The template prior as an extra constraint
+None when fitting TFA alone</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="brainiak.factoranalysis.tfa.TFA.get_bounds">
+<code class="descname">get_bounds</code><span class="sig-paren">(</span><em>R</em><span class="sig-paren">)</span><a class="headerlink" href="#brainiak.factoranalysis.tfa.TFA.get_bounds" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculate lower and upper bounds for centers and widths</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>R</strong> (<em>2D array</em><em>, </em><em>with shape</em><em> [</em><em>n_voxel</em><em>, </em><em>n_dim</em><em>]</em>) – The coordinate matrix of fMRI data from one subject</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><strong>bounds</strong> – The lower and upper bounds on factor’s centers and widths.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">2-tuple of array_like, default: None</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="brainiak.factoranalysis.tfa.TFA.get_centers">
+<code class="descname">get_centers</code><span class="sig-paren">(</span><em>estimation</em><span class="sig-paren">)</span><a class="headerlink" href="#brainiak.factoranalysis.tfa.TFA.get_centers" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get estimation on centers</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>estimation</strong> (<em>1D arrary</em>) – Either prior of posterior estimation</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><strong>centers</strong> – Estimation on centers</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">2D array, in shape [K, n_dim]</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="brainiak.factoranalysis.tfa.TFA.get_centers_mean_cov">
+<code class="descname">get_centers_mean_cov</code><span class="sig-paren">(</span><em>estimation</em><span class="sig-paren">)</span><a class="headerlink" href="#brainiak.factoranalysis.tfa.TFA.get_centers_mean_cov" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get estimation on the covariance of centers’ mean</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>estimation</strong> (<em>1D arrary</em>) – Either prior of posterior estimation</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><strong>centers_mean_cov</strong> – Estimation of the covariance of centers’ mean</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">2D array, in shape [K, cov_vec_size]</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="brainiak.factoranalysis.tfa.TFA.get_factors">
+<code class="descname">get_factors</code><span class="sig-paren">(</span><em>unique_R</em>, <em>inds</em>, <em>centers</em>, <em>widths</em><span class="sig-paren">)</span><a class="headerlink" href="#brainiak.factoranalysis.tfa.TFA.get_factors" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculate factors based on centers and widths</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>unique_R</strong> (<em>a list of array</em><em>,</em>) – Each element contains unique value in one dimension of
+scanner coordinate matrix R.</li>
+<li><strong>inds</strong> (<em>a list of array</em><em>,</em>) – Each element contains the indices to reconstruct one
+dimension of original cooridnate matrix from the unique
+array.</li>
+<li><strong>centers</strong> (<em>2D array</em><em>, </em><em>with shape</em><em> [</em><em>K</em><em>, </em><em>n_dim</em><em>]</em>) – The centers of  factors.</li>
+<li><strong>widths</strong> (<em>1D array</em><em>, </em><em>with shape</em><em> [</em><em>K</em><em>, </em><em>1</em><em>]</em>) – The widths of factors.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>F</strong> – The latent factors from fMRI data.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">2D array, with shape [n_voxel,self.K]</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="brainiak.factoranalysis.tfa.TFA.get_map_offset">
+<code class="descname">get_map_offset</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#brainiak.factoranalysis.tfa.TFA.get_map_offset" title="Permalink to this definition">¶</a></dt>
+<dd><p>Compute offset of prior/posterior</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><strong>map_offest</strong> – The offset to different fields in prior/posterior</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">1D array</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="brainiak.factoranalysis.tfa.TFA.get_template">
+<code class="descname">get_template</code><span class="sig-paren">(</span><em>R</em><span class="sig-paren">)</span><a class="headerlink" href="#brainiak.factoranalysis.tfa.TFA.get_template" title="Permalink to this definition">¶</a></dt>
+<dd><p>Compute a template on latent factors</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>R</strong> (<em>2D array</em><em>, </em><em>in format</em><em> [</em><em>n_voxel</em><em>, </em><em>n_dim</em><em>]</em>) – The scanner coordinate matrix of one subject’s fMRI data</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><ul class="simple">
+<li><strong>template_prior</strong> (<em>1D array</em>) – The template prior.</li>
+<li><strong>template_centers_cov</strong> (<em>2D array,  in shape [n_dim, n_dim]</em>) – The template on centers’ covariance.</li>
+<li><strong>template_widths_var</strong> (<em>float</em>) – The template on widths’ variance</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="brainiak.factoranalysis.tfa.TFA.get_unique_R">
+<code class="descname">get_unique_R</code><span class="sig-paren">(</span><em>R</em><span class="sig-paren">)</span><a class="headerlink" href="#brainiak.factoranalysis.tfa.TFA.get_unique_R" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get unique vlaues from coordinate matrix</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>R</strong> (<em>2D array</em>) – The coordinate matrix of a subject’s fMRI data</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><ul class="simple">
+<li><strong>unique_R</strong> (<em>a list of array,</em>) – Each element contains unique value in one dimension of
+coordinate matrix R.</li>
+<li><strong>inds</strong> (<em>a list of array,</em>) – Each element contains the indices to reconstruct one
+dimension of original cooridnate matrix from the unique
+array.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="brainiak.factoranalysis.tfa.TFA.get_weights">
+<code class="descname">get_weights</code><span class="sig-paren">(</span><em>data</em>, <em>F</em><span class="sig-paren">)</span><a class="headerlink" href="#brainiak.factoranalysis.tfa.TFA.get_weights" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculate weight matrix based on fMRI data and factors</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>data</strong> (<em>2D array</em><em>, </em><em>with shape</em><em> [</em><em>n_voxel</em><em>, </em><em>n_tr</em><em>]</em>) – fMRI data from one subject</li>
+<li><strong>F</strong> (<em>2D array</em><em>, </em><em>with shape</em><em> [</em><em>n_voxel</em><em>,</em><em>self.K</em><em>]</em>) – The latent factors from fMRI data.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>W</strong> – The weight matrix from fMRI data.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">2D array, with shape [K, n_tr]</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="brainiak.factoranalysis.tfa.TFA.get_widths">
+<code class="descname">get_widths</code><span class="sig-paren">(</span><em>estimation</em><span class="sig-paren">)</span><a class="headerlink" href="#brainiak.factoranalysis.tfa.TFA.get_widths" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get estimation on widths</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>estimation</strong> (<em>1D arrary</em>) – Either prior of posterior estimation</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><strong>fields</strong> – Estimation of widths</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">2D array, in shape [K, 1]</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="brainiak.factoranalysis.tfa.TFA.get_widths_mean_var">
+<code class="descname">get_widths_mean_var</code><span class="sig-paren">(</span><em>estimation</em><span class="sig-paren">)</span><a class="headerlink" href="#brainiak.factoranalysis.tfa.TFA.get_widths_mean_var" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get estimation on the variance of widths’ mean</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>estimation</strong> (<em>1D arrary</em>) – Either prior of posterior estimation</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><strong>widths_mean_var</strong> – Estimation on variance of widths’ mean</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">2D array, in shape [K, 1]</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="brainiak.factoranalysis.tfa.TFA.init_centers_widths">
+<code class="descname">init_centers_widths</code><span class="sig-paren">(</span><em>R</em><span class="sig-paren">)</span><a class="headerlink" href="#brainiak.factoranalysis.tfa.TFA.init_centers_widths" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initialize prior of centers and widths</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><ul class="simple">
+<li><strong>centers</strong> (<em>2D array, with shape [K, n_dim]</em>) – Prior of factors’ centers.</li>
+<li><strong>widths</strong> (<em>1D array, with shape [K, 1]</em>) – Prior of factors’ widths.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="brainiak.factoranalysis.tfa.TFA.init_prior">
+<code class="descname">init_prior</code><span class="sig-paren">(</span><em>R</em><span class="sig-paren">)</span><a class="headerlink" href="#brainiak.factoranalysis.tfa.TFA.init_prior" title="Permalink to this definition">¶</a></dt>
+<dd><p>initialize prior for the subject</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Returns the instance itself.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="#brainiak.factoranalysis.tfa.TFA" title="brainiak.factoranalysis.tfa.TFA">TFA</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="brainiak.factoranalysis.tfa.TFA.set_K">
+<code class="descname">set_K</code><span class="sig-paren">(</span><em>K</em><span class="sig-paren">)</span><a class="headerlink" href="#brainiak.factoranalysis.tfa.TFA.set_K" title="Permalink to this definition">¶</a></dt>
+<dd><p>set K for the subject</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>K</strong> (<em>integer</em>) – Number of latent factor.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Returns the instance itself.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="#brainiak.factoranalysis.tfa.TFA" title="brainiak.factoranalysis.tfa.TFA">TFA</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="brainiak.factoranalysis.tfa.TFA.set_centers">
+<code class="descname">set_centers</code><span class="sig-paren">(</span><em>estimation</em>, <em>centers</em><span class="sig-paren">)</span><a class="headerlink" href="#brainiak.factoranalysis.tfa.TFA.set_centers" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set estimation on centers</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>estimation</strong> (<em>1D arrary</em>) – Either prior or posterior estimation</li>
+<li><strong>centers</strong> (<em>2D array</em><em>, </em><em>in shape</em><em> [</em><em>K</em><em>, </em><em>n_dim</em><em>]</em>) – Estimation on centers</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="brainiak.factoranalysis.tfa.TFA.set_centers_mean_cov">
+<code class="descname">set_centers_mean_cov</code><span class="sig-paren">(</span><em>estimation</em>, <em>centers_mean_cov</em><span class="sig-paren">)</span><a class="headerlink" href="#brainiak.factoranalysis.tfa.TFA.set_centers_mean_cov" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set estimation on centers</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>estimation</strong> (<em>1D arrary</em>) – Either prior of posterior estimation</li>
+<li><strong>centers</strong> (<em>2D array</em><em>, </em><em>in shape</em><em> [</em><em>K</em><em>, </em><em>n_dim</em><em>]</em>) – Estimation on centers</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="brainiak.factoranalysis.tfa.TFA.set_prior">
+<code class="descname">set_prior</code><span class="sig-paren">(</span><em>prior</em><span class="sig-paren">)</span><a class="headerlink" href="#brainiak.factoranalysis.tfa.TFA.set_prior" title="Permalink to this definition">¶</a></dt>
+<dd><p>set prior for the subject</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>prior</strong> (<em>1D array</em><em>, </em><em>with K*</em><em>(</em><em>n_dim+1</em><em>) </em><em>elements</em>) – Subject prior of centers and widths.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Returns the instance itself.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="#brainiak.factoranalysis.tfa.TFA" title="brainiak.factoranalysis.tfa.TFA">TFA</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="brainiak.factoranalysis.tfa.TFA.set_seed">
+<code class="descname">set_seed</code><span class="sig-paren">(</span><em>seed</em><span class="sig-paren">)</span><a class="headerlink" href="#brainiak.factoranalysis.tfa.TFA.set_seed" title="Permalink to this definition">¶</a></dt>
+<dd><p>set seed for the subject</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>seed</strong> (<em>int</em>) – Seed for subsampling voxels and trs</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Returns the instance itself.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="#brainiak.factoranalysis.tfa.TFA" title="brainiak.factoranalysis.tfa.TFA">TFA</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="brainiak.factoranalysis.tfa.TFA.set_widths">
+<code class="descname">set_widths</code><span class="sig-paren">(</span><em>estimation</em>, <em>widths</em><span class="sig-paren">)</span><a class="headerlink" href="#brainiak.factoranalysis.tfa.TFA.set_widths" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set estimation on widths</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>estimation</strong> (<em>1D arrary</em>) – Either prior of posterior estimation</li>
+<li><strong>widths</strong> (<em>2D array</em><em>, </em><em>in shape</em><em> [</em><em>K</em><em>, </em><em>1</em><em>]</em>) – Estimation on widths</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="brainiak.factoranalysis.tfa.TFA.set_widths_mean_var">
+<code class="descname">set_widths_mean_var</code><span class="sig-paren">(</span><em>estimation</em>, <em>widths_mean_var</em><span class="sig-paren">)</span><a class="headerlink" href="#brainiak.factoranalysis.tfa.TFA.set_widths_mean_var" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set estimation on centers</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>estimation</strong> (<em>1D arrary</em>) – Either prior of posterior estimation</li>
+<li><strong>centers</strong> (<em>2D array</em><em>, </em><em>in shape</em><em> [</em><em>K</em><em>, </em><em>n_dim</em><em>]</em>) – Estimation on centers</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="brainiak.fcma.html" class="btn btn-neutral float-right" title="brainiak.fcma package" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="brainiak.eventseg.html" class="btn btn-neutral" title="brainiak.eventseg package" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016, Princeton Neuroscience Institute and Intel Corporation.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'0.6',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>
