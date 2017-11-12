@@ -26,4 +26,4 @@ keep_files: ["docs"]
 
 social:
   - title: github
-    url: https://github.com/IntelPNI/brainiak
+    url: https://github.com/brainiak/brainiak
