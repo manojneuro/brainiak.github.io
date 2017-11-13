@@ -10,7 +10,7 @@
   authors: Ming Bo Cai, Nicolas W. Schuck, Jonathan W. Pillow, Yael Niv
   contact: mcai@princeton.edu
   pdf: 260.05.pdf
-  example: "https://github.com/lcnature/brainiak/tree/brsa_example/examples/reprsimil"
+  example: "https://github.com/brainiak/brainiak/blob/bbcd4f84814303c95f453c75921a48ab8130772f/examples/reprsimil/bayesian_rsa_example.ipynb"
 - id: 260.06
   title: Real-time fMRI analysis in the cloud
   authors: Daniel C. Suo, J. Benjamin Hutchinson, Megan T. DeBettencourt, Anne C. Mennen, Yida Wang, Theodore L. Willke, Nicholas B. Turk-Browne, Kenneth A. Norman, Jonathan D. Cohen, Kai Li
