@@ -1,0 +1,37 @@
+# ----------------------- #
+#      Main Configs       #
+# ----------------------- #
+
+url: http://brainiak.org
+title: Brain Imaging Analysis Kit
+email: dsuo@cs.princeton.edu
+author: Daniel Suo
+description: The Brain Imaging Analysis Kit is a package of Python modules useful for neuroscience, primarily focused on functional Magnetic Resonance Imaging (fMRI) analysis.
+copyright: 'Copyright &copy; 2017 Intel Corporation and Princeton University. All Rights Reserved.'
+google_analytics: UA-107810401-1
+
+# ----------------------- #
+#    Jekyll & Plugins     #
+# ----------------------- #
+
+# Build settings
+markdown: kramdown
+permalink: pretty
+include: ["_static", "_source"]
+keep_files: ["docs"]
+exclude:
+- Gemfile
+- Gemfile.lock
+- bin
+- .gitignore
+- README.md
+- package.json
+- package-lock.json
+
+# ----------------------- #
+#   3rd Party Settings    #
+# ----------------------- #
+
+social:
+  - title: github
+    url: https://github.com/brainiak/brainiak
