@@ -6,6 +6,7 @@ Install ```node``` and run ```./bin/install```. May require ```sudo```.
 ## TODO
 - hero image
 - syntax highlighting
+- ~~jekyllify~~
 - ~~speed up build; this is absurdly slow~~
 - google analytics
 - install script (add node, gulp, install npm)
