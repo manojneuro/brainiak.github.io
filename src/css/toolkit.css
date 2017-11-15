@@ -1370,9 +1370,6 @@ pre {
   .form-control:-ms-input-placeholder {
     color: #868e96;
     opacity: 1; }
-  .form-control::-ms-input-placeholder {
-    color: #868e96;
-    opacity: 1; }
   .form-control::placeholder {
     color: #868e96;
     opacity: 1; }
@@ -8535,9 +8532,6 @@ img.zoom-img {
   .text-ribbon-input:-ms-input-placeholder {
     color: #000;
     opacity: 1; }
-  .text-ribbon-input::-ms-input-placeholder {
-    color: #000;
-    opacity: 1; }
   .text-ribbon-input::placeholder {
     color: #000;
     opacity: 1; }
@@ -8794,5 +8788,3 @@ h6, .h6 {
 
 strong {
   font-weight: bold; }
-
-/*# sourceMappingURL=toolkit-startup.css.map */

@@ -113,7 +113,7 @@ function js(glob) {
                "\n+function () {\n",
        footer: '\n}();\n'
     }))
-    .pipe(gulp.dest(PATH.ASSETS))
+    .pipe(gulp.dest('assets/js'))
 }
 
 funcs = [copy, scss, js]
@@ -123,6 +123,14 @@ gulp.task('watch', function() {
   for (i in funcs) {
     funcs[i](watch(srcs[i], {
       ignoreInitial: false,
+      base: 'src'
+    }))
+  }
+})
+
+gulp.task('build', function() {
+  for (i in funcs) {
+    funcs[i](gulp.src(srcs[i], {
       base: 'src'
     }))
   }

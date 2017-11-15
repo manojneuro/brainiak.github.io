@@ -5,19 +5,20 @@
   position: absolute;
 }
 
+.app-header {
+  /*display: table;*/
+  position: relative;
+}
 
 /* header block */
-.app-graph {
-  width: 150%;
-  position: absolute;
-  right: 0;
-  bottom: -40px;
-}
-@media (min-width: 768px) {
+@media (min-width: 992px) {
   .app-graph {
-    width: 100%;
-    bottom: 0;
-  }
+  width: 35%;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-60%);
+  right: 10%;
+}
 }
 
 
@@ -33,6 +34,9 @@
 
 
 /* code block */
+.hljs {
+   background: #262F36;
+}
 .app-code-block {
   background-color: #262F36;
   overflow: hidden;
