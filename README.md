@@ -11,6 +11,7 @@ Install ```node``` and run ```./bin/install```. May require ```sudo```.
    - links to examples
    - images?
 - footer links
+- fix hamburger
 - Nice page scrolling nav bar [here](https://www.codeply.com/go/K3yOyA2QuN)
 - ~~citation~~
 - ~~hero image~~
