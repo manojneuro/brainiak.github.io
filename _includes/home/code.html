@@ -1,27 +1,28 @@
-<div class="block block-inverse block-secondary app-code-block">
+<div class="block block-inverse block-secondary app-code-block" id="get-started">
   <div class="container">
     <div class="row app-align-center">
-      <div class="col-md-6 order-2 order-md-1">
-        <h6 class="text-muted text-uppercase">Easy development</h6>
-        <h2>Natural language queries make mining data easy for anyone.</h2>
-        <p class="lead mb-4 text-muted">Rather than force everyone at your company to learn incredibly difficult terminal commands, we allow anyone to query the data with natural language to return data.</p>
-        <button class="btn btn-secondary btn-lg btn-borderless">
-          Read our docs
-        </button>
+      <div class="col-md-6 order-1 order-md-1 install-instructions">
+        <h6 class="text-muted text-uppercase">Get Started</h6>
+        <h2>Install via Docker or pip</h2>
+        <p class="lead mb-4 text-muted">The easiest way to get started is through a Docker container. For the full feature set (and a few extra steps), install BrainIAK via pip.</p>
+        <a href="/docs/#support">
+          <button class="btn btn-secondary btn-lg btn-borderless">
+            Need help?
+          </button>
+        </a>
       </div>
-      <div class="col-md-5 ml-auto order-1 order-md-2">
-        <pre class="app-code"><code class="bash"> #!/usr/bin/env bash
- pip install brainiak
- 
- asdf
- asdf
- asdf
- asdf
- asdf
- asdf
- asdf
-
- echo blah</code></pre>
+      <div class="col-md-5 ml-auto order-2 order-md-2">
+        <pre class="app-code"><code class="bash"><span class="hljs-built_in">Method 1: Docker</span>
+# 1. Install Docker (<a href="https://store.docker.com/editions/community/docker-ce-desktop-mac">Mac</a>, <a href="https://store.docker.com/editions/community/docker-ce-desktop-windows">Win</a>, <a href="https://store.docker.com/editions/community/docker-ce-server-ubuntu">Linux</a>)
+# 2. Run the following commands:
+<span class="unselectable">> </span>docker pull brainiak/brainiak
+<span class="unselectable">> </span>docker run -it -p 8888:8888 -v brainiak:/mnt --name demo brainiak/brainiak
+<span class="unselectable">> </span>python3 -m notebook --allow-root --no-browser --ip=0.0.0.0
+# 3. Visit <a href="http://localhost:8888">http://localhost:8888</a></code>
+<code class="bash"><span class="hljs-built_in">Method 2: pip</span>
+# 1. Install BrainIAK <a href="/docs/#requirements">requirements</a>
+# 2. Run the following command:
+<span class="unselectable">> </span>python3 -m pip install -U brainiak</code></pre>
       </div>
     </div>
   </div>

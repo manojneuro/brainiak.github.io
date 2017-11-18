@@ -8305,7 +8305,7 @@ h1.block-title {
 
 @media (min-width: 576px) {
   .block {
-    padding: 100px 1rem; }
+    padding: 50px 1rem; }
     .block:not(.block-secondary) .lead {
       font-size: 21px; } }
 

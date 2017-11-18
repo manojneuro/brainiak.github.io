@@ -21,21 +21,48 @@
 }
 }
 
+.logotype {
+  margin-top: 10px;
+  font-size: 1.2em;
+}
 
-/* iphone block */
-.app-iphone-block {
+/* about block */
+.app-about-block {
   padding-bottom: 60px;
+  padding-top: 60px;
 }
 @media (min-width: 768px) {
-  .app-iphone-block {
-    padding-bottom: 0;
+  .app-about-block {
+    padding-bottom: 1.5rem;
+    padding-top: 1.5rem;
   }
 }
 
+.app-about-logo {
+  width: 100%;
+}
 
 /* code block */
+pre {
+ white-space: pre-wrap;       /* css-3 */
+ white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
+ white-space: -pre-wrap;      /* Opera 4-6 */
+ white-space: -o-pre-wrap;    /* Opera 7 */
+ word-wrap: break-word;       /* Internet Explorer 5.5+ */
+}
+.unselectable {
+  -webkit-user-select: none;  /* Chrome all / Safari all */
+  -moz-user-select: none;     /* Firefox all */
+  -ms-user-select: none;      /* IE 10+ */
+  user-select: none;          /* Likely future */
+  color: #5c6370;
+}
 .hljs {
    background: #262F36;
+}
+.hljs-line{ display: inline; }
+a .hljs-comment {
+  color: #00a1f1;
 }
 .app-code-block {
   background-color: #262F36;
@@ -51,8 +78,9 @@
   margin-bottom: 30px;
   border-radius: .3rem;
 }
-.app-code span {
-  color: #8496A5;
+.install-instructions{
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
 }
 @media (min-width: 768px) {
   .app-code {
@@ -88,15 +116,15 @@
 }
 
 
-/* marketing grid block */
-.app-block-marketing-grid .container {
+/* analyses grid block */
+.app-block-analyses-grid .container {
   margin-bottom: -60px;
 }
-.app-marketing-grid .m-b {
+.app-analyses-grid .m-b {
   margin-bottom: 10px !important;
 }
 @media (max-width: 768px) {
-  .app-marketing-grid .m-b-lg {
+  .app-analyses-grid .m-b-lg {
     margin-bottom: 40px !important;
   }
 }
@@ -139,22 +167,27 @@
   background-color: transparent;
 }
 
-
+a button .btn-primary {
+  color: #fff;
+}
 /* general btn overrides */
 .btn-lg {
   font-size: 18px;
+  margin-bottom: 12px;
+  width: auto;
 }
+.
 .block-secondary .btn-lg {
-  width: 100%;
+  /* width: 80%; */
 }
-.btn-lg:not(.btn-block) {
-  padding: 12px 50px;
-}
-@media (min-width: 768px) {
-  .btn-lg:not(.btn-block) {
-    width: auto;
-  }
-}
+/* .btn-lg:not(.btn-block) { */
+  /* padding: 12px; */
+/* } */
+/* @media (min-width: 768px) { */
+  /* .btn-lg:not(.btn-block) { */
+    /* width: auto; */
+  /* } */
+/* } */
 
 
 /* ie10+ */

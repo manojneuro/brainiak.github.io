@@ -25,7 +25,10 @@ var PATH = {
   ASSETS_TOOLKIT_JS    : 'src/js/toolkit.js',
   // SCSS_TOOLKIT_SOURCES : 'src/scss/toolkit*',
   SCSS                 : 'src/css/main.scss',
-  JS                   : 'src/js/**/**',
+  JS                   : [
+    'src/js/bootstrap/*.js',
+    'src/js/custom/*.js'
+  ],
   COPY                 : [
     'src/fonts/**/**',
     'src/img/**/**',
@@ -57,7 +60,9 @@ gulp.task('jekyll', () => {
 			'--watch',
 			'--incremental',
 			'--drafts',
-      '--livereload'
+      '--livereload',
+      '--host',
+      '0.0.0.0'
 	])
 
 	const jekyllLogger = (buffer) => {
