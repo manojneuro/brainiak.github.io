@@ -1,381 +1,493 @@
 
 
-
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="keywords" content="">
-    <meta name="author" content="">
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Brain Imaging Analysis Kit &mdash; brainiak 0.6 documentation</title>
+  
 
-    <title>
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+        <link rel="search" title="Search" href="search.html"/>
+    <link rel="top" title="brainiak 0.6 documentation" href="#"/>
+        <link rel="next" title="Release notes" href="release_notes.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="#" class="icon icon-home"> brainiak
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.6
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="release_notes.html">Release notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api.html">API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contributing.html">Contributing</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
       
-        StartUp &middot; 
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="#">brainiak</a>
+        
+      </nav>
+
+
       
-    </title>
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
     
-      <link href='https://fonts.googleapis.com/css?family=Lora:400,400italic|Work+Sans:300,400,500,600' rel='stylesheet' type='text/css'>
-      <link href="assets/css/toolkit-startup.css" rel="stylesheet">
-      <link href="assets/css/application-startup.css" rel="stylesheet">
+      <li><a href="#">Docs</a> &raquo;</li>
+        
+      <li>Brain Imaging Analysis Kit</li>
     
-
     
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/index.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
 
-    <style>
-      /* note: this is a hack for ios iframe for bootstrap themes shopify page */
-      /* this chunk of css is not part of the toolkit :) */
-      /* …curses ios, etc… */
-      @media (max-width: 768px) and (-webkit-min-device-pixel-ratio: 2) {
-        body {
-          width: 1px;
-          min-width: 100%;
-          *width: 100%;
-        }
-        #stage {
-          height: 1px;
-          overflow: auto;
-          min-height: 100vh;
-          -webkit-overflow-scrolling: touch;
-        }
-      }
-    </style>
-  </head>
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="brain-imaging-analysis-kit">
+<h1>Brain Imaging Analysis Kit<a class="headerlink" href="#brain-imaging-analysis-kit" title="Permalink to this headline">¶</a></h1>
+<a class="reference external image-reference" href="https://travis-ci.org/brainiak/brainiak"><img alt="https://travis-ci.org/brainiak/brainiak.svg?branch=master" src="https://travis-ci.org/brainiak/brainiak.svg?branch=master" /></a>
+<a class="reference external image-reference" href="https://gitter.im/brainiak/brainiak?utm_source=badge&amp;utm_medium=badge&amp;utm_campaign=pr-badge&amp;utm_content=badge"><img alt="Join the chat at https://gitter.im/brainiak/brainiak" src="https://badges.gitter.im/brainiak/brainiak.svg" /></a>
+<p>The Brain Imaging Analysis Kit is a package of Python modules useful for
+neuroscience, primarily focused on functional Magnetic Resonance Imaging (fMRI)
+analysis.</p>
+<p>The package was originally created by a collaboration between Intel and the
+Princeton Neuroscience Institute (PNI).</p>
+<p>To reduce verbosity, we may refer to the Brain Imaging Analysis Kit using the
+<code class="docutils literal"><span class="pre">BrainIAK</span></code> abbreviation. Whenever lowercase spelling is used (e.g., Python
+package name), we use <code class="docutils literal"><span class="pre">brainiak</span></code>.</p>
+</div>
+<div class="section" id="requirements">
+<h1>Requirements<a class="headerlink" href="#requirements" title="Permalink to this headline">¶</a></h1>
+<p>We support Linux and MacOS with Python version 3.4 or higher. Most of the
+dependencies will be installed automatically. However, a few need to be
+installed manually.</p>
+<div class="section" id="linux">
+<h2>Linux<a class="headerlink" href="#linux" title="Permalink to this headline">¶</a></h2>
+<p>Install the following packages (Ubuntu 16.04 is used in these instructions):</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">apt</span> <span class="n">install</span> <span class="n">build</span><span class="o">-</span><span class="n">essential</span> <span class="n">libgomp1</span> <span class="n">libmpich</span><span class="o">-</span><span class="n">dev</span> <span class="n">mpich</span> <span class="n">python3</span><span class="o">-</span><span class="n">dev</span> \
+    <span class="n">python3</span><span class="o">-</span><span class="n">pip</span> <span class="n">python3</span><span class="o">-</span><span class="n">venv</span>
+</pre></div>
+</div>
+<p>Install updated version of the following Python packages:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">python3</span> <span class="o">-</span><span class="n">m</span> <span class="n">pip</span> <span class="n">install</span> <span class="o">--</span><span class="n">user</span> <span class="o">-</span><span class="n">U</span> <span class="n">pip</span>
+</pre></div>
+</div>
+<p>Note the <code class="docutils literal"><span class="pre">--user</span></code> flag, which instructs Pip to not overwrite system
+files. You must add <code class="docutils literal"><span class="pre">$HOME/.local/bin</span></code> to your <code class="docutils literal"><span class="pre">$PATH</span></code> to be able to run
+the updated Pip, e.g., by adding the following line to <code class="docutils literal"><span class="pre">$HOME/.profile</span></code>
+and launching a new login shell (e.g., logout or execute <code class="docutils literal"><span class="pre">bash</span> <span class="pre">-l</span></code>):</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">PATH</span><span class="o">=</span><span class="s2">&quot;$HOME/.local/bin:$PATH&quot;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="macos">
+<h2>MacOS<a class="headerlink" href="#macos" title="Permalink to this headline">¶</a></h2>
+<p>Install the Xcode Command Line Tools:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">xcode</span><span class="o">-</span><span class="n">select</span> <span class="o">--</span><span class="n">install</span>
+</pre></div>
+</div>
+<p>Install <code class="docutils literal"><span class="pre">brew</span></code> from <a class="reference external" href="https://brew.sh">https://brew.sh</a>. If you already have <code class="docutils literal"><span class="pre">brew</span></code>, examine
+the output of the following command to make sure it is working:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">brew</span> <span class="n">doctor</span>
+</pre></div>
+</div>
+<p>Then install the following:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">brew</span> <span class="n">install</span> <span class="n">llvm</span> <span class="n">cmake</span> <span class="n">mpich</span> <span class="n">python3</span>
+</pre></div>
+</div>
+<p>You must instruct programs to use this <code class="docutils literal"><span class="pre">clang</span></code> version at <code class="docutils literal"><span class="pre">/usr/local/opt/llvm/bin</span></code>.
+One way to do this, which
+works for most programs, is setting the <code class="docutils literal"><span class="pre">CC</span></code> environment variable. You can
+add the following lines to <code class="docutils literal"><span class="pre">$HOME/.profile</span></code> (or <code class="docutils literal"><span class="pre">$HOME/.bash_profile</span></code>, if
+you have one). For them to take effect, you must logout or launch a new login
+shell, e.g., <code class="docutils literal"><span class="pre">bash</span> <span class="pre">-l</span></code>:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">export</span> <span class="n">CC</span><span class="o">=/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="n">opt</span><span class="o">/</span><span class="n">llvm</span><span class="o">/</span><span class="nb">bin</span><span class="o">/</span><span class="n">clang</span>
+<span class="n">export</span> <span class="n">CXX</span><span class="o">=/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="n">opt</span><span class="o">/</span><span class="n">llvm</span><span class="o">/</span><span class="nb">bin</span><span class="o">/</span><span class="n">clang</span><span class="o">++</span>
+</pre></div>
+</div>
+<p>In addition, you also need to specify the directories that the newly installed <code class="xref py py-obj docutils literal"><span class="pre">clang</span></code>
+will seek for compiling and linking:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">export</span> <span class="n">LDFLAGS</span><span class="o">=</span><span class="s2">&quot;-L/usr/local/opt/llvm/lib &quot;</span>\
+<span class="s2">&quot;-Wl,-rpath,/usr/local/opt/llvm/lib $LDFLAGS&quot;</span>
+<span class="n">export</span> <span class="n">CPPFLAGS</span><span class="o">=</span><span class="s2">&quot;-I/usr/local/opt/llvm/include $CPPFLAGS&quot;</span>
+</pre></div>
+</div>
+<p>Install updated versions of the following Python packages:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">python3</span> <span class="o">-</span><span class="n">m</span> <span class="n">pip</span> <span class="n">install</span> <span class="o">-</span><span class="n">U</span> <span class="n">pip</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="installing-and-upgrading">
+<h1>Installing and upgrading<a class="headerlink" href="#installing-and-upgrading" title="Permalink to this headline">¶</a></h1>
+<p>The Brain Imaging Analysis Kit is available on PyPI. You can install it (or
+upgrade to the latest version) using the following command:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">python3</span> <span class="o">-</span><span class="n">m</span> <span class="n">pip</span> <span class="n">install</span> <span class="o">-</span><span class="n">U</span> <span class="n">brainiak</span>
+</pre></div>
+</div>
+<p>Note that you may see a <code class="docutils literal"><span class="pre">Failed</span> <span class="pre">building</span> <span class="pre">wheel</span> <span class="pre">for</span> <span class="pre">brainiak</span></code> message (<a class="reference external" href="https://github.com/brainiak/brainiak/issues/61">issue
+#61</a>). Installation will proceed despite this failure. You can safely ignore it
+as long as you see <code class="docutils literal"><span class="pre">Successfully</span> <span class="pre">installed</span></code> at the end.</p>
+<p>Until we reach version 1.0, we will only support the latest released version.
+Therefore, if you have a problem with an older version, please upgrade to the
+latest version before creating an issue on GitHub.</p>
+</div>
+<div class="section" id="docker">
+<h1>Docker<a class="headerlink" href="#docker" title="Permalink to this headline">¶</a></h1>
+<p>You can also test BrainIAK without installing it using Docker:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">docker</span> <span class="n">pull</span> <span class="n">brainiak</span><span class="o">/</span><span class="n">brainiak</span>
+<span class="n">docker</span> <span class="n">run</span> <span class="o">-</span><span class="n">it</span> <span class="o">-</span><span class="n">p</span> <span class="mi">8888</span><span class="p">:</span><span class="mi">8888</span> <span class="o">-</span><span class="n">v</span> <span class="n">brainiak</span><span class="p">:</span><span class="o">/</span><span class="n">mnt</span> <span class="o">--</span><span class="n">name</span> <span class="n">demo</span> <span class="n">brainiak</span><span class="o">/</span><span class="n">brainiak</span>
+</pre></div>
+</div>
+<p>To run Jupyter notebooks in the running container, try:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">python3</span> <span class="o">-</span><span class="n">m</span> <span class="n">notebook</span> <span class="o">--</span><span class="n">allow</span><span class="o">-</span><span class="n">root</span> <span class="o">--</span><span class="n">no</span><span class="o">-</span><span class="n">browser</span> <span class="o">--</span><span class="n">ip</span><span class="o">=</span><span class="mf">0.0</span><span class="o">.</span><span class="mf">0.0</span>
+</pre></div>
+</div>
+<p>Then visit <a class="reference external" href="http://localhost:8888">http://localhost:8888</a> in your browser and enter the token. Protip:
+run <code class="docutils literal"><span class="pre">screen</span></code> before running the notebook command.</p>
+<p>Note that we do not support MPI execution using Docker containers and that performance will not be optimal.</p>
+</div>
+<div class="section" id="support">
+<h1>Support<a class="headerlink" href="#support" title="Permalink to this headline">¶</a></h1>
+<p>If you have a question or feedback, chat with us on <a class="reference external" href="https://gitter.im/brainiak/brainiak">Gitter</a> or email our list at
+<a class="reference external" href="mailto:brainiak&#37;&#52;&#48;googlegroups&#46;com">brainiak<span>&#64;</span>googlegroups<span>&#46;</span>com</a>. If you find a problem with BrainIAK, you can also
+<a class="reference external" href="https://github.com/brainiak/brainiak/issues">open an issue on GitHub</a>.</p>
+</div>
+<div class="section" id="examples">
+<h1>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h1>
+<p>We include BrainIAK usage examples in the examples directory of the code
+repository, e.g., <a class="reference external" href="https://github.com/brainiak/brainiak/blob/master/examples/funcalign/srm_image_prediction_example.ipynb">funcalign/srm_image_prediction_example.ipynb</a>.</p>
+<p>To run the examples, download an archive of the <a class="reference external" href="https://github.com/brainiak/brainiak/releases">latest BrainIAK release from
+GitHub</a>. Note that we only
+support the latest release at this moment, so make sure to upgrade your
+BrainIAK installation.</p>
+</div>
+<div class="section" id="documentation">
+<h1>Documentation<a class="headerlink" href="#documentation" title="Permalink to this headline">¶</a></h1>
+<p>The documentation is available at <a class="reference external" href="https://pythonhosted.org/brainiak">pythonhosted.org/brainiak</a>.</p>
+</div>
+<div class="section" id="contributing">
+<h1>Contributing<a class="headerlink" href="#contributing" title="Permalink to this headline">¶</a></h1>
+<p>We welcome contributions. Have a look at the issues labeled “<a class="reference external" href="https://github.com/brainiak/brainiak/issues?q=is%3Aissue+is%3Aopen+label%3Aeasy">easy</a>” for
+starting contribution ideas. Please read the guide in <a class="reference external" href="https://github.com/brainiak/brainiak/blob/master/CONTRIBUTING.rst">CONTRIBUTING.rst</a>
+first.</p>
+</div>
+<div class="section" id="citing">
+<h1>Citing<a class="headerlink" href="#citing" title="Permalink to this headline">¶</a></h1>
+<p>Please cite BrainIAK in your publications as: “Brain Imaging Analysis Kit,
+<a class="reference external" href="http://brainiak.org">http://brainiak.org</a>.” Additionally, if you use <a class="reference external" href="https://scicrunch.org/resolver">RRIDs</a> to identify resources, please mention
+BrainIAK as “Brain Imaging Analysis Kit, RRID:SCR_014824”. Finally, please cite
+the publications referenced in the documentation of the BrainIAK modules you
+use, e.g., <a class="reference external" href="http://pythonhosted.org/brainiak/brainiak.funcalign.html">SRM</a>.</p>
+</div>
+<div class="section" id="table-of-contents">
+<h1>Table of contents<a class="headerlink" href="#table-of-contents" title="Permalink to this headline">¶</a></h1>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="release_notes.html">Release notes</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="release_notes.html#brainiak-0-6-2017-11-10">BrainIAK 0.6 (2017-11-10)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="release_notes.html#features">Features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="release_notes.html#bugfixes">Bugfixes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="release_notes.html#deprecations-and-removals">Deprecations and removals</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="release_notes.html#brainiak-0-5-2017-05-23">BrainIAK 0.5 (2017-05-23)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="release_notes.html#id11">Features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="release_notes.html#id19">Deprecations and removals</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="release_notes.html#brainiak-0-4-2017-01-19">BrainIAK 0.4 (2017-01-19)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="release_notes.html#id21">Features</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="release_notes.html#brainiak-0-3-2-2016-10-31">BrainIAK 0.3.2 (2016-10-31)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="release_notes.html#id26">Features</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="release_notes.html#brainiak-0-3-1-2016-09-30">BrainIAK 0.3.1 (2016-09-30)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="release_notes.html#id29">Features</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="release_notes.html#brainiak-0-3-2016-09-30-yanked">BrainIAK 0.3 (2016-09-30) [YANKED]</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release_notes.html#brainiak-0-2-2016-08-03">BrainIAK 0.2 (2016-08-03)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="release_notes.html#id36">Features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="release_notes.html#id38">Deprecations and removals</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="release_notes.html#brainiak-0-1-2016-07-12">BrainIAK 0.1 (2016-07-12)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="release_notes.html#id40">Features</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="api.html">API</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="api.html#brainiak">brainiak</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="brainiak.html">brainiak package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="brainiak.html#subpackages">Subpackages</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="brainiak.eventseg.html">brainiak.eventseg package</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="brainiak.eventseg.html#submodules">Submodules</a></li>
+<li class="toctree-l6"><a class="reference internal" href="brainiak.eventseg.html#module-brainiak.eventseg.event">brainiak.eventseg.event module</a></li>
+</ul>
+</li>
+<li class="toctree-l5"><a class="reference internal" href="brainiak.factoranalysis.html">brainiak.factoranalysis package</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="brainiak.factoranalysis.html#submodules">Submodules</a></li>
+<li class="toctree-l6"><a class="reference internal" href="brainiak.factoranalysis.html#module-brainiak.factoranalysis.htfa">brainiak.factoranalysis.htfa module</a></li>
+<li class="toctree-l6"><a class="reference internal" href="brainiak.factoranalysis.html#module-brainiak.factoranalysis.tfa">brainiak.factoranalysis.tfa module</a></li>
+</ul>
+</li>
+<li class="toctree-l5"><a class="reference internal" href="brainiak.fcma.html">brainiak.fcma package</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="brainiak.fcma.html#submodules">Submodules</a></li>
+<li class="toctree-l6"><a class="reference internal" href="brainiak.fcma.html#module-brainiak.fcma.classifier">brainiak.fcma.classifier module</a></li>
+<li class="toctree-l6"><a class="reference internal" href="brainiak.fcma.html#module-brainiak.fcma.cython_blas">brainiak.fcma.cython_blas module</a></li>
+<li class="toctree-l6"><a class="reference internal" href="brainiak.fcma.html#module-brainiak.fcma.mvpa_voxelselector">brainiak.fcma.mvpa_voxelselector module</a></li>
+<li class="toctree-l6"><a class="reference internal" href="brainiak.fcma.html#module-brainiak.fcma.preprocessing">brainiak.fcma.preprocessing module</a></li>
+<li class="toctree-l6"><a class="reference internal" href="brainiak.fcma.html#module-brainiak.fcma.util">brainiak.fcma.util module</a></li>
+<li class="toctree-l6"><a class="reference internal" href="brainiak.fcma.html#module-brainiak.fcma.voxelselector">brainiak.fcma.voxelselector module</a></li>
+</ul>
+</li>
+<li class="toctree-l5"><a class="reference internal" href="brainiak.funcalign.html">brainiak.funcalign package</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="brainiak.funcalign.html#submodules">Submodules</a></li>
+<li class="toctree-l6"><a class="reference internal" href="brainiak.funcalign.html#module-brainiak.funcalign.srm">brainiak.funcalign.srm module</a></li>
+<li class="toctree-l6"><a class="reference internal" href="brainiak.funcalign.html#module-brainiak.funcalign.sssrm">brainiak.funcalign.sssrm module</a></li>
+</ul>
+</li>
+<li class="toctree-l5"><a class="reference internal" href="brainiak.hyperparamopt.html">brainiak.hyperparamopt package</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="brainiak.hyperparamopt.html#submodules">Submodules</a></li>
+<li class="toctree-l6"><a class="reference internal" href="brainiak.hyperparamopt.html#module-brainiak.hyperparamopt.hpo">brainiak.hyperparamopt.hpo module</a></li>
+</ul>
+</li>
+<li class="toctree-l5"><a class="reference internal" href="brainiak.reprsimil.html">brainiak.reprsimil package</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="brainiak.reprsimil.html#submodules">Submodules</a></li>
+<li class="toctree-l6"><a class="reference internal" href="brainiak.reprsimil.html#module-brainiak.reprsimil.brsa">brainiak.reprsimil.brsa module</a></li>
+</ul>
+</li>
+<li class="toctree-l5"><a class="reference internal" href="brainiak.searchlight.html">brainiak.searchlight package</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="brainiak.searchlight.html#submodules">Submodules</a></li>
+<li class="toctree-l6"><a class="reference internal" href="brainiak.searchlight.html#module-brainiak.searchlight.searchlight">brainiak.searchlight.searchlight module</a></li>
+</ul>
+</li>
+<li class="toctree-l5"><a class="reference internal" href="brainiak.utils.html">brainiak.utils package</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="brainiak.utils.html#submodules">Submodules</a></li>
+<li class="toctree-l6"><a class="reference internal" href="brainiak.utils.html#module-brainiak.utils.fmrisim">brainiak.utils.fmrisim module</a></li>
+<li class="toctree-l6"><a class="reference internal" href="brainiak.utils.html#module-brainiak.utils.utils">brainiak.utils.utils module</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="brainiak.html#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="brainiak.html#module-brainiak.image">brainiak.image module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="brainiak.html#module-brainiak.io">brainiak.io module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="brainiak.html#module-brainiak.isfc">brainiak.isfc module</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="contributing.html">Contributing</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="contributing.html#goals">Goals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contributing.html#how-to-contribute">How to contribute</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contributing.html#tools">Tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contributing.html#standards">Standards</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contributing.html#testing">Testing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contributing.html#folder-layout">Folder layout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contributing.html#making-a-release">Making a release</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="indices-and-tables">
+<h1>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><a class="reference internal" href="genindex.html"><span class="std std-ref">Index</span></a></li>
+<li><a class="reference internal" href="py-modindex.html"><span class="std std-ref">Module Index</span></a></li>
+<li><a class="reference internal" href="search.html"><span class="std std-ref">Search Page</span></a></li>
+</ul>
+</div>
 
 
-<body>
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="release_notes.html" class="btn btn-neutral float-right" title="Release notes" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016, Princeton Neuroscience Institute and Intel Corporation.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
   
 
 
+  
 
-<div class="stage-shelf stage-shelf-right hidden" id="sidebar">
-  <ul class="nav nav-bordered nav-stacked flex-column">
-    <li class="nav-header">Examples</li>
-    <li class="nav-item">
-      <a class="nav-link active" href="index.html">Startup</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="minimal/index.html">Minimal</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="bold/index.html">Bold</a>
-    </li>
-    <li class="nav-divider"></li>
-    <li class="nav-header">Docs</li>
-    <li class="nav-item">
-      <a class="nav-link" href="docs/index.html">Toolkit</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="http://getbootstrap.com">Bootstrap</a>
-    </li>
-  </ul>
-</div>
-
-<div class="stage" id="stage">
-
-<div class="block block-inverse block-fill-height app-header"
-     style="background-image: url(assets/img/startup-1.jpg);">
-
-  <div class="container py-4 fixed-top app-navbar">
-  <nav class="navbar navbar-transparent navbar-padded navbar-expand-md">
-    <a class="navbar-brand mr-auto" href="">
-      <strong style="background: #fff; padding: 12px; border-radius: 4px; color: #28669F;">go</strong>
-    </a>
-    <button
-      class="navbar-toggler"
-      type="button"
-      data-target="#stage"
-      data-toggle="stage"
-      data-distance="-250">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <div class="d-none d-md-block text-uppercase">
-      <ul class="navbar-nav">
-        <li class="nav-item px-1 ">
-          <a class="nav-link" href="#">StartUp</a>
-        </li>
-        <li class="nav-item px-1 ">
-          <a class="nav-link" href="minimal/index.html">Minimal</a>
-        </li>
-        <li class="nav-item px-1 ">
-          <a class="nav-link" href="bold/index.html">Bold</a>
-        </li>
-        <li class="nav-item px-1 ">
-          <a class="nav-link" href="docs/index.html">Docs</a>
-        </li>
-      </ul>
-    </div>
-  </nav>
-</div>
-
-  <img class="app-graph"  src="assets/img/startup-0.svg">
-
-  <div class="block-xs-middle pb-5">
-    <div class="container">
-      <div class="row">
-        <div class="col-sm-10 col-lg-6">
-          <h1 class="block-titleData frequency">Analytics on demand.</h1>
-          <p class="lead mb-4 text-muted">Stop installing bloated scripts that all track the exact same things. Install one that does everything.</p>
-          <button class="btn btn-primary btn-lg">Try it now</button>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="block block-secondary app-iphone-block">
-  <div class="container">
-    <div class="row app-align-center">
-
-      <div class="col-sm-5 d-none d-md-block">
-        <img class="app-iphone" src="assets/img/startup-2.jpg" style="width: 100%;">
-      </div>
-
-      <div class="col-md-6 col-sm-12 ml-auto">
-        <h6 class="text-muted text-uppercase">Rich Information</h6>
-        <h2>Make informed decisions with historical &amp; real time data.</h2>
-        <p class="lead mb-4">We combine immediate real time events with rich historical data to help answer the toughest questions about retention, growth, and engagement.</p>
-        <div class="row d-none d-md-flex">
-          <div class="col-sm-6 mb-3">
-            <h5>Data frequency</h5>
-            <p>We poll for data on a millisecond basis. You can react to new information in seconds rather than days. <a href="#" class="text-primary">Learn more.</a></p>
-          </div>
-          <div class="col-sm-6">
-            <h5>Reliability &amp; uptime</h5>
-            <p>We process our data across a massively distributed network of reliable servers to ensure 99.99% uptime, always. <a href="#" class="text-primary">Learn more</a>.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-
-  </div>
-</div>
-
-<div class="block block-inverse block-secondary app-code-block">
-  <div class="container">
-    <div class="row app-align-center">
-      <div class="col-md-6 order-2 order-md-1">
-        <h6 class="text-muted text-uppercase">Easy development</h6>
-        <h2>Natural language queries make mining data easy for anyone.</h2>
-        <p class="lead mb-4 text-muted">Rather than force everyone at your company to learn incredibly difficult terminal commands, we allow anyone to query the data with natural language to return data.</p>
-        <button class="btn btn-secondary btn-lg btn-borderless">
-          Read our docs
-        </button>
-      </div>
-      <div class="col-md-5 ml-auto order-1 order-md-2">
-        <pre class="app-code">
-<span>1</span> <span>goAnalytics</span> “who are the latest 3 users?”
-<span>2</span>
-<span>3</span>  {
-<span>4</span>    "Dave": {
-<span>5</span>      "fullName": "Dave Gamache",
-<span>6</span>      "twitterHandle": "@dhg",
-<span>7</span>    }
-<span>8</span>    "Mark": {
-<span>9</span>      "fullName": "Mark Otto",
-<span>10</span>      "twitterHandle": "@mdo",
-<span>11</span>    }
-<span>12</span>    "Jacob": {
-<span>13</span>      "fullName": "Jacob Thornton",
-<span>14</span>      "twitterHandle": "@fat",
-<span>15</span>    }
-<span>16</span>  }</pre>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="block block-inverse app-high-praise"
-     style="background-image: url(assets/img/startup-3.jpg);">
-    <div class="container">
-      <div class="row app-align-center py-3 justify-content-end">
-        <div class="col-sm-7 col-md-5 py-5">
-          <h6 class="text-muted text-uppercase mb-2">High Praise</h6>
-          <h2 class="mb-4">“Go Analytics is amazing. Decisions that used to take weeks, now only takes minutes and is available to everyone on my team.”</h2>
-          <p class="mb-4 text-muted">Cindy Smith, founder of Cool Startup</p>
-        </div>
-      </div>
-  </div>
-</div>
-
-<div class="block app-ribbon py-5">
-  <div class="container text-xs-center">
-    <img src="assets/img/startup-4.svg">
-    <img src="assets/img/startup-5.svg">
-    <img src="assets/img/startup-6.svg">
-    <img src="assets/img/startup-7.svg">
-    <img src="assets/img/startup-8.svg">
-  </div>
-</div>
-
-<div class="block block-secondary app-block-marketing-grid">
-  <div class="container text-xs-center">
-
-    <div class="row mb-5 justify-content-center">
-      <div class="col-10 col-sm-8 col-lg-6">
-        <h6 class="text-muted text-uppercase mb-2">Inside the machine</h6>
-        <h2 class="mb-4">It’s not hard to see how we make your life easier every day.</h2>
-      </div>
-    </div>
-
-    <div class="row app-marketing-grid">
-      <div class="col-md-4 px-4 mb-5">
-        <img class="mb-1" src="assets/img/startup-9.svg">
-        <p><strong>24/7 support.</strong> We’re always here for you no matter what time of day.</p>
-      </div>
-      <div class="col-md-4 px-4 mb-5">
-        <img class="mb-1" src="assets/img/startup-10.svg">
-        <p><strong>E-commerce.</strong> We automatically handle all sales analytics.</p>
-      </div>
-      <div class="col-md-4 px-4 mb-5">
-        <img class="mb-1" src="assets/img/startup-11.svg">
-        <p><strong>Turnaround.</strong> Our data analysis is distributed, so it processes in seconds.</p>
-      </div>
-    </div>
-
-    <div class="row app-marketing-grid">
-      <div class="col-md-4 px-4 mb-5">
-        <img class="mb-1" src="assets/img/startup-12.svg">
-        <p><strong>Rich calculations.</strong> Limitless ways to splice and dice your data.</p>
-      </div>
-      <div class="col-md-4 px-4 mb-5">
-        <img class="mb-1" src="assets/img/startup-13.svg">
-        <p><strong>Mobile apps.</strong> iOS and Android apps available for monitoring.</p>
-      </div>
-      <div class="col-md-4 px-4 mb-5">
-        <img class="mb-1" src="assets/img/startup-14.svg">
-        <p><strong>Secure connections.</strong> Every single request is routed through HTTPS.</p>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="block app-price-plans">
-  <div class="container text-center">
-
-    <div class="row mb-5 justify-content-center">
-      <div class="col-10 col-md-8 col-lg-6">
-        <h6 class="text-muted text-uppercase mb-2">Business Talk</h6>
-        <h2>No plans. We just bump your plan whenever you need it.</h2>
-      </div>
-    </div>
-
-    <div class="row">
-      <div class="col-md-4 px-4 pb-2 mb-5">
-        <div class="px-2 mb-2">
-          <h6 class="text-muted text-uppercase mb-4">Personal</h6>
-          <img class="mb-4" src="assets/img/startup-15.svg">
-          <p class="pb-2">Plenty of processing power for any personal projects, big or small.</p>
-        </div>
-
-        <ul class="list-unstyled list-bordered text-xs-left my-4">
-          <li class="py-4"><strong>10k</strong> monthly requests</li>
-          <li class="py-4"><strong>9am-5pm</strong> technical supprt</li>
-          <li class="py-4"><strong>Public</strong> API access</li>
-        </ul>
-
-        <button class="btn btn-lg btn-primary btn-block">
-          Start <span class="d-none d-xl-inline">a personal account</span>
-        </button>
-      </div>
-
-      <div class="col-md-4 px-4 pb-2 mb-5">
-        <div class="px-2">
-          <h6 class="text-muted text-uppercase mb-4">Business</h6>
-          <img class="mb-4" src="assets/img/startup-16.svg">
-          <p class="pb-2">The perfect sized plan for small businesses to get started.</p>
-        </div>
-
-        <ul class="list-unstyled list-bordered text-xs-left my-4">
-          <li class="py-4"><strong>100k</strong> monthly requests</li>
-          <li class="py-4"><strong>24/7</strong> technical supprt</li>
-          <li class="py-4"><strong>Public</strong> API access</li>
-        </ul>
-
-        <button class="btn btn-lg btn-primary btn-block">
-          Start <span class="d-none d-xl-inline">a business account</span>
-        </button>
-      </div>
-
-      <div class="col-md-4 px-4 pb-1 mb-5">
-        <div class="px-2">
-          <h6 class="text-muted text-uppercase mb-4">Corporate</h6>
-          <img class="mb-4" src="assets/img/startup-17.svg">
-          <p class="pb-2">An unlimited plan that will scale infinitely to any size project.</p>
-        </div>
-
-        <ul class="list-unstyled list-bordered text-xs-left my-4">
-          <li class="py-4"><strong>Unlimited</strong> monthly requests</li>
-          <li class="py-4"><strong>24/7</strong> technical supprt</li>
-          <li class="py-4"><strong>Public &amp; Private</strong> API access</li>
-        </ul>
-
-        <button class="btn btn-lg btn-primary btn-block">
-          Start <span class="d-none d-xl-inline">a corporate account</span>
-        </button>
-      </div>
-    </div>
-
-  </div>
-</div>
-
-<div class="block block-inverse app-footer">
- <div class="container">
-    <div class="row">
-      <div class="col-md-5 mb-5">
-        <ul class="list-unstyled list-spaced">
-          <li class="mb-2"><h6 class="text-uppercase">About</h6></li>
-          <li class="text-muted">
-             We’ve been working on Go Analytics for the better part of a decade and are super proud of what we’ve created. If you’d like to learn more, or are interested in a job, contact us anytime at <a href="mailto: themes@getbootstrap.com">themes@getbootstrap.com</a>.
-          </li>
-        </ul>
-      </div>
-      <div class="col-md-2 ml-auto mb-5">
-        <ul class="list-unstyled list-spaced">
-          <li class="mb-2"><h6 class="text-uppercase">Product</h6></li>
-          <li class="text-muted">Features</li>
-          <li class="text-muted">Examples</li>
-          <li class="text-muted">Tour</li>
-          <li class="text-muted">Gallery</li>
-        </ul>
-      </div>
-      <div class="col-md-2 mb-5">
-        <ul class="list-unstyled list-spaced">
-          <li class="mb-2"><h6 class="text-uppercase">Apis</h6></li>
-          <li class="text-muted">Rich data</li>
-          <li class="text-muted">Simple data</li>
-          <li class="text-muted">Real time</li>
-          <li class="text-muted">Social</li>
-        </ul>
-      </div>
-      <div class="col-md-2 mb-5">
-        <ul class="list-unstyled list-spaced">
-          <li class="mb-2"><h6 class="text-uppercase">Legal</h6></li>
-          <li class="text-muted">Terms</li>
-          <li class="text-muted">Legal</li>
-          <li class="text-muted">Privacy</li>
-          <li class="text-muted">License</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</div>
-
-</div>
-
-
-    <script src="assets/js/jquery.min.js"></script>
-    <script src="assets/js/popper.min.js"></script>
-    <script src="assets/js/toolkit.js"></script>
-    <script src="assets/js/application.js"></script>
-    <script>
-      // execute/clear BS loaders for docs
-      $(function(){while(window.BS&&window.BS.loader&&window.BS.loader.length){(window.BS.loader.pop())()}})
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'0.6',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
     </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
 </body>
 </html>
-

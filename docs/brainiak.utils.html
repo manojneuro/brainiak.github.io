@@ -1,0 +1,1001 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>brainiak.utils package &mdash; brainiak 0.6 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+        <link rel="search" title="Search" href="search.html"/>
+    <link rel="top" title="brainiak 0.6 documentation" href="index.html"/>
+        <link rel="up" title="brainiak package" href="brainiak.html"/>
+        <link rel="next" title="Contributing" href="contributing.html"/>
+        <link rel="prev" title="brainiak.searchlight package" href="brainiak.searchlight.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> brainiak
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.6
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="release_notes.html">Release notes</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="api.html">API</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="api.html#brainiak">brainiak</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="brainiak.html">brainiak package</a><ul class="current">
+<li class="toctree-l4 current"><a class="reference internal" href="brainiak.html#subpackages">Subpackages</a></li>
+<li class="toctree-l4"><a class="reference internal" href="brainiak.html#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="brainiak.html#module-brainiak.image">brainiak.image module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="brainiak.html#module-brainiak.io">brainiak.io module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="brainiak.html#module-brainiak.isfc">brainiak.isfc module</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="contributing.html">Contributing</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">brainiak</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="api.html">API</a> &raquo;</li>
+        
+          <li><a href="brainiak.html">brainiak package</a> &raquo;</li>
+        
+      <li>brainiak.utils package</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/brainiak.utils.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-brainiak.utils">
+<span id="brainiak-utils-package"></span><h1>brainiak.utils package<a class="headerlink" href="#module-brainiak.utils" title="Permalink to this headline">¶</a></h1>
+<p>Utilities used by multiple subpackages.</p>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-brainiak.utils.fmrisim">
+<span id="brainiak-utils-fmrisim-module"></span><h2>brainiak.utils.fmrisim module<a class="headerlink" href="#module-brainiak.utils.fmrisim" title="Permalink to this headline">¶</a></h2>
+<p>fMRI Simulator</p>
+<p>Simulate fMRI data for a single subject.</p>
+<p>This code provides a set of functions necessary to produce realistic
+simulations of fMRI data. There are two main steps: characterizing the
+signal and generating the noise model, which are then combined to simulate
+brain data. Tools are included to support the creation of different types
+of signal, such as region specific differences in univariate
+activity. To create the noise model the parameters can either be set
+manually or can be estimated from real fMRI data with reasonable accuracy (
+works best when fMRI data has not been preprocessed)</p>
+<p>Functions:</p>
+<p>generate_signal
+Create a volume with activity, of a specified shape and either multivariate
+or univariate pattern, in a specific region to represent the signal in the
+neural data.</p>
+<p>generate_stimfunction
+Create a timecourse of the signal activation. This can be specified using event
+onsets and durations from a timing file. This is the time course before
+convolution and therefore can be at any temporal precision.</p>
+<p>export_3_column:
+Generate a three column timing file that can be used with software like FSL
+to represent event event onsets and duration</p>
+<p>export_epoch_file:
+Generate an epoch file from the time course which can be used as an input to
+brainiak functions</p>
+<p>convolve_hrf
+Convolve the signal timecourse with the  HRF to model the expected evoked
+activity</p>
+<p>apply_signal
+Combine the signal volume with the HRF, thus giving the signal the temporal
+properties of the HRF (such as smoothing and lag)</p>
+<p>calc_noise
+Estimate the noise properties of a given fMRI volume. Prominently, estimate
+the smoothing and SFNR of the data</p>
+<p>generate_noise
+Create the noise for this run. This creates temporal, spatial task and white
+noise. Various parameters can be tuned depending on need</p>
+<p>mask_brain
+Create a mask volume that has similar contrast as an fMRI image. Defaults to
+use an MNI grey matter atlas but any image can be supplied to create an
+estimate.</p>
+<p>plot_brain
+Display the brain, timepoint by timepoint, with above threshold voxels
+highlighted against the outline of the brain.</p>
+<blockquote>
+<div>Authors:
+Cameron Ellis (Princeton) 2016-2017
+Chris Baldassano (Princeton) 2016-2017</div></blockquote>
+<dl class="function">
+<dt id="brainiak.utils.fmrisim.generate_signal">
+<code class="descclassname">brainiak.utils.fmrisim.</code><code class="descname">generate_signal</code><span class="sig-paren">(</span><em>dimensions, feature_coordinates, feature_size, feature_type, signal_magnitude=[1], signal_constant=1</em><span class="sig-paren">)</span><a class="headerlink" href="#brainiak.utils.fmrisim.generate_signal" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generate volume containing signal</p>
+<p>Generate signal, of a specific shape in specific regions, for a single
+volume. This will then be convolved with the HRF across time</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>dimensions</strong> (<em>1d array</em><em>, </em><em>ndarray</em>) – What are the dimensions of the volume you wish to create</li>
+<li><strong>feature_coordinates</strong> (<em>multidimensional array</em>) – What are the feature_coordinates of the signal being created.
+Be aware of clipping: features far from the centre of the
+brain will be clipped. If you wish to have multiple features
+then list these as a features x 3 array. To create a feature of
+a unique shape then supply all the individual
+feature_coordinates of the shape and set the feature_size to 1.</li>
+<li><strong>feature_size</strong> (<em>list</em><em>, </em><em>int</em>) – How big is the signal. If feature_coordinates=1 then only one value is
+accepted, if feature_coordinates&gt;1 then either one value must be
+supplied or m values</li>
+<li><strong>feature_type</strong> (<em>list</em><em>, </em><em>string</em>) – What feature_type of signal is being inserted? Options are cube,
+loop, cavity, sphere. If feature_coordinates = 1 then
+only one value is accepted, if feature_coordinates &gt; 1 then either
+one value must be supplied or m values</li>
+<li><strong>signal_magnitude</strong> (<em>list</em><em>, </em><em>float</em>) – What is the (average) magnitude of the signal being generated? A
+value of 1 means that the signal is one standard deviation from the
+noise</li>
+<li><strong>signal_constant</strong> (<em>list</em><em>, </em><em>bool</em>) – Is the signal constant across the feature (for univariate activity)
+or is it a random pattern of a given magnitude across the feature (for
+multivariate activity)</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>volume_signal</strong> – Creates a single volume containing the signal</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">3 dimensional array, float</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="brainiak.utils.fmrisim.generate_stimfunction">
+<code class="descclassname">brainiak.utils.fmrisim.</code><code class="descname">generate_stimfunction</code><span class="sig-paren">(</span><em>onsets, event_durations, total_time, weights=[1], timing_file=None, temporal_resolution=1000.0</em><span class="sig-paren">)</span><a class="headerlink" href="#brainiak.utils.fmrisim.generate_stimfunction" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the function for the timecourse events</p>
+<p>When do stimuli onset, how long for and to what extent should you
+resolve the fMRI time course. There are two ways to create this, either
+by supplying onset, duration and weight information or by supplying a
+timing file (in the three column format used by FSL).</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>onsets</strong> (<em>list</em><em>, </em><em>int</em>) – What are the timestamps (in s) for when an event you want to
+generate onsets?</li>
+<li><strong>event_durations</strong> (<em>list</em><em>, </em><em>int</em>) – What are the durations (in s) of the events you want to
+generate? If there is only one value then this will be assigned
+to all onsets</li>
+<li><strong>total_time</strong> (<em>int</em>) – How long (in s) is the experiment in total.</li>
+<li><strong>weights</strong> (<em>list</em><em>, </em><em>float</em>) – What is the weight for each event (how high is the box car)? If
+there is only one value then this will be assigned to all onsets</li>
+<li><strong>timing_file</strong> (<em>string</em>) – The filename (with path) to a three column timing file (FSL) to
+make the events. Still requires total_time to work</li>
+<li><strong>temporal_resolution</strong> (<em>float</em>) – How many elements per second are you modeling for the
+timecourse. This is useful when you want to model the HRF at an
+arbitrarily high resolution (and then downsample to your TR later).</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>stim_function</strong> – The time course of stimulus evoked activation. This has a temporal
+resolution of temporal resolution / 1.0 elements per second</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">1 by timepoint array, float</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="brainiak.utils.fmrisim.export_3_column">
+<code class="descclassname">brainiak.utils.fmrisim.</code><code class="descname">export_3_column</code><span class="sig-paren">(</span><em>stimfunction</em>, <em>filename</em>, <em>temporal_resolution=1000.0</em><span class="sig-paren">)</span><a class="headerlink" href="#brainiak.utils.fmrisim.export_3_column" title="Permalink to this definition">¶</a></dt>
+<dd><p>Output a tab separated three column timing file</p>
+<p>This produces a three column tab separated text file, with the three
+columns representing onset time (s), event duration (s) and weight,
+respectively. Useful if you want to run the simulated data through FEAT
+analyses. In a way, this is the reverse of generate_stimfunction</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>stimfunction</strong> (<em>timepoint by 1 array</em>) – The stimulus function describing the time course of events. For
+instance output from generate_stimfunction.</li>
+<li><strong>filename</strong> (<em>str</em>) – The name of the three column text file to be output</li>
+<li><strong>temporal_resolution</strong> (<em>float</em>) – How many elements per second are you modeling with the
+stimfunction?</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="brainiak.utils.fmrisim.export_epoch_file">
+<code class="descclassname">brainiak.utils.fmrisim.</code><code class="descname">export_epoch_file</code><span class="sig-paren">(</span><em>stimfunction</em>, <em>filename</em>, <em>tr_duration</em>, <em>temporal_resolution=1000.0</em><span class="sig-paren">)</span><a class="headerlink" href="#brainiak.utils.fmrisim.export_epoch_file" title="Permalink to this definition">¶</a></dt>
+<dd><p>Output an epoch file, necessary for some inputs into brainiak</p>
+<p>This takes in the time course of stimulus events and outputs the epoch
+file used in Brainiak. The epoch file is a way to structure the timing
+information in fMRI that allows you to flexibly input different stimulus
+sequences. This is a list with each entry a 3d matrix corresponding to a
+participant. The dimensions of the 3d matrix are condition by epoch by time</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>stimfunction</strong> (<em>list of timepoint by condition arrays</em>) – The stimulus function describing the time course of events. Each
+list entry is from a different participant, each row is a different
+timepoint (with the given temporal precision), each column is a
+different condition. export_epoch_file is looking for differences in
+the value of stimfunction to identify the start and end of an
+epoch. If epochs in stimfunction are coded with the same weight and
+there is no time between blocks then export_epoch_file won’t be able to
+label them as different epochs</li>
+<li><strong>filename</strong> (<em>str</em>) – The name of the three column text file to be output</li>
+<li><strong>tr_duration</strong> (<em>float</em>) – How long is each TR in seconds</li>
+<li><strong>temporal_resolution</strong> (<em>float</em>) – How many elements per second are you modeling with the
+stimfunction?</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="brainiak.utils.fmrisim.convolve_hrf">
+<code class="descclassname">brainiak.utils.fmrisim.</code><code class="descname">convolve_hrf</code><span class="sig-paren">(</span><em>stimfunction</em>, <em>tr_duration</em>, <em>hrf_type='double_gamma'</em>, <em>scale_function=True</em>, <em>temporal_resolution=1000.0</em><span class="sig-paren">)</span><a class="headerlink" href="#brainiak.utils.fmrisim.convolve_hrf" title="Permalink to this definition">¶</a></dt>
+<dd><p>Convolve the specified hrf with the timecourse</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>stimfunction</strong> (<em>timepoint by timecourse array</em>) – What is the time course of events to be modelled in this
+experiment. This can specify one or more timecourses of events.
+The events can be weighted or binary</li>
+<li><strong>tr_duration</strong> (<em>float</em>) – How long (in s) between each volume onset</li>
+<li><strong>hrf_type</strong> (<em>str</em><em> or </em><em>list</em>) – Takes in a string describing the hrf that ought to be created.
+Can instead take in a vector describing the HRF as it was
+specified by any function. The default is ‘double_gamma’ in which
+an initial rise and an undershoot are modelled.</li>
+<li><strong>scale_function</strong> (<em>bool</em>) – Do you want to scale the function to a range of 1</li>
+<li><strong>temporal_resolution</strong> (<em>float</em>) – How many elements per second are you modeling for the stimfunction</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>signal_function</strong> – The time course of the HRF convolved with the stimulus function.
+This can have multiple time courses specified as different
+columns in this array.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">timepoint by timecourse array</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="brainiak.utils.fmrisim.apply_signal">
+<code class="descclassname">brainiak.utils.fmrisim.</code><code class="descname">apply_signal</code><span class="sig-paren">(</span><em>signal_function</em>, <em>volume_signal</em><span class="sig-paren">)</span><a class="headerlink" href="#brainiak.utils.fmrisim.apply_signal" title="Permalink to this definition">¶</a></dt>
+<dd><p>Combine the signal volume with its timecourse</p>
+<p>Apply the convolution of the HRF and stimulus time course to the
+volume.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>signal_function</strong> (<em>timepoint by timecourse array</em><em>, </em><em>float</em>) – The timecourse of the signal over time. If there is only one column
+then the same timecourse is applied to all non-zero voxels in
+volume_signal. If there is more than one column then each column is
+paired with a non-zero voxel in the volume_signal (a 3d numpy array
+generated in generate_signal).</li>
+<li><strong>volume_signal</strong> (<em>multi dimensional array</em><em>, </em><em>float</em>) – The volume containing the signal to be convolved with the same
+dimensions as the output volume. The elements in volume_signal
+indicate how strong each signal in signal_function are modulated by
+in the output volume</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>signal</strong> – The convolved signal volume with the same 3d as volume signal and
+the same 4th dimension as signal_function</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">multidimensional array, float</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="brainiak.utils.fmrisim.calc_noise">
+<code class="descclassname">brainiak.utils.fmrisim.</code><code class="descname">calc_noise</code><span class="sig-paren">(</span><em>volume</em>, <em>mask=None</em>, <em>noise_dict=None</em><span class="sig-paren">)</span><a class="headerlink" href="#brainiak.utils.fmrisim.calc_noise" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculates the noise properties of the volume supplied.
+This estimates what noise properties the volume has. For instance it
+determines the spatial smoothness, the autoregressive noise, system
+noise etc. Read the doc string for generate_noise to understand how
+these different types of noise interact.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>volume</strong> (<em>4d numpy array</em><em>, </em><em>float</em>) – Take in a functional volume (either the file name or the numpy
+array) to be used to estimate the noise properties of this</li>
+<li><strong>mask</strong> (<em>3d numpy array</em><em>, </em><em>binary</em>) – A binary mask of the brain, the same size as the volume</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>noise_dict</strong> – Return a dictionary of the calculated noise parameters of the provided
+dataset</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">dict</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="brainiak.utils.fmrisim.generate_noise">
+<code class="descclassname">brainiak.utils.fmrisim.</code><code class="descname">generate_noise</code><span class="sig-paren">(</span><em>dimensions</em>, <em>stimfunction_tr</em>, <em>tr_duration</em>, <em>template</em>, <em>mask=None</em>, <em>noise_dict=None</em><span class="sig-paren">)</span><a class="headerlink" href="#brainiak.utils.fmrisim.generate_noise" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generate the noise to be added to the signal.
+Default noise parameters will create a noise volume with a standard
+deviation of 0.1 (where the signal defaults to a value of 1). This has
+built into estimates of how different types of noise mix. All noise
+values can be set by the user or estimated with calc_noise.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>dimensions</strong> (<em>nd array</em>) – What is the shape of the volume to be generated</li>
+<li><strong>stimfunction_tr</strong> (<em>Iterable</em><em>, </em><em>list</em>) – When do the stimuli events occur. Each element is a TR</li>
+<li><strong>tr_duration</strong> (<em>float</em>) – What is the duration, in seconds, of each TR?</li>
+<li><strong>template</strong> (<em>3d array</em><em>, </em><em>float</em>) – A continuous (0 -&gt; 1) volume describing the likelihood a voxel is in
+the brain. This can be used to contrast the brain and non brain.</li>
+<li><strong>mask</strong> (<em>3d array</em><em>, </em><em>binary</em>) – The mask of the brain volume, distinguishing brain from non-brain</li>
+<li><strong>noise_dict</strong> (<em>dictionary</em><em>, </em><em>float</em>) – This is a dictionary which describes the noise parameters of the
+data. If there are no other variables provided then it will use default
+values</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>noise</strong> – Generates the noise volume for these parameters</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">multidimensional array, float</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="brainiak.utils.fmrisim.mask_brain">
+<code class="descclassname">brainiak.utils.fmrisim.</code><code class="descname">mask_brain</code><span class="sig-paren">(</span><em>volume</em>, <em>template_name=None</em>, <em>mask_threshold=None</em>, <em>mask_self=0</em><span class="sig-paren">)</span><a class="headerlink" href="#brainiak.utils.fmrisim.mask_brain" title="Permalink to this definition">¶</a></dt>
+<dd><p>Mask the simulated volume
+This creates a mask specifying the likelihood (kind of) a voxel is
+part of the brain. All values are bounded to the range of 0 to 1. An
+appropriate threshold to isolate brain voxels is &gt;0.2</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>volume</strong> (<em>multidimensional array</em>) – Either numpy array of a volume or a tuple describing the dimensions
+of the mask to be created</li>
+<li><strong>template_name</strong> (<em>str</em>) – What is the path to the template to be loaded? If empty then it
+defaults to an MNI152 grey matter mask. This is ignored if mask_self is
+True.</li>
+<li><strong>mask_threshold</strong> (<em>float</em>) – What is the threshold (0 -&gt; 1) for including a voxel in the mask? If
+None then the program will try and identify the last wide peak in a
+histogram of the template (assumed to be the brain voxels) and takes
+the minima before that peak as the threshold. Won’t work when the
+data is not bimodal.</li>
+<li><strong>mask_self</strong> (<em>bool</em>) – If set to true then it makes a mask from the volume supplied (by
+averaging across time points and changing the range).</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"><ul class="simple">
+<li><strong>mask</strong> (<em>3 dimensional array, binary</em>) – The masked brain, thresholded to distinguish brain and non-brain</li>
+<li><strong>template</strong> (<em>3 dimensional array, float</em>) – A continuous (0 -&gt; 1) volume describing the likelihood a voxel is in
+the brain. This can be used to contrast the brain and non brain.</li>
+</ul>
+</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="brainiak.utils.fmrisim.plot_brain">
+<code class="descclassname">brainiak.utils.fmrisim.</code><code class="descname">plot_brain</code><span class="sig-paren">(</span><em>fig</em>, <em>brain</em>, <em>mask=None</em>, <em>percentile=99</em><span class="sig-paren">)</span><a class="headerlink" href="#brainiak.utils.fmrisim.plot_brain" title="Permalink to this definition">¶</a></dt>
+<dd><p>Display the brain that has been generated with a given threshold
+Will display the voxels above the given percentile and then a shadow of
+all voxels in the mask</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>fig</strong> (<em>matplotlib object</em>) – The figure to be displayed, generated from matplotlib. import
+matplotlib.pyplot as plt; fig = plt.figure()</li>
+<li><strong>brain</strong> (<em>3d array</em>) – This is a 3d array with the neural data</li>
+<li><strong>mask</strong> (<em>3d array</em>) – A binary mask describing the location that you want to specify as</li>
+<li><strong>percentile</strong> (<em>float</em>) – What percentage of voxels will be included? Based on the values
+supplied</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>ax</strong> – Object with the information to be plotted</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">matplotlib object</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="module-brainiak.utils.utils">
+<span id="brainiak-utils-utils-module"></span><h2>brainiak.utils.utils module<a class="headerlink" href="#module-brainiak.utils.utils" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="brainiak.utils.utils.ReadDesign">
+<em class="property">class </em><code class="descclassname">brainiak.utils.utils.</code><code class="descname">ReadDesign</code><span class="sig-paren">(</span><em>fname=None</em>, <em>include_orth=True</em>, <em>include_pols=True</em><span class="sig-paren">)</span><a class="headerlink" href="#brainiak.utils.utils.ReadDesign" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
+<dl class="docutils">
+<dt>A class which has the ability of reading in design matrix in .1D file,</dt>
+<dd>generated by AFNI’s 3dDeconvolve.</dd>
+</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>fname</strong> (<em>string</em><em>, </em><em>the address of the file to read.</em>) – </li>
+<li><strong>include_orth</strong> (<em>Boollean</em><em>, </em><em>whether to include &quot;orthogonal&quot; regressors in</em>) – the nuisance regressors which are usually head motion parameters.
+All the columns of design matrix are still going to be read in,
+but the attribute cols_used will reflect whether these orthogonal
+regressors are to be included for furhter analysis.
+Note that these are not entered into design_task attribute which
+include only regressors related to task conditions.</li>
+<li><strong>include_pols</strong> (<em>Boollean</em><em>, </em><em>whether to include polynomial regressors in</em>) – the nuisance regressors which are used to capture slow drift of
+signals.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="attribute">
+<dt id="brainiak.utils.utils.ReadDesign.design">
+<code class="descname">design</code><a class="headerlink" href="#brainiak.utils.utils.ReadDesign.design" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>2d array. The design matrix read in from the csv file.</em></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="brainiak.utils.utils.ReadDesign.design_task">
+<code class="descname">design_task</code><a class="headerlink" href="#brainiak.utils.utils.ReadDesign.design_task" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>2d array. The part of design matrix corresponding to</em> – task conditions.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="brainiak.utils.utils.ReadDesign.n_col">
+<code class="descname">n_col</code><a class="headerlink" href="#brainiak.utils.utils.ReadDesign.n_col" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>number of total columns in the design matrix.</em></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="brainiak.utils.utils.ReadDesign.column_types">
+<code class="descname">column_types</code><a class="headerlink" href="#brainiak.utils.utils.ReadDesign.column_types" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>1d array. the types of each column in the design matrix.</em> – 0 for orthogonal regressors (usually head motion parameters),
+-1 for polynomial basis (capturing slow drift of signals),
+values &gt; 0 for stimulus conditions</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="brainiak.utils.utils.ReadDesign.n_basis">
+<code class="descname">n_basis</code><a class="headerlink" href="#brainiak.utils.utils.ReadDesign.n_basis" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>scalar. The number of polynomial bases in the designn matrix.</em></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="brainiak.utils.utils.ReadDesign.n_stim">
+<code class="descname">n_stim</code><a class="headerlink" href="#brainiak.utils.utils.ReadDesign.n_stim" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>scalar. The number of stimulus conditions.</em></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="brainiak.utils.utils.ReadDesign.n_orth">
+<code class="descname">n_orth</code><a class="headerlink" href="#brainiak.utils.utils.ReadDesign.n_orth" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>scalar. The number of orthogoanal regressors (usually head</em> – motions)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="brainiak.utils.utils.ReadDesign.StimLabels">
+<code class="descname">StimLabels</code><a class="headerlink" href="#brainiak.utils.utils.ReadDesign.StimLabels" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>list. The names of each column in the design matrix.</em></p>
+</dd></dl>
+
+<dl class="method">
+<dt id="brainiak.utils.utils.ReadDesign.read_afni">
+<code class="descname">read_afni</code><span class="sig-paren">(</span><em>fname</em><span class="sig-paren">)</span><a class="headerlink" href="#brainiak.utils.utils.ReadDesign.read_afni" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="brainiak.utils.utils.center_mass_exp">
+<code class="descclassname">brainiak.utils.utils.</code><code class="descname">center_mass_exp</code><span class="sig-paren">(</span><em>interval</em>, <em>scale=1.0</em><span class="sig-paren">)</span><a class="headerlink" href="#brainiak.utils.utils.center_mass_exp" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="docutils">
+<dt>Calculate the center of mass of negative exponential distribution</dt>
+<dd>p(x) = exp(-x / scale) / scale
+in the interval of (interval_left, interval_right).
+scale is the same scale parameter as scipy.stats.expon.pdf</dd>
+</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>interval</strong> (<em>size 2 tuple</em><em>, </em><em>float</em>) – interval must be in the form of (interval_left, interval_right),
+where interval_left/interval_right is the starting/end point of the
+interval in which the center of mass is calculated for exponential
+distribution.
+Note that interval_left must be non-negative, since exponential is
+not supported in the negative domain, and interval_right must be
+bigger than interval_left (thus positive) to form a well-defined
+interval.</li>
+<li><strong>scale</strong> (<em>float</em><em>, </em><em>positive</em>) – The scale parameter of the exponential distribution. See above.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>m</strong> – The center of mass in the interval of (interval_left,
+interval_right) for exponential distribution.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">float</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="brainiak.utils.utils.concatenate_not_none">
+<code class="descclassname">brainiak.utils.utils.</code><code class="descname">concatenate_not_none</code><span class="sig-paren">(</span><em>l</em>, <em>axis=0</em><span class="sig-paren">)</span><a class="headerlink" href="#brainiak.utils.utils.concatenate_not_none" title="Permalink to this definition">¶</a></dt>
+<dd><p>Construct a numpy array by stacking not-None arrays in a list</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>data</strong> (<em>list of arrays</em>) – The list of arrays to be concatenated. Arrays have same shape in all
+but one dimension or are None, in which case they are ignored.</li>
+<li><strong>axis</strong> (<em>int</em><em>, </em><em>default = 0</em>) – Axis for the concatenation</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>data_stacked</strong> – The resulting concatenated array.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">array</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="brainiak.utils.utils.cov2corr">
+<code class="descclassname">brainiak.utils.utils.</code><code class="descname">cov2corr</code><span class="sig-paren">(</span><em>cov</em><span class="sig-paren">)</span><a class="headerlink" href="#brainiak.utils.utils.cov2corr" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="docutils">
+<dt>Calculate the correlation matrix based on a</dt>
+<dd>covariance matrix</dd>
+</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>cov</strong> (<em>2D array</em>) – </td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><strong>corr</strong> – correlation converted from the covarince matrix</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">2D array</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="brainiak.utils.utils.from_sym_2_tri">
+<code class="descclassname">brainiak.utils.utils.</code><code class="descname">from_sym_2_tri</code><span class="sig-paren">(</span><em>symm</em><span class="sig-paren">)</span><a class="headerlink" href="#brainiak.utils.utils.from_sym_2_tri" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="docutils">
+<dt>convert a 2D symmetric matrix to an upper</dt>
+<dd>triangular matrix in 1D format</dd>
+</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>symm</strong> (<em>2D array</em>) – Symmetric matrix</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><strong>tri</strong> – Contains elements of upper triangular matrix</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">1D array</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="brainiak.utils.utils.from_tri_2_sym">
+<code class="descclassname">brainiak.utils.utils.</code><code class="descname">from_tri_2_sym</code><span class="sig-paren">(</span><em>tri</em>, <em>dim</em><span class="sig-paren">)</span><a class="headerlink" href="#brainiak.utils.utils.from_tri_2_sym" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="docutils">
+<dt>convert a upper triangular matrix in 1D format</dt>
+<dd>to 2D symmetric matrix</dd>
+</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>tri</strong> (<em>1D array</em>) – Contains elements of upper triangular matrix</li>
+<li><strong>dim</strong> (<em>int</em>) – The dimension of target matrix.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>symm</strong> – Symmetric matrix in shape=[dim, dim]</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">2D array</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="brainiak.utils.utils.gen_design">
+<code class="descclassname">brainiak.utils.utils.</code><code class="descname">gen_design</code><span class="sig-paren">(</span><em>stimtime_files</em>, <em>scan_duration</em>, <em>TR</em>, <em>style='FSL'</em>, <em>temp_res=0.01</em>, <em>hrf_para={'undershoot_dispersion': 0.9</em>, <em>'response_delay': 6</em>, <em>'response_dispersion': 0.9</em>, <em>'undershoot_scale': 0.035</em>, <em>'undershoot_delay': 12}</em><span class="sig-paren">)</span><a class="headerlink" href="#brainiak.utils.utils.gen_design" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="docutils">
+<dt>Generate design matrix based on a list of names of stimulus</dt>
+<dd>timing files. The function will read each file, and generate
+a numpy array of size [time_points * condition], where
+time_points equals duration / TR, and condition is the size of
+stimtime_filenames. Each column is the hypothetical fMRI response
+based on the stimulus timing in the corresponding file
+of stimtime_files.
+This function uses generate_stimfunction and double_gamma_hrf
+of brainiak.utils.fmrisim.</dd>
+</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>stimtime_files</strong> (<em>a string</em><em> or </em><em>a list of string.</em>) – Each string is the name of the file storing
+the stimulus timing information of one task condition.
+The contents in the files will be interpretated
+based on the style parameter.
+Details are explained under the style parameter.</li>
+<li><strong>scan_duration</strong> (<em>float</em><em> or </em><em>a list</em><em> (or </em><em>a 1D numpy array</em><em>) </em><em>of numbers.</em>) – Total duration of each fMRI scan, in unit of seconds.
+If there are multiple runs, the duration should be
+a list (or 1-d numpy array) of numbers.
+If it is a list, then each number in the list
+represents the duration of the corresponding scan
+in the stimtime_files.
+If only a number is provided, it is assumed that
+there is only one fMRI scan lasting for scan_duration.</li>
+<li><strong>TR</strong> (<em>float.</em>) – The sampling period of fMRI, in unit of seconds.</li>
+<li><strong>style</strong> (<em>string</em><em>, </em><em>default: 'FSL'</em>) – <p>Acceptable inputs: ‘FSL’, ‘AFNI’
+The formating style of the stimtime_files.
+‘FSL’ style has one line for each event of the same condition.
+Each line contains three numbers. The first number is the onset
+of the event relative to the onset of the first scan,
+in units of seconds.
+(Multiple scans should be treated as a concatenated long scan
+for the purpose of calculating onsets.
+However, the design matrix from one scan won’t leak into the next).
+The second number is the duration of the event,
+in unit of seconds.
+The third number is the amplitude modulation (or weight)
+of the response.
+It is acceptable to not provide the weight,
+or not provide both duration and weight.
+In such cases, these parameters will default to 1.0.</p>
+<p>’AFNI’ style has one line for each scan (run).
+Each line has a few triplets in the format of
+stim_onsets*weight:duration
+(or simpler, see below), separated by spaces.
+For example, 3.2*2.0:1.5 means that one event starts at 3.2s,
+modulated by weight of 2.0 and lasts for 1.5s.
+If some run does not include a single event
+of a condition (stimulus type), then you can put *,
+or a negative number, or a very large number in that line.
+Either duration or weight can be neglected. In such
+cases, they will default to 1.0.
+For example, 3.0, 3.0*1.0, 3.0:1.0 and 3.0*1.0:1.0 all
+means an event starting at 3.0s, lasting for 1.0s, with
+amplitude modulation of 1.0.</p>
+</li>
+<li><strong>temp_res</strong> (<em>float</em><em>, </em><em>default: 0.01</em>) – Temporal resolution of fMRI, in second.</li>
+<li><strong>hrf_para</strong> (<em>dictionary</em>) – The parameters of the double-Gamma hemodynamic response function.
+To set different parameters, supply a dictionary with
+the same set of keys as the default, and replace the corresponding
+values with the new values.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>design</strong> – design matrix. Each time row represents one TR
+(fMRI sampling time point) and each column represents
+one experiment condition, in the order in stimtime_files</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">2D numpy array</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="brainiak.utils.utils.sumexp_stable">
+<code class="descclassname">brainiak.utils.utils.</code><code class="descname">sumexp_stable</code><span class="sig-paren">(</span><em>data</em><span class="sig-paren">)</span><a class="headerlink" href="#brainiak.utils.utils.sumexp_stable" title="Permalink to this definition">¶</a></dt>
+<dd><p>Compute the sum of exponents for a list of samples</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>data</strong> (<em>array</em><em>, </em><em>shape=</em><em>[</em><em>features</em><em>, </em><em>samples</em><em>]</em>) – A data array containing samples.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><ul class="simple">
+<li><strong>result_sum</strong> (<em>array, shape=[samples,]</em>) – The sum of exponents for each sample divided by the exponent
+of the maximum feature value in the sample.</li>
+<li><strong>max_value</strong> (<em>array, shape=[samples,]</em>) – The maximum feature value for each sample.</li>
+<li><strong>result_exp</strong> (<em>array, shape=[features, samples]</em>) – The exponent of each element in each sample divided by the exponent
+of the maximum feature value in the sample.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">This function is more stable than computing the sum(exp(v)).
+It useful for computing the softmax_i(v)=exp(v_i)/sum(exp(v)) function.</p>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="brainiak.utils.utils.usable_cpu_count">
+<code class="descclassname">brainiak.utils.utils.</code><code class="descname">usable_cpu_count</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#brainiak.utils.utils.usable_cpu_count" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get number of CPUs usable by the current process.</p>
+<p>Takes into consideration cpusets restrictions.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"></td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">int</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="contributing.html" class="btn btn-neutral float-right" title="Contributing" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="brainiak.searchlight.html" class="btn btn-neutral" title="brainiak.searchlight package" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016, Princeton Neuroscience Institute and Intel Corporation.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'0.6',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

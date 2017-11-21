@@ -1,0 +1,20 @@
+brainiak\.searchlight package
+=============================
+
+.. automodule:: brainiak.searchlight
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+Submodules
+----------
+
+brainiak\.searchlight\.searchlight module
+-----------------------------------------
+
+.. automodule:: brainiak.searchlight.searchlight
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+

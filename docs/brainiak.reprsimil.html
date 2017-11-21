@@ -1,0 +1,1413 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>brainiak.reprsimil package &mdash; brainiak 0.6 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+        <link rel="search" title="Search" href="search.html"/>
+    <link rel="top" title="brainiak 0.6 documentation" href="index.html"/>
+        <link rel="up" title="brainiak package" href="brainiak.html"/>
+        <link rel="next" title="brainiak.searchlight package" href="brainiak.searchlight.html"/>
+        <link rel="prev" title="brainiak.hyperparamopt package" href="brainiak.hyperparamopt.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> brainiak
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.6
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="release_notes.html">Release notes</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="api.html">API</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="api.html#brainiak">brainiak</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="brainiak.html">brainiak package</a><ul class="current">
+<li class="toctree-l4 current"><a class="reference internal" href="brainiak.html#subpackages">Subpackages</a></li>
+<li class="toctree-l4"><a class="reference internal" href="brainiak.html#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="brainiak.html#module-brainiak.image">brainiak.image module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="brainiak.html#module-brainiak.io">brainiak.io module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="brainiak.html#module-brainiak.isfc">brainiak.isfc module</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="contributing.html">Contributing</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">brainiak</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="api.html">API</a> &raquo;</li>
+        
+          <li><a href="brainiak.html">brainiak package</a> &raquo;</li>
+        
+      <li>brainiak.reprsimil package</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/brainiak.reprsimil.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-brainiak.reprsimil">
+<span id="brainiak-reprsimil-package"></span><h1>brainiak.reprsimil package<a class="headerlink" href="#module-brainiak.reprsimil" title="Permalink to this headline">¶</a></h1>
+<p>A Bayesian method to perform Representational Similarity Analysis</p>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-brainiak.reprsimil.brsa">
+<span id="brainiak-reprsimil-brsa-module"></span><h2>brainiak.reprsimil.brsa module<a class="headerlink" href="#module-brainiak.reprsimil.brsa" title="Permalink to this headline">¶</a></h2>
+<p>Bayesian Representational Similarity Analysis (BRSA)</p>
+<blockquote>
+<div>This implementation is based the work in <a class="reference internal" href="#cai2016" id="id1">[Cai2016]</a>.</div></blockquote>
+<table class="docutils citation" frame="void" id="cai2016" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id1">[Cai2016]</a></td><td>“A Bayesian method for reducing bias in neural
+representational similarity analysis”,
+M.B. Cai, N. Schuck, J. Pillow, Y. Niv,
+Advances in Neural Information Processing Systems 29, 2016, 4952–4960
+Available at:
+<a class="reference external" href="http://papers.nips.cc/paper/6131-a-bayesian-method-for-reducing-bias-in-neural-representational-similarity-analysis.pdf">http://papers.nips.cc/paper/6131-a-bayesian-method-for-reducing-bias-in-neural-representational-similarity-analysis.pdf</a>
+Some extensions beyond the paper have been made here.
+More specifically:
+(1) spatial noise correlation (or alternatively
+considered as signals of intrinsic fluctuation not related to tasks);
+(2) new fitting procedure which marginalizes all voxel-specific
+parameters such as pseudo-SNR, noise variance, auto-regressive
+coefficients, in <a class="reference internal" href="#brainiak.reprsimil.brsa.GBRSA" title="brainiak.reprsimil.brsa.GBRSA"><code class="xref py py-obj docutils literal"><span class="pre">GBRSA</span></code></a> class;
+(3) capacity to jointly fit to data of multiple participants,
+in <a class="reference internal" href="#brainiak.reprsimil.brsa.GBRSA" title="brainiak.reprsimil.brsa.GBRSA"><code class="xref py py-obj docutils literal"><span class="pre">GBRSA</span></code></a> class;
+(4) cross-validation score between a full model and a null model
+in <a class="reference internal" href="#brainiak.reprsimil.brsa.BRSA.score" title="brainiak.reprsimil.brsa.BRSA.score"><code class="xref py py-obj docutils literal"><span class="pre">BRSA.score</span></code></a> and <a class="reference internal" href="#brainiak.reprsimil.brsa.GBRSA.score" title="brainiak.reprsimil.brsa.GBRSA.score"><code class="xref py py-obj docutils literal"><span class="pre">GBRSA.score</span></code></a>;
+(5) capability of decoding task-related signals and intrinsic
+fluctuation from new data based on model fitted from training data
+in <a class="reference internal" href="#brainiak.reprsimil.brsa.BRSA.transform" title="brainiak.reprsimil.brsa.BRSA.transform"><code class="xref py py-obj docutils literal"><span class="pre">BRSA.transform</span></code></a> and <a class="reference internal" href="#brainiak.reprsimil.brsa.GBRSA.transform" title="brainiak.reprsimil.brsa.GBRSA.transform"><code class="xref py py-obj docutils literal"><span class="pre">GBRSA.transform</span></code></a>.
+<a class="reference internal" href="#brainiak.reprsimil.brsa.GBRSA" title="brainiak.reprsimil.brsa.GBRSA"><code class="xref py py-obj docutils literal"><span class="pre">GBRSA</span></code></a> may perform better than <a class="reference internal" href="#brainiak.reprsimil.brsa.BRSA" title="brainiak.reprsimil.brsa.BRSA"><code class="xref py py-obj docutils literal"><span class="pre">BRSA</span></code></a> due to (2). It can be
+use for single participant as well.</td></tr>
+</tbody>
+</table>
+<dl class="class">
+<dt id="brainiak.reprsimil.brsa.BRSA">
+<em class="property">class </em><code class="descclassname">brainiak.reprsimil.brsa.</code><code class="descname">BRSA</code><span class="sig-paren">(</span><em>n_iter=50</em>, <em>rank=None</em>, <em>auto_nuisance=True</em>, <em>n_nureg=None</em>, <em>nureg_zscore=True</em>, <em>nureg_method='PCA'</em>, <em>baseline_single=False</em>, <em>GP_space=False</em>, <em>GP_inten=False</em>, <em>space_smooth_range=None</em>, <em>inten_smooth_range=None</em>, <em>tau_range=5.0</em>, <em>tau2_prior=&lt;function prior_GP_var_inv_gamma&gt;</em>, <em>eta=0.0001</em>, <em>init_iter=20</em>, <em>optimizer='BFGS'</em>, <em>random_state=None</em>, <em>anneal_speed=10</em>, <em>tol=0.0001</em>, <em>minimize_options={'gtol': 0.0001</em>, <em>'disp': False</em>, <em>'maxiter': 6}</em><span class="sig-paren">)</span><a class="headerlink" href="#brainiak.reprsimil.brsa.BRSA" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">sklearn.base.BaseEstimator</span></code>, <code class="xref py py-class docutils literal"><span class="pre">sklearn.base.TransformerMixin</span></code></p>
+<p>Bayesian representational Similarity Analysis (BRSA)</p>
+<p>Given the time series of neural imaging data in a region of interest
+(ROI) and the hypothetical neural response (design matrix) to
+each experimental condition of interest,
+calculate the shared covariance matrix U of
+the voxels(recording unit)’ response profiles beta_i to each condition,
+and the relative SNR of each voxels.
+The relative SNR could be considered as the degree of contribution
+of each voxel to this shared covariance matrix.
+A correlation matrix converted from the covariance matrix U
+will be provided as a quantification of neural representational similarity.</p>
+<div class="math">
+\[ \begin{align}\begin{aligned}Y = X \cdot \beta + X_0 \cdot \beta_0 + \epsilon\\\beta_i \sim N(0,(s_{i} \sigma_{i})^2 U)\\\epsilon_i \sim AR(1)\end{aligned}\end{align} \]</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>n_iter</strong> (<em>int. Default: 50</em>) – Number of maximum iterations to run the algorithm.</li>
+<li><strong>rank</strong> (<em>int. Default: None</em>) – The rank of the covariance matrix.
+If not provided, the covariance matrix will be assumed
+to be full rank. When you have many conditions
+(e.g., calculating the similarity matrix of responses to each event),
+you might try specifying a lower rank.</li>
+<li><strong>auto_nuisance</strong> (<em>boolean. Default: True</em>) – In order to model spatial correlation between voxels that cannot
+be accounted for by common response captured in the design matrix,
+we assume that a set of time courses not related to the task
+conditions are shared across voxels with unknown amplitudes.
+One approach is for users to provide time series which they consider
+as nuisance but exist in the noise (such as head motion).
+The other way is to take the first n_nureg principal components
+in the residual after subtracting the response to the design matrix
+from the data, and use these components as the nuisance regressor.
+This flag is for the second approach. If turned on,
+PCA or factor analysis will be applied to the residuals
+to obtain new nuisance regressors in each round of fitting.
+These two approaches can be combined. If the users provide nuisance
+regressors and set this flag as True, then the first n_nureg
+principal components of the residuals after subtracting
+both the responses to design matrix and the user-supplied nuisance
+regressors will be used in addition to the nuisance regressors
+provided by the users.
+Note that nuisance regressor is not required from user. If it is
+not provided, DC components for each run will be included as nuisance
+regressor regardless of the auto_nuisance parameter.</li>
+<li><strong>n_nureg</strong> (<em>Optional</em><em>[</em><em>int</em><em>]</em><em> Default: None</em>) – Number of nuisance regressors to use in order to model signals
+shared across voxels not captured by the design matrix.
+This number is in addition to any nuisance regressor that the user
+has already provided.
+If set to None, the number of nuisance regressors will be
+automatically determined based on M Gavish
+and D Donoho’s approximate estimation of optimal hard
+threshold for singular values.
+This only takes effect if auto_nuisance is True.</li>
+<li><strong>nureg_zscore</strong> (<em>boolean</em><em>, </em><em>default: True</em>) – A flag to tell the algorithm whether data is z-scored before
+estimating the number of nuisance regressor components necessary to
+account for spatial noise correlation. It also determinie whether
+the residual noise is z-scored before estimating the nuisance
+regressors from residual.
+This only takes effect if auto_nuisance is True.</li>
+<li><strong>nureg_method</strong> (<em>string</em><em>, </em><em>naming a method from sklearn.decomposition.</em>) – ‘PCA’, ‘ICA’, ‘FA’ or ‘SPCA’ are currently supported. Default: ‘PCA’
+The method to estimate the shared component in noise across voxels.
+This only takes effect if auto_nuisance is True.</li>
+<li><strong>baseline_single</strong> (<em>boolean</em><em>, </em><em>default: False</em>) – A time course of constant 1 will be included to the nuisance
+regressor regardless of whether the user requests.
+If baseline_single is set to False, one such regressor is included
+for each fMRI run, but a single component in beta0_ will be
+computed as the average of the weight maps corresponding to
+these regressors. This might cause underestimation of noise variance.
+If baseline_single is True, only one regressor of constant 1 will be
+used for the whole dataset. This might be desirable if you
+believe the average image intensity might not scale with the
+same proportion for different voxels across scan. In other words,
+it is possible that some part of the brain is more vulnerable to
+change in baseline intensity due to facts such as
+field inhomogeneity. Setting baseline_single to True will force the
+nuisance regressors automatically estimated from residuals to
+capture this. However, when each task condition only occurs in one
+run and when the design matrix in each run sums together close to
+a flat line, this option can cause the estimated similarity to be
+extremely high between conditions occuring in the same run.</li>
+<li><strong>GP_space</strong> (<em>boolean. Default: False</em>) – Whether to impose a Gaussion Process (GP) prior on the log(pseudo-SNR).
+If true, the GP has a kernel defined over spatial coordinate
+of each voxel. The idea behind this option is that
+adjacent voxels should have similar SNRs.
+This is relatively slow for big ROI. We find that when SNR
+is generally low, smoothness can be overestimated.
+But such regularization may reduce variance in the estimated
+SNR map and similarity matrix.</li>
+<li><strong>GP_inten</strong> (<em>boolean. Defualt: False</em>) – Whether to include a kernel defined over the intensity of image.
+GP_space should be True as well if you want to use this,
+because the smoothness should be primarily in space.
+Smoothness in intensity is just complementary. The idea
+behind this option is that voxels should have similar
+SNRs when they are both adjacent (imposed by GP_space)
+and are of the same tissue type (when their image intensities
+are close). If you accept the second assumption, then
+you can set GP_inten as True and provide an array to the <code class="xref py py-obj docutils literal"><span class="pre">inten</span></code>
+variable, expressing the intensities (brightness) for each voxel.</li>
+<li><strong>space_smooth_range</strong> (<em>float. Default: None</em>) – The distance (in unit the same as what
+you would use when supplying the spatial coordiates of
+each voxel, typically millimeter) which you believe is
+the maximum range of the length scale parameter of
+Gaussian Process defined over voxel location. This is
+used to impose a half-Cauchy prior on the length scale.
+If not provided, the program will set it to half of the
+maximum distance between all voxels.</li>
+<li><strong>inten_smooth_range</strong> (<em>float. Default: None</em>) – The difference in image intensity which
+you believe is the maximum range of plausible length
+scale for the Gaussian Process defined over image
+intensity. Length scales larger than this are allowed,
+but will be penalized. If not supplied, this parameter
+will be set to half of the maximal intensity difference.</li>
+<li><strong>tau_range</strong> (<em>float. Default: 5.0</em>) – The reasonable range of the standard deviation
+of log(SNR). This range should not be too
+large. 5 is a loose range.
+When a Gaussian Process is imposed on the log(SNR),
+this parameter is used in a half-Cauchy prior
+on the standard deviation, or an inverse-Gamma prior
+on the variance of the GP.</li>
+<li><strong>tau2_prior</strong> (<em>Callable</em><em>[</em><em>[</em><em>float</em><em>, </em><em>int</em><em>, </em><em>float</em><em>]</em><em>]</em><em>, </em><em>[</em><em>float</em><em>, </em><em>float</em><em>]</em><em>]</em><em>,</em>) – <p>Default: prior_GP_var_inv_gamma.
+Can be prior_GP_var_inv_gamma or prior_GP_var_half_cauchy,
+or a custom function.
+The function which impose a prior for tau^2, the variance of the
+GP prior on log(SNR), and returns the MAP estimate of tau^2.
+It can be either prior_GP_var_inv_gamma for inverse-Gamma
+or prior_GP_var_half_cauchy for half-Cauchy.
+half-Cauchy prior is in fact imposed on tau.
+But tau_range describes the range of tau in the prior in both cases.
+Both functions are part of brsa module.
+See also <a class="reference internal" href="#brainiak.reprsimil.brsa.prior_GP_var_inv_gamma" title="brainiak.reprsimil.brsa.prior_GP_var_inv_gamma"><code class="xref py py-obj docutils literal"><span class="pre">prior_GP_var_inv_gamma</span></code></a> and
+<a class="reference internal" href="#brainiak.reprsimil.brsa.prior_GP_var_half_cauchy" title="brainiak.reprsimil.brsa.prior_GP_var_half_cauchy"><code class="xref py py-obj docutils literal"><span class="pre">prior_GP_var_half_cauchy</span></code></a>
+To use the default inverse-Gamma prior, you can ignore this argument:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">brainiak.reprsimil.brsa</span> <span class="k">import</span> <span class="n">BRSA</span>
+<span class="n">brsa</span> <span class="o">=</span> <span class="n">BRSA</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>If you want to try the alternative half-Cauchy prior,
+then you need to import it in addition to BRSA:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">brainiak.reprsimil.brsa</span> <span class="k">import</span> <span class="n">BRSA</span><span class="p">,</span> <span class="n">prior_GP_var_half_cauchy</span>
+<span class="n">brsa</span> <span class="o">=</span> <span class="n">BRSA</span><span class="p">(</span><span class="n">tau2_prior</span><span class="o">=</span><span class="n">prior_GP_var_half_cauchy</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+<li><strong>eta</strong> (<em>float. Default: 0.0001</em>) – A small number added to the diagonal element of the
+covariance matrix in the Gaussian Process prior. This is
+to ensure that the matrix is invertible.</li>
+<li><strong>init_iter</strong> (<em>int. Default: 20</em>) – How many initial iterations to fit the model
+without introducing the GP prior before fitting with it,
+if GP_space or GP_inten is requested. This initial
+fitting is to give the parameters a good starting point.</li>
+<li><strong>optimizer</strong> (<em>str</em><em> or </em><em>callable. Default: 'BFGS'</em>) – The optimizer to use for minimizing cost function which
+scipy.optimize.minimize can accept.
+We use ‘L-BFGS-B’ as a default. Users can try other strings
+corresponding to optimizer provided by scipy.optimize.minimize,
+or a custom optimizer, such as ‘L-BFGS-B’ or ‘CG’.
+Note that BRSA fits a lot of parameters. So a chosen optimizer
+should accept gradient (Jacobian) of the cost function. Otherwise
+the fitting is likely to be unbarely slow. We do not calculate
+Hessian of the objective function. So an optimizer which requires
+Hessian cannot be used.</li>
+<li><strong>random_state</strong> (<em>RandomState</em><em> or </em><em>an int seed. Default: None</em>) – A random number generator instance to define the state of
+the random permutations generator whenever the module
+needs to generate random number (e.g., initial parameter
+of the Cholesky factor).</li>
+<li><strong>anneal_speed</strong> (<em>float. Default: 20</em>) – Annealing is introduced in fitting of the Cholesky
+decomposition of the shared covariance matrix. The amount
+of perturbation decays exponentially. This parameter sets
+the ratio of the maximum number of iteration to the
+time constant of the exponential.
+anneal_speed=10 means by n_iter/10 iterations,
+the amount of perturbation is reduced by 2.713 times.</li>
+<li><strong>minimize_options</strong> (<em>dictionary.</em>) – Default: {‘gtol’: 1e-4, ‘disp’: False, ‘maxiter’: 6}
+This is the dictionary passed as the options argument to
+scipy.optimize.minize which minimizes the cost function during
+fitting. Notice that the minimization is performed for many times,
+alternating between optimizing the covariance matrix U underlying
+the pattern similarity matrix, and SNR. At most n_iter times
+of this alternation is performed. So within each step of fitting,
+the step of iteration performed by scipy.optimize.minize does not
+have to be very large. In other words, scipy.optimize.minize does
+not need to converge within each step of the alternating fitting
+procedure.</li>
+<li><strong>tol</strong> (<em>float. Default: 1e-4.</em>) – Tolerance parameter passed to scipy.optimize.minimize. It is also
+used for determining convergence of the alternating fitting
+procedure.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="attribute">
+<dt id="brainiak.reprsimil.brsa.BRSA.U_">
+<code class="descname">U_</code><a class="headerlink" href="#brainiak.reprsimil.brsa.BRSA.U_" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>numpy array, shape=[condition,condition].</em> – The shared covariance matrix.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="brainiak.reprsimil.brsa.BRSA.L_">
+<code class="descname">L_</code><a class="headerlink" href="#brainiak.reprsimil.brsa.BRSA.L_" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>numpy array, shape=[condition,rank].</em> – The Cholesky factor of the shared covariance matrix
+(lower-triangular matrix).</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="brainiak.reprsimil.brsa.BRSA.C_">
+<code class="descname">C_</code><a class="headerlink" href="#brainiak.reprsimil.brsa.BRSA.C_" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>numpy array, shape=[condition,condition].</em> – The correlation matrix derived from the shared covariance matrix.
+This is the estimated similarity matrix between neural patterns
+to your task conditions. Notice that it is recommended that
+you also check U_, which is the covariance matrix underlying
+this correlation matrix. In cases there is almost no response
+to your task conditions, the diagonal values of U_ would become
+very small and C_ might contain many correlation coefficients
+close to 1 or -1. This might not reflect true strong correlation
+or strong negative correlation, but a result of lack of
+task-related neural activity, design matrix that does not match
+true neural response, or not enough data.
+It is also recommended to check nSNR_ after mapping it back to
+the brain. A “reasonable” map should at least have higher values
+in gray matter in than white matter.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="brainiak.reprsimil.brsa.BRSA.nSNR_">
+<code class="descname">nSNR_</code><a class="headerlink" href="#brainiak.reprsimil.brsa.BRSA.nSNR_" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>numpy array, shape=[voxels,].</em> – The normalized pseuso-SNR of all voxels.
+They are normalized such that the geometric mean is 1.
+Note that this attribute can not be interpreted as true SNR,
+but the relative ratios between voxel indicates the contribution
+of each voxel to the representational similarity structure.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="brainiak.reprsimil.brsa.BRSA.sigma_">
+<code class="descname">sigma_</code><a class="headerlink" href="#brainiak.reprsimil.brsa.BRSA.sigma_" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>numpy array, shape=[voxels,].</em> – The estimated standard deviation of the noise in each voxel
+Assuming AR(1) model, this means the standard deviation
+of the innovation noise.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="brainiak.reprsimil.brsa.BRSA.rho_">
+<code class="descname">rho_</code><a class="headerlink" href="#brainiak.reprsimil.brsa.BRSA.rho_" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>numpy array, shape=[voxels,].</em> – The estimated autoregressive coefficient of each voxel</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="brainiak.reprsimil.brsa.BRSA.bGP_">
+<code class="descname">bGP_</code><a class="headerlink" href="#brainiak.reprsimil.brsa.BRSA.bGP_" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>float, only if GP_space or GP_inten is True.</em> – The standard deviation of the GP prior</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="brainiak.reprsimil.brsa.BRSA.lGPspace_">
+<code class="descname">lGPspace_</code><a class="headerlink" href="#brainiak.reprsimil.brsa.BRSA.lGPspace_" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>float, only if GP_space or GP_inten is True</em> – The length scale of Gaussian Process prior of log(SNR)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="brainiak.reprsimil.brsa.BRSA.lGPinten_">
+<code class="descname">lGPinten_</code><a class="headerlink" href="#brainiak.reprsimil.brsa.BRSA.lGPinten_" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>float, only if GP_inten is True</em> – The length scale in fMRI intensity of the GP prior of log(SNR)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="brainiak.reprsimil.brsa.BRSA.beta_">
+<code class="descname">beta_</code><a class="headerlink" href="#brainiak.reprsimil.brsa.BRSA.beta_" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>array, shape=[conditions, voxels]</em> – The maximum a posterior estimation of the response amplitudes
+of each voxel to each task condition.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="brainiak.reprsimil.brsa.BRSA.beta0_">
+<code class="descname">beta0_</code><a class="headerlink" href="#brainiak.reprsimil.brsa.BRSA.beta0_" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>numpy array, shape=[n_nureg + n_base, voxels]</em> – The loading weights of each voxel for the shared time courses
+not captured by the design matrix. This helps capture the
+structure of spatial covariance of task-unrelated signal.
+n_base is the number of columns of the user-supplied nuisance
+regressors plus one for DC component</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="brainiak.reprsimil.brsa.BRSA.X0_">
+<code class="descname">X0_</code><a class="headerlink" href="#brainiak.reprsimil.brsa.BRSA.X0_" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>numpy array, shape=[time_points, n_nureg + n_base]</em> – The estimated time course that is shared across voxels but
+unrelated to the events of interest (design matrix).</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="brainiak.reprsimil.brsa.BRSA.beta0_null_">
+<code class="descname">beta0_null_</code><a class="headerlink" href="#brainiak.reprsimil.brsa.BRSA.beta0_null_" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>numpy array, shape=[n_nureg + n_base, voxels]</em> – The equivalent of beta0_ in a null model which does not
+include the design matrix and response pattern beta.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="brainiak.reprsimil.brsa.BRSA.X0_null_">
+<code class="descname">X0_null_</code><a class="headerlink" href="#brainiak.reprsimil.brsa.BRSA.X0_null_" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>numpy array, shape=[time_points, n_nureg + n_base]</em> – The equivalent of X0_ in a null model which does not
+include the design matrix and response pattern beta</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="brainiak.reprsimil.brsa.BRSA.n_nureg_">
+<code class="descname">n_nureg_</code><a class="headerlink" href="#brainiak.reprsimil.brsa.BRSA.n_nureg_" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>int</em> – Number of nuisance regressor in addition to such
+regressors provided by the user (if any), if auto_nuisance
+is set to True. If n_nureg is set to ‘opt’,
+this will be estimated from data. ‘opt’ will use M Gavish
+and D Donoho’s approximate estimation of optimal hard
+threshold for singular values.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="brainiak.reprsimil.brsa.BRSA.random_state_">
+<code class="descname">random_state_</code><a class="headerlink" href="#brainiak.reprsimil.brsa.BRSA.random_state_" title="Permalink to this definition">¶</a></dt>
+<dd><p><code class="xref py py-obj docutils literal"><span class="pre">RandomState</span></code> – Random number generator initialized using random_state.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="brainiak.reprsimil.brsa.BRSA.fit">
+<code class="descname">fit</code><span class="sig-paren">(</span><em>X</em>, <em>design</em>, <em>nuisance=None</em>, <em>scan_onsets=None</em>, <em>coords=None</em>, <em>inten=None</em><span class="sig-paren">)</span><a class="headerlink" href="#brainiak.reprsimil.brsa.BRSA.fit" title="Permalink to this definition">¶</a></dt>
+<dd><p>Compute the Bayesian RSA</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>X</strong> (<em>numpy array</em><em>, </em><em>shape=</em><em>[</em><em>time_points</em><em>, </em><em>voxels</em><em>]</em>) – If you have multiple scans of the same participants that you
+want to analyze together, you should concatenate them along
+the time dimension after proper preprocessing (e.g. spatial
+alignment), and specify the onsets of each scan in scan_onsets.</li>
+<li><strong>design</strong> (<em>numpy array</em><em>, </em><em>shape=</em><em>[</em><em>time_points</em><em>, </em><em>conditions</em><em>]</em>) – This is the design matrix. It should only include the hypothetic
+response for task conditions. You should not include
+regressors for a DC component or motion parameters, unless you
+want to estimate their pattern similarity with response patterns
+to your task conditions. If you want to model head motion,
+you should include them in nuisance regressors.
+If you have multiple run, the design matrix
+of all runs should be concatenated along the time dimension,
+with every column for one condition across runs.
+For example, if you have 3 runs of experiment of one participant,
+with each run lasting 200 TR. And you have 4 conditions,
+then design should be a 600 x 4 numpy array.</li>
+<li><strong>nuisance</strong> (<em>optional</em><em>, </em><em>numpy array</em><em>, </em><em>shape=</em><em>[</em><em>time_points</em><em>, </em><em>nuisance_factors</em><em>]</em>) – The responses to these regressors will be marginalized out from
+each voxel, which means they are considered, but won’t be assumed
+to share the same pseudo-SNR map with the design matrix.
+Therefore, the pseudo-SNR map will only reflect the
+relative contribution of design matrix to each voxel.
+You can provide time courses such as those for head motion
+to this parameter.
+Note that if auto_nuisance is set to True, the first
+n_nureg principal components of residual (excluding the response
+to the design matrix and the user-provided nuisance regressors
+and a constant baseline)
+will be included as additional nuisance regressor after the
+first round of fitting.
+If auto_nuisance is set to False, the nuisance regressors supplied
+by the users together with DC components will be used as
+nuisance time series.
+Please do not include time course of constant baseline in nuisance.</li>
+<li><strong>scan_onsets</strong> (<em>optional</em><em>, </em><em>numpy array</em><em>, </em><em>shape=</em><em>[</em><em>runs</em><em>,</em><em>]</em>) – This specifies the indices of X which correspond to the onset
+of each scanning run. For example, if you have two experimental
+runs of the same subject, each with 100 TRs, then scan_onsets
+should be [0,100].
+If you do not provide the argument, the program will
+assume all data are from the same run.
+The effect of them is to make the inverse matrix
+of the temporal covariance matrix of noise block-diagonal.</li>
+<li><strong>coords</strong> (<em>optional</em><em>, </em><em>numpy array</em><em>, </em><em>shape=</em><em>[</em><em>voxels</em><em>,</em><em>3</em><em>]</em>) – This is the coordinate of each voxel,
+used for implementing Gaussian Process prior.</li>
+<li><strong>inten</strong> (<em>optional</em><em>, </em><em>numpy array</em><em>, </em><em>shape=</em><em>[</em><em>voxel</em><em>,</em><em>]</em>) – This is the average fMRI intensity in each voxel.
+It should be calculated from your data without any preprocessing
+such as z-scoring. Because it should reflect
+whether a voxel is bright (grey matter) or dark (white matter).
+A Gaussian Process kernel defined on both coordinate and intensity
+imposes a smoothness prior on adjcent voxels
+but with the same tissue type. The Gaussian Process
+is experimental and has shown good performance on
+some visual datasets.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="brainiak.reprsimil.brsa.BRSA.score">
+<code class="descname">score</code><span class="sig-paren">(</span><em>X</em>, <em>design</em>, <em>scan_onsets=None</em><span class="sig-paren">)</span><a class="headerlink" href="#brainiak.reprsimil.brsa.BRSA.score" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="docutils">
+<dt>Use the model and parameters estimated by fit function</dt>
+<dd><p class="first">from some data of a participant to evaluate the log
+likelihood of some new data of the same participant.
+Design matrix of the same set of experimental
+conditions in the testing data should be provided, with each
+column corresponding to the same condition as that column
+in the design matrix of the training data.
+Unknown nuisance time series will be marginalized, assuming
+they follow the same spatial pattern as in the training
+data. The hypothetical response captured by the design matrix
+will be subtracted from data before the marginalization
+when evaluating the log likelihood. For null model,
+nothing will be subtracted before marginalization.</p>
+<p>There is a difference between the form of likelihood function
+used in fit() and score(). In fit(), the response amplitude
+beta to design matrix X and the modulation beta0 by nuisance
+regressor X0 are both marginalized, with X provided and X0
+estimated from data. In score(), posterior estimation of
+beta and beta0 from the fitting step are assumed unchanged
+to testing data and X0 is marginalized.
+The logic underlying score() is to transfer
+as much as what we can learn from training data when
+calculating a likelihood score for testing data.</p>
+<p class="last">If you z-scored your data during fit step, you should
+z-score them for score function as well. If you did not
+z-score in fitting, you should not z-score here either.</p>
+</dd>
+</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>X</strong> (<em>numpy arrays</em><em>, </em><em>shape=</em><em>[</em><em>time_points</em><em>, </em><em>voxels</em><em>]</em>) – fMRI data of new data of the same subject. The voxels should
+match those used in the fit() function. If data are z-scored
+(recommended) when fitting the model, data should be z-scored
+as well when calling transform()</li>
+<li><strong>design</strong> (<em>numpy array</em><em>, </em><em>shape=</em><em>[</em><em>time_points</em><em>, </em><em>conditions</em><em>]</em>) – Design matrix expressing the hypothetical response of
+the task conditions in data X.</li>
+<li><strong>scan_onsets</strong> (<em>numpy array</em><em>, </em><em>shape=</em><em>[</em><em>number of runs</em><em>]</em><em> Default: None.</em>) – A list of indices corresponding to the onsets of
+scans in the data X. If not provided, data will be assumed
+to be acquired in a continuous scan.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"><ul class="simple">
+<li><strong>ll</strong> (<em>float,</em>) – The log likelihood of the new data based on the model and its
+parameters fit to the training data.</li>
+<li><strong>ll_null</strong> (<em>float,</em>) – The log likelihood of the new data based on a null model
+which assumes the same as the full model for everything
+except for that there is no response to any of the
+task conditions.</li>
+</ul>
+</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="brainiak.reprsimil.brsa.BRSA.transform">
+<code class="descname">transform</code><span class="sig-paren">(</span><em>X</em>, <em>y=None</em>, <em>scan_onsets=None</em><span class="sig-paren">)</span><a class="headerlink" href="#brainiak.reprsimil.brsa.BRSA.transform" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="docutils">
+<dt>Use the model to estimate the time course of response to</dt>
+<dd>each condition (ts), and the time course unrelated to task
+(ts0) which is spread across the brain.
+This is equivalent to “decoding” the design matrix and
+nuisance regressors from a new dataset different from the
+training dataset on which fit() was applied. An AR(1) smooth
+prior is imposed on the decoded ts and ts0 with the AR(1)
+parameters learnt from the corresponding time courses in the
+training data.
+Notice: if you set the rank to be lower than the number of
+experimental conditions (number of columns in the design
+matrix), the recovered task-related activity will have
+collinearity (the recovered time courses of some conditions
+can be linearly explained by the recovered time courses
+of other conditions).</dd>
+</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>X</strong> (<em>numpy arrays</em><em>, </em><em>shape=</em><em>[</em><em>time_points</em><em>, </em><em>voxels</em><em>]</em>) – fMRI data of new data of the same subject. The voxels should
+match those used in the fit() function. If data are z-scored
+(recommended) when fitting the model, data should be z-scored
+as well when calling transform()</li>
+<li><strong>y</strong> (<em>not used</em><em> (</em><em>as it is unsupervised learning</em><em>)</em>) – </li>
+<li><strong>scan_onsets</strong> (<em>numpy array</em><em>, </em><em>shape=</em><em>[</em><em>number of runs</em><em>]</em><em> Default: None.</em>) – A list of indices corresponding to the onsets of
+scans in the data X. If not provided, data will be assumed
+to be acquired in a continuous scan.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"><ul class="simple">
+<li><strong>ts</strong> (<em>numpy arrays, shape = [time_points, condition]</em>) – The estimated response to the task conditions which have the
+response amplitudes estimated during the fit step.</li>
+<li><strong>ts0</strong> (<em>numpy array, shape = [time_points, n_nureg]</em>) – The estimated time course spread across the brain, with the
+loading weights estimated during the fit step.</li>
+</ul>
+</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="brainiak.reprsimil.brsa.GBRSA">
+<em class="property">class </em><code class="descclassname">brainiak.reprsimil.brsa.</code><code class="descname">GBRSA</code><span class="sig-paren">(</span><em>n_iter=50</em>, <em>rank=None</em>, <em>auto_nuisance=True</em>, <em>n_nureg=None</em>, <em>nureg_zscore=True</em>, <em>nureg_method='PCA'</em>, <em>baseline_single=False</em>, <em>logS_range=1.0</em>, <em>SNR_prior='exp'</em>, <em>SNR_bins=21</em>, <em>rho_bins=20</em>, <em>tol=0.0001</em>, <em>optimizer='BFGS'</em>, <em>minimize_options={'gtol': 0.0001</em>, <em>'disp': False</em>, <em>'maxiter': 20}</em>, <em>random_state=None</em>, <em>anneal_speed=10</em><span class="sig-paren">)</span><a class="headerlink" href="#brainiak.reprsimil.brsa.GBRSA" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#brainiak.reprsimil.brsa.BRSA" title="brainiak.reprsimil.brsa.BRSA"><code class="xref py py-class docutils literal"><span class="pre">brainiak.reprsimil.brsa.BRSA</span></code></a></p>
+<p>Group Bayesian representational Similarity Analysis (GBRSA)</p>
+<p>Given the time series of neural imaging data in a region of interest
+(ROI) and the hypothetical neural response (design matrix) to
+each experimental condition of interest,
+calculate the shared covariance matrix of
+the voxels(recording unit)’ response to each condition,
+and the relative SNR of each voxels.
+The relative SNR could be considered as the degree of contribution
+of each voxel to this shared covariance matrix.
+A correlation matrix converted from the covariance matrix
+will be provided as a quantification of neural representational similarity.
+Both tools provide estimation of SNR and noise parameters at the end,
+and both tools provide empirical Bayesian estimates of activity patterns
+beta, together with weight map of nuisance signals beta0.</p>
+<p>The differences of this tool from BRSA are:
+(1) It allows fitting a shared covariance matrix (which can be converted
+to similarity matrix) across multiple subjects.
+This is analogous to SRM under funcalign submodule. Because of using
+multiple subjects, the result is less noisy.
+(2) In the fitting process, the SNR and noise parameters are marginalized
+for each voxel. Therefore, this tool should be faster than BRSA
+when analyzing an ROI of hundreds to thousands voxels. It does not
+provide a spatial smoothness prior on SNR though.
+(3) The voxel-wise pseudo-SNR and noise parameters estimated are
+posterior mean estimates, while those estimated by BRSA are
+maximum-a-posterior estimates.
+If your goal is to perform searchlight RSA with relatively fewer voxels
+on single subject, BRSA should be faster. However, GBRSA can in principle
+be used together with searchlight in a template space such as MNI.</p>
+<div class="math">
+\[ \begin{align}\begin{aligned}Y = X \cdot \beta + X_0 \cdot \beta_0 + \epsilon\\\beta_i \sim N(0,(s_{i} \sigma_{i})^2 U)\end{aligned}\end{align} \]</div>
+<p>See also <a class="reference internal" href="#brainiak.reprsimil.brsa.BRSA" title="brainiak.reprsimil.brsa.BRSA"><code class="xref py py-obj docutils literal"><span class="pre">BRSA</span></code></a>.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>n_iter</strong> (<em>int. Default: 50</em>) – Number of maximum iterations to run the algorithm.</li>
+<li><strong>rank</strong> (<em>int. Default: None</em>) – The rank of the covariance matrix.
+If not provided, the covariance matrix will be assumed
+to be full rank. When you have many conditions
+(e.g., calculating the similarity matrix of responses to each event),
+you might want to start with specifying a lower rank and use metrics
+such as AIC or BIC to decide the optimal rank. The log likelihood
+for the fitted data can be retrieved through private attributes
+_LL_train_. Note that this log likelihood score is only used
+here for selecting hyperparameters such as rank. For any formal
+model comparison, we recommend using score() function on left-out
+data.</li>
+<li><strong>auto_nuisance</strong> (<em>boolean. Default: True</em>) – In order to model spatial correlation between voxels that cannot
+be accounted for by common response captured in the design matrix,
+we assume that a set of time courses not related to the task
+conditions are shared across voxels with unknown amplitudes.
+One approach is for users to provide time series which they consider
+as nuisance but exist in the noise (such as head motion).
+The other way is to take the first n_nureg principal components
+in the residual after subtracting the response to the design matrix
+from the data, and use these components as the nuisance regressor.
+This flag is for the second approach. If turned on,
+PCA or factor analysis will be applied to the residuals
+to obtain new nuisance regressors in each round of fitting.
+These two approaches can be combined. If the users provide nuisance
+regressors and set this flag as True, then the first n_nureg
+principal components of the residuals after subtracting
+both the responses to design matrix and the user-supplied nuisance
+regressors will be used in addition to the nuisance regressors
+provided by the users.
+Note that nuisance regressor is not required from user. If it is
+not provided, DC components for each run will be included as nuisance
+regressor regardless of the auto_nuisance parameter.</li>
+<li><strong>n_nureg</strong> (<em>Optional</em><em>[</em><em>int</em><em>]</em><em> Default: None</em>) – Number of nuisance regressors to use in order to model signals
+shared across voxels not captured by the design matrix.
+This number is in addition to any nuisance regressor that the user
+has already provided.
+If set to None, the number of nuisance regressors will be
+automatically determined based on M Gavish
+and D Donoho’s approximate estimation of optimal hard
+threshold for singular values. (Gavish &amp; Donoho,
+IEEE Transactions on Information Theory 60.8 (2014): 5040-5053.)
+This only takes effect if auto_nuisance is True.</li>
+<li><strong>nureg_zscore</strong> (<em>boolean</em><em>, </em><em>default: True</em>) – A flag to tell the algorithm whether data is z-scored before
+estimating the number of nuisance regressor components necessary to
+account for spatial noise correlation. It also determinie whether
+the residual noise is z-scored before estimating the nuisance
+regressors from residual.
+This only takes effect if auto_nuisance is True.</li>
+<li><strong>nureg_method</strong> (<em>string</em><em>, </em><em>naming a method from sklearn.decomposition.</em>) – ‘PCA’, ‘ICA’, ‘FA’ or ‘SPCA’ are currently supported. Default: ‘PCA’
+The method to estimate the shared component in noise across voxels.
+This only takes effect if auto_nuisance is True.</li>
+<li><strong>baseline_single</strong> (<em>boolean. Default: False</em>) – A time course of constant 1 will be included to the nuisance
+regressor for each participant. If baseline_single is set to False,
+one such regressor is included for each fMRI run, but at the end of
+fitting, a single component in beta0_ will be computed as the average
+of the weight maps corresponding to these regressors. This might
+cause underestimation of noise variance.
+If baseline_single is True, only one regressor of constant 1 will be
+used for the whole dataset. This might be desirable if you
+believe the average image intensity might not scale with the
+same proportion for different voxels across scan. In other words,
+it is possible that some part of the brain is more vulnerable to
+change in baseline intensity due to facts such as
+field inhomogeneity. Setting baseline_single to True will force the
+nuisance regressors automatically estimated from residuals to
+capture this. However, when each task condition only occurs in one
+run and when the design matrix in each run sums together close to
+a flat line, this option can cause the estimated similarity to be
+extremely high between conditions occuring in the same run.</li>
+<li><strong>SNR_prior</strong> (<em>string. Default: 'exp'</em>) – The type of prior for pseudo-SNR.
+If set to ‘exp’, truncated exponential distribution with scale
+parameter of 1 is imposed on pseudo-SNR.
+If set to ‘lognorm’, a truncated log normal prior is imposed.
+In this case, the standard deviation of log(SNR) is set
+by the parameter logS_range.
+If set to ‘unif’, a uniform prior in [0,1] is imposed.
+In all these cases, SNR is numerically
+marginalized on a grid of parameters. So the parameter SNR_bins
+determines how accurate the numerical integration is. The more
+number of bins are used, the more accurate the numerical
+integration becomes.
+In all the cases, the grids used for pseudo-SNR do not really
+set an upper bound for SNR, because the real SNR is determined
+by both pseudo-SNR and U, the shared covariance structure.</li>
+<li><strong>logS_range</strong> (<em>float. Default: 1.0</em>) – The reasonable range of the spread of SNR in log scale.
+This parameter only takes effect if SNR_prior is set to ‘lognorm’.
+It is effectively the <code class="xref py py-obj docutils literal"><span class="pre">s</span></code> parameter of <code class="xref py py-obj docutils literal"><span class="pre">scipy.stats.lognorm</span></code>,
+or the standard deviation of the distribution in log scale.
+logS_range specifies how variable you believe the SNRs
+to vary across voxels in log scale.
+This range should not be set too large, otherwise the fitting
+may encounter numerical issue.
+If it is set too small, the estimated SNR will turn to be too
+close to each other and the estimated similarity matrix might
+overfit to voxels of low SNR.
+If you increase logS_range, it is recommended to increase
+SNR_bins accordingly, otherwise the pseudo-SNR values evaluated might
+be too sparse, causing the posterior pseudo-SNR estimations
+to be clustered around the bins.</li>
+<li><strong>SNR_bins</strong> (<em>integer. Default: 21</em>) – The number of bins used to numerically marginalize the pseudo-SNR
+parameter. In general, you should try to choose a large number
+to the degree that decreasing SNR_bins does not change the result
+of fitting result. However, very large number of bins also causes
+slower computation and larger memory consumption.
+For SNR_prior=’lognorm’, the default value 21 is based on
+the default value of logS_range=1.0 and bin width of 0.3 on log scale.
+But it is also a reasonable choice for the other two options
+for SNR_prior.</li>
+<li><strong>rho_bins</strong> (<em>integer. Default: 20</em>) – The number of bins to divide the region of (-1, 1) for rho.
+This only takes effect for fitting the marginalized version.
+If set to 20, discrete numbers of {-0.95, -0.85, …, 0.95} will
+be used to numerically integrate rho from -1 to 1.</li>
+<li><strong>optimizer</strong> (<em>str</em><em> or </em><em>callable. Default: 'BFGS'</em>) – The optimizer to use for minimizing cost function which
+scipy.optimize.minimize can accept.
+We use ‘L-BFGS-B’ as a default. Users can try other strings
+corresponding to optimizer provided by scipy.optimize.minimize,
+or a custom optimizer, such as ‘L-BFGS-B’ or ‘CG’.
+Note that BRSA fits a lot of parameters. So a chosen optimizer
+should accept gradient (Jacobian) of the cost function. Otherwise
+the fitting is likely to be unbarely slow. We do not calculate
+Hessian of the objective function. So an optimizer which requires
+Hessian cannot be used.</li>
+<li><strong>minimize_options</strong> (<em>dictionary.</em>) – Default: {‘gtol’: 1e-4, ‘disp’: False,
+‘maxiter’: 20}
+This is the dictionary passed as the options argument to
+scipy.optimize.minize which minimizes the cost function during
+fitting. Notice that the minimization is performed for up to
+n_iter times, with the nuisance regressor re-estimated each time.
+So within each of the n_iter steps of fitting,
+scipy.optimize.minize does not need to fully converge. The key
+‘maxiter’ in this dictionary determines the maximum number of
+iteration done by scipy.optimize.minimize within each of the n_iter
+steps of fitting.</li>
+<li><strong>tol</strong> (<em>float. Default: 1e-4.</em>) – Tolerance parameter passed to scipy.optimize.minimize. It is also
+used for determining convergence of the alternating fitting
+procedure.</li>
+<li><strong>random_state</strong> (<em>RandomState</em><em> or </em><em>an int seed. Default: None</em>) – A random number generator instance to define the state of
+the random permutations generator whenever the module
+needs to generate random number (e.g., initial parameter
+of the Cholesky factor).</li>
+<li><strong>anneal_speed</strong> (<em>float. Default: 10</em>) – Annealing is introduced in fitting of the Cholesky
+decomposition of the shared covariance matrix. The amount
+of perturbation decays exponentially. This parameter sets
+the ratio of the maximum number of iteration to the
+time constant of the exponential.
+anneal_speed=10 means by n_iter/10 iterations,
+the amount of perturbation is reduced by 2.713 times.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="attribute">
+<dt id="brainiak.reprsimil.brsa.GBRSA.U_">
+<code class="descname">U_</code><a class="headerlink" href="#brainiak.reprsimil.brsa.GBRSA.U_" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>numpy array, shape=[condition,condition].</em> – The shared covariance matrix</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="brainiak.reprsimil.brsa.GBRSA.L_">
+<code class="descname">L_</code><a class="headerlink" href="#brainiak.reprsimil.brsa.GBRSA.L_" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>numpy array, shape=[condition,condition].</em> – The Cholesky factor of the shared covariance matrix
+(lower-triangular matrix).</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="brainiak.reprsimil.brsa.GBRSA.C_">
+<code class="descname">C_</code><a class="headerlink" href="#brainiak.reprsimil.brsa.GBRSA.C_" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>numpy array, shape=[condition,condition].</em> – The correlation matrix derived from the shared covariance matrix.
+This is the estimated similarity matrix between neural patterns
+to your task conditions. Notice that it is recommended that
+you also check U_, which is the covariance matrix underlying
+this correlation matrix. In cases there is almost no response
+to your task conditions, the diagonal values of U_ would become
+very small and C_ might contain many correlation coefficients
+close to 1 or -1. This might not reflect true strong correlation
+or strong negative correlation, but a result of lack of
+task-related neural activity, design matrix that does not match
+true neural response, or not enough data.
+It is also recommended to check nSNR_ after mapping it back to
+the brain. A “reasonable” map should at least have higher values
+in gray matter in than white matter.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="brainiak.reprsimil.brsa.GBRSA.nSNR_">
+<code class="descname">nSNR_</code><a class="headerlink" href="#brainiak.reprsimil.brsa.GBRSA.nSNR_" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>list of numpy arrays, shape=[voxels,] for each subject in the list.</em> – The pseuso-SNR of all voxels. If SNR_prior=’lognormal’,
+the geometric mean of nSNR_ would be approximately 1.
+If SNR_prior=’unif’, all nSNR_ would be in the range of (0,1).
+If SNR_prior=’exp’ (default), the range of values would vary
+depending on the data and SNR_bins, but many should have low
+values with few voxels with high values.
+Note that this attribute can not be interpreted as true SNR,
+but the relative ratios between voxels indicate the contribution
+of each voxel to the representational similarity structure.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="brainiak.reprsimil.brsa.GBRSA.sigma_">
+<code class="descname">sigma_</code><a class="headerlink" href="#brainiak.reprsimil.brsa.GBRSA.sigma_" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>list of numpy arrays, shape=[voxels,] for each subject.</em> – The estimated standard deviation of the noise in each voxel
+Assuming AR(1) model, this means the standard deviation
+of the innovation noise.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="brainiak.reprsimil.brsa.GBRSA.rho_">
+<code class="descname">rho_</code><a class="headerlink" href="#brainiak.reprsimil.brsa.GBRSA.rho_" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>list of numpy arrays, shape=[voxels,] for each subject.</em> – The estimated autoregressive coefficient of each voxel</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="brainiak.reprsimil.brsa.GBRSA.beta_">
+<code class="descname">beta_</code><a class="headerlink" href="#brainiak.reprsimil.brsa.GBRSA.beta_" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>list of numpy arrays, shape=[conditions, voxels] for each subject.</em> – The posterior mean estimation of the response amplitudes
+of each voxel to each task condition.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="brainiak.reprsimil.brsa.GBRSA.beta0_">
+<code class="descname">beta0_</code><a class="headerlink" href="#brainiak.reprsimil.brsa.GBRSA.beta0_" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>list of numpy arrays, shape=[n_nureg + n_base, voxels]</em> – for each subject.
+The loading weights of each voxel for the shared time courses
+not captured by the design matrix.
+n_base is the number of columns of the user-supplied nuisance
+regressors plus one for DC component.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="brainiak.reprsimil.brsa.GBRSA.X0_">
+<code class="descname">X0_</code><a class="headerlink" href="#brainiak.reprsimil.brsa.GBRSA.X0_" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>list of numpy arrays, shape=[time_points, n_nureg + n_base]</em> – for each subject.
+The estimated time course that is shared across voxels but
+unrelated to the events of interest (design matrix).</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="brainiak.reprsimil.brsa.GBRSA.beta0_null_">
+<code class="descname">beta0_null_</code><a class="headerlink" href="#brainiak.reprsimil.brsa.GBRSA.beta0_null_" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>list of numpy arrays, shape=[n_nureg + n_base, voxels]</em> – for each subject.
+The equivalent of beta0_ in a null model which does not
+include the design matrix and response pattern beta</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="brainiak.reprsimil.brsa.GBRSA.X0_null_">
+<code class="descname">X0_null_</code><a class="headerlink" href="#brainiak.reprsimil.brsa.GBRSA.X0_null_" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>list of numpy arrays, shape=[time_points, n_nureg + n_base]</em> – for each subject.
+The equivalent of X0_ in a null model which does not
+include the design matrix and response pattern beta</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="brainiak.reprsimil.brsa.GBRSA.n_nureg_">
+<code class="descname">n_nureg_</code><a class="headerlink" href="#brainiak.reprsimil.brsa.GBRSA.n_nureg_" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>1-d numpy array</em> – Number of nuisance regressor used to model the spatial noise
+correlation of each participant.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="brainiak.reprsimil.brsa.GBRSA.random_state_">
+<code class="descname">random_state_</code><a class="headerlink" href="#brainiak.reprsimil.brsa.GBRSA.random_state_" title="Permalink to this definition">¶</a></dt>
+<dd><p><code class="xref py py-obj docutils literal"><span class="pre">RandomState</span></code> – Random number generator initialized using random_state.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="brainiak.reprsimil.brsa.GBRSA.fit">
+<code class="descname">fit</code><span class="sig-paren">(</span><em>X</em>, <em>design</em>, <em>nuisance=None</em>, <em>scan_onsets=None</em><span class="sig-paren">)</span><a class="headerlink" href="#brainiak.reprsimil.brsa.GBRSA.fit" title="Permalink to this definition">¶</a></dt>
+<dd><p>Fit the model to data of all participants jointly.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>X</strong> (<em>list of numpy arrays</em><em>, </em><em>shape=</em><em>[</em><em>time_points</em><em>, </em><em>voxels</em><em>] </em><em>for each entry.</em>) – Data to be fitted. Each participant corresponds to one item in
+the list. If you have multiple scans of the same participants
+that you want to analyze together, you should concatenate them
+along the time dimension after proper preprocessing (e.g. spatial
+alignment), and specify the onsets of each scan in scan_onsets.</li>
+<li><strong>design</strong> (<em>list of numpy arrays</em><em>, </em><em>shape=</em><em>[</em><em>time_points</em><em>, </em><em>conditions</em><em>] </em><em>for each.</em>) – This is the design matrix of each participant.
+It should only include the hypothetic response for task conditions.
+You should not include regressors for a DC component or
+motion parameters, unless with a strong reason.
+If you want to model head motion, you should include them
+in nuisance regressors.
+If you have multiple run, the design matrix
+of all runs should be concatenated along the time dimension for
+each participant, with every column for one condition across runs.
+If the design matrix is the same for all subjects,
+either provide a list as required, or provide single numpy array.</li>
+<li><strong>nuisance</strong> (<em>optional</em><em>, </em><em>list of numpy arrays</em><em>,</em>) – shape=[time_points, nuisance_factors] for each subject in the list.
+Nuisance regressors of each participant.
+The responses to these regressors will be marginalized out from
+each voxel, which means they are considered, but won’t be assumed
+to share the same pseudo-SNR map with the design matrix.
+Therefore, the pseudo-SNR map will only reflect the
+relative contribution of design matrix to each voxel.
+You can provide time courses such as those for head motion
+to this parameter.
+Note that if auto_nuisance is set to True, the first
+n_nureg principal components of residual (excluding the response
+to the design matrix and the user-provided nuisance regressors)
+will be included as additional nuisance regressor after the
+first round of fitting.
+If auto_nuisance is set to False, the nuisance regressors supplied
+by the users together with DC components will be used as
+nuisance time series.</li>
+<li><strong>scan_onsets</strong> (<em>optional</em><em>, </em><em>list numpy arrays</em><em>, </em><em>shape=</em><em>[</em><em>runs</em><em>,</em><em>] </em><em>for each.</em>) – Each item in the list specifies the indices of X which correspond
+to the onset of each scanning run for one participant.
+For example, if you have two experimental runs of
+the first participant, each with 100 TRs, and one run of the
+second participant, with 150 TR, then scan_onsets should be
+[ndarry([0, 100]), ndarry([150])].
+The effect of this argument is to make the inverse matrix
+of the temporal covariance matrix of noise block-diagonal.
+If you do not provide the argument, the program will
+assume all data are from the same run for each participant.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="brainiak.reprsimil.brsa.GBRSA.score">
+<code class="descname">score</code><span class="sig-paren">(</span><em>X</em>, <em>design</em>, <em>scan_onsets=None</em><span class="sig-paren">)</span><a class="headerlink" href="#brainiak.reprsimil.brsa.GBRSA.score" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="docutils">
+<dt>After fit() is applied to the data of a group of participants,</dt>
+<dd><p class="first">use the parameters estimated by fit() function to evaluate
+from some data of a set of participants to evaluate
+the log likelihood of some new data of the same participants
+given these estimated parameters.
+Design matrices of the same set of experimental
+conditions in the testing data should be provided, with each
+column corresponding to the same condition as that column
+in the design matrix of the training data.
+Unknown nuisance time series will be marginalized, assuming
+they follow the same spatial pattern as in the training
+data. The hypothetical response captured by the design matrix
+will be subtracted from data before the marginalization
+when evaluating the log likelihood. For null model,
+nothing will be subtracted before marginalization.</p>
+<p>There is a difference between the form of likelihood function
+used in fit() and score(). In fit(), the response amplitude
+beta to design matrix X and the modulation beta0 by nuisance
+regressor X0 are both marginalized, with X provided and X0
+estimated from data. In score(), posterior estimation of
+beta and beta0 from the fitting step are assumed unchanged
+in testing data; X is assumed given by the user,
+and X0 is marginalized.
+The logic underlying score() is to transfer
+as much as what we can learn from training data when
+calculating a likelihood score for testing data. This is done
+at the cost of using point estimation for beta and beta0.</p>
+<p class="last">If you z-scored your data during fit step, you should
+z-score them for score function as well. If you did not
+z-score in fitting, you should not z-score here either.</p>
+</dd>
+</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>X</strong> (<em>List of 2-D arrays. For each item</em><em>, </em><em>shape=</em><em>[</em><em>time_points</em><em>, </em><em>voxels</em><em>]</em>) – fMRI data of new data of the same participants.
+The voxels of each participants should
+match those used in the fit() function. If data are z-scored
+(recommended) when fitting the model, data should be z-scored
+as well when calling transform()</li>
+<li><strong>design</strong> (<em>List of 2-D arrays. shape=</em><em>[</em><em>time_points</em><em>, </em><em>conditions</em><em>] </em><em>for each</em>) – Each corresponds to one participant.
+Design matrices expressing the hypothetical response of
+the task conditions in data X.</li>
+<li><strong>scan_onsets</strong> (<em>List of 2-D arrays</em><em>, </em><em>shape=</em><em>[</em><em>#fMRI runs</em><em>] </em><em>for each</em>) – Each array corresponds to one participant.
+Lists of indices corresponding to the onsets of
+scans in the data X.
+If not provided, data will be assumed
+to be acquired in a continuous scan.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"><ul class="simple">
+<li><strong>ll</strong> (<em>list, shape=[number of participants]</em>) – The log likelihoods of the new data based on the model and its
+parameters fit to the training data.
+If data of some participants are not provided, the corresponding
+entry will be None.</li>
+<li><strong>ll_null</strong> (<em>list, shape=[number of participants]</em>) – The log likelihood of the new data based on a null model
+which assumes the same as the full model for everything
+except for that there is no response to any of the
+task conditions.</li>
+</ul>
+</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="brainiak.reprsimil.brsa.GBRSA.transform">
+<code class="descname">transform</code><span class="sig-paren">(</span><em>X</em>, <em>y=None</em>, <em>scan_onsets=None</em><span class="sig-paren">)</span><a class="headerlink" href="#brainiak.reprsimil.brsa.GBRSA.transform" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="docutils">
+<dt>Use the model to estimate the time course of response to</dt>
+<dd>each condition (ts), and the time course unrelated to task
+(ts0) which is spread across the brain.
+This is equivalent to “decoding” the design matrix and
+nuisance regressors from a new dataset different from the
+training dataset on which fit() was applied. An AR(1) smooth
+prior is imposed on the decoded ts and ts0 with the AR(1)
+parameters learnt from the corresponding time courses in the
+training data.</dd>
+</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>X</strong> (<em>list of 2-D arrays. For each item</em><em>, </em><em>shape=</em><em>[</em><em>time_points</em><em>, </em><em>voxels</em><em>]</em>) – New fMRI data of the same subjects. The voxels should
+match those used in the fit() function.
+The size of the list should match the size of the list X fed
+to fit(), with each item in the list corresponding to data
+from the same subject in the X fed to fit(). If you do not
+need to transform some subjects’ data, leave the entry
+corresponding to that subject as None.
+If data are z-scored when fitting the model,
+data should be z-scored as well when calling transform()</li>
+<li><strong>y</strong> (<em>not used</em><em> (</em><em>as it is unsupervised learning</em><em>)</em>) – </li>
+<li><strong>scan_onsets</strong> (<em>list of 1-D numpy arrays</em><em>,</em>) – Each array corresponds to the onsets of
+scans in the data X for the particular subject.
+If not provided, data will be assumed
+to be acquired in a continuous scan.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"><ul class="simple">
+<li><strong>ts</strong> (<em>list of 2-D arrays. For each, shape = [time_points, condition]</em>) – The estimated response to the cognitive dimensions
+（task dimensions) whose response amplitudes were estimated
+during the fit step.
+One item for each subject. If some subjects’ data are
+not provided, None will be returned.</li>
+<li><strong>ts0</strong> (<em>list of 2-D array. For each, shape = [time_points, n_nureg]</em>) – The estimated time courses spread across the brain, with the
+loading weights estimated during the fit step.
+One item for each subject. If some subjects’ data are
+not provided, None will be returned.</li>
+</ul>
+</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="brainiak.reprsimil.brsa.prior_GP_var_inv_gamma">
+<code class="descclassname">brainiak.reprsimil.brsa.</code><code class="descname">prior_GP_var_inv_gamma</code><span class="sig-paren">(</span><em>y_invK_y</em>, <em>n_y</em>, <em>tau_range</em><span class="sig-paren">)</span><a class="headerlink" href="#brainiak.reprsimil.brsa.prior_GP_var_inv_gamma" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="docutils">
+<dt>Imposing an inverse-Gamma prior onto the variance (tau^2)</dt>
+<dd><p class="first">parameter of a Gaussian Process, which is in turn a prior
+imposed over an unknown function y = f(x).
+The inverse-Gamma prior of tau^2, tau^2 ~ invgamma(shape, scale)
+is described by a shape parameter alpha=2 and a scale parameter
+beta=tau_range^2. tau_range describes the reasonable range of
+tau in the inverse-Gamma prior.
+The data y’s at locations x’s are assumed to follow Gaussian Process:
+f(x, x’) ~ N(0, K(x, x’) / 2 tau^2), where K is a kernel
+function defined on x. For n observations, K(x1, x2, …, xn) is
+an n by n positive definite matrix.
+Given the prior parameter tau_range, number of observations
+n_y, and y_invK_y = y * inv(K) * y’,
+the function returns the MAP estimate of tau^2 and
+the log posterior probability of tau^2 at the MAP value:
+log(p(tau^2|tau_range)).
+This function is written primarily for BRSA but can also
+be used elsewhere. y in this case corresponds to the log of
+SNR in each voxel. GBRSA does not rely on this function.
+An alternative form of prior is half-Cauchy prior on tau.
+Inverse-Gamma prior penalizes for both very small and very
+large values of tau, while half-Cauchy prior only penalizes
+for very large values of tau.
+For more information on usage, see description in BRSA class:
+<a class="reference internal" href="#brainiak.reprsimil.brsa.BRSA" title="brainiak.reprsimil.brsa.BRSA"><code class="xref py py-obj docutils literal"><span class="pre">BRSA</span></code></a></p>
+<p class="last">See also: <a class="reference internal" href="#brainiak.reprsimil.brsa.prior_GP_var_half_cauchy" title="brainiak.reprsimil.brsa.prior_GP_var_half_cauchy"><code class="xref py py-obj docutils literal"><span class="pre">prior_GP_var_half_cauchy</span></code></a></p>
+</dd>
+</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>y_invK_y</strong> (<em>float</em>) – y * inv(K) * y^T, where y=f(x) is a vector of observations
+of unknown function f at different locations x.
+K is correlation matrix of f between different locations, based
+on a Gaussian Process (GP) describing the smoothness property
+of f. K fully incorporates the form of the kernel
+and the length scale of the GP, but not the variance of the GP
+(the purpose of this function is to estimate the variance).</li>
+<li><strong>n_y</strong> (<em>int</em><em>, </em><em>number of observations</em>) – </li>
+<li><strong>tau_range</strong> (<em>float</em><em>,</em>) – The reasonable range of tau, the standard deviation of the
+Gaussian Process imposed on y=f(x). tau_range is parameter
+of the inverse-Gamma prior. Say, if you expect the standard
+deviation of the Gaussian process to be around 3, tau_range
+can be set to 3.
+The smaller it is, the more penalization is imposed
+on large variation of y.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"><ul class="simple">
+<li><strong>tau2</strong> (<em>The MAP estimation of tau^2 based on the prior on tau</em>) – and y_invK_y.</li>
+<li><strong>log_ptau</strong> (<em>log(p(tau)) of the returned tau^2 based on the</em>) – inverse-Gamma prior.</li>
+</ul>
+</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="brainiak.reprsimil.brsa.prior_GP_var_half_cauchy">
+<code class="descclassname">brainiak.reprsimil.brsa.</code><code class="descname">prior_GP_var_half_cauchy</code><span class="sig-paren">(</span><em>y_invK_y</em>, <em>n_y</em>, <em>tau_range</em><span class="sig-paren">)</span><a class="headerlink" href="#brainiak.reprsimil.brsa.prior_GP_var_half_cauchy" title="Permalink to this definition">¶</a></dt>
+<dd><p>Imposing a half-Cauchy prior onto the standard deviation (tau)
+of the Gaussian Process which is in turn a prior imposed over
+a function y = f(x).
+The scale parameter of the half-Cauchy prior is tau_range.
+The function returns the MAP estimate of tau^2 and
+log(p(tau|tau_range)) for the MAP value of tau^2,
+where tau_range describes the reasonable range of tau
+in the half-Cauchy prior.
+An alternative form of prior is inverse-Gamma prior on tau^2.
+Inverse-Gamma prior penalizes for both very small and very
+large values of tau, while half-Cauchy prior only penalizes
+for very large values of tau.
+For more information on usage, see description in BRSA class:
+<a class="reference internal" href="#brainiak.reprsimil.brsa.BRSA" title="brainiak.reprsimil.brsa.BRSA"><code class="xref py py-obj docutils literal"><span class="pre">BRSA</span></code></a></p>
+</dd></dl>
+
+<dl class="function">
+<dt id="brainiak.reprsimil.brsa.Ncomp_SVHT_MG_DLD_approx">
+<code class="descclassname">brainiak.reprsimil.brsa.</code><code class="descname">Ncomp_SVHT_MG_DLD_approx</code><span class="sig-paren">(</span><em>X</em>, <em>zscore=True</em><span class="sig-paren">)</span><a class="headerlink" href="#brainiak.reprsimil.brsa.Ncomp_SVHT_MG_DLD_approx" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="docutils">
+<dt>This function implements the approximate calculation of the</dt>
+<dd>optimal hard threshold for singular values, by Matan Gavish
+and David L. Donoho:
+“The optimal hard threshold for singular values is 4 / sqrt(3)”
+<a class="reference external" href="http://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=6846297">http://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=6846297</a></dd>
+</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>X</strong> (<em>2-D numpy array of size</em><em> [</em><em>n_T</em><em>, </em><em>n_V</em><em>]</em>) – The data to estimate the optimal rank for selecting principal
+components.</li>
+<li><strong>zscore</strong> (<em>Boolean</em><em>, </em><em>default: True</em>) – Whether to z-score the data before calculating number of components.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>ncomp</strong> – The optimal number of components determined by the method of MG
+and DLD</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">integer</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="brainiak.searchlight.html" class="btn btn-neutral float-right" title="brainiak.searchlight package" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="brainiak.hyperparamopt.html" class="btn btn-neutral" title="brainiak.hyperparamopt package" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016, Princeton Neuroscience Institute and Intel Corporation.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'0.6',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

@@ -1,0 +1,50 @@
+brainiak package
+================
+
+.. automodule:: brainiak
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+Subpackages
+-----------
+
+.. toctree::
+
+    brainiak.eventseg
+    brainiak.factoranalysis
+    brainiak.fcma
+    brainiak.funcalign
+    brainiak.hyperparamopt
+    brainiak.reprsimil
+    brainiak.searchlight
+    brainiak.utils
+
+Submodules
+----------
+
+brainiak\.image module
+----------------------
+
+.. automodule:: brainiak.image
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+brainiak\.io module
+-------------------
+
+.. automodule:: brainiak.io
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+brainiak\.isfc module
+---------------------
+
+.. automodule:: brainiak.isfc
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+
