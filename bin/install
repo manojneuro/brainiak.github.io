@@ -1,5 +1,9 @@
 #!/usr/bin/env bash
 
+# Assume MacOS and brew
+
+brew install node
+
 npm install -g gulp
 npm install
 gem install bundler
