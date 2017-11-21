@@ -38,8 +38,19 @@
   }
 }
 
+.app-about {
+   position: absolute;
+   height: 200%;
+   transform: translate(25%, -25%);
+   opacity: 0.2;
+}
+
 .app-about-logo {
   width: 100%;
+}
+
+.app-about-logo-container {
+   height: 100%;
 }
 
 /* code block */
