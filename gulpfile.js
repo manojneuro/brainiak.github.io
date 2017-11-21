@@ -121,8 +121,10 @@ function js(glob) {
     .pipe(gulp.dest('assets/js'))
 }
 
-funcs = [copy, scss, js]
-srcs = [PATH.COPY, PATH.SCSS, PATH.JS]
+// funcs = [copy, scss, js]
+// srcs = [PATH.COPY, PATH.SCSS, PATH.JS]
+funcs = [copy, scss]
+srcs = [PATH.COPY, PATH.SCSS]
 
 gulp.task('watch', function() {
   for (i in funcs) {
