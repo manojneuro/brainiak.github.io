@@ -36,7 +36,7 @@ Please <a href='http://brainiak.org/docs/#support'>contact us</a> if you need he
 </div>
 </div>
 
-{% for poster in site.data.sfn2017 %}
+{% for poster in site.data.events.sfn2017 %}
 <div class='row'>
 <div class='col-lg-6'>
 {{ poster.id }}: {{ poster.title }}
