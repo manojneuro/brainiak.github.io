@@ -1,3 +1,7 @@
+html, body {
+   height: 100%;
+}
+
 /* navbar */
 .app-navbar {
   font-weight: 500;
@@ -5,8 +9,21 @@
   position: absolute;
 }
 
+.app-navbar-default {
+   background: #262F36;
+   width: 100%;
+   display; fixed;
+}
+
+.navbar-default {
+
+}
+
+.block-default {
+   margin-top: 64.75px;
+}
+
 .app-header {
-  /*display: table;*/
   position: relative;
 }
 
@@ -42,7 +59,7 @@
    position: absolute;
    height: 200%;
    transform: translate(25%, -25%);
-   opacity: 0.2;
+   opacity: 0.1;
 }
 
 .app-about-logo {

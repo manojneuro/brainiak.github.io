@@ -3,8 +3,12 @@
   {% include head.html %}
   <body>
     {% include nav-hamburger.html %}
-    {% include nav.html %}
-    {{ content }}
+    {% include nav-default.html %}
+    <div class='stage' id='stage'>
+      <div class='block block-default container'>
+        {{ content }}
+      </div>
+    </div>
     {% include footer.html %}
     {% include scripts.html %}
   </body>

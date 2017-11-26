@@ -28,6 +28,12 @@ exclude:
 - package.json
 - package-lock.json
 
+plugins:
+  - jekyll-redirect-from
+
+whitelist:
+  - jekyll-redirect-from
+
 # ----------------------- #
 #   3rd Party Settings    #
 # ----------------------- #

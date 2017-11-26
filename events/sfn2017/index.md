@@ -1,15 +1,10 @@
 ---
 layout: default
 title: Society for Neuroscience 2017
+redirect_from: /sfn2017
 ---
 
-<section>
-
-<div class='content-section-a'>
-
-<div class='container'>
-
-<h2 class='section-heading'>BrainIAK at SfN 2017</h2>
+# BrainIAK at SfN 2017
 <div class='row text'>
 <div class='col-lg-6'>
 BrainIAK is a Python package for high-performance neuroimaging analysis. Below are the six posters associated with the BrainIAK project that will appear at SfN 2017 along with several code examples.
@@ -36,6 +31,7 @@ Please <a href='http://brainiak.org/docs/#support'>contact us</a> if you need he
 </div>
 </div>
 
+## Posters at SfN 2017
 {% for poster in site.data.events.sfn2017 %}
 <div class='row'>
 <div class='col-lg-6'>
@@ -50,7 +46,3 @@ Please <a href='http://brainiak.org/docs/#support'>contact us</a> if you need he
 </div>
 <br>
 {% endfor %}
-</div>
-</div>
-
-</section>
