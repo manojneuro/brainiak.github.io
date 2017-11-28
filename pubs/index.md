@@ -5,7 +5,7 @@ title: Publications
 
 # Publications
 
-Below are a list of publications related to the BrainIAK project. Please <a href="mailto:brainiak@googlegroups.com">email</a> us if you feel your work should be listed here!
+<!-- Below is a list of publications related to the BrainIAK project. Please <a href="mailto:brainiak@googlegroups.com">email</a> us if you feel your work should be listed here! -->
 
 {% assign pubs = site.data.pubs | sort: 'date' | reverse %}
 {% assign counter = pubs | size %}
