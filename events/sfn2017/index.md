@@ -39,7 +39,7 @@ Please <a href='http://brainiak.org/docs/#support'>contact us</a> if you need he
 <div class='text'>
 {{ poster.authors }} <br>
 <a href='mailto:{{ poster.contact }}?subject=SfN%202017%20poster'>contact</a>
-(<a href='/sfn2017/{{ poster.pdf }}'>pdf</a>{% if poster.example %}, <a href='{{ poster.example }}'>example</a>{% endif %}{% if poster.paper %}, <a href='{{ poster.paper }}'>paper</a>{% endif %})
+(<a href='/events/sfn2017/{{ poster.pdf }}'>pdf</a>{% if poster.example %}, <a href='{{ poster.example }}'>example</a>{% endif %}{% if poster.paper %}, <a href='{{ poster.paper }}'>paper</a>{% endif %})
 {% if poster.notes %} <br><br>{{ poster.notes }} {% endif %}
 </div>
 </div>
