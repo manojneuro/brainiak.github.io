@@ -4,9 +4,10 @@ title: Publications
 ---
 
 # Publications
-
-<!-- Below is a list of publications related to the BrainIAK project. Please <a href="mailto:brainiak@googlegroups.com">email</a> us if you feel your work should be listed here! -->
-
+<!-- <hr class="section-heading-spacer"> -->
+<!-- <div class="lead"> -->
+<!-- Below is a list of publications related to the BrainIAK project. Please <a href="mailto:brainiak@googlegroups.com">email</a> us if you feel your work should be listed. -->
+<!-- </div> -->
 {% assign pubs = site.data.pubs | sort: 'date' | reverse %}
 {% assign counter = pubs | size %}
 {% for pub in pubs %}
