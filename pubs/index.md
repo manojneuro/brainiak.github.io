@@ -3,7 +3,7 @@ layout: default
 title: Publications
 ---
 
-# Publications
+# {{ page.title }}
 <!-- <hr class="section-heading-spacer"> -->
 <!-- <div class="lead"> -->
 <!-- Below is a list of publications related to the BrainIAK project. Please <a href="mailto:brainiak@googlegroups.com">email</a> us if you feel your work should be listed. -->
