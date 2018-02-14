@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Contributing &mdash; brainiak 0.6 documentation</title>
+  <title>Contributing &mdash; brainiak 0.7 documentation</title>
   
 
   
@@ -35,7 +35,7 @@
         <link rel="index" title="Index"
               href="genindex.html"/>
         <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="brainiak 0.6 documentation" href="index.html"/>
+    <link rel="top" title="brainiak 0.7 documentation" href="index.html"/>
         <link rel="prev" title="brainiak.utils package" href="brainiak.utils.html"/> 
 
   
@@ -65,7 +65,7 @@
             
             
               <div class="version">
-                0.6
+                0.7
               </div>
             
           
@@ -90,6 +90,7 @@
             
             
               <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="release_notes.html">Release notes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="api.html">API</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Contributing</a><ul>
@@ -403,6 +404,25 @@ analysis.</p>
 <h2>Making a release<a class="headerlink" href="#making-a-release" title="Permalink to this headline">¶</a></h2>
 <p>This information is only of interest to the core contributors who have the
 right to make releases.</p>
+<p>Before making a release, ensure that:</p>
+<ol class="arabic">
+<li><p class="first">The following environment variables are set:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>export $CONDA_HOME=/path/to/miniconda3
+</pre></div>
+</div>
+</li>
+<li><p class="first">The following Conda channels are enabled:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">config</span> <span class="o">--</span><span class="n">add</span> <span class="n">channels</span> <span class="n">conda</span><span class="o">-</span><span class="n">forge</span> <span class="o">--</span><span class="n">add</span> <span class="n">channels</span> <span class="n">defaults</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">The following Conda packages are installed:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">install</span> <span class="n">conda</span><span class="o">-</span><span class="n">build</span> <span class="n">anaconda</span><span class="o">-</span><span class="n">client</span>
+</pre></div>
+</div>
+</li>
+</ol>
+<p>To make a release:</p>
 <ol class="arabic">
 <li><p class="first">Choose a release number, <code class="docutils literal"><span class="pre">v</span></code>. We follow <a class="reference external" href="http://semver.org">Semantic Versioning</a>, although we omit the patch number when it is 0.</p>
 </li>
@@ -424,7 +444,7 @@ right to make releases.</p>
 </pre></div>
 </div>
 </li>
-<li><p class="first">Create and test the distribution package:</p>
+<li><p class="first">Create and test the source distribution package:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">python3</span> <span class="n">setup</span><span class="o">.</span><span class="n">py</span> <span class="n">sdist</span>
 <span class="n">tar</span> <span class="o">-</span><span class="n">xf</span> <span class="n">dist</span><span class="o">/</span><span class="n">brainiak</span><span class="o">-&lt;</span><span class="n">v</span><span class="o">&gt;.</span><span class="n">tar</span><span class="o">.</span><span class="n">gz</span>
 <span class="n">cd</span> <span class="n">brainiak</span><span class="o">-&lt;</span><span class="n">v</span><span class="o">&gt;</span>
@@ -437,6 +457,21 @@ right to make releases.</p>
 <li><p class="first">Push release:</p>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">tag</span> <span class="o">--</span><span class="n">push</span>
 <span class="n">twine</span> <span class="n">upload</span> <span class="n">dist</span><span class="o">/</span><span class="n">brainiak</span><span class="o">-&lt;</span><span class="n">v</span><span class="o">&gt;.</span><span class="n">tar</span><span class="o">.</span><span class="n">gz</span>
+</pre></div>
+</div>
+</li>
+</ol>
+<ol class="arabic" start="7">
+<li><p class="first">Create and test Conda packages (repeat command for all OSes and Python
+versions); requires the <code class="docutils literal"><span class="pre">conda-build</span></code> Conda package:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">.</span><span class="n">conda</span><span class="o">/</span><span class="nb">bin</span><span class="o">/</span><span class="n">build</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Upload the built Conda package (repeat command for all OSes and Python
+versions); requires the <code class="docutils literal"><span class="pre">anaconda-client</span></code> Conda package:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span>anaconda upload -u brainiak \
+$CONDA_HOME/conda-bld/&lt;OS&gt;/brainiak-&lt;v&gt;-&lt;python_version&gt;.tar.bz2
 </pre></div>
 </div>
 </li>
@@ -486,7 +521,7 @@ right to make releases.</p>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'./',
-            VERSION:'0.6',
+            VERSION:'0.7',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true,

@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>brainiak.reprsimil package &mdash; brainiak 0.6 documentation</title>
+  <title>brainiak.reprsimil package &mdash; brainiak 0.7 documentation</title>
   
 
   
@@ -35,7 +35,7 @@
         <link rel="index" title="Index"
               href="genindex.html"/>
         <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="brainiak 0.6 documentation" href="index.html"/>
+    <link rel="top" title="brainiak 0.7 documentation" href="index.html"/>
         <link rel="up" title="brainiak package" href="brainiak.html"/>
         <link rel="next" title="brainiak.searchlight package" href="brainiak.searchlight.html"/>
         <link rel="prev" title="brainiak.hyperparamopt package" href="brainiak.hyperparamopt.html"/> 
@@ -67,7 +67,7 @@
             
             
               <div class="version">
-                0.6
+                0.7
               </div>
             
           
@@ -92,6 +92,7 @@
             
             
               <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="release_notes.html">Release notes</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="api.html">API</a><ul class="current">
 <li class="toctree-l2 current"><a class="reference internal" href="api.html#brainiak">brainiak</a><ul class="current">
@@ -215,7 +216,7 @@ use for single participant as well.</td></tr>
 </table>
 <dl class="class">
 <dt id="brainiak.reprsimil.brsa.BRSA">
-<em class="property">class </em><code class="descclassname">brainiak.reprsimil.brsa.</code><code class="descname">BRSA</code><span class="sig-paren">(</span><em>n_iter=50</em>, <em>rank=None</em>, <em>auto_nuisance=True</em>, <em>n_nureg=None</em>, <em>nureg_zscore=True</em>, <em>nureg_method='PCA'</em>, <em>baseline_single=False</em>, <em>GP_space=False</em>, <em>GP_inten=False</em>, <em>space_smooth_range=None</em>, <em>inten_smooth_range=None</em>, <em>tau_range=5.0</em>, <em>tau2_prior=&lt;function prior_GP_var_inv_gamma&gt;</em>, <em>eta=0.0001</em>, <em>init_iter=20</em>, <em>optimizer='BFGS'</em>, <em>random_state=None</em>, <em>anneal_speed=10</em>, <em>tol=0.0001</em>, <em>minimize_options={'gtol': 0.0001</em>, <em>'disp': False</em>, <em>'maxiter': 6}</em><span class="sig-paren">)</span><a class="headerlink" href="#brainiak.reprsimil.brsa.BRSA" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">brainiak.reprsimil.brsa.</code><code class="descname">BRSA</code><span class="sig-paren">(</span><em>n_iter=50</em>, <em>rank=None</em>, <em>auto_nuisance=True</em>, <em>n_nureg=None</em>, <em>nureg_zscore=True</em>, <em>nureg_method='PCA'</em>, <em>baseline_single=False</em>, <em>GP_space=False</em>, <em>GP_inten=False</em>, <em>space_smooth_range=None</em>, <em>inten_smooth_range=None</em>, <em>tau_range=5.0</em>, <em>tau2_prior=&lt;function prior_GP_var_inv_gamma&gt;</em>, <em>eta=0.0001</em>, <em>init_iter=20</em>, <em>optimizer='BFGS'</em>, <em>random_state=None</em>, <em>anneal_speed=10</em>, <em>tol=0.0001</em>, <em>minimize_options={'maxiter': 6</em>, <em>'gtol': 0.0001</em>, <em>'disp': False}</em><span class="sig-paren">)</span><a class="headerlink" href="#brainiak.reprsimil.brsa.BRSA" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">sklearn.base.BaseEstimator</span></code>, <code class="xref py py-class docutils literal"><span class="pre">sklearn.base.TransformerMixin</span></code></p>
 <p>Bayesian representational Similarity Analysis (BRSA)</p>
 <p>Given the time series of neural imaging data in a region of interest
@@ -722,7 +723,7 @@ loading weights estimated during the fit step.</li>
 
 <dl class="class">
 <dt id="brainiak.reprsimil.brsa.GBRSA">
-<em class="property">class </em><code class="descclassname">brainiak.reprsimil.brsa.</code><code class="descname">GBRSA</code><span class="sig-paren">(</span><em>n_iter=50</em>, <em>rank=None</em>, <em>auto_nuisance=True</em>, <em>n_nureg=None</em>, <em>nureg_zscore=True</em>, <em>nureg_method='PCA'</em>, <em>baseline_single=False</em>, <em>logS_range=1.0</em>, <em>SNR_prior='exp'</em>, <em>SNR_bins=21</em>, <em>rho_bins=20</em>, <em>tol=0.0001</em>, <em>optimizer='BFGS'</em>, <em>minimize_options={'gtol': 0.0001</em>, <em>'disp': False</em>, <em>'maxiter': 20}</em>, <em>random_state=None</em>, <em>anneal_speed=10</em><span class="sig-paren">)</span><a class="headerlink" href="#brainiak.reprsimil.brsa.GBRSA" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">brainiak.reprsimil.brsa.</code><code class="descname">GBRSA</code><span class="sig-paren">(</span><em>n_iter=50</em>, <em>rank=None</em>, <em>auto_nuisance=True</em>, <em>n_nureg=None</em>, <em>nureg_zscore=True</em>, <em>nureg_method='PCA'</em>, <em>baseline_single=False</em>, <em>logS_range=1.0</em>, <em>SNR_prior='exp'</em>, <em>SNR_bins=21</em>, <em>rho_bins=20</em>, <em>tol=0.0001</em>, <em>optimizer='BFGS'</em>, <em>minimize_options={'maxiter': 20</em>, <em>'gtol': 0.0001</em>, <em>'disp': False}</em>, <em>random_state=None</em>, <em>anneal_speed=10</em><span class="sig-paren">)</span><a class="headerlink" href="#brainiak.reprsimil.brsa.GBRSA" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#brainiak.reprsimil.brsa.BRSA" title="brainiak.reprsimil.brsa.BRSA"><code class="xref py py-class docutils literal"><span class="pre">brainiak.reprsimil.brsa.BRSA</span></code></a></p>
 <p>Group Bayesian representational Similarity Analysis (GBRSA)</p>
 <p>Given the time series of neural imaging data in a region of interest
@@ -1381,7 +1382,7 @@ and DLD</p>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'./',
-            VERSION:'0.6',
+            VERSION:'0.7',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true,
