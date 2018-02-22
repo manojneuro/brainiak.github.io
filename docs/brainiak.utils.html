@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>brainiak.utils package &mdash; brainiak 0.7 documentation</title>
+  <title>brainiak.utils package &mdash; brainiak 0.7.1 documentation</title>
   
 
   
@@ -35,7 +35,7 @@
         <link rel="index" title="Index"
               href="genindex.html"/>
         <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="brainiak 0.7 documentation" href="index.html"/>
+    <link rel="top" title="brainiak 0.7.1 documentation" href="index.html"/>
         <link rel="up" title="brainiak package" href="brainiak.html"/>
         <link rel="next" title="Contributing" href="contributing.html"/>
         <link rel="prev" title="brainiak.searchlight package" href="brainiak.searchlight.html"/> 
@@ -67,7 +67,7 @@
             
             
               <div class="version">
-                0.7
+                0.7.1
               </div>
             
           
@@ -91,23 +91,10 @@
               
             
             
-              <ul class="current">
+              <ul>
 <li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="release_notes.html">Release notes</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="api.html">API</a><ul class="current">
-<li class="toctree-l2 current"><a class="reference internal" href="api.html#brainiak">brainiak</a><ul class="current">
-<li class="toctree-l3 current"><a class="reference internal" href="brainiak.html">brainiak package</a><ul class="current">
-<li class="toctree-l4 current"><a class="reference internal" href="brainiak.html#subpackages">Subpackages</a></li>
-<li class="toctree-l4"><a class="reference internal" href="brainiak.html#submodules">Submodules</a></li>
-<li class="toctree-l4"><a class="reference internal" href="brainiak.html#module-brainiak.image">brainiak.image module</a></li>
-<li class="toctree-l4"><a class="reference internal" href="brainiak.html#module-brainiak.io">brainiak.io module</a></li>
-<li class="toctree-l4"><a class="reference internal" href="brainiak.html#module-brainiak.isfc">brainiak.isfc module</a></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="api.html">API</a></li>
 <li class="toctree-l1"><a class="reference internal" href="contributing.html">Contributing</a></li>
 </ul>
 
@@ -828,7 +815,7 @@ fraction of values less than or equal to q.</p>
 
 <dl class="function">
 <dt id="brainiak.utils.utils.gen_design">
-<code class="descclassname">brainiak.utils.utils.</code><code class="descname">gen_design</code><span class="sig-paren">(</span><em>stimtime_files</em>, <em>scan_duration</em>, <em>TR</em>, <em>style='FSL'</em>, <em>temp_res=0.01</em>, <em>hrf_para={'undershoot_delay': 12</em>, <em>'response_delay': 6</em>, <em>'response_dispersion': 0.9</em>, <em>'undershoot_dispersion': 0.9</em>, <em>'undershoot_scale': 0.035}</em><span class="sig-paren">)</span><a class="headerlink" href="#brainiak.utils.utils.gen_design" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">brainiak.utils.utils.</code><code class="descname">gen_design</code><span class="sig-paren">(</span><em>stimtime_files</em>, <em>scan_duration</em>, <em>TR</em>, <em>style='FSL'</em>, <em>temp_res=0.01</em>, <em>hrf_para={'undershoot_dispersion': 0.9</em>, <em>'undershoot_delay': 12</em>, <em>'response_dispersion': 0.9</em>, <em>'undershoot_scale': 0.035</em>, <em>'response_delay': 6}</em><span class="sig-paren">)</span><a class="headerlink" href="#brainiak.utils.utils.gen_design" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="docutils">
 <dt>Generate design matrix based on a list of names of stimulus</dt>
 <dd>timing files. The function will read each file, and generate
@@ -1073,7 +1060,7 @@ It useful for computing the softmax_i(v)=exp(v_i)/sum(exp(v)) function.</p>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'./',
-            VERSION:'0.7',
+            VERSION:'0.7.1',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true,

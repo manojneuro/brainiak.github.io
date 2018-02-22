@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>brainiak.factoranalysis package &mdash; brainiak 0.7 documentation</title>
+  <title>brainiak.factoranalysis package &mdash; brainiak 0.7.1 documentation</title>
   
 
   
@@ -35,7 +35,7 @@
         <link rel="index" title="Index"
               href="genindex.html"/>
         <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="brainiak 0.7 documentation" href="index.html"/>
+    <link rel="top" title="brainiak 0.7.1 documentation" href="index.html"/>
         <link rel="up" title="brainiak package" href="brainiak.html"/>
         <link rel="next" title="brainiak.fcma package" href="brainiak.fcma.html"/>
         <link rel="prev" title="brainiak.eventseg package" href="brainiak.eventseg.html"/> 
@@ -67,7 +67,7 @@
             
             
               <div class="version">
-                0.7
+                0.7.1
               </div>
             
           
@@ -91,23 +91,10 @@
               
             
             
-              <ul class="current">
+              <ul>
 <li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="release_notes.html">Release notes</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="api.html">API</a><ul class="current">
-<li class="toctree-l2 current"><a class="reference internal" href="api.html#brainiak">brainiak</a><ul class="current">
-<li class="toctree-l3 current"><a class="reference internal" href="brainiak.html">brainiak package</a><ul class="current">
-<li class="toctree-l4 current"><a class="reference internal" href="brainiak.html#subpackages">Subpackages</a></li>
-<li class="toctree-l4"><a class="reference internal" href="brainiak.html#submodules">Submodules</a></li>
-<li class="toctree-l4"><a class="reference internal" href="brainiak.html#module-brainiak.image">brainiak.image module</a></li>
-<li class="toctree-l4"><a class="reference internal" href="brainiak.html#module-brainiak.io">brainiak.io module</a></li>
-<li class="toctree-l4"><a class="reference internal" href="brainiak.html#module-brainiak.isfc">brainiak.isfc module</a></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="api.html">API</a></li>
 <li class="toctree-l1"><a class="reference internal" href="contributing.html">Contributing</a></li>
 </ul>
 
@@ -186,7 +173,7 @@
 <span id="brainiak-factoranalysis-htfa-module"></span><h2>brainiak.factoranalysis.htfa module<a class="headerlink" href="#module-brainiak.factoranalysis.htfa" title="Permalink to this headline">¶</a></h2>
 <p>Hierarchical Topographical Factor Analysis (HTFA)</p>
 <p>This implementation is based on the work in <a class="reference internal" href="#manning2014-1" id="id1">[Manning2014-1]</a>, <a class="reference internal" href="#manning2014-2" id="id2">[Manning2014-2]</a>,
-and <a class="reference internal" href="#andersonmj2016" id="id3">[AndersonMJ2016]</a>.</p>
+<a class="reference internal" href="#andersonmj2016" id="id3">[AndersonMJ2016]</a>, and <a class="reference internal" href="#manning2018" id="id4">[Manning2018]</a>.</p>
 <table class="docutils citation" frame="void" id="manning2014-1" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
@@ -203,6 +190,16 @@ R. Ranganath, K. A. Norman, and D. M. Blei. PLoS One, vol. 9, no. 5,
 Manning, R. Ranganath, W. Keung, N. B. Turk-Browne, J. D.Cohen,
 K. A. Norman, and D. M. Blei. Pattern Recognition in Neuroimaging,
 2014 International Workshop on, June 2014.</td></tr>
+</tbody>
+</table>
+<table class="docutils citation" frame="void" id="manning2018" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id4">[Manning2018]</a></td><td>“A Probabilistic Approach to Discovering Dynamic Full-brain
+Functional Connectivit Patterns”, J. R. Manning, X. Zhu, T.L. Willke,
+R. Ranganath, K. Stachenfeld, U. Hasson, D. M. Blei and K. A. Norman.
+Neuroimage, 2018.
+<a class="reference external" href="https://doi.org/10.1016/j.neuroimage.2018.01.071">https://doi.org/10.1016/j.neuroimage.2018.01.071</a></td></tr>
 </tbody>
 </table>
 <table class="docutils citation" frame="void" id="andersonmj2016" rules="none">
@@ -328,12 +325,12 @@ of fMRI data of one subject.</li>
 <div class="section" id="module-brainiak.factoranalysis.tfa">
 <span id="brainiak-factoranalysis-tfa-module"></span><h2>brainiak.factoranalysis.tfa module<a class="headerlink" href="#module-brainiak.factoranalysis.tfa" title="Permalink to this headline">¶</a></h2>
 <p>Topographical Factor Analysis (TFA)</p>
-<p>This implementation is based on the work in <a class="reference internal" href="#manning2014" id="id4">[Manning2014]</a> and
-<a class="reference internal" href="#andersonm2016" id="id5">[AndersonM2016]</a>.</p>
+<p>This implementation is based on the work in <a class="reference internal" href="#manning2014" id="id5">[Manning2014]</a> and
+<a class="reference internal" href="#andersonm2016" id="id6">[AndersonM2016]</a>.</p>
 <table class="docutils citation" frame="void" id="manning2014" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id4">[Manning2014]</a></td><td>“Topographic factor analysis: a bayesian model for inferring
+<tr><td class="label"><a class="fn-backref" href="#id5">[Manning2014]</a></td><td>“Topographic factor analysis: a bayesian model for inferring
 brain networks from neural data”, J. R. Manning, R. Ranganath, K. A. Norman,
 and D. M. Blei.PLoS One, vol. 9, no. 5, 2014.</td></tr>
 </tbody>
@@ -341,7 +338,7 @@ and D. M. Blei.PLoS One, vol. 9, no. 5, 2014.</td></tr>
 <table class="docutils citation" frame="void" id="andersonm2016" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id5">[AndersonM2016]</a></td><td>“Scaling Up Multi-Subject Neuroimaging Factor Analysis”
+<tr><td class="label"><a class="fn-backref" href="#id6">[AndersonM2016]</a></td><td>“Scaling Up Multi-Subject Neuroimaging Factor Analysis”
 Michael J. Anderson, Mihai Capota, Javier S. Turek, Xia Zhu,
 Theodore L. Willke, Yida Wang, Po-Hsuan Chen, Jeremy R. Manning,
 Peter J. Ramadge, and Kenneth A. Norman
@@ -844,7 +841,7 @@ array.</li>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'./',
-            VERSION:'0.7',
+            VERSION:'0.7.1',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true,
