@@ -1,7 +1,7 @@
 var fs           = require('fs')
 var gulp         = require('gulp')
 var path         = require('path')
-var sass         = require('gulp-sass')
+// var sass         = require('gulp-sass')
 var autoprefixer = require('gulp-autoprefixer')
 var sourcemaps   = require('gulp-sourcemaps')
 var cleanCSS     = require('gulp-clean-css')
@@ -123,8 +123,10 @@ function js(glob) {
 
 // funcs = [copy, scss, js]
 // srcs = [PATH.COPY, PATH.SCSS, PATH.JS]
-funcs = [copy, scss]
-srcs = [PATH.COPY, PATH.SCSS]
+// funcs = [copy, scss]
+// srcs = [PATH.COPY, PATH.SCSS]
+funcs = [copy]
+srcs = [PATH.COPY]
 
 gulp.task('watch', function() {
   for (i in funcs) {
