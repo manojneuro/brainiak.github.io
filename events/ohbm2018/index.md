@@ -35,7 +35,7 @@ Please <a href='http://brainiak.org/docs/#support'>contact us</a> if you need he
 {% for poster in site.data.events.ohbm2018 %}
 <div class='row'>
 <div class='col-lg-6'>
-{{ poster.id }}: {{ poster.title }}
+ <h4 class="section-heading">{{ poster.id }}: {{ poster.title }}</h4>
 <div class='text'>
 {{ poster.authors }} <br>
 <a href='mailto:{{ poster.contact }}?subject=OHBM%202018%20poster'>contact</a>
