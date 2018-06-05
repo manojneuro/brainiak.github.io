@@ -1,0 +1,342 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Installation &mdash; brainiak 0.7.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+        <link rel="search" title="Search" href="search.html"/>
+    <link rel="top" title="brainiak 0.7.1 documentation" href="index.html"/>
+        <link rel="next" title="Release notes" href="release_notes.html"/>
+        <link rel="prev" title="Brain Imaging Analysis Kit" href="index.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> brainiak
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.7.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Installation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#conda">Conda</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#source">Source</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#requirements">Requirements</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#linux">Linux</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#macos">MacOS</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#installing-and-upgrading">Installing and upgrading</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="release_notes.html">Release notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api.html">API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contributing.html">Contributing</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">brainiak</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Installation</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/installation.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="installation">
+<h1>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="conda">
+<h2>Conda<a class="headerlink" href="#conda" title="Permalink to this headline">¶</a></h2>
+<p>Make sure you have the <code class="docutils literal"><span class="pre">conda-forge</span></code> channel active, because some of our
+dependencies are not available in the default channels.</p>
+<p>Use our <code class="docutils literal"><span class="pre">brainiak</span></code> channel to install:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">install</span> <span class="o">-</span><span class="n">c</span> <span class="n">brainiak</span> <span class="n">brainiak</span>
+</pre></div>
+</div>
+<p>Note that <a class="reference internal" href="brainiak.funcalign.html#brainiak.funcalign.sssrm.SSSRM" title="brainiak.funcalign.sssrm.SSSRM"><code class="xref py py-obj docutils literal"><span class="pre">SSSRM</span></code></a> currently uses Theano, which
+requires the Xcode Command Line Tools on <a class="reference internal" href="#macos">MacOS</a>.</p>
+</div>
+<div class="section" id="source">
+<h2>Source<a class="headerlink" href="#source" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="requirements">
+<h3>Requirements<a class="headerlink" href="#requirements" title="Permalink to this headline">¶</a></h3>
+<p>We support Linux and MacOS with Python version 3.4 or higher. Most of the
+dependencies will be installed automatically. However, a few need to be
+installed manually.</p>
+<div class="section" id="linux">
+<h4>Linux<a class="headerlink" href="#linux" title="Permalink to this headline">¶</a></h4>
+<p>Install the following packages (Ubuntu 16.04 is used in these instructions):</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">apt</span> <span class="n">install</span> <span class="n">build</span><span class="o">-</span><span class="n">essential</span> <span class="n">libgomp1</span> <span class="n">libmpich</span><span class="o">-</span><span class="n">dev</span> <span class="n">mpich</span> <span class="n">python3</span><span class="o">-</span><span class="n">dev</span> \
+    <span class="n">python3</span><span class="o">-</span><span class="n">pip</span> <span class="n">python3</span><span class="o">-</span><span class="n">venv</span>
+</pre></div>
+</div>
+<p>Install updated version of the following Python packages:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">python3</span> <span class="o">-</span><span class="n">m</span> <span class="n">pip</span> <span class="n">install</span> <span class="o">--</span><span class="n">user</span> <span class="o">-</span><span class="n">U</span> <span class="n">pip</span>
+</pre></div>
+</div>
+<p>Note the <code class="docutils literal"><span class="pre">--user</span></code> flag, which instructs Pip to not overwrite system
+files. You must add <code class="docutils literal"><span class="pre">$HOME/.local/bin</span></code> to your <code class="docutils literal"><span class="pre">$PATH</span></code> to be able to run
+the updated Pip, e.g., by adding the following line to <code class="docutils literal"><span class="pre">$HOME/.profile</span></code>
+and launching a new login shell (e.g., logout or execute <code class="docutils literal"><span class="pre">bash</span> <span class="pre">-l</span></code>):</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">PATH</span><span class="o">=</span><span class="s2">&quot;$HOME/.local/bin:$PATH&quot;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="macos">
+<h4>MacOS<a class="headerlink" href="#macos" title="Permalink to this headline">¶</a></h4>
+<p>Install the Xcode Command Line Tools:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">xcode</span><span class="o">-</span><span class="n">select</span> <span class="o">--</span><span class="n">install</span>
+</pre></div>
+</div>
+<p>Install <code class="docutils literal"><span class="pre">brew</span></code> from <a class="reference external" href="https://brew.sh">https://brew.sh</a>. If you already have <code class="docutils literal"><span class="pre">brew</span></code>, examine
+the output of the following command to make sure it is working:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">brew</span> <span class="n">doctor</span>
+</pre></div>
+</div>
+<p>Then install the following:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">brew</span> <span class="n">install</span> <span class="n">llvm</span> <span class="n">cmake</span> <span class="n">mpich</span> <span class="n">python3</span>
+</pre></div>
+</div>
+<p>Note that if your MacOS does not have <code class="docutils literal"><span class="pre">gcc</span></code> (a prerequisite of <code class="docutils literal"><span class="pre">mpich</span></code>),
+it will take a long time (perhaps over an hour) to install <code class="docutils literal"><span class="pre">gcc</span></code> from source for you.</p>
+<p>You must instruct programs to use this <code class="docutils literal"><span class="pre">clang</span></code> version at <code class="docutils literal"><span class="pre">/usr/local/opt/llvm/bin</span></code>.
+One way to do this, which
+works for most programs, is setting the <code class="docutils literal"><span class="pre">CC</span></code> environment variable. You can
+add the following lines to <code class="docutils literal"><span class="pre">$HOME/.profile</span></code> (or <code class="docutils literal"><span class="pre">$HOME/.bash_profile</span></code>, if
+you have one). For them to take effect, you must logout or launch a new login
+shell, e.g., <code class="docutils literal"><span class="pre">bash</span> <span class="pre">-l</span></code>:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">export</span> <span class="n">CC</span><span class="o">=/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="n">opt</span><span class="o">/</span><span class="n">llvm</span><span class="o">/</span><span class="nb">bin</span><span class="o">/</span><span class="n">clang</span>
+<span class="n">export</span> <span class="n">CXX</span><span class="o">=/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="n">opt</span><span class="o">/</span><span class="n">llvm</span><span class="o">/</span><span class="nb">bin</span><span class="o">/</span><span class="n">clang</span><span class="o">++</span>
+</pre></div>
+</div>
+<p>In addition, you also need to specify the directories that the newly installed <code class="xref py py-obj docutils literal"><span class="pre">clang</span></code>
+will seek for compiling and linking:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">export</span> <span class="n">LDFLAGS</span><span class="o">=</span><span class="s2">&quot;-L/usr/local/opt/llvm/lib &quot;</span>\
+<span class="s2">&quot;-Wl,-rpath,/usr/local/opt/llvm/lib $LDFLAGS&quot;</span>
+<span class="n">export</span> <span class="n">CPPFLAGS</span><span class="o">=</span><span class="s2">&quot;-I/usr/local/opt/llvm/include $CPPFLAGS&quot;</span>
+</pre></div>
+</div>
+<p>Install updated versions of the following Python packages:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">python3</span> <span class="o">-</span><span class="n">m</span> <span class="n">pip</span> <span class="n">install</span> <span class="o">-</span><span class="n">U</span> <span class="n">pip</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="installing-and-upgrading">
+<h3>Installing and upgrading<a class="headerlink" href="#installing-and-upgrading" title="Permalink to this headline">¶</a></h3>
+<p>The Brain Imaging Analysis Kit is available on PyPI. You can install it (or
+upgrade to the latest version) using the following command:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">python3</span> <span class="o">-</span><span class="n">m</span> <span class="n">pip</span> <span class="n">install</span> <span class="o">-</span><span class="n">U</span> <span class="n">brainiak</span>
+</pre></div>
+</div>
+<p>Note that you may see a <code class="docutils literal"><span class="pre">Failed</span> <span class="pre">building</span> <span class="pre">wheel</span> <span class="pre">for</span> <span class="pre">brainiak</span></code> message (<a class="reference external" href="https://github.com/brainiak/brainiak/issues/61">issue
+#61</a>). Installation will proceed despite this failure. You can safely ignore it
+as long as you see <code class="docutils literal"><span class="pre">Successfully</span> <span class="pre">installed</span></code> at the end.</p>
+<p>Until we reach version 1.0, we will only support the latest released version.
+Therefore, if you have a problem with an older version, please upgrade to the
+latest version before creating an issue on GitHub.</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="release_notes.html" class="btn btn-neutral float-right" title="Release notes" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral" title="Brain Imaging Analysis Kit" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016, Princeton Neuroscience Institute and Intel Corporation.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'0.7.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

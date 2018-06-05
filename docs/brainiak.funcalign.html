@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>brainiak.funcalign package &mdash; brainiak 0.6 documentation</title>
+  <title>brainiak.funcalign package &mdash; brainiak 0.7.1 documentation</title>
   
 
   
@@ -35,7 +35,7 @@
         <link rel="index" title="Index"
               href="genindex.html"/>
         <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="brainiak 0.6 documentation" href="index.html"/>
+    <link rel="top" title="brainiak 0.7.1 documentation" href="index.html"/>
         <link rel="up" title="brainiak package" href="brainiak.html"/>
         <link rel="next" title="brainiak.hyperparamopt package" href="brainiak.hyperparamopt.html"/>
         <link rel="prev" title="brainiak.fcma package" href="brainiak.fcma.html"/> 
@@ -67,7 +67,7 @@
             
             
               <div class="version">
-                0.6
+                0.7.1
               </div>
             
           
@@ -91,22 +91,10 @@
               
             
             
-              <ul class="current">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="release_notes.html">Release notes</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="api.html">API</a><ul class="current">
-<li class="toctree-l2 current"><a class="reference internal" href="api.html#brainiak">brainiak</a><ul class="current">
-<li class="toctree-l3 current"><a class="reference internal" href="brainiak.html">brainiak package</a><ul class="current">
-<li class="toctree-l4 current"><a class="reference internal" href="brainiak.html#subpackages">Subpackages</a></li>
-<li class="toctree-l4"><a class="reference internal" href="brainiak.html#submodules">Submodules</a></li>
-<li class="toctree-l4"><a class="reference internal" href="brainiak.html#module-brainiak.image">brainiak.image module</a></li>
-<li class="toctree-l4"><a class="reference internal" href="brainiak.html#module-brainiak.io">brainiak.io module</a></li>
-<li class="toctree-l4"><a class="reference internal" href="brainiak.html#module-brainiak.isfc">brainiak.isfc module</a></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="api.html">API</a></li>
 <li class="toctree-l1"><a class="reference internal" href="contributing.html">Contributing</a></li>
 </ul>
 
@@ -181,6 +169,146 @@
 <div class="section" id="submodules">
 <h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
 </div>
+<div class="section" id="module-brainiak.funcalign.rsrm">
+<span id="brainiak-funcalign-rsrm-module"></span><h2>brainiak.funcalign.rsrm module<a class="headerlink" href="#module-brainiak.funcalign.rsrm" title="Permalink to this headline">¶</a></h2>
+<p>Robust Shared Response Model (RSRM)</p>
+<p>The implementation is based on the following publications:</p>
+<table class="docutils citation" frame="void" id="turek2017" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label">[Turek2017]</td><td><em>(<a class="fn-backref" href="#id1">1</a>, <a class="fn-backref" href="#id2">2</a>)</em> “Capturing Shared and Individual Information in fMRI Data”,
+J. Turek, C. Ellis, L. Skalaban, N. Turk-Browne, T. Willke
+under review, 2017.</td></tr>
+</tbody>
+</table>
+<dl class="class">
+<dt id="brainiak.funcalign.rsrm.RSRM">
+<em class="property">class </em><code class="descclassname">brainiak.funcalign.rsrm.</code><code class="descname">RSRM</code><span class="sig-paren">(</span><em>n_iter=10</em>, <em>features=50</em>, <em>gamma=1.0</em>, <em>rand_seed=0</em><span class="sig-paren">)</span><a class="headerlink" href="#brainiak.funcalign.rsrm.RSRM" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">sklearn.base.BaseEstimator</span></code>, <code class="xref py py-class docutils literal"><span class="pre">sklearn.base.TransformerMixin</span></code></p>
+<p>Robust Shared Response Model (RSRM)</p>
+<p>Given multi-subject data, factorize it as a shared response R among all
+subjects, an orthogonal transform W per subject, and an individual
+(outlying) sparse component S per subject:</p>
+<div class="math">
+\[X_i \approx W_i R + S_i, \forall i=1 \dots N\]</div>
+<p>This unsupervised model allows to learn idiosyncratic information for
+subjects and simultaneously improve the shared response estimation.
+The model has similar properties to the Shared Response Model (SRM) with
+the addition of the individual components.</p>
+<p>The model is estimated solving the following optimization problem:</p>
+<div class="math">
+\[\min_{W_i, S_i, R}\sum_i \frac{1}{2}\|X_i - W_i R - S_i\|_F^2\]</div>
+<div class="math">
+\[+ \gamma\|S_i\|_1\]</div>
+<div class="math">
+\[s.t. \qquad W_i^TW_i = I \quad \forall i=1 \dots N\]</div>
+<p>The solution to this problem is obtained by applying a Block-Coordinate
+Descent procedure. More details can be found in <a class="reference internal" href="#turek2017" id="id1">[Turek2017]</a>.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>n_iter</strong> (<em>int</em><em>, </em><em>default: 10</em>) – Number of iterations to run the algorithm.</li>
+<li><strong>features</strong> (<em>int</em><em>, </em><em>default: 50</em>) – Number of features to compute.</li>
+<li><strong>gamma</strong> (<em>float</em><em>, </em><em>default: 1.0</em>) – Regularization parameter for the sparseness of the individual
+components. Higher values yield sparser individual components.</li>
+<li><strong>rand_seed</strong> (<em>int</em><em>, </em><em>default: 0</em>) – Seed for initializing the random number generator.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="attribute">
+<dt id="brainiak.funcalign.rsrm.RSRM.w_">
+<code class="descname">w_</code><a class="headerlink" href="#brainiak.funcalign.rsrm.RSRM.w_" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>list of array, element i has shape=[voxels_i, features]</em> – The orthogonal transforms (mappings) for each subject.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="brainiak.funcalign.rsrm.RSRM.r_">
+<code class="descname">r_</code><a class="headerlink" href="#brainiak.funcalign.rsrm.RSRM.r_" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>array, shape=[features, timepoints]</em> – The shared response.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="brainiak.funcalign.rsrm.RSRM.s_">
+<code class="descname">s_</code><a class="headerlink" href="#brainiak.funcalign.rsrm.RSRM.s_" title="Permalink to this definition">¶</a></dt>
+<dd><p><em>list of array, element i has shape=[voxels_i, timepoints]</em> – The individual components for each subject.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="brainiak.funcalign.rsrm.RSRM.random_state_">
+<code class="descname">random_state_</code><a class="headerlink" href="#brainiak.funcalign.rsrm.RSRM.random_state_" title="Permalink to this definition">¶</a></dt>
+<dd><p><code class="xref py py-obj docutils literal"><span class="pre">RandomState</span></code> – Random number generator initialized using rand_seed</p>
+</dd></dl>
+
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>The number of voxels may be different between subjects. However, the
+number of timepoints for the alignment data must be the same across
+subjects.</p>
+<p>The Robust Shared Response Model is approximated using the
+Block-Coordinate Descent (BCD) algorithm proposed in <a class="reference internal" href="#turek2017" id="id2">[Turek2017]</a>.</p>
+<p class="last">This is a single node version.</p>
+</div>
+<dl class="method">
+<dt id="brainiak.funcalign.rsrm.RSRM.fit">
+<code class="descname">fit</code><span class="sig-paren">(</span><em>X</em><span class="sig-paren">)</span><a class="headerlink" href="#brainiak.funcalign.rsrm.RSRM.fit" title="Permalink to this definition">¶</a></dt>
+<dd><p>Compute the Robust Shared Response Model</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>X</strong> (<em>list of 2D arrays</em><em>, </em><em>element i has shape=</em><em>[</em><em>voxels_i</em><em>, </em><em>timepoints</em><em>]</em>) – Each element in the list contains the fMRI data of one subject.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="brainiak.funcalign.rsrm.RSRM.transform">
+<code class="descname">transform</code><span class="sig-paren">(</span><em>X</em><span class="sig-paren">)</span><a class="headerlink" href="#brainiak.funcalign.rsrm.RSRM.transform" title="Permalink to this definition">¶</a></dt>
+<dd><p>Use the model to transform new data to Shared Response space</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>X</strong> (<em>list of 2D arrays</em><em>, </em><em>element i has shape=</em><em>[</em><em>voxels_i</em><em>, </em><em>timepoints_i</em><em>]</em>) – Each element in the list contains the fMRI data of one subject.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><ul class="simple">
+<li><strong>r</strong> (<em>list of 2D arrays, element i has shape=[features_i, timepoints_i]</em>) – Shared responses from input data (X)</li>
+<li><strong>s</strong> (<em>list of 2D arrays, element i has shape=[voxels_i, timepoints_i]</em>) – Individual data obtained from fitting model to input data (X)</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="brainiak.funcalign.rsrm.RSRM.transform_subject">
+<code class="descname">transform_subject</code><span class="sig-paren">(</span><em>X</em><span class="sig-paren">)</span><a class="headerlink" href="#brainiak.funcalign.rsrm.RSRM.transform_subject" title="Permalink to this definition">¶</a></dt>
+<dd><p>Transform a new subject using the existing model</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>X</strong> (<em>2D array</em><em>, </em><em>shape=</em><em>[</em><em>voxels</em><em>, </em><em>timepoints</em><em>]</em>) – The fMRI data of the new subject.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><ul class="simple">
+<li><strong>w</strong> (<em>2D array, shape=[voxels, features]</em>) – Orthogonal mapping <code class="xref py py-obj docutils literal"><span class="pre">W_{new}</span></code> for new subject</li>
+<li><strong>s</strong> (<em>2D array, shape=[voxels, timepoints]</em>) – Individual term <code class="xref py py-obj docutils literal"><span class="pre">S_{new}</span></code> for new subject</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+</div>
 <div class="section" id="module-brainiak.funcalign.srm">
 <span id="brainiak-funcalign-srm-module"></span><h2>brainiak.funcalign.srm module<a class="headerlink" href="#module-brainiak.funcalign.srm" title="Permalink to this headline">¶</a></h2>
 <p>Shared Response Model (SRM)</p>
@@ -188,7 +316,7 @@
 <table class="docutils citation" frame="void" id="chen2015" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label">[Chen2015]</td><td><em>(<a class="fn-backref" href="#id1">1</a>, <a class="fn-backref" href="#id3">2</a>)</em> “A Reduced-Dimension fMRI Shared Response Model”,
+<tr><td class="label">[Chen2015]</td><td><em>(<a class="fn-backref" href="#id3">1</a>, <a class="fn-backref" href="#id5">2</a>)</em> “A Reduced-Dimension fMRI Shared Response Model”,
 P.-H. Chen, J. Chen, Y. Yeshurun-Dishon, U. Hasson, J. Haxby, P. Ramadge
 Advances in Neural Information Processing Systems (NIPS), 2015.
 <a class="reference external" href="http://papers.nips.cc/paper/5855-a-reduced-dimension-fmri-shared-response-model">http://papers.nips.cc/paper/5855-a-reduced-dimension-fmri-shared-response-model</a></td></tr>
@@ -197,7 +325,7 @@ Advances in Neural Information Processing Systems (NIPS), 2015.
 <table class="docutils citation" frame="void" id="anderson2016" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id2">[Anderson2016]</a></td><td>“Enabling Factor Analysis on Thousand-Subject Neuroimaging
+<tr><td class="label"><a class="fn-backref" href="#id4">[Anderson2016]</a></td><td>“Enabling Factor Analysis on Thousand-Subject Neuroimaging
 Datasets”,
 Michael J. Anderson, Mihai Capotă, Javier S. Turek, Xia Zhu, Theodore L.
 Willke, Yida Wang, Po-Hsuan Chen, Jeremy R. Manning, Peter J. Ramadge,
@@ -276,8 +404,8 @@ subjects and an orthogonal transform W per subject:</p>
 <p>The number of voxels may be different between subjects. However, the
 number of samples must be the same across subjects.</p>
 <p>The probabilistic Shared Response Model is approximated using the
-Expectation Maximization (EM) algorithm proposed in <a class="reference internal" href="#chen2015" id="id1">[Chen2015]</a>. The
-implementation follows the optimizations published in <a class="reference internal" href="#anderson2016" id="id2">[Anderson2016]</a>.</p>
+Expectation Maximization (EM) algorithm proposed in <a class="reference internal" href="#chen2015" id="id3">[Chen2015]</a>. The
+implementation follows the optimizations published in <a class="reference internal" href="#anderson2016" id="id4">[Anderson2016]</a>.</p>
 <p>This is a single node version.</p>
 <p class="last">The run-time complexity is <span class="math">\(O(I (V T K + V K^2 + K^3))\)</span> and the
 memory complexity is <span class="math">\(O(V T)\)</span> with I - the number of iterations,
@@ -374,7 +502,7 @@ subjects and an orthogonal transform W per subject:</p>
 <p>The number of voxels may be different between subjects. However, the
 number of samples must be the same across subjects.</p>
 <p>The Deterministic Shared Response Model is approximated using the
-Block Coordinate Descent (BCD) algorithm proposed in <a class="reference internal" href="#chen2015" id="id3">[Chen2015]</a>.</p>
+Block Coordinate Descent (BCD) algorithm proposed in <a class="reference internal" href="#chen2015" id="id5">[Chen2015]</a>.</p>
 <p>This is a single node version.</p>
 <p class="last">The run-time complexity is <span class="math">\(O(I (V T K + V K^2))\)</span> and the memory
 complexity is <span class="math">\(O(V T)\)</span> with I - the number of iterations, V - the
@@ -434,10 +562,12 @@ number of subjects.</p>
 <table class="docutils citation" frame="void" id="turek2016" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label">[Turek2016]</td><td><em>(<a class="fn-backref" href="#id4">1</a>, <a class="fn-backref" href="#id5">2</a>)</em> “A Semi-Supervised Method for Multi-Subject fMRI Functional
+<tr><td class="label">[Turek2016]</td><td><em>(<a class="fn-backref" href="#id6">1</a>, <a class="fn-backref" href="#id7">2</a>)</em> “A Semi-Supervised Method for Multi-Subject fMRI Functional
 Alignment”,
-J. Turek, T. Willke, P.-H. Chen, P. Ramadge
-under review, 2016.</td></tr>
+J. S. Turek, T. L. Willke, P.-H. Chen, P. J. Ramadge
+IEEE International Conference on Acoustics, Speech and Signal Processing
+(ICASSP), 2017, pp. 1098-1102.
+<a class="reference external" href="https://doi.org/10.1109/ICASSP.2017.7952326">https://doi.org/10.1109/ICASSP.2017.7952326</a></td></tr>
 </tbody>
 </table>
 <dl class="class">
@@ -453,7 +583,7 @@ l2 regularization) in a semi-supervised manner:</p>
 <span class="eqno">(1)<a class="headerlink" href="#equation-sssrm-eq" title="Permalink to this equation">¶</a></span>\[(1-\alpha) Loss_{SRM}(W_i,S;X_i)
 + \alpha/\gamma Loss_{MLR}(\theta, bias; {(W_i^T \times Z_i, y_i})
 + R(\theta)\]</div>
-<p>(see Equations (1) and (4) in <a class="reference internal" href="#turek2016" id="id4">[Turek2016]</a>).</p>
+<p>(see Equations (1) and (4) in <a class="reference internal" href="#turek2016" id="id6">[Turek2016]</a>).</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -511,7 +641,7 @@ l2 regularization) in a semi-supervised manner:</p>
 number of samples for the alignment data must be the same across
 subjects. The number of labeled samples per subject can be different.</p>
 <p>The Semi-Supervised Shared Response Model is approximated using the
-Block-Coordinate Descent (BCD) algorithm proposed in <a class="reference internal" href="#turek2016" id="id5">[Turek2016]</a>.</p>
+Block-Coordinate Descent (BCD) algorithm proposed in <a class="reference internal" href="#turek2016" id="id7">[Turek2016]</a>.</p>
 <p class="last">This is a single node version.</p>
 </div>
 <dl class="method">
@@ -630,7 +760,7 @@ note that number of voxels and samples can vary across subjects.</li>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'./',
-            VERSION:'0.6',
+            VERSION:'0.7.1',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true,

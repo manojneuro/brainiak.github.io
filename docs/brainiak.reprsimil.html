@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>brainiak.reprsimil package &mdash; brainiak 0.6 documentation</title>
+  <title>brainiak.reprsimil package &mdash; brainiak 0.7.1 documentation</title>
   
 
   
@@ -35,7 +35,7 @@
         <link rel="index" title="Index"
               href="genindex.html"/>
         <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="brainiak 0.6 documentation" href="index.html"/>
+    <link rel="top" title="brainiak 0.7.1 documentation" href="index.html"/>
         <link rel="up" title="brainiak package" href="brainiak.html"/>
         <link rel="next" title="brainiak.searchlight package" href="brainiak.searchlight.html"/>
         <link rel="prev" title="brainiak.hyperparamopt package" href="brainiak.hyperparamopt.html"/> 
@@ -67,7 +67,7 @@
             
             
               <div class="version">
-                0.6
+                0.7.1
               </div>
             
           
@@ -91,22 +91,10 @@
               
             
             
-              <ul class="current">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="release_notes.html">Release notes</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="api.html">API</a><ul class="current">
-<li class="toctree-l2 current"><a class="reference internal" href="api.html#brainiak">brainiak</a><ul class="current">
-<li class="toctree-l3 current"><a class="reference internal" href="brainiak.html">brainiak package</a><ul class="current">
-<li class="toctree-l4 current"><a class="reference internal" href="brainiak.html#subpackages">Subpackages</a></li>
-<li class="toctree-l4"><a class="reference internal" href="brainiak.html#submodules">Submodules</a></li>
-<li class="toctree-l4"><a class="reference internal" href="brainiak.html#module-brainiak.image">brainiak.image module</a></li>
-<li class="toctree-l4"><a class="reference internal" href="brainiak.html#module-brainiak.io">brainiak.io module</a></li>
-<li class="toctree-l4"><a class="reference internal" href="brainiak.html#module-brainiak.isfc">brainiak.isfc module</a></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="api.html">API</a></li>
 <li class="toctree-l1"><a class="reference internal" href="contributing.html">Contributing</a></li>
 </ul>
 
@@ -215,7 +203,7 @@ use for single participant as well.</td></tr>
 </table>
 <dl class="class">
 <dt id="brainiak.reprsimil.brsa.BRSA">
-<em class="property">class </em><code class="descclassname">brainiak.reprsimil.brsa.</code><code class="descname">BRSA</code><span class="sig-paren">(</span><em>n_iter=50</em>, <em>rank=None</em>, <em>auto_nuisance=True</em>, <em>n_nureg=None</em>, <em>nureg_zscore=True</em>, <em>nureg_method='PCA'</em>, <em>baseline_single=False</em>, <em>GP_space=False</em>, <em>GP_inten=False</em>, <em>space_smooth_range=None</em>, <em>inten_smooth_range=None</em>, <em>tau_range=5.0</em>, <em>tau2_prior=&lt;function prior_GP_var_inv_gamma&gt;</em>, <em>eta=0.0001</em>, <em>init_iter=20</em>, <em>optimizer='BFGS'</em>, <em>random_state=None</em>, <em>anneal_speed=10</em>, <em>tol=0.0001</em>, <em>minimize_options={'gtol': 0.0001</em>, <em>'disp': False</em>, <em>'maxiter': 6}</em><span class="sig-paren">)</span><a class="headerlink" href="#brainiak.reprsimil.brsa.BRSA" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">brainiak.reprsimil.brsa.</code><code class="descname">BRSA</code><span class="sig-paren">(</span><em>n_iter=100</em>, <em>rank=None</em>, <em>auto_nuisance=True</em>, <em>n_nureg=None</em>, <em>nureg_zscore=True</em>, <em>nureg_method='PCA'</em>, <em>baseline_single=False</em>, <em>GP_space=False</em>, <em>GP_inten=False</em>, <em>space_smooth_range=None</em>, <em>inten_smooth_range=None</em>, <em>tau_range=5.0</em>, <em>tau2_prior=&lt;function prior_GP_var_inv_gamma&gt;</em>, <em>eta=0.0001</em>, <em>init_iter=20</em>, <em>optimizer='L-BFGS-B'</em>, <em>random_state=None</em>, <em>anneal_speed=10</em>, <em>tol=0.0001</em>, <em>minimize_options={'maxiter': 6</em>, <em>'gtol': 0.0001</em>, <em>'disp': False}</em><span class="sig-paren">)</span><a class="headerlink" href="#brainiak.reprsimil.brsa.BRSA" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">sklearn.base.BaseEstimator</span></code>, <code class="xref py py-class docutils literal"><span class="pre">sklearn.base.TransformerMixin</span></code></p>
 <p>Bayesian representational Similarity Analysis (BRSA)</p>
 <p>Given the time series of neural imaging data in a region of interest
@@ -230,18 +218,33 @@ A correlation matrix converted from the covariance matrix U
 will be provided as a quantification of neural representational similarity.</p>
 <div class="math">
 \[ \begin{align}\begin{aligned}Y = X \cdot \beta + X_0 \cdot \beta_0 + \epsilon\\\beta_i \sim N(0,(s_{i} \sigma_{i})^2 U)\\\epsilon_i \sim AR(1)\end{aligned}\end{align} \]</div>
+<p>Please note that the model assumes that the covariance matrix U which
+all beta_i follow is zero-meaned. This assumption does not imply
+there must be both positive and negative responses across voxels.
+However, it means that Bayesian RSA treats the task-evoked activity
+against baseline BOLD level as signal, while in other RSA tools
+the deviation of task-evoked activity in each voxel from the average
+task-evoked activity level across voxels may be considered as signal
+of interest. Due to this assumption in BRSA, relatively high degree
+of similarity may be expected when the activity patterns of two
+task conditions both include strong sensory driven signals regardless
+of their specific stimuli. When two task conditions elicit exactly
+the same activity patterns but only differ in their global magnitudes,
+under the assumption in BRSA, their similarity is 1; under the assumption
+that only deviation of pattern from average patterns is signal of interest,
+their similarity should be -1.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>n_iter</strong> (<em>int. Default: 50</em>) – Number of maximum iterations to run the algorithm.</li>
+<li><strong>n_iter</strong> (<em>int.</em>) – Number of maximum iterations to run the algorithm.</li>
 <li><strong>rank</strong> (<em>int. Default: None</em>) – The rank of the covariance matrix.
 If not provided, the covariance matrix will be assumed
 to be full rank. When you have many conditions
 (e.g., calculating the similarity matrix of responses to each event),
 you might try specifying a lower rank.</li>
-<li><strong>auto_nuisance</strong> (<em>boolean. Default: True</em>) – In order to model spatial correlation between voxels that cannot
+<li><strong>auto_nuisance</strong> (<em>boolean.</em>) – In order to model spatial correlation between voxels that cannot
 be accounted for by common response captured in the design matrix,
 we assume that a set of time courses not related to the task
 conditions are shared across voxels with unknown amplitudes.
@@ -262,7 +265,7 @@ provided by the users.
 Note that nuisance regressor is not required from user. If it is
 not provided, DC components for each run will be included as nuisance
 regressor regardless of the auto_nuisance parameter.</li>
-<li><strong>n_nureg</strong> (<em>Optional</em><em>[</em><em>int</em><em>]</em><em> Default: None</em>) – Number of nuisance regressors to use in order to model signals
+<li><strong>n_nureg</strong> (<em>Optional</em><em>[</em><em>int</em><em>]</em><em></em>) – Number of nuisance regressors to use in order to model signals
 shared across voxels not captured by the design matrix.
 This number is in addition to any nuisance regressor that the user
 has already provided.
@@ -271,16 +274,16 @@ automatically determined based on M Gavish
 and D Donoho’s approximate estimation of optimal hard
 threshold for singular values.
 This only takes effect if auto_nuisance is True.</li>
-<li><strong>nureg_zscore</strong> (<em>boolean</em><em>, </em><em>default: True</em>) – A flag to tell the algorithm whether data is z-scored before
+<li><strong>nureg_zscore</strong> (<em>boolean.</em>) – A flag to tell the algorithm whether data is z-scored before
 estimating the number of nuisance regressor components necessary to
 account for spatial noise correlation. It also determinie whether
 the residual noise is z-scored before estimating the nuisance
 regressors from residual.
 This only takes effect if auto_nuisance is True.</li>
-<li><strong>nureg_method</strong> (<em>string</em><em>, </em><em>naming a method from sklearn.decomposition.</em>) – ‘PCA’, ‘ICA’, ‘FA’ or ‘SPCA’ are currently supported. Default: ‘PCA’
+<li><strong>nureg_method</strong> (<em>string</em><em>, </em><em>naming a method from sklearn.decomposition.</em>) – ‘PCA’, ‘ICA’, ‘FA’ or ‘SPCA’ are currently supported.
 The method to estimate the shared component in noise across voxels.
 This only takes effect if auto_nuisance is True.</li>
-<li><strong>baseline_single</strong> (<em>boolean</em><em>, </em><em>default: False</em>) – A time course of constant 1 will be included to the nuisance
+<li><strong>baseline_single</strong> (<em>boolean.</em>) – A time course of constant 1 will be included to the nuisance
 regressor regardless of whether the user requests.
 If baseline_single is set to False, one such regressor is included
 for each fMRI run, but a single component in beta0_ will be
@@ -298,7 +301,7 @@ capture this. However, when each task condition only occurs in one
 run and when the design matrix in each run sums together close to
 a flat line, this option can cause the estimated similarity to be
 extremely high between conditions occuring in the same run.</li>
-<li><strong>GP_space</strong> (<em>boolean. Default: False</em>) – Whether to impose a Gaussion Process (GP) prior on the log(pseudo-SNR).
+<li><strong>GP_space</strong> (<em>boolean.</em>) – Whether to impose a Gaussion Process (GP) prior on the log(pseudo-SNR).
 If true, the GP has a kernel defined over spatial coordinate
 of each voxel. The idea behind this option is that
 adjacent voxels should have similar SNRs.
@@ -306,7 +309,7 @@ This is relatively slow for big ROI. We find that when SNR
 is generally low, smoothness can be overestimated.
 But such regularization may reduce variance in the estimated
 SNR map and similarity matrix.</li>
-<li><strong>GP_inten</strong> (<em>boolean. Defualt: False</em>) – Whether to include a kernel defined over the intensity of image.
+<li><strong>GP_inten</strong> (<em>boolean.</em>) – Whether to include a kernel defined over the intensity of image.
 GP_space should be True as well if you want to use this,
 because the smoothness should be primarily in space.
 Smoothness in intensity is just complementary. The idea
@@ -316,21 +319,21 @@ and are of the same tissue type (when their image intensities
 are close). If you accept the second assumption, then
 you can set GP_inten as True and provide an array to the <code class="xref py py-obj docutils literal"><span class="pre">inten</span></code>
 variable, expressing the intensities (brightness) for each voxel.</li>
-<li><strong>space_smooth_range</strong> (<em>float. Default: None</em>) – The distance (in unit the same as what
+<li><strong>space_smooth_range</strong> (<em>float.</em>) – The distance (in unit the same as what
 you would use when supplying the spatial coordiates of
 each voxel, typically millimeter) which you believe is
 the maximum range of the length scale parameter of
 Gaussian Process defined over voxel location. This is
 used to impose a half-Cauchy prior on the length scale.
-If not provided, the program will set it to half of the
+If set to None, the program will default to half of the
 maximum distance between all voxels.</li>
-<li><strong>inten_smooth_range</strong> (<em>float. Default: None</em>) – The difference in image intensity which
+<li><strong>inten_smooth_range</strong> (<em>float.</em>) – The difference in image intensity which
 you believe is the maximum range of plausible length
 scale for the Gaussian Process defined over image
 intensity. Length scales larger than this are allowed,
-but will be penalized. If not supplied, this parameter
-will be set to half of the maximal intensity difference.</li>
-<li><strong>tau_range</strong> (<em>float. Default: 5.0</em>) – The reasonable range of the standard deviation
+but will be penalized. If set to None, this parameter
+will default to half of the maximal intensity difference.</li>
+<li><strong>tau_range</strong> (<em>float.</em>) – The reasonable range of the standard deviation
 of log(SNR). This range should not be too
 large. 5 is a loose range.
 When a Gaussian Process is imposed on the log(SNR),
@@ -361,28 +364,28 @@ then you need to import it in addition to BRSA:</p>
 </pre></div>
 </div>
 </li>
-<li><strong>eta</strong> (<em>float. Default: 0.0001</em>) – A small number added to the diagonal element of the
+<li><strong>eta</strong> (<em>float.</em>) – A small number added to the diagonal element of the
 covariance matrix in the Gaussian Process prior. This is
 to ensure that the matrix is invertible.</li>
-<li><strong>init_iter</strong> (<em>int. Default: 20</em>) – How many initial iterations to fit the model
+<li><strong>init_iter</strong> (<em>int.</em>) – How many initial iterations to fit the model
 without introducing the GP prior before fitting with it,
 if GP_space or GP_inten is requested. This initial
 fitting is to give the parameters a good starting point.</li>
-<li><strong>optimizer</strong> (<em>str</em><em> or </em><em>callable. Default: 'BFGS'</em>) – The optimizer to use for minimizing cost function which
+<li><strong>optimizer</strong> (<em>str</em><em> or </em><em>callable.</em>) – The optimizer to use for minimizing cost function which
 scipy.optimize.minimize can accept.
 We use ‘L-BFGS-B’ as a default. Users can try other strings
 corresponding to optimizer provided by scipy.optimize.minimize,
-or a custom optimizer, such as ‘L-BFGS-B’ or ‘CG’.
+or a custom optimizer, such as ‘BFGS’ or ‘CG’.
 Note that BRSA fits a lot of parameters. So a chosen optimizer
 should accept gradient (Jacobian) of the cost function. Otherwise
 the fitting is likely to be unbarely slow. We do not calculate
 Hessian of the objective function. So an optimizer which requires
 Hessian cannot be used.</li>
-<li><strong>random_state</strong> (<em>RandomState</em><em> or </em><em>an int seed. Default: None</em>) – A random number generator instance to define the state of
+<li><strong>random_state</strong> (<em>RandomState</em><em> or </em><em>an int seed.</em>) – A random number generator instance to define the state of
 the random permutations generator whenever the module
 needs to generate random number (e.g., initial parameter
 of the Cholesky factor).</li>
-<li><strong>anneal_speed</strong> (<em>float. Default: 20</em>) – Annealing is introduced in fitting of the Cholesky
+<li><strong>anneal_speed</strong> (<em>float.</em>) – Annealing is introduced in fitting of the Cholesky
 decomposition of the shared covariance matrix. The amount
 of perturbation decays exponentially. This parameter sets
 the ratio of the maximum number of iteration to the
@@ -400,7 +403,7 @@ the step of iteration performed by scipy.optimize.minize does not
 have to be very large. In other words, scipy.optimize.minize does
 not need to converge within each step of the alternating fitting
 procedure.</li>
-<li><strong>tol</strong> (<em>float. Default: 1e-4.</em>) – Tolerance parameter passed to scipy.optimize.minimize. It is also
+<li><strong>tol</strong> (<em>float.</em>) – Tolerance parameter passed to scipy.optimize.minimize. It is also
 used for determining convergence of the alternating fitting
 procedure.</li>
 </ul>
@@ -648,16 +651,16 @@ match those used in the fit() function. If data are z-scored
 as well when calling transform()</li>
 <li><strong>design</strong> (<em>numpy array</em><em>, </em><em>shape=</em><em>[</em><em>time_points</em><em>, </em><em>conditions</em><em>]</em>) – Design matrix expressing the hypothetical response of
 the task conditions in data X.</li>
-<li><strong>scan_onsets</strong> (<em>numpy array</em><em>, </em><em>shape=</em><em>[</em><em>number of runs</em><em>]</em><em> Default: None.</em>) – A list of indices corresponding to the onsets of
+<li><strong>scan_onsets</strong> (<em>numpy array</em><em>, </em><em>shape=</em><em>[</em><em>number of runs</em><em>]</em><em></em>) – A list of indices corresponding to the onsets of
 scans in the data X. If not provided, data will be assumed
 to be acquired in a continuous scan.</li>
 </ul>
 </td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"><ul class="simple">
-<li><strong>ll</strong> (<em>float,</em>) – The log likelihood of the new data based on the model and its
+<li><strong>ll</strong> (<em>float.</em>) – The log likelihood of the new data based on the model and its
 parameters fit to the training data.</li>
-<li><strong>ll_null</strong> (<em>float,</em>) – The log likelihood of the new data based on a null model
+<li><strong>ll_null</strong> (<em>float.</em>) – The log likelihood of the new data based on a null model
 which assumes the same as the full model for everything
 except for that there is no response to any of the
 task conditions.</li>
@@ -699,7 +702,7 @@ match those used in the fit() function. If data are z-scored
 (recommended) when fitting the model, data should be z-scored
 as well when calling transform()</li>
 <li><strong>y</strong> (<em>not used</em><em> (</em><em>as it is unsupervised learning</em><em>)</em>) – </li>
-<li><strong>scan_onsets</strong> (<em>numpy array</em><em>, </em><em>shape=</em><em>[</em><em>number of runs</em><em>]</em><em> Default: None.</em>) – A list of indices corresponding to the onsets of
+<li><strong>scan_onsets</strong> (<em>numpy array</em><em>, </em><em>shape=</em><em>[</em><em>number of runs</em><em>]</em><em></em>) – A list of indices corresponding to the onsets of
 scans in the data X. If not provided, data will be assumed
 to be acquired in a continuous scan.</li>
 </ul>
@@ -722,7 +725,7 @@ loading weights estimated during the fit step.</li>
 
 <dl class="class">
 <dt id="brainiak.reprsimil.brsa.GBRSA">
-<em class="property">class </em><code class="descclassname">brainiak.reprsimil.brsa.</code><code class="descname">GBRSA</code><span class="sig-paren">(</span><em>n_iter=50</em>, <em>rank=None</em>, <em>auto_nuisance=True</em>, <em>n_nureg=None</em>, <em>nureg_zscore=True</em>, <em>nureg_method='PCA'</em>, <em>baseline_single=False</em>, <em>logS_range=1.0</em>, <em>SNR_prior='exp'</em>, <em>SNR_bins=21</em>, <em>rho_bins=20</em>, <em>tol=0.0001</em>, <em>optimizer='BFGS'</em>, <em>minimize_options={'gtol': 0.0001</em>, <em>'disp': False</em>, <em>'maxiter': 20}</em>, <em>random_state=None</em>, <em>anneal_speed=10</em><span class="sig-paren">)</span><a class="headerlink" href="#brainiak.reprsimil.brsa.GBRSA" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">brainiak.reprsimil.brsa.</code><code class="descname">GBRSA</code><span class="sig-paren">(</span><em>n_iter=100</em>, <em>rank=None</em>, <em>auto_nuisance=True</em>, <em>n_nureg=None</em>, <em>nureg_zscore=True</em>, <em>nureg_method='PCA'</em>, <em>baseline_single=False</em>, <em>logS_range=1.0</em>, <em>SNR_prior='exp'</em>, <em>SNR_bins=21</em>, <em>rho_bins=20</em>, <em>tol=0.0001</em>, <em>optimizer='L-BFGS-B'</em>, <em>minimize_options={'maxiter': 20</em>, <em>'gtol': 0.0001</em>, <em>'disp': False}</em>, <em>random_state=None</em>, <em>anneal_speed=10</em><span class="sig-paren">)</span><a class="headerlink" href="#brainiak.reprsimil.brsa.GBRSA" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#brainiak.reprsimil.brsa.BRSA" title="brainiak.reprsimil.brsa.BRSA"><code class="xref py py-class docutils literal"><span class="pre">brainiak.reprsimil.brsa.BRSA</span></code></a></p>
 <p>Group Bayesian representational Similarity Analysis (GBRSA)</p>
 <p>Given the time series of neural imaging data in a region of interest
@@ -756,13 +759,16 @@ be used together with searchlight in a template space such as MNI.</p>
 <div class="math">
 \[ \begin{align}\begin{aligned}Y = X \cdot \beta + X_0 \cdot \beta_0 + \epsilon\\\beta_i \sim N(0,(s_{i} \sigma_{i})^2 U)\end{aligned}\end{align} \]</div>
 <p>See also <a class="reference internal" href="#brainiak.reprsimil.brsa.BRSA" title="brainiak.reprsimil.brsa.BRSA"><code class="xref py py-obj docutils literal"><span class="pre">BRSA</span></code></a>.</p>
+<p>Please note that the model assumes that the covariance matrix U which
+all beta_i follow is zero-meaned. For more details of its implication,
+see documentation of <a class="reference internal" href="#brainiak.reprsimil.brsa.BRSA" title="brainiak.reprsimil.brsa.BRSA"><code class="xref py py-obj docutils literal"><span class="pre">BRSA</span></code></a></p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>n_iter</strong> (<em>int. Default: 50</em>) – Number of maximum iterations to run the algorithm.</li>
-<li><strong>rank</strong> (<em>int. Default: None</em>) – The rank of the covariance matrix.
+<li><strong>n_iter</strong> (<em>int.</em>) – Number of maximum iterations to run the algorithm.</li>
+<li><strong>rank</strong> (<em>int.</em>) – The rank of the covariance matrix.
 If not provided, the covariance matrix will be assumed
 to be full rank. When you have many conditions
 (e.g., calculating the similarity matrix of responses to each event),
@@ -773,7 +779,7 @@ _LL_train_. Note that this log likelihood score is only used
 here for selecting hyperparameters such as rank. For any formal
 model comparison, we recommend using score() function on left-out
 data.</li>
-<li><strong>auto_nuisance</strong> (<em>boolean. Default: True</em>) – In order to model spatial correlation between voxels that cannot
+<li><strong>auto_nuisance</strong> (<em>Boolean.</em>) – In order to model spatial correlation between voxels that cannot
 be accounted for by common response captured in the design matrix,
 we assume that a set of time courses not related to the task
 conditions are shared across voxels with unknown amplitudes.
@@ -794,7 +800,7 @@ provided by the users.
 Note that nuisance regressor is not required from user. If it is
 not provided, DC components for each run will be included as nuisance
 regressor regardless of the auto_nuisance parameter.</li>
-<li><strong>n_nureg</strong> (<em>Optional</em><em>[</em><em>int</em><em>]</em><em> Default: None</em>) – Number of nuisance regressors to use in order to model signals
+<li><strong>n_nureg</strong> (<em>Optional</em><em>[</em><em>int</em><em>]</em><em></em>) – Number of nuisance regressors to use in order to model signals
 shared across voxels not captured by the design matrix.
 This number is in addition to any nuisance regressor that the user
 has already provided.
@@ -804,16 +810,16 @@ and D Donoho’s approximate estimation of optimal hard
 threshold for singular values. (Gavish &amp; Donoho,
 IEEE Transactions on Information Theory 60.8 (2014): 5040-5053.)
 This only takes effect if auto_nuisance is True.</li>
-<li><strong>nureg_zscore</strong> (<em>boolean</em><em>, </em><em>default: True</em>) – A flag to tell the algorithm whether data is z-scored before
+<li><strong>nureg_zscore</strong> (<em>Boolean.</em>) – A flag to tell the algorithm whether data is z-scored before
 estimating the number of nuisance regressor components necessary to
 account for spatial noise correlation. It also determinie whether
 the residual noise is z-scored before estimating the nuisance
 regressors from residual.
 This only takes effect if auto_nuisance is True.</li>
-<li><strong>nureg_method</strong> (<em>string</em><em>, </em><em>naming a method from sklearn.decomposition.</em>) – ‘PCA’, ‘ICA’, ‘FA’ or ‘SPCA’ are currently supported. Default: ‘PCA’
+<li><strong>nureg_method</strong> (<em>string</em><em>, </em><em>naming a method from sklearn.decomposition.</em>) – ‘PCA’, ‘ICA’, ‘FA’ or ‘SPCA’ are currently supported.
 The method to estimate the shared component in noise across voxels.
 This only takes effect if auto_nuisance is True.</li>
-<li><strong>baseline_single</strong> (<em>boolean. Default: False</em>) – A time course of constant 1 will be included to the nuisance
+<li><strong>baseline_single</strong> (<em>Boolean.</em>) – A time course of constant 1 will be included to the nuisance
 regressor for each participant. If baseline_single is set to False,
 one such regressor is included for each fMRI run, but at the end of
 fitting, a single component in beta0_ will be computed as the average
@@ -831,7 +837,7 @@ capture this. However, when each task condition only occurs in one
 run and when the design matrix in each run sums together close to
 a flat line, this option can cause the estimated similarity to be
 extremely high between conditions occuring in the same run.</li>
-<li><strong>SNR_prior</strong> (<em>string. Default: 'exp'</em>) – The type of prior for pseudo-SNR.
+<li><strong>SNR_prior</strong> (<em>string.</em>) – The type of prior for pseudo-SNR.
 If set to ‘exp’, truncated exponential distribution with scale
 parameter of 1 is imposed on pseudo-SNR.
 If set to ‘lognorm’, a truncated log normal prior is imposed.
@@ -846,7 +852,7 @@ integration becomes.
 In all the cases, the grids used for pseudo-SNR do not really
 set an upper bound for SNR, because the real SNR is determined
 by both pseudo-SNR and U, the shared covariance structure.</li>
-<li><strong>logS_range</strong> (<em>float. Default: 1.0</em>) – The reasonable range of the spread of SNR in log scale.
+<li><strong>logS_range</strong> (<em>float.</em>) – The reasonable range of the spread of SNR in log scale.
 This parameter only takes effect if SNR_prior is set to ‘lognorm’.
 It is effectively the <code class="xref py py-obj docutils literal"><span class="pre">s</span></code> parameter of <code class="xref py py-obj docutils literal"><span class="pre">scipy.stats.lognorm</span></code>,
 or the standard deviation of the distribution in log scale.
@@ -861,7 +867,7 @@ If you increase logS_range, it is recommended to increase
 SNR_bins accordingly, otherwise the pseudo-SNR values evaluated might
 be too sparse, causing the posterior pseudo-SNR estimations
 to be clustered around the bins.</li>
-<li><strong>SNR_bins</strong> (<em>integer. Default: 21</em>) – The number of bins used to numerically marginalize the pseudo-SNR
+<li><strong>SNR_bins</strong> (<em>integer.</em>) – The number of bins used to numerically marginalize the pseudo-SNR
 parameter. In general, you should try to choose a large number
 to the degree that decreasing SNR_bins does not change the result
 of fitting result. However, very large number of bins also causes
@@ -870,23 +876,21 @@ For SNR_prior=’lognorm’, the default value 21 is based on
 the default value of logS_range=1.0 and bin width of 0.3 on log scale.
 But it is also a reasonable choice for the other two options
 for SNR_prior.</li>
-<li><strong>rho_bins</strong> (<em>integer. Default: 20</em>) – The number of bins to divide the region of (-1, 1) for rho.
+<li><strong>rho_bins</strong> (<em>integer.</em>) – The number of bins to divide the region of (-1, 1) for rho.
 This only takes effect for fitting the marginalized version.
 If set to 20, discrete numbers of {-0.95, -0.85, …, 0.95} will
 be used to numerically integrate rho from -1 to 1.</li>
-<li><strong>optimizer</strong> (<em>str</em><em> or </em><em>callable. Default: 'BFGS'</em>) – The optimizer to use for minimizing cost function which
+<li><strong>optimizer</strong> (<em>str</em><em> or </em><em>callable.</em>) – The optimizer to use for minimizing cost function which
 scipy.optimize.minimize can accept.
 We use ‘L-BFGS-B’ as a default. Users can try other strings
 corresponding to optimizer provided by scipy.optimize.minimize,
-or a custom optimizer, such as ‘L-BFGS-B’ or ‘CG’.
+or a custom optimizer, such as ‘BFGS’ or ‘CG’.
 Note that BRSA fits a lot of parameters. So a chosen optimizer
 should accept gradient (Jacobian) of the cost function. Otherwise
 the fitting is likely to be unbarely slow. We do not calculate
 Hessian of the objective function. So an optimizer which requires
 Hessian cannot be used.</li>
-<li><strong>minimize_options</strong> (<em>dictionary.</em>) – Default: {‘gtol’: 1e-4, ‘disp’: False,
-‘maxiter’: 20}
-This is the dictionary passed as the options argument to
+<li><strong>minimize_options</strong> (<em>dictionary.</em>) – This is the dictionary passed as the options argument to
 scipy.optimize.minize which minimizes the cost function during
 fitting. Notice that the minimization is performed for up to
 n_iter times, with the nuisance regressor re-estimated each time.
@@ -895,14 +899,14 @@ scipy.optimize.minize does not need to fully converge. The key
 ‘maxiter’ in this dictionary determines the maximum number of
 iteration done by scipy.optimize.minimize within each of the n_iter
 steps of fitting.</li>
-<li><strong>tol</strong> (<em>float. Default: 1e-4.</em>) – Tolerance parameter passed to scipy.optimize.minimize. It is also
+<li><strong>tol</strong> (<em>float.</em>) – Tolerance parameter passed to scipy.optimize.minimize. It is also
 used for determining convergence of the alternating fitting
 procedure.</li>
-<li><strong>random_state</strong> (<em>RandomState</em><em> or </em><em>an int seed. Default: None</em>) – A random number generator instance to define the state of
+<li><strong>random_state</strong> (<em>RandomState</em><em> or </em><em>an int seed.</em>) – A random number generator instance to define the state of
 the random permutations generator whenever the module
 needs to generate random number (e.g., initial parameter
 of the Cholesky factor).</li>
-<li><strong>anneal_speed</strong> (<em>float. Default: 10</em>) – Annealing is introduced in fitting of the Cholesky
+<li><strong>anneal_speed</strong> (<em>float.</em>) – Annealing is introduced in fitting of the Cholesky
 decomposition of the shared covariance matrix. The amount
 of perturbation decays exponentially. This parameter sets
 the ratio of the maximum number of iteration to the
@@ -1319,7 +1323,7 @@ and David L. Donoho:
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>X</strong> (<em>2-D numpy array of size</em><em> [</em><em>n_T</em><em>, </em><em>n_V</em><em>]</em>) – The data to estimate the optimal rank for selecting principal
 components.</li>
-<li><strong>zscore</strong> (<em>Boolean</em><em>, </em><em>default: True</em>) – Whether to z-score the data before calculating number of components.</li>
+<li><strong>zscore</strong> (<em>Boolean</em>) – Whether to z-score the data before calculating number of components.</li>
 </ul>
 </td>
 </tr>
@@ -1381,7 +1385,7 @@ and DLD</p>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'./',
-            VERSION:'0.6',
+            VERSION:'0.7.1',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true,

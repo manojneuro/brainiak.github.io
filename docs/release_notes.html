@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Release notes &mdash; brainiak 0.6 documentation</title>
+  <title>Release notes &mdash; brainiak 0.7.1 documentation</title>
   
 
   
@@ -35,9 +35,9 @@
         <link rel="index" title="Index"
               href="genindex.html"/>
         <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="brainiak 0.6 documentation" href="index.html"/>
+    <link rel="top" title="brainiak 0.7.1 documentation" href="index.html"/>
         <link rel="next" title="API" href="api.html"/>
-        <link rel="prev" title="Brain Imaging Analysis Kit" href="index.html"/> 
+        <link rel="prev" title="Installation" href="installation.html"/> 
 
   
   <script src="_static/js/modernizr.min.js"></script>
@@ -66,7 +66,7 @@
             
             
               <div class="version">
-                0.6
+                0.7.1
               </div>
             
           
@@ -91,38 +91,50 @@
             
             
               <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Release notes</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#brainiak-0-6-2017-11-10">BrainIAK 0.6 (2017-11-10)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#brainiak-0-7-1-2018-02-20">BrainIAK 0.7.1 (2018-02-20)</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#features">Features</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#bugfixes">Bugfixes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#documentation-improvements">Documentation improvements</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#brainiak-0-7-2018-02-12">BrainIAK 0.7 (2018-02-12)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id4">Features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id9">Documentation improvements</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#brainiak-0-6-2017-11-10">BrainIAK 0.6 (2017-11-10)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id11">Features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id19">Bugfixes</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#deprecations-and-removals">Deprecations and removals</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#brainiak-0-5-2017-05-23">BrainIAK 0.5 (2017-05-23)</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id11">Features</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id19">Deprecations and removals</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id23">Features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id31">Deprecations and removals</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#brainiak-0-4-2017-01-19">BrainIAK 0.4 (2017-01-19)</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id21">Features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id33">Features</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#brainiak-0-3-2-2016-10-31">BrainIAK 0.3.2 (2016-10-31)</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id26">Features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id38">Features</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#brainiak-0-3-1-2016-09-30">BrainIAK 0.3.1 (2016-09-30)</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id29">Features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id41">Features</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#brainiak-0-3-2016-09-30-yanked">BrainIAK 0.3 (2016-09-30) [YANKED]</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#brainiak-0-2-2016-08-03">BrainIAK 0.2 (2016-08-03)</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id36">Features</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id38">Deprecations and removals</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id48">Features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id50">Deprecations and removals</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#brainiak-0-1-2016-07-12">BrainIAK 0.1 (2016-07-12)</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id40">Features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id52">Features</a></li>
 </ul>
 </li>
 </ul>
@@ -194,10 +206,50 @@
             
   <div class="section" id="release-notes">
 <h1>Release notes<a class="headerlink" href="#release-notes" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="brainiak-0-6-2017-11-10">
-<h2>BrainIAK 0.6 (2017-11-10)<a class="headerlink" href="#brainiak-0-6-2017-11-10" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="brainiak-0-7-1-2018-02-20">
+<h2>BrainIAK 0.7.1 (2018-02-20)<a class="headerlink" href="#brainiak-0-7-1-2018-02-20" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="features">
 <h3>Features<a class="headerlink" href="#features" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>reprsimil: Changed the default optimizer of (G)BRSA to L-BFGD-B. (<a class="reference external" href="https://github.com/brainiak/brainiak/pull/337">#337</a>)</li>
+</ul>
+</div>
+<div class="section" id="bugfixes">
+<h3>Bugfixes<a class="headerlink" href="#bugfixes" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>eventseg: Fixed bug that was causing fits to be asymmetric (<a class="reference external" href="https://github.com/brainiak/brainiak/issues/339">#339</a>)</li>
+</ul>
+</div>
+<div class="section" id="documentation-improvements">
+<h3>Documentation improvements<a class="headerlink" href="#documentation-improvements" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>reprsimil: Added explanation that both BRSA and GBRSA assume zero-mean in the
+distribution of beta patterns. (<a class="reference external" href="https://github.com/brainiak/brainiak/pull/337">#337</a>)</li>
+</ul>
+</div>
+</div>
+<div class="section" id="brainiak-0-7-2018-02-12">
+<h2>BrainIAK 0.7 (2018-02-12)<a class="headerlink" href="#brainiak-0-7-2018-02-12" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id4">
+<h3>Features<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>funcalign: Added the Robust Shared Response Model method. (<a class="reference external" href="https://github.com/brainiak/brainiak/issues/302">#302</a>)</li>
+<li>fmrisim: Update convolution and drift. (<a class="reference external" href="https://github.com/brainiak/brainiak/pull/309">#309</a>)</li>
+<li>eventseg: Added option to compute p values for ISC and ISFC (<a class="reference external" href="https://github.com/brainiak/brainiak/issues/310">#310</a>)</li>
+<li>Added Conda packages. (<a class="reference external" href="https://github.com/brainiak/brainiak/issues/328">#328</a>)</li>
+</ul>
+</div>
+<div class="section" id="id9">
+<h3>Documentation improvements<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>Updated the searchlight API docs. (<a class="reference external" href="https://github.com/brainiak/brainiak/issues/324">#324</a>)</li>
+</ul>
+</div>
+</div>
+<div class="section" id="brainiak-0-6-2017-11-10">
+<h2>BrainIAK 0.6 (2017-11-10)<a class="headerlink" href="#brainiak-0-6-2017-11-10" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id11">
+<h3>Features<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li>reprsimil: Add Group Bayesian RSA, add transform (decoding) and score (model
 selection) functions, add automatic determination of the number of necessary
@@ -212,8 +264,8 @@ weighted variance (<a class="reference external" href="https://github.com/braini
 <li>Restricted multiprocessing to the available number of CPUs. (<a class="reference external" href="https://github.com/brainiak/brainiak/issues/293">#293</a>)</li>
 </ul>
 </div>
-<div class="section" id="bugfixes">
-<h3>Bugfixes<a class="headerlink" href="#bugfixes" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id19">
+<h3>Bugfixes<a class="headerlink" href="#id19" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li>searchlight: Do not use <code class="docutils literal"><span class="pre">sys.exit</span></code>. (<a class="reference external" href="https://github.com/brainiak/brainiak/issues/156">#156</a>)</li>
 <li>reprsimil: Follow random number guidelines. (<a class="reference external" href="https://github.com/brainiak/brainiak/issues/239">#239</a>)</li>
@@ -228,8 +280,8 @@ weighted variance (<a class="reference external" href="https://github.com/braini
 </div>
 <div class="section" id="brainiak-0-5-2017-05-23">
 <h2>BrainIAK 0.5 (2017-05-23)<a class="headerlink" href="#brainiak-0-5-2017-05-23" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id11">
-<h3>Features<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id23">
+<h3>Features<a class="headerlink" href="#id23" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li>FCMA partial similarity matrix option. (<a class="reference external" href="https://github.com/brainiak/brainiak/issues/168">#168</a>)</li>
 <li>Faster FCMA cross validation via multiprocessing. (<a class="reference external" href="https://github.com/brainiak/brainiak/issues/176">#176</a>)</li>
@@ -241,8 +293,8 @@ weighted variance (<a class="reference external" href="https://github.com/braini
 <li>Shape masks for the searchlight. (<a class="reference external" href="https://github.com/brainiak/brainiak/issues/221">#221</a>)</li>
 </ul>
 </div>
-<div class="section" id="id19">
-<h3>Deprecations and removals<a class="headerlink" href="#id19" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id31">
+<h3>Deprecations and removals<a class="headerlink" href="#id31" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li>Changed fmrisim to compute signal-to-fluctuation-noise ratio (SFNR) instead
 of signal-to-noise ratio (SNR). (<a class="reference external" href="https://github.com/brainiak/brainiak/issues/224">#224</a>)</li>
@@ -251,8 +303,8 @@ of signal-to-noise ratio (SNR). (<a class="reference external" href="https://git
 </div>
 <div class="section" id="brainiak-0-4-2017-01-19">
 <h2>BrainIAK 0.4 (2017-01-19)<a class="headerlink" href="#brainiak-0-4-2017-01-19" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id21">
-<h3>Features<a class="headerlink" href="#id21" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id33">
+<h3>Features<a class="headerlink" href="#id33" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li>Distributed searchlight. (<a class="reference external" href="https://github.com/brainiak/brainiak/issues/148">#148</a>)</li>
 <li>Multi-voxel pattern analysis (MVPA) support in FCMA. (<a class="reference external" href="https://github.com/brainiak/brainiak/issues/154">#154</a>, <a class="reference external" href="https://github.com/brainiak/brainiak/pull/157)">#157</a>)</li>
@@ -262,8 +314,8 @@ of signal-to-noise ratio (SNR). (<a class="reference external" href="https://git
 </div>
 <div class="section" id="brainiak-0-3-2-2016-10-31">
 <h2>BrainIAK 0.3.2 (2016-10-31)<a class="headerlink" href="#brainiak-0-3-2-2016-10-31" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id26">
-<h3>Features<a class="headerlink" href="#id26" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id38">
+<h3>Features<a class="headerlink" href="#id38" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li>Faster event segmentation via Cython implementation.  (<a class="reference external" href="https://github.com/brainiak/brainiak/pull/111">#111</a>)</li>
 <li>fMRI data simulator (fmrisim). (<a class="reference external" href="https://github.com/brainiak/brainiak/pull/135">#135</a>)</li>
@@ -272,8 +324,8 @@ of signal-to-noise ratio (SNR). (<a class="reference external" href="https://git
 </div>
 <div class="section" id="brainiak-0-3-1-2016-09-30">
 <h2>BrainIAK 0.3.1 (2016-09-30)<a class="headerlink" href="#brainiak-0-3-1-2016-09-30" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id29">
-<h3>Features<a class="headerlink" href="#id29" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id41">
+<h3>Features<a class="headerlink" href="#id41" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li>Event segmentation. (<a class="reference external" href="https://github.com/brainiak/brainiak/issues/72">#72</a>)</li>
 <li>Full correlation matrix analysis (FCMA). (<a class="reference external" href="https://github.com/brainiak/brainiak/issues/97">#97</a>, <a class="reference external" href="https://github.com/brainiak/brainiak/pull/122">#122</a>)</li>
@@ -288,14 +340,14 @@ of signal-to-noise ratio (SNR). (<a class="reference external" href="https://git
 </div>
 <div class="section" id="brainiak-0-2-2016-08-03">
 <h2>BrainIAK 0.2 (2016-08-03)<a class="headerlink" href="#brainiak-0-2-2016-08-03" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id36">
-<h3>Features<a class="headerlink" href="#id36" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id48">
+<h3>Features<a class="headerlink" href="#id48" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li>Hyperparameter optimization. (<a class="reference external" href="https://github.com/brainiak/brainiak/pull/58">#58</a>)</li>
 </ul>
 </div>
-<div class="section" id="id38">
-<h3>Deprecations and removals<a class="headerlink" href="#id38" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id50">
+<h3>Deprecations and removals<a class="headerlink" href="#id50" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li>Removed <code class="docutils literal"><span class="pre">_</span></code> from package names. (<a class="reference external" href="https://github.com/brainiak/brainiak/issues/73">#73</a>)</li>
 </ul>
@@ -303,8 +355,8 @@ of signal-to-noise ratio (SNR). (<a class="reference external" href="https://git
 </div>
 <div class="section" id="brainiak-0-1-2016-07-12">
 <h2>BrainIAK 0.1 (2016-07-12)<a class="headerlink" href="#brainiak-0-1-2016-07-12" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id40">
-<h3>Features<a class="headerlink" href="#id40" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id52">
+<h3>Features<a class="headerlink" href="#id52" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li>Initial release, including:<ul>
 <li>Shared response model (SRM).</li>
@@ -330,7 +382,7 @@ analysis (HTFA).</li>
         <a href="api.html" class="btn btn-neutral float-right" title="API" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="index.html" class="btn btn-neutral" title="Brain Imaging Analysis Kit" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="installation.html" class="btn btn-neutral" title="Installation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -361,7 +413,7 @@ analysis (HTFA).</li>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'./',
-            VERSION:'0.6',
+            VERSION:'0.7.1',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true,

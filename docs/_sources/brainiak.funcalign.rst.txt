@@ -9,6 +9,14 @@ brainiak\.funcalign package
 Submodules
 ----------
 
+brainiak\.funcalign\.rsrm module
+--------------------------------
+
+.. automodule:: brainiak.funcalign.rsrm
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
 brainiak\.funcalign\.srm module
 -------------------------------
 

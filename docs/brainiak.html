@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>brainiak package &mdash; brainiak 0.6 documentation</title>
+  <title>brainiak package &mdash; brainiak 0.7.1 documentation</title>
   
 
   
@@ -35,7 +35,7 @@
         <link rel="index" title="Index"
               href="genindex.html"/>
         <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="brainiak 0.6 documentation" href="index.html"/>
+    <link rel="top" title="brainiak 0.7.1 documentation" href="index.html"/>
         <link rel="up" title="API" href="api.html"/>
         <link rel="next" title="brainiak.eventseg package" href="brainiak.eventseg.html"/>
         <link rel="prev" title="API" href="api.html"/> 
@@ -67,7 +67,7 @@
             
             
               <div class="version">
-                0.6
+                0.7.1
               </div>
             
           
@@ -91,22 +91,10 @@
               
             
             
-              <ul class="current">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="release_notes.html">Release notes</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="api.html">API</a><ul class="current">
-<li class="toctree-l2 current"><a class="reference internal" href="api.html#brainiak">brainiak</a><ul class="current">
-<li class="toctree-l3 current"><a class="current reference internal" href="#">brainiak package</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#subpackages">Subpackages</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#submodules">Submodules</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#module-brainiak.image">brainiak.image module</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#module-brainiak.io">brainiak.io module</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#module-brainiak.isfc">brainiak.isfc module</a></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="api.html">API</a></li>
 <li class="toctree-l1"><a class="reference internal" href="contributing.html">Contributing</a></li>
 </ul>
 
@@ -203,6 +191,7 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="brainiak.funcalign.html">brainiak.funcalign package</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="brainiak.funcalign.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="brainiak.funcalign.html#module-brainiak.funcalign.rsrm">brainiak.funcalign.rsrm module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="brainiak.funcalign.html#module-brainiak.funcalign.srm">brainiak.funcalign.srm module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="brainiak.funcalign.html#module-brainiak.funcalign.sssrm">brainiak.funcalign.sssrm module</a></li>
 </ul>
@@ -414,8 +403,7 @@ called again.</p>
 <span id="brainiak-isfc-module"></span><h2>brainiak.isfc module<a class="headerlink" href="#module-brainiak.isfc" title="Permalink to this headline">¶</a></h2>
 <p>Intersubject analyses (ISC/ISFC)</p>
 <p>Functions for computing intersubject correlation (ISC) and intersubject
-functional correlation (ISFC), and utility functions for loading subject data
-files and masks</p>
+functional correlation (ISFC)</p>
 <p>Paper references:
 ISC: Hasson, U., Nir, Y., Levy, I., Fuhrmann, G. &amp; Malach, R. Intersubject
 synchronization of cortical activity during natural vision. Science 303,
@@ -425,11 +413,13 @@ synchronization of cortical activity during natural vision. Science 303,
 comprehension. Nat Commun 7.</p>
 <dl class="function">
 <dt id="brainiak.isfc.isc">
-<code class="descclassname">brainiak.isfc.</code><code class="descname">isc</code><span class="sig-paren">(</span><em>D</em>, <em>collapse_subj=True</em><span class="sig-paren">)</span><a class="headerlink" href="#brainiak.isfc.isc" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">brainiak.isfc.</code><code class="descname">isc</code><span class="sig-paren">(</span><em>D</em>, <em>collapse_subj=True</em>, <em>return_p=False</em>, <em>num_perm=1000</em>, <em>two_sided=False</em>, <em>random_state=0</em><span class="sig-paren">)</span><a class="headerlink" href="#brainiak.isfc.isc" title="Permalink to this definition">¶</a></dt>
 <dd><p>Intersubject correlation</p>
 <p>For each voxel, computes the correlation of each subject’s timecourse with
 the mean of all other subjects’ timecourses. By default the result is
-averaged across subjects, unless collapse_subj is set to False.</p>
+averaged across subjects, unless collapse_subj is set to False. A null
+distribution can optionally be computed using phase randomization, to
+compute a p value for each voxel.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -437,13 +427,21 @@ averaged across subjects, unless collapse_subj is set to False.</p>
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>D</strong> (<em>voxel by time by subject ndarray</em>) – fMRI data for which to compute ISC</li>
 <li><strong>collapse_subj</strong> (<em>bool</em><em>, </em><em>default:True</em>) – Whether to average across subjects before returning result</li>
+<li><strong>return_p</strong> (<em>bool</em><em>, </em><em>default:False</em>) – Whether to use phase randomization to compute a p value for each voxel</li>
+<li><strong>num_perm</strong> (<em>int</em><em>, </em><em>default:1000</em>) – Number of null samples to use for computing p values</li>
+<li><strong>two_sided</strong> (<em>bool</em><em>, </em><em>default:False</em>) – Whether the p value should be one-sided (testing only for being
+above the null) or two-sided (testing for both significantly positive
+and significantly negative values)</li>
+<li><strong>random_state</strong> (<em>RandomState</em><em> or </em><em>an int seed</em><em> (</em><em>0 by default</em><em>)</em>) – A random number generator instance to define the state of the
+random permutations generator.</li>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>ISC</strong> – pearson correlation for each voxel, across subjects</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">voxel ndarray (or voxel by subject ndarray, if collapse_subj=False)</p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"><ul class="simple">
+<li><strong>ISC</strong> (<em>voxel ndarray (or voxel by subject ndarray, if collapse_subj=False)</em>) – pearson correlation for each voxel, across subjects</li>
+<li><strong>p</strong> (<em>ndarray the same shape as ISC (if return_p = True)</em>) – p values for each ISC value under the null distribution</li>
+</ul>
+</p>
 </td>
 </tr>
 </tbody>
@@ -452,12 +450,14 @@ averaged across subjects, unless collapse_subj is set to False.</p>
 
 <dl class="function">
 <dt id="brainiak.isfc.isfc">
-<code class="descclassname">brainiak.isfc.</code><code class="descname">isfc</code><span class="sig-paren">(</span><em>D</em>, <em>collapse_subj=True</em><span class="sig-paren">)</span><a class="headerlink" href="#brainiak.isfc.isfc" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">brainiak.isfc.</code><code class="descname">isfc</code><span class="sig-paren">(</span><em>D</em>, <em>collapse_subj=True</em>, <em>return_p=False</em>, <em>num_perm=1000</em>, <em>two_sided=False</em>, <em>random_state=0</em><span class="sig-paren">)</span><a class="headerlink" href="#brainiak.isfc.isfc" title="Permalink to this definition">¶</a></dt>
 <dd><p>Intersubject functional correlation</p>
 <p>Computes the correlation between the timecoure of each voxel in each
 subject with the average of all other subjects’ timecourses in <em>all</em>
 voxels. By default the result is averaged across subjects, unless
-collapse_subj is set to False.</p>
+collapse_subj is set to False. A null distribution can optionally be
+computed using phase randomization, to compute a p value for each voxel-to-
+voxel correlation.</p>
 <p>Uses the high performance compute_correlation routine from fcma.util</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -466,14 +466,22 @@ collapse_subj is set to False.</p>
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>D</strong> (<em>voxel by time by subject ndarray</em>) – fMRI data for which to compute ISFC</li>
 <li><strong>collapse_subj</strong> (<em>bool</em><em>, </em><em>default:True</em>) – Whether to average across subjects before returning result</li>
+<li><strong>return_p</strong> (<em>bool</em><em>, </em><em>default:False</em>) – Whether to use phase randomization to compute a p value for each voxel</li>
+<li><strong>num_perm</strong> (<em>int</em><em>, </em><em>default:1000</em>) – Number of null samples to use for computing p values</li>
+<li><strong>two_sided</strong> (<em>bool</em><em>, </em><em>default:False</em>) – Whether the p value should be one-sided (testing only for being
+above the null) or two-sided (testing for both significantly positive
+and significantly negative values)</li>
+<li><strong>random_state</strong> (<em>RandomState</em><em> or </em><em>an int seed</em><em> (</em><em>0 by default</em><em>)</em>) – A random number generator instance to define the state of the
+random permutations generator.</li>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>ISFC</strong> – (or voxel by voxel by subject ndarray, if collapse_subj=False)
-pearson correlation between all pairs of voxels, across subjects</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">voxel by voxel ndarray</p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"><ul class="simple">
+<li><strong>ISFC</strong> (<em>voxel by voxel ndarray</em>) – (or voxel by voxel by subject ndarray, if collapse_subj=False)
+pearson correlation between all pairs of voxels, across subjects</li>
+<li><strong>p</strong> (<em>ndarray the same shape as ISC (if return_p = True)</em>) – p values for each ISC value under the null distribution</li>
+</ul>
+</p>
 </td>
 </tr>
 </tbody>
@@ -527,7 +535,7 @@ pearson correlation between all pairs of voxels, across subjects</p>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'./',
-            VERSION:'0.6',
+            VERSION:'0.7.1',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true,

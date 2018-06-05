@@ -3,8 +3,8 @@
     <div class="row app-align-center">
       <div class="col-md-6 order-1 order-md-1 install-instructions">
         <h6 class="text-muted text-uppercase">Get Started</h6>
-        <h2>Install via Docker or pip</h2>
-        <p class="lead mb-4 text-muted">The easiest way to get started is through a Docker container. For the full feature set (and a few extra steps), install BrainIAK via pip.</p>
+        <h2> Installing Brainiak </h2>
+        <p class="lead mb-4 text-muted">The easiest way to get started is via Conda. We provide a Docker image and a pip package (which requires extra steps) as alternatives.</p>
         <a href="/docs/#support">
           <button class="btn btn-secondary btn-lg btn-borderless">
             Need help?
@@ -12,14 +12,24 @@
         </a>
       </div>
       <div class="col-md-5 ml-auto order-2 order-md-2">
-        <pre class="app-code"><code class="bash"><span class="hljs-built_in">Method 1: Docker</span>
+         <pre class="app-code">
+<code class="bash"><span class="hljs-built_in">Method 1: Conda (recommended)</span>
+# 1. Install Miniconda (<a href="https://conda.io/docs/user-guide/install/macos.html">Mac</a>, <a href="https://conda.io/docs/user-guide/install/windows.html">Win</a>, <a href="https://conda.io/docs/user-guide/install/linux.html">Linux</a>)
+# 2. Create a Conda environment (<a href="https://conda.io/docs/user-guide/tasks/manage-environments.html#creating-an-environment-with-commands">link</a>)
+<span class="unselectable">> </span>conda create -n venv
+# 3. Activate the Conda environment (<a href="https://conda.io/docs/user-guide/tasks/manage-environments.html#activating-an-environment">link</a>) 
+<span class="unselectable">> </span>source activate venv
+# 4 Install Brainiak
+<span class="unselectable">> </span>conda install -c brainiak -c defaults -c conda-forge brainiak
+</code>
+<code class="bash"><span class="hljs-built_in">Method 2: Docker</span>
 # 1. Install Docker (<a href="https://store.docker.com/editions/community/docker-ce-desktop-mac">Mac</a>, <a href="https://store.docker.com/editions/community/docker-ce-desktop-windows">Win</a>, <a href="https://store.docker.com/editions/community/docker-ce-server-ubuntu">Linux</a>)
 # 2. Run the following commands:
 <span class="unselectable">> </span>docker pull brainiak/brainiak
 <span class="unselectable">> </span>docker run -it -p 8888:8888 -v brainiak:/mnt --name demo brainiak/brainiak
 <span class="unselectable">> </span>python3 -m notebook --allow-root --no-browser --ip=0.0.0.0
 # 3. Visit <a href="http://localhost:8888">http://localhost:8888</a></code>
-<code class="bash"><span class="hljs-built_in">Method 2: pip</span>
+<code class="bash"><span class="hljs-built_in">Method 3: pip</span>
 # 1. Install BrainIAK <a href="/docs/#requirements">requirements</a>
 # 2. Run the following command:
 <span class="unselectable">> </span>python3 -m pip install -U brainiak</code></pre>

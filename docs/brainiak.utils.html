@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>brainiak.utils package &mdash; brainiak 0.6 documentation</title>
+  <title>brainiak.utils package &mdash; brainiak 0.7.1 documentation</title>
   
 
   
@@ -35,7 +35,7 @@
         <link rel="index" title="Index"
               href="genindex.html"/>
         <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="brainiak 0.6 documentation" href="index.html"/>
+    <link rel="top" title="brainiak 0.7.1 documentation" href="index.html"/>
         <link rel="up" title="brainiak package" href="brainiak.html"/>
         <link rel="next" title="Contributing" href="contributing.html"/>
         <link rel="prev" title="brainiak.searchlight package" href="brainiak.searchlight.html"/> 
@@ -67,7 +67,7 @@
             
             
               <div class="version">
-                0.6
+                0.7.1
               </div>
             
           
@@ -91,22 +91,10 @@
               
             
             
-              <ul class="current">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="release_notes.html">Release notes</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="api.html">API</a><ul class="current">
-<li class="toctree-l2 current"><a class="reference internal" href="api.html#brainiak">brainiak</a><ul class="current">
-<li class="toctree-l3 current"><a class="reference internal" href="brainiak.html">brainiak package</a><ul class="current">
-<li class="toctree-l4 current"><a class="reference internal" href="brainiak.html#subpackages">Subpackages</a></li>
-<li class="toctree-l4"><a class="reference internal" href="brainiak.html#submodules">Submodules</a></li>
-<li class="toctree-l4"><a class="reference internal" href="brainiak.html#module-brainiak.image">brainiak.image module</a></li>
-<li class="toctree-l4"><a class="reference internal" href="brainiak.html#module-brainiak.io">brainiak.io module</a></li>
-<li class="toctree-l4"><a class="reference internal" href="brainiak.html#module-brainiak.isfc">brainiak.isfc module</a></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="api.html">API</a></li>
 <li class="toctree-l1"><a class="reference internal" href="contributing.html">Contributing</a></li>
 </ul>
 
@@ -277,7 +265,7 @@ multivariate activity)</li>
 
 <dl class="function">
 <dt id="brainiak.utils.fmrisim.generate_stimfunction">
-<code class="descclassname">brainiak.utils.fmrisim.</code><code class="descname">generate_stimfunction</code><span class="sig-paren">(</span><em>onsets, event_durations, total_time, weights=[1], timing_file=None, temporal_resolution=1000.0</em><span class="sig-paren">)</span><a class="headerlink" href="#brainiak.utils.fmrisim.generate_stimfunction" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">brainiak.utils.fmrisim.</code><code class="descname">generate_stimfunction</code><span class="sig-paren">(</span><em>onsets, event_durations, total_time, weights=[1], timing_file=None, temporal_resolution=100.0</em><span class="sig-paren">)</span><a class="headerlink" href="#brainiak.utils.fmrisim.generate_stimfunction" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return the function for the timecourse events</p>
 <p>When do stimuli onset, how long for and to what extent should you
 resolve the fMRI time course. There are two ways to create this, either
@@ -317,7 +305,7 @@ resolution of temporal resolution / 1.0 elements per second</p>
 
 <dl class="function">
 <dt id="brainiak.utils.fmrisim.export_3_column">
-<code class="descclassname">brainiak.utils.fmrisim.</code><code class="descname">export_3_column</code><span class="sig-paren">(</span><em>stimfunction</em>, <em>filename</em>, <em>temporal_resolution=1000.0</em><span class="sig-paren">)</span><a class="headerlink" href="#brainiak.utils.fmrisim.export_3_column" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">brainiak.utils.fmrisim.</code><code class="descname">export_3_column</code><span class="sig-paren">(</span><em>stimfunction</em>, <em>filename</em>, <em>temporal_resolution=100.0</em><span class="sig-paren">)</span><a class="headerlink" href="#brainiak.utils.fmrisim.export_3_column" title="Permalink to this definition">¶</a></dt>
 <dd><p>Output a tab separated three column timing file</p>
 <p>This produces a three column tab separated text file, with the three
 columns representing onset time (s), event duration (s) and weight,
@@ -342,7 +330,7 @@ stimfunction?</li>
 
 <dl class="function">
 <dt id="brainiak.utils.fmrisim.export_epoch_file">
-<code class="descclassname">brainiak.utils.fmrisim.</code><code class="descname">export_epoch_file</code><span class="sig-paren">(</span><em>stimfunction</em>, <em>filename</em>, <em>tr_duration</em>, <em>temporal_resolution=1000.0</em><span class="sig-paren">)</span><a class="headerlink" href="#brainiak.utils.fmrisim.export_epoch_file" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">brainiak.utils.fmrisim.</code><code class="descname">export_epoch_file</code><span class="sig-paren">(</span><em>stimfunction</em>, <em>filename</em>, <em>tr_duration</em>, <em>temporal_resolution=100.0</em><span class="sig-paren">)</span><a class="headerlink" href="#brainiak.utils.fmrisim.export_epoch_file" title="Permalink to this definition">¶</a></dt>
 <dd><p>Output an epoch file, necessary for some inputs into brainiak</p>
 <p>This takes in the time course of stimulus events and outputs the epoch
 file used in Brainiak. The epoch file is a way to structure the timing
@@ -375,8 +363,20 @@ stimfunction?</li>
 
 <dl class="function">
 <dt id="brainiak.utils.fmrisim.convolve_hrf">
-<code class="descclassname">brainiak.utils.fmrisim.</code><code class="descname">convolve_hrf</code><span class="sig-paren">(</span><em>stimfunction</em>, <em>tr_duration</em>, <em>hrf_type='double_gamma'</em>, <em>scale_function=True</em>, <em>temporal_resolution=1000.0</em><span class="sig-paren">)</span><a class="headerlink" href="#brainiak.utils.fmrisim.convolve_hrf" title="Permalink to this definition">¶</a></dt>
-<dd><p>Convolve the specified hrf with the timecourse</p>
+<code class="descclassname">brainiak.utils.fmrisim.</code><code class="descname">convolve_hrf</code><span class="sig-paren">(</span><em>stimfunction</em>, <em>tr_duration</em>, <em>hrf_type='double_gamma'</em>, <em>scale_function=True</em>, <em>temporal_resolution=100.0</em><span class="sig-paren">)</span><a class="headerlink" href="#brainiak.utils.fmrisim.convolve_hrf" title="Permalink to this definition">¶</a></dt>
+<dd><p>Convolve the specified hrf with the timecourse.
+The output of this is a downsampled convolution of the stimfunction and
+the HRF function. If temporal_resolution is 1 / tr_duration then the
+output will be the same length as stimfunction. This time course assumes
+that slice time correction has occurred and all slices have been aligned
+to the middle time point in the TR.</p>
+<p>Be aware that if scaling is on and event durations are less than the
+duration of a TR then the hrf may or may not come out as anticipated.
+This is because very short events would evoke a small absolute response
+after convolution  but if there are only short events and you scale then
+this will look similar to a convolution with longer events. In general
+scaling is useful, which is why it is the default, but be aware of this
+edge case and if it is a concern, set the scale_function to false.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -746,6 +746,26 @@ but one dimension or are None, in which case they are ignored.</li>
 </dd></dl>
 
 <dl class="function">
+<dt id="brainiak.utils.utils.ecdf">
+<code class="descclassname">brainiak.utils.utils.</code><code class="descname">ecdf</code><span class="sig-paren">(</span><em>x</em><span class="sig-paren">)</span><a class="headerlink" href="#brainiak.utils.utils.ecdf" title="Permalink to this definition">¶</a></dt>
+<dd><p>Empirical cumulative distribution function</p>
+<p>Given a 1D array of values, returns a function f(q) that outputs the
+fraction of values less than or equal to q.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>x</strong> (<em>1D array</em>) – values for which to compute CDF</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><strong>ecdf_fun</strong> – function that returns the value of the CDF at a given point</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">Callable[[float], float]</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
 <dt id="brainiak.utils.utils.from_sym_2_tri">
 <code class="descclassname">brainiak.utils.utils.</code><code class="descname">from_sym_2_tri</code><span class="sig-paren">(</span><em>symm</em><span class="sig-paren">)</span><a class="headerlink" href="#brainiak.utils.utils.from_sym_2_tri" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="docutils">
@@ -795,7 +815,7 @@ but one dimension or are None, in which case they are ignored.</li>
 
 <dl class="function">
 <dt id="brainiak.utils.utils.gen_design">
-<code class="descclassname">brainiak.utils.utils.</code><code class="descname">gen_design</code><span class="sig-paren">(</span><em>stimtime_files</em>, <em>scan_duration</em>, <em>TR</em>, <em>style='FSL'</em>, <em>temp_res=0.01</em>, <em>hrf_para={'undershoot_dispersion': 0.9</em>, <em>'response_delay': 6</em>, <em>'response_dispersion': 0.9</em>, <em>'undershoot_scale': 0.035</em>, <em>'undershoot_delay': 12}</em><span class="sig-paren">)</span><a class="headerlink" href="#brainiak.utils.utils.gen_design" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">brainiak.utils.utils.</code><code class="descname">gen_design</code><span class="sig-paren">(</span><em>stimtime_files</em>, <em>scan_duration</em>, <em>TR</em>, <em>style='FSL'</em>, <em>temp_res=0.01</em>, <em>hrf_para={'undershoot_dispersion': 0.9</em>, <em>'undershoot_delay': 12</em>, <em>'response_dispersion': 0.9</em>, <em>'undershoot_scale': 0.035</em>, <em>'response_delay': 6}</em><span class="sig-paren">)</span><a class="headerlink" href="#brainiak.utils.utils.gen_design" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="docutils">
 <dt>Generate design matrix based on a list of names of stimulus</dt>
 <dd>timing files. The function will read each file, and generate
@@ -841,7 +861,9 @@ The third number is the amplitude modulation (or weight)
 of the response.
 It is acceptable to not provide the weight,
 or not provide both duration and weight.
-In such cases, these parameters will default to 1.0.</p>
+In such cases, these parameters will default to 1.0.
+This code will accept timing files with only 1 or 2 columns for
+convenience but please note that the FSL package does not allow this</p>
 <p>’AFNI’ style has one line for each scan (run).
 Each line has a few triplets in the format of
 stim_onsets*weight:duration
@@ -871,6 +893,75 @@ one experiment condition, in the order in stimtime_files</p>
 </td>
 </tr>
 <tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">2D numpy array</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="brainiak.utils.utils.p_from_null">
+<code class="descclassname">brainiak.utils.utils.</code><code class="descname">p_from_null</code><span class="sig-paren">(</span><em>X</em>, <em>two_sided=False</em><span class="sig-paren">)</span><a class="headerlink" href="#brainiak.utils.utils.p_from_null" title="Permalink to this definition">¶</a></dt>
+<dd><p>Compute p value of true result from null distribution</p>
+<p>Given an array containing both a real result and a set of null results,
+computes the fraction of null results larger than the real result (or,
+if two_sided=True, the fraction of null results more extreme than the real
+result in either the positive or negative direction).</p>
+<p>Note that all real results are compared to a pooled null distribution,
+which is the max/min over all null results, providing multiple
+comparisons correction.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>X</strong> (<em>ndarray with arbitrary number of dimensions</em>) – The last dimension of X should contain the real result in X[…, 0]
+and the null results in X[…, 1:]</li>
+<li><strong>two_sided</strong> (<em>bool</em><em>, </em><em>default:False</em>) – Whether the p value should be one-sided (testing only for being
+above the null) or two-sided (testing for both significantly positive
+and significantly negative values)</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>p</strong> – p values for each true X value under the null distribution</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">ndarray the same shape as X, without the last dimension</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="brainiak.utils.utils.phase_randomize">
+<code class="descclassname">brainiak.utils.utils.</code><code class="descname">phase_randomize</code><span class="sig-paren">(</span><em>D</em>, <em>random_state=0</em><span class="sig-paren">)</span><a class="headerlink" href="#brainiak.utils.utils.phase_randomize" title="Permalink to this definition">¶</a></dt>
+<dd><p>Randomly shift signal phases</p>
+<p>For each timecourse (from each voxel and each subject), computes its DFT
+and then randomly shifts the phase of each frequency before inverting
+back into the time domain. This yields timecourses with the same power
+spectrum (and thus the same autocorrelation) as the original timecourses,
+but will remove any meaningful temporal relationships between the
+timecourses.</p>
+<p>This procedure is described in:
+Simony E, Honey CJ, Chen J, Lositsky O, Yeshurun Y, Wiesel A, Hasson U
+(2016) Dynamic reconfiguration of the default mode network during narrative
+comprehension. Nat Commun 7.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>D</strong> (<em>voxel by time by subject ndarray</em>) – fMRI data to be phase randomized</li>
+<li><strong>random_state</strong> (<em>RandomState</em><em> or </em><em>an int seed</em><em> (</em><em>0 by default</em><em>)</em>) – A random number generator instance to define the state of the
+random permutations generator.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">phase randomized timecourses</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">ndarray of same shape as D</p>
 </td>
 </tr>
 </tbody>
@@ -969,7 +1060,7 @@ It useful for computing the softmax_i(v)=exp(v_i)/sum(exp(v)) function.</p>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'./',
-            VERSION:'0.6',
+            VERSION:'0.7.1',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true,
