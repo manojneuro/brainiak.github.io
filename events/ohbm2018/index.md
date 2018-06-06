@@ -3,16 +3,17 @@ layout: default
 title: Organization for Human Brain Mapping
 redirect_from: /ohbm2018
 ---
-
-
-## BrainIAK Sample Tutorials
+# BrainIAK at OHBM 2018
+<br/>
+## BrainIAK Tutorials
 <div class='row text'>
 <div class='col-lg-6'>
-We have provided some sample tutorials in the link below. The entire tutorial set is undergoing alpha testing currently. 
+We have tutorials that will cover materials 
+from the basics of Machine Learning to advanced fMRI analysis. They are all built using Jupyter notebooks. The entire tutorial set is undergoing alpha testing currently. 
 We plan to release the tutorials in <b>late Fall 2018.</b> </div></div>
 - [Sample Tutorials](/events/ohbm2018/brainiak_sample_tutorials)
 
-## BrainIAK Posters at OHBM 2018
+## BrainIAK Posters
 {% for poster in site.data.events.ohbm2018 %}
 <div class='row'>
 <div class='col-lg-6'>
@@ -28,7 +29,7 @@ We plan to release the tutorials in <b>late Fall 2018.</b> </div></div>
 <br>
 {% endfor %}
 
-# BrainIAK Installation
+## BrainIAK Installation
 <div class='row text'>
 <div class='col-lg-6'>
 BrainIAK is a Python package for high-performance neuroimaging analysis. The above posters associated with the BrainIAK project will appear at OHBM 2018 along with several code examples.
