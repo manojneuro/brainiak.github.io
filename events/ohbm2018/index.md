@@ -4,34 +4,15 @@ title: Organization for Human Brain Mapping
 redirect_from: /ohbm2018
 ---
 
-# BrainIAK at OHBM 2018
+
+## BrainIAK Sample Tutorials
 <div class='row text'>
 <div class='col-lg-6'>
-BrainIAK is a Python package for high-performance neuroimaging analysis. Below are the six posters associated with the BrainIAK project that will appear at OHBM 2018 along with several code examples.
-The easiest way to get started with the examples is via a Docker <a href='https://www.docker.com/what-container'>container</a>:
-<ol>
-   <li>Install Docker (<a href='https://www.docker.com/docker-windows#availability'>Windows</a>, <a href='https://www.docker.com/docker-mac#availability'>macOS</a>, or <a href='https://www.docker.com/docker-ubuntu#availability'>Ubuntu</a>).</li>
-   <li>Run the following commands in your terminal (or follow the <a href='/docs/#docker'>documentation</a>):
-   <ul>
-     <li><code>docker pull brainiak/brainiak</code></li>
-     <li><code>docker run -it -p 8888:8888 -v brainiak:/mnt --name demo brainiak/brainiak</code></li>
-     <li><code>python3 -m notebook --allow-root --no-browser --ip=0.0.0.0</code></li>
-   </ul>
-   </li>
-   <li>Visit <a href='http://localhost:8888'>http://localhost:8888</a> in your browser.</li>
-</ol>
+We have provided some sample tutorials in the link below. The entire tutorial set is undergoing alpha testing currently. 
+We plan to release the tutorials in <b>late Fall 2018.</b> </div></div>
+- [Sample Tutorials](/events/ohbm2018/brainiak_sample_tutorials)
 
-For the full BrainIAK feature set, including scalability, please
-<ol>
-   <li>Install the appropriate <a href='http://brainiak.org/docs/#requirements'>requirements</a></li>
-   <li>Install BrainIAK via <code>pip install brainiak</code></li>
-</ol>
-Please <a href='http://brainiak.org/docs/#support'>contact us</a> if you need help.
-<br><br>
-</div>
-</div>
-
-## Posters at OHBM 2018
+## BrainIAK Posters at OHBM 2018
 {% for poster in site.data.events.ohbm2018 %}
 <div class='row'>
 <div class='col-lg-6'>
@@ -46,3 +27,14 @@ Please <a href='http://brainiak.org/docs/#support'>contact us</a> if you need he
 </div>
 <br>
 {% endfor %}
+
+# BrainIAK Installation
+<div class='row text'>
+<div class='col-lg-6'>
+BrainIAK is a Python package for high-performance neuroimaging analysis. The above posters associated with the BrainIAK project will appear at OHBM 2018 along with several code examples.
+The easiest way to get started with the examples is via conda  <a href='http://brainiak.org/docs/installation.html'>install. </a>
+<br/><br/>
+Please <a href='http://brainiak.org/docs/#support'>contact us</a> if you need help.
+<br><br>
+</div>
+</div>

@@ -2,9 +2,8 @@
   title: "BrainIAK Tutorials: User-friendly tutorials for cutting-edge MVPA methods"
   authors: Manoj Kumar, Cameron T. Ellis,  Nicholas B. Turk-Browne, Peter J. Ramadge, Kenneth A. Norman
   contact: mk35@princeton.edu
-  pdf: 260.04.pdf
-  example: "https://github.com/brainiak/brainiak/blob/master/examples/utils/fmrisim_multivariate_example.ipynb
-"
+  pdf: 2020.pdf
+  example: "http://0.0.0.0:4000/events/ohbm2018/brainiak_sample_tutorials/"
 - id: 2023
   title: "Enabling large-scale fMRI analysis with BrainIAK"
   authors: Mihai Capotă, Daniel Suo, Theodore Willke, Kenneth Norman, Nicholas Turk-Browne, Kai Li, Jonathan Cohen
