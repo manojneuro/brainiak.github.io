@@ -4,15 +4,9 @@ title: Organization for Human Brain Mapping
 redirect_from: /ohbm2018
 ---
 # BrainIAK at OHBM 2018
-<br/>
-## BrainIAK Tutorials
-<div class='row text'>
-<div class='col-lg-6'>
-We have tutorials that will cover materials 
-from the basics of Machine Learning to advanced fMRI analysis. They are all built using Jupyter notebooks. The entire tutorial set is undergoing alpha testing currently. 
-We plan to release the tutorials in <b>late Fall 2018.</b> </div></div>
-- [Sample Tutorials](/events/ohbm2018/brainiak_sample_tutorials)
 
+
+<br/>
 ## BrainIAK Posters
 {% for poster in site.data.events.ohbm2018 %}
 <div class='row'>
