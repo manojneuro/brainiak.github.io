@@ -14,7 +14,7 @@ Below, we have a sample of the tutorials that we have created. Please click the 
 The tutorials may be easily modified to point to your own data.  </div></div>
 - [Searchlights](/events/ohbm2018/brainiak_sample_tutorials/07-searchlight.html) &nbsp;&nbsp;&nbsp; [video](https://www.youtube.com/watch?v=gnVadHiYSHQ)
 - [Full Correlation Matrix Analysis](/events/ohbm2018/brainiak_sample_tutorials/09-fcma.html)
-- [Functional Alignment](/events/ohbm2018/brainiak_sample_tutorials/10-func-align.html)
+- [Functional Alignment](/events/ohbm2018/brainiak_sample_tutorials/10-func-align.html) &nbsp;&nbsp;&nbsp; [video](https://youtu.be/XGQYfNJ1rQg)
 
 <div class='row text'>
 <div class='col-lg-6'>
