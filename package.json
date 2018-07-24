@@ -17,7 +17,6 @@
     "gulp-babel": "*",
     "gulp-clean-css": "*",
     "gulp-concat": "*",
-    "gulp-connect": "^5.5.0",
     "gulp-open": "^3.0.1",
     "gulp-rename": "*",
     "gulp-replace": "*",
