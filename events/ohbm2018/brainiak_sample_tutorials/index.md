@@ -12,6 +12,7 @@ from the basics of Machine Learning to advanced fMRI analysis. They are all buil
 We plan to release the full set of tutorials in <b>early 2019.</b> 
 Below, we have a sample of the tutorials that we have created. Please click the links below to view these tutorials. Each tutorial has an associated dataset against which it is run.
 The tutorials may be easily modified to point to your own data.  </div></div>
+- [Representational Similarity Analysis](/events/ohbm2018/brainiak_sample_tutorials/06-rsa.html)
 - [Searchlights](/events/ohbm2018/brainiak_sample_tutorials/07-searchlight.html) &nbsp;&nbsp;&nbsp; [video](https://www.youtube.com/watch?v=gnVadHiYSHQ)
 - [Full Correlation Matrix Analysis](/events/ohbm2018/brainiak_sample_tutorials/09-fcma.html)
 - [Functional Alignment](/events/ohbm2018/brainiak_sample_tutorials/10-func-align.html) &nbsp;&nbsp;&nbsp; [video](https://youtu.be/XGQYfNJ1rQg)
