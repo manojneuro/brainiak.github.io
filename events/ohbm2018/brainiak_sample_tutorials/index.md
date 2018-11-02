@@ -22,4 +22,4 @@ If you would like to be notified when we release the tutorials, please fill out 
 </div>
 </div>
 <br/>
-[Back to OHBM 2018](/events/ohbm2018)
+[Check out our posters at other events](/events/)
