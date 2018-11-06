@@ -187,3 +187,23 @@
      code: "https://github.com/brainiak/brainiak/blob/master/brainiak/funcalign/rsrm.py"
      docs: "http://brainiak.org/docs/brainiak.funcalign.html#module-brainiak.funcalign.rsrm"
      example: "https://github.com/brainiak/brainiak/blob/master/examples/funcalign/rsrm_synthetic_reconstruction.ipynb"
+
+- id: cohen2017-1
+  title: "Computational approaches to fMRI analysis"
+  date: 2017-02-23
+  authors:
+     - Jonathan D. Cohen
+     - Nathaniel Daw
+     - Barbara Engelhardt
+     - Uri Hasson
+     - Kai Li
+     - Yael Niv
+     - Kenneth A. Norman
+     - Jonathan Pillow
+     - Peter J. Ramadge
+     - Nicholas B. Turk-Browne
+     - Theodore L. Willke
+  journal: Nature Neuroscience
+  year: 2017
+  links:
+     paper: "https://doi.org/10.1038/nn.4499"
