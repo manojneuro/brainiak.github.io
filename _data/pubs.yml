@@ -155,7 +155,7 @@
      docs: "http://brainiak.org/docs/brainiak.reprsimil.html"
      example: "https://github.com/brainiak/brainiak/blob/master/examples/reprsimil/bayesian_rsa_example.ipynb"
 
-- id: turek2016-1
+- id: turek2017-1
   title: "A semi-supervised method for multi-subject FMRI functional alignment"
   date: 2017-06-19
   authors:
@@ -170,3 +170,20 @@
      code: "https://github.com/brainiak/brainiak/blob/master/brainiak/funcalign/sssrm.py"
      docs: "http://brainiak.org/docs/brainiak.funcalign.html#module-brainiak.funcalign.sssrm"
      example: "https://github.com/brainiak/brainiak/blob/master/examples/funcalign/sssrm_image_prediction_example.py"
+
+- id: turek2018-1
+  title: "Capturing Shared and Individual Information in fMRI Data"
+  date: 2018-09-13
+  authors:
+     - Javier S. Turek
+     - Cameron T. Ellis
+     - Lena J. Skalaban
+     - Nicholas B. Turk-Browne
+     - Theodore L. Willke
+  journal: 2018 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP)
+  year: 2018
+  links:
+     paper: "https://doi.org/10.1109/ICASSP.2018.8462175"
+     code: "https://github.com/brainiak/brainiak/blob/master/brainiak/funcalign/rsrm.py"
+     docs: "http://brainiak.org/docs/brainiak.funcalign.html#module-brainiak.funcalign.rsrm"
+     example: "https://github.com/brainiak/brainiak/blob/master/examples/funcalign/rsrm_synthetic_reconstruction.ipynb"
