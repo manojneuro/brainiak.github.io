@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>brainiak.funcalign package &mdash; brainiak 0.7.1 documentation</title>
+  <title>brainiak.funcalign package &mdash; brainiak 0.8 documentation</title>
   
 
   
@@ -35,7 +35,7 @@
         <link rel="index" title="Index"
               href="genindex.html"/>
         <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="brainiak 0.7.1 documentation" href="index.html"/>
+    <link rel="top" title="brainiak 0.8 documentation" href="index.html"/>
         <link rel="up" title="brainiak package" href="brainiak.html"/>
         <link rel="next" title="brainiak.hyperparamopt package" href="brainiak.hyperparamopt.html"/>
         <link rel="prev" title="brainiak.fcma package" href="brainiak.fcma.html"/> 
@@ -67,7 +67,7 @@
             
             
               <div class="version">
-                0.7.1
+                0.8
               </div>
             
           
@@ -91,10 +91,23 @@
               
             
             
-              <ul>
+              <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="release_notes.html">Release notes</a></li>
-<li class="toctree-l1"><a class="reference internal" href="api.html">API</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="api.html">API</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="api.html#brainiak">brainiak</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="brainiak.html">brainiak package</a><ul class="current">
+<li class="toctree-l4 current"><a class="reference internal" href="brainiak.html#subpackages">Subpackages</a></li>
+<li class="toctree-l4"><a class="reference internal" href="brainiak.html#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="brainiak.html#module-brainiak.image">brainiak.image module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="brainiak.html#module-brainiak.io">brainiak.io module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="brainiak.html#module-brainiak.isfc">brainiak.isfc module</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="contributing.html">Contributing</a></li>
 </ul>
 
@@ -455,6 +468,25 @@ note that number of voxels and samples can vary across subjects</li>
 </table>
 </dd></dl>
 
+<dl class="method">
+<dt id="brainiak.funcalign.srm.SRM.transform_subject">
+<code class="descname">transform_subject</code><span class="sig-paren">(</span><em>X</em><span class="sig-paren">)</span><a class="headerlink" href="#brainiak.funcalign.srm.SRM.transform_subject" title="Permalink to this definition">¶</a></dt>
+<dd><p>Transform a new subject using the existing model.
+The subject is assumed to have recieved equivalent stimulation</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>X</strong> (<em>2D array</em><em>, </em><em>shape=</em><em>[</em><em>voxels</em><em>, </em><em>timepoints</em><em>]</em>) – The fMRI data of the new subject.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><strong>w</strong> – Orthogonal mapping <code class="xref py py-obj docutils literal"><span class="pre">W_{new}</span></code> for new subject</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">2D array, shape=[voxels, features]</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
 </dd></dl>
 
 <dl class="class">
@@ -547,6 +579,25 @@ number of subjects.</p>
 </tr>
 <tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">list of 2D arrays, element i has shape=[features_i, samples_i]</p>
 </td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="brainiak.funcalign.srm.DetSRM.transform_subject">
+<code class="descname">transform_subject</code><span class="sig-paren">(</span><em>X</em><span class="sig-paren">)</span><a class="headerlink" href="#brainiak.funcalign.srm.DetSRM.transform_subject" title="Permalink to this definition">¶</a></dt>
+<dd><p>Transform a new subject using the existing model.
+The subject is assumed to have recieved equivalent stimulation</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>X</strong> (<em>2D array</em><em>, </em><em>shape=</em><em>[</em><em>voxels</em><em>, </em><em>timepoints</em><em>]</em>) – The fMRI data of the new subject.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><strong>w</strong> – Orthogonal mapping <code class="xref py py-obj docutils literal"><span class="pre">W_{new}</span></code> for new subject</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">2D array, shape=[voxels, features]</td>
 </tr>
 </tbody>
 </table>
@@ -760,7 +811,7 @@ note that number of voxels and samples can vary across subjects.</li>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'./',
-            VERSION:'0.7.1',
+            VERSION:'0.8',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true,

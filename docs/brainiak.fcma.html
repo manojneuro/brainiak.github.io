@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>brainiak.fcma package &mdash; brainiak 0.7.1 documentation</title>
+  <title>brainiak.fcma package &mdash; brainiak 0.8 documentation</title>
   
 
   
@@ -35,7 +35,7 @@
         <link rel="index" title="Index"
               href="genindex.html"/>
         <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="brainiak 0.7.1 documentation" href="index.html"/>
+    <link rel="top" title="brainiak 0.8 documentation" href="index.html"/>
         <link rel="up" title="brainiak package" href="brainiak.html"/>
         <link rel="next" title="brainiak.funcalign package" href="brainiak.funcalign.html"/>
         <link rel="prev" title="brainiak.factoranalysis package" href="brainiak.factoranalysis.html"/> 
@@ -67,7 +67,7 @@
             
             
               <div class="version">
-                0.7.1
+                0.8
               </div>
             
           
@@ -91,10 +91,23 @@
               
             
             
-              <ul>
+              <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="release_notes.html">Release notes</a></li>
-<li class="toctree-l1"><a class="reference internal" href="api.html">API</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="api.html">API</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="api.html#brainiak">brainiak</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="brainiak.html">brainiak package</a><ul class="current">
+<li class="toctree-l4 current"><a class="reference internal" href="brainiak.html#subpackages">Subpackages</a></li>
+<li class="toctree-l4"><a class="reference internal" href="brainiak.html#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="brainiak.html#module-brainiak.image">brainiak.image module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="brainiak.html#module-brainiak.io">brainiak.io module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="brainiak.html#module-brainiak.isfc">brainiak.isfc module</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="contributing.html">Contributing</a></li>
 </ul>
 
@@ -236,7 +249,7 @@ in which case training data is needed to compute
 the similarity vector for each sample to be classified.
 However, if the test samples are also provided during the fit,
 the similarity vectors can be precomputed too
-and then training_datais None</p>
+and then training_data_ is None</p>
 </dd></dl>
 
 <dl class="attribute">
@@ -867,11 +880,11 @@ the length of array equals the number of voxels</li>
 <em class="property">class </em><code class="descclassname">brainiak.fcma.preprocessing.</code><code class="descname">RandomType</code><a class="headerlink" href="#brainiak.fcma.preprocessing.RandomType" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">enum.Enum</span></code></p>
 <p>Define the random types as enumeration</p>
-<p>NORANDOM means do not randomize the data;
-REPRODUCIBLE means randomize the data with a fixed seed so that the
+<p>NORANDOM means do not randomize the image data;
+REPRODUCIBLE means randomize the image data with a fixed seed so that the
 permutation holds between different runs;
-UNREPRODUCIBLE means truly randomize the data which returns different
-results in different runs.</p>
+UNREPRODUCIBLE means truly randomize the image data which returns
+different results in different runs.</p>
 <dl class="attribute">
 <dt id="brainiak.fcma.preprocessing.RandomType.NORANDOM">
 <code class="descname">NORANDOM</code><em class="property"> = 0</em><a class="headerlink" href="#brainiak.fcma.preprocessing.RandomType.NORANDOM" title="Permalink to this definition">¶</a></dt>
@@ -906,8 +919,7 @@ results in different runs.</p>
 If it is not specified, the method will assign None to the returning
 variable raw_data2 and the self-correlation on raw_data1 will be
 computed</li>
-<li><strong>random</strong> (<em>Optional</em><em>[</em><a class="reference internal" href="#brainiak.fcma.preprocessing.RandomType" title="brainiak.fcma.preprocessing.RandomType"><em>RandomType</em></a><em>]</em>) – Randomize the data within subject or not.
-Default NORANDOM</li>
+<li><strong>random</strong> (<em>Optional</em><em>[</em><a class="reference internal" href="#brainiak.fcma.preprocessing.RandomType" title="brainiak.fcma.preprocessing.RandomType"><em>RandomType</em></a><em>]</em>) – Randomize the image data within subject or not.</li>
 <li><strong>comm</strong> (<em>MPI.Comm</em>) – MPI communicator to use for MPI operations.</li>
 </ul>
 </td>
@@ -996,7 +1008,7 @@ processing. Assuming all subjects live in the identical cube.</p>
 <li><strong>images</strong> (<em>Iterable</em><em>[</em><em>SpatialImage</em><em>]</em>) – Data.</li>
 <li><strong>conditions</strong> (<em>List</em><em>[</em><em>UniqueLabelConditionSpec</em><em>]</em>) – Condition specification.</li>
 <li><strong>data_type</strong> – Type to cast image to.</li>
-<li><strong>random</strong> (<em>Optional</em><em>[</em><a class="reference internal" href="#brainiak.fcma.preprocessing.RandomType" title="brainiak.fcma.preprocessing.RandomType"><em>RandomType</em></a><em>]</em>) – Randomize the data within subject or not.</li>
+<li><strong>random</strong> (<em>Optional</em><em>[</em><a class="reference internal" href="#brainiak.fcma.preprocessing.RandomType" title="brainiak.fcma.preprocessing.RandomType"><em>RandomType</em></a><em>]</em>) – Randomize the image data within subject or not.</li>
 </ul>
 </td>
 </tr>
@@ -1183,7 +1195,7 @@ the length of array equals the number of voxels</td>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'./',
-            VERSION:'0.7.1',
+            VERSION:'0.8',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true,

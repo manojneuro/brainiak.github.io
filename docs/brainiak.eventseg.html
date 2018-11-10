@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>brainiak.eventseg package &mdash; brainiak 0.7.1 documentation</title>
+  <title>brainiak.eventseg package &mdash; brainiak 0.8 documentation</title>
   
 
   
@@ -35,7 +35,7 @@
         <link rel="index" title="Index"
               href="genindex.html"/>
         <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="brainiak 0.7.1 documentation" href="index.html"/>
+    <link rel="top" title="brainiak 0.8 documentation" href="index.html"/>
         <link rel="up" title="brainiak package" href="brainiak.html"/>
         <link rel="next" title="brainiak.factoranalysis package" href="brainiak.factoranalysis.html"/>
         <link rel="prev" title="brainiak package" href="brainiak.html"/> 
@@ -67,7 +67,7 @@
             
             
               <div class="version">
-                0.7.1
+                0.8
               </div>
             
           
@@ -91,10 +91,23 @@
               
             
             
-              <ul>
+              <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="release_notes.html">Release notes</a></li>
-<li class="toctree-l1"><a class="reference internal" href="api.html">API</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="api.html">API</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="api.html#brainiak">brainiak</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="brainiak.html">brainiak package</a><ul class="current">
+<li class="toctree-l4 current"><a class="reference internal" href="brainiak.html#subpackages">Subpackages</a></li>
+<li class="toctree-l4"><a class="reference internal" href="brainiak.html#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="brainiak.html#module-brainiak.image">brainiak.image module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="brainiak.html#module-brainiak.io">brainiak.io module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="brainiak.html#module-brainiak.isfc">brainiak.isfc module</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="contributing.html">Contributing</a></li>
 </ul>
 
@@ -176,15 +189,20 @@
 segment the timeseries into events with stable activity patterns. After
 learning the signature activity pattern of each event, the model can then be
 applied to other datasets to identify a corresponding sequence of events.</p>
-<p>Full details are available in the bioRxiv preprint:
+<p>Full details are available in:
 Christopher Baldassano, Janice Chen, Asieh Zadbood,
 Jonathan W Pillow, Uri Hasson, Kenneth A Norman
 Discovering event structure in continuous narrative perception and memory
 Neuron, Volume 95, Issue 3, 709 - 721.e5
-<a class="reference external" href="http://www.cell.com/neuron/abstract/S0896-6273(17)30593-7">http://www.cell.com/neuron/abstract/S0896-6273(17)30593-7</a></p>
+<a class="reference external" href="https://doi.org/10.1016/j.neuron.2017.06.041">https://doi.org/10.1016/j.neuron.2017.06.041</a></p>
+<p>This class also extends the model described in the Neuron paper, by allowing
+transition matrices that are composed of multiple separate chains of events
+rather than a single linear path. This allows a model to contain patterns for
+multiple event sequences (e.g. narratives), and fit probabilities along each of
+these chains on a new, unlabeled timeseries.</p>
 <dl class="class">
 <dt id="brainiak.eventseg.event.EventSegment">
-<em class="property">class </em><code class="descclassname">brainiak.eventseg.event.</code><code class="descname">EventSegment</code><span class="sig-paren">(</span><em>n_events=2</em>, <em>step_var=&lt;function EventSegment._default_var_schedule&gt;</em>, <em>n_iter=500</em><span class="sig-paren">)</span><a class="headerlink" href="#brainiak.eventseg.event.EventSegment" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">brainiak.eventseg.event.</code><code class="descname">EventSegment</code><span class="sig-paren">(</span><em>n_events=2</em>, <em>step_var=&lt;function EventSegment._default_var_schedule&gt;</em>, <em>n_iter=500</em>, <em>event_chains=None</em><span class="sig-paren">)</span><a class="headerlink" href="#brainiak.eventseg.event.EventSegment" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">sklearn.base.BaseEstimator</span></code></p>
 <p>Class for event segmentation of continuous fMRI data</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -196,6 +214,8 @@ Neuron, Volume 95, Issue 3, 709 - 721.e5
 <li><strong>step_var</strong> (<em>Callable</em><em>[</em><em>[</em><em>int</em><em>]</em><em>, </em><em>float</em><em>] </em><em>: default 4 *</em><em> (</em><em>0.98 **</em><em> (</em><em>step - 1</em><em>)</em><em>)</em>) – The Gaussian variance to use during fitting, as a function of the
 number of steps. Should decrease slowly over time.</li>
 <li><strong>n_iter</strong> (<em>int : default 500</em>) – Maximum number of steps to run during fitting</li>
+<li><strong>event_chains</strong> (<em>ndarray with length = n_events</em>) – Array with unique value for each separate chain of events, each linked
+in the order they appear in the array</li>
 </ul>
 </td>
 </tr>
@@ -330,6 +350,28 @@ are segmented simultaneously with the same event patterns</li>
 </dd></dl>
 
 <dl class="method">
+<dt id="brainiak.eventseg.event.EventSegment.model_prior">
+<code class="descname">model_prior</code><span class="sig-paren">(</span><em>t</em><span class="sig-paren">)</span><a class="headerlink" href="#brainiak.eventseg.event.EventSegment.model_prior" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the prior probability of the HMM</p>
+<p>Runs forward-backward without any data, showing the prior distribution
+of the model (for comparison with a posterior).</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>t</strong> (<em>int</em>) – Number of timepoints</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><ul class="simple">
+<li><strong>segments</strong> (<em>time by event ndarray</em>) – segments[t,e] = prior probability that timepoint t is in event e</li>
+<li><strong>test_ll</strong> (<em>float</em>) – Log-likelihood of model (data-independent term)</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
 <dt id="brainiak.eventseg.event.EventSegment.predict">
 <code class="descname">predict</code><span class="sig-paren">(</span><em>X</em><span class="sig-paren">)</span><a class="headerlink" href="#brainiak.eventseg.event.EventSegment.predict" title="Permalink to this definition">¶</a></dt>
 <dd><p>Applies learned event segmentation to new testing dataset</p>
@@ -416,7 +458,7 @@ find corresponding events in a new dataset, using find_events().</p>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'./',
-            VERSION:'0.7.1',
+            VERSION:'0.8',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true,

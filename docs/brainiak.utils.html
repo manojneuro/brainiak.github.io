@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>brainiak.utils package &mdash; brainiak 0.7.1 documentation</title>
+  <title>brainiak.utils package &mdash; brainiak 0.8 documentation</title>
   
 
   
@@ -35,7 +35,7 @@
         <link rel="index" title="Index"
               href="genindex.html"/>
         <link rel="search" title="Search" href="search.html"/>
-    <link rel="top" title="brainiak 0.7.1 documentation" href="index.html"/>
+    <link rel="top" title="brainiak 0.8 documentation" href="index.html"/>
         <link rel="up" title="brainiak package" href="brainiak.html"/>
         <link rel="next" title="Contributing" href="contributing.html"/>
         <link rel="prev" title="brainiak.searchlight package" href="brainiak.searchlight.html"/> 
@@ -67,7 +67,7 @@
             
             
               <div class="version">
-                0.7.1
+                0.8
               </div>
             
           
@@ -91,10 +91,23 @@
               
             
             
-              <ul>
+              <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="release_notes.html">Release notes</a></li>
-<li class="toctree-l1"><a class="reference internal" href="api.html">API</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="api.html">API</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="api.html#brainiak">brainiak</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="brainiak.html">brainiak package</a><ul class="current">
+<li class="toctree-l4 current"><a class="reference internal" href="brainiak.html#subpackages">Subpackages</a></li>
+<li class="toctree-l4"><a class="reference internal" href="brainiak.html#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="brainiak.html#module-brainiak.image">brainiak.image module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="brainiak.html#module-brainiak.io">brainiak.io module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="brainiak.html#module-brainiak.isfc">brainiak.isfc module</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="contributing.html">Contributing</a></li>
 </ul>
 
@@ -212,13 +225,14 @@ noise. Various parameters can be tuned depending on need</p>
 Create a mask volume that has similar contrast as an fMRI image. Defaults to
 use an MNI grey matter atlas but any image can be supplied to create an
 estimate.</p>
-<p>plot_brain
-Display the brain, timepoint by timepoint, with above threshold voxels
-highlighted against the outline of the brain.</p>
+<p>compute_signal_change
+Convert the signal function into useful metric units according to metrics
+used by others (Welvaert &amp; Rosseel, 2013)</p>
 <blockquote>
 <div>Authors:
-Cameron Ellis (Princeton) 2016-2017
-Chris Baldassano (Princeton) 2016-2017</div></blockquote>
+Cameron Ellis (Princeton &amp; Yale) 2016-2018
+Chris Baldassano (Princeton) 2016-2017
+Mingbo Cai (Princeton) 2017</div></blockquote>
 <dl class="function">
 <dt id="brainiak.utils.fmrisim.generate_signal">
 <code class="descclassname">brainiak.utils.fmrisim.</code><code class="descname">generate_signal</code><span class="sig-paren">(</span><em>dimensions, feature_coordinates, feature_size, feature_type, signal_magnitude=[1], signal_constant=1</em><span class="sig-paren">)</span><a class="headerlink" href="#brainiak.utils.fmrisim.generate_signal" title="Permalink to this definition">¶</a></dt>
@@ -336,7 +350,9 @@ stimfunction?</li>
 file used in Brainiak. The epoch file is a way to structure the timing
 information in fMRI that allows you to flexibly input different stimulus
 sequences. This is a list with each entry a 3d matrix corresponding to a
-participant. The dimensions of the 3d matrix are condition by epoch by time</p>
+participant. The dimensions of the 3d matrix are condition by epoch by
+time. For the i-th condition, if its k-th epoch spans time points t_m to
+t_n-1, then [i, k, t_m:t_n] are 1 in the epoch file.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -350,7 +366,7 @@ the value of stimfunction to identify the start and end of an
 epoch. If epochs in stimfunction are coded with the same weight and
 there is no time between blocks then export_epoch_file won’t be able to
 label them as different epochs</li>
-<li><strong>filename</strong> (<em>str</em>) – The name of the three column text file to be output</li>
+<li><strong>filename</strong> (<em>str</em>) – The name of the epoch file to be output</li>
 <li><strong>tr_duration</strong> (<em>float</em>) – How long is each TR in seconds</li>
 <li><strong>temporal_resolution</strong> (<em>float</em>) – How many elements per second are you modeling with the
 stimfunction?</li>
@@ -382,7 +398,7 @@ edge case and if it is a concern, set the scale_function to false.</p>
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>stimfunction</strong> (<em>timepoint by timecourse array</em>) – What is the time course of events to be modelled in this
+<li><strong>stimfunction</strong> (<em>timepoint by feature array</em>) – What is the time course of events to be modelled in this
 experiment. This can specify one or more timecourses of events.
 The events can be weighted or binary</li>
 <li><strong>tr_duration</strong> (<em>float</em>) – How long (in s) between each volume onset</li>
@@ -443,7 +459,7 @@ the same 4th dimension as signal_function</p>
 
 <dl class="function">
 <dt id="brainiak.utils.fmrisim.calc_noise">
-<code class="descclassname">brainiak.utils.fmrisim.</code><code class="descname">calc_noise</code><span class="sig-paren">(</span><em>volume</em>, <em>mask=None</em>, <em>noise_dict=None</em><span class="sig-paren">)</span><a class="headerlink" href="#brainiak.utils.fmrisim.calc_noise" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">brainiak.utils.fmrisim.</code><code class="descname">calc_noise</code><span class="sig-paren">(</span><em>volume</em>, <em>mask</em>, <em>template</em>, <em>noise_dict=None</em><span class="sig-paren">)</span><a class="headerlink" href="#brainiak.utils.fmrisim.calc_noise" title="Permalink to this definition">¶</a></dt>
 <dd><p>Calculates the noise properties of the volume supplied.
 This estimates what noise properties the volume has. For instance it
 determines the spatial smoothness, the autoregressive noise, system
@@ -457,6 +473,10 @@ these different types of noise interact.</p>
 <li><strong>volume</strong> (<em>4d numpy array</em><em>, </em><em>float</em>) – Take in a functional volume (either the file name or the numpy
 array) to be used to estimate the noise properties of this</li>
 <li><strong>mask</strong> (<em>3d numpy array</em><em>, </em><em>binary</em>) – A binary mask of the brain, the same size as the volume</li>
+<li><strong>template</strong> (<em>3d array</em><em>, </em><em>float</em>) – A continuous (0 -&gt; 1) volume describing the likelihood a voxel is in
+the brain. This can be used to contrast the brain and non brain.</li>
+<li><strong>noise_dict</strong> (<em>dict</em>) – The initialized dictionary of the calculated noise parameters of the
+provided dataset (usually it is only the voxel size)</li>
 </ul>
 </td>
 </tr>
@@ -473,7 +493,7 @@ dataset</p>
 
 <dl class="function">
 <dt id="brainiak.utils.fmrisim.generate_noise">
-<code class="descclassname">brainiak.utils.fmrisim.</code><code class="descname">generate_noise</code><span class="sig-paren">(</span><em>dimensions</em>, <em>stimfunction_tr</em>, <em>tr_duration</em>, <em>template</em>, <em>mask=None</em>, <em>noise_dict=None</em><span class="sig-paren">)</span><a class="headerlink" href="#brainiak.utils.fmrisim.generate_noise" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">brainiak.utils.fmrisim.</code><code class="descname">generate_noise</code><span class="sig-paren">(</span><em>dimensions</em>, <em>stimfunction_tr</em>, <em>tr_duration</em>, <em>template</em>, <em>mask=None</em>, <em>noise_dict=None</em>, <em>temporal_proportion=0.5</em>, <em>iterations=None</em>, <em>fit_thresh=0.05</em>, <em>fit_delta=0.5</em><span class="sig-paren">)</span><a class="headerlink" href="#brainiak.utils.fmrisim.generate_noise" title="Permalink to this definition">¶</a></dt>
 <dd><p>Generate the noise to be added to the signal.
 Default noise parameters will create a noise volume with a standard
 deviation of 0.1 (where the signal defaults to a value of 1). This has
@@ -490,9 +510,46 @@ values can be set by the user or estimated with calc_noise.</p>
 <li><strong>template</strong> (<em>3d array</em><em>, </em><em>float</em>) – A continuous (0 -&gt; 1) volume describing the likelihood a voxel is in
 the brain. This can be used to contrast the brain and non brain.</li>
 <li><strong>mask</strong> (<em>3d array</em><em>, </em><em>binary</em>) – The mask of the brain volume, distinguishing brain from non-brain</li>
-<li><strong>noise_dict</strong> (<em>dictionary</em><em>, </em><em>float</em>) – This is a dictionary which describes the noise parameters of the
-data. If there are no other variables provided then it will use default
-values</li>
+<li><strong>noise_dict</strong> (<em>dictionary</em><em>, </em><em>float</em>) – <p>This is a dictionary which describes the noise parameters of the
+data. If there are no other variables provided then it will use
+default values. The noise variables are as follows:</p>
+<p>snr [float]: Ratio of MR signal to the spatial noise
+sfnr [float]: Ratio of the MR signal to the temporal noise. This is the
+total variability that the following sigmas ‘sum’ to:</p>
+<p>task_sigma [float]: Size of the variance of task specific noise
+drift_sigma [float]: Size of the variance of drift noise
+auto_reg_sigma [float]: Size of the variance of autoregressive
+noise. This is an ARMA process where the AR and MA components can be
+separately specified
+physiological_sigma [float]: Size of the variance of physiological
+noise</p>
+<p>auto_reg_rho [list]: The coefficients of the autoregressive
+components you are modeling
+ma_rho [list]:The coefficients of the moving average components you
+are modeling
+max_activity [float]: The max value of the averaged brain in order
+to reference the template
+voxel_size [list]: The mm size of the voxels
+fwhm [float]: The gaussian smoothing kernel size (mm)
+matched [bool]: Specify whether you are fitting the noise parameters</p>
+<p>The volumes of brain noise that are generated have smoothness
+specified by ‘fwhm’</p>
+</li>
+<li><strong>float</strong> (<em>temporal_proportion</em><em>,</em>) – What is the proportion of the temporal variance (as specified by the
+SFNR noise parameter) that is accounted for by the system noise. If
+this number is high then all of the temporal variability is due to
+system noise, if it is low then all of the temporal variability is
+due to brain variability.</li>
+<li><strong>iterations</strong> (<em>list</em><em>, </em><em>int</em>) – The first element is how many steps of fitting the SFNR and SNR values
+will be performed. Usually converges after &lt; 5. The second element
+is the number of iterations for the AR fitting. This is much more
+time consuming (has to make a new timecourse on each iteration) so
+be careful about setting this appropriately.</li>
+<li><strong>fit_thresh</strong> (<em>float</em>) – What proportion of the target parameter value is sufficient error to
+warrant finishing fit search.</li>
+<li><strong>fit_delta</strong> (<em>float</em>) – How much are the parameters attenuated during the fitting process,
+in terms of the proportion of difference between the target
+parameter and the actual parameter</li>
 </ul>
 </td>
 </tr>
@@ -508,11 +565,14 @@ values</li>
 
 <dl class="function">
 <dt id="brainiak.utils.fmrisim.mask_brain">
-<code class="descclassname">brainiak.utils.fmrisim.</code><code class="descname">mask_brain</code><span class="sig-paren">(</span><em>volume</em>, <em>template_name=None</em>, <em>mask_threshold=None</em>, <em>mask_self=0</em><span class="sig-paren">)</span><a class="headerlink" href="#brainiak.utils.fmrisim.mask_brain" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">brainiak.utils.fmrisim.</code><code class="descname">mask_brain</code><span class="sig-paren">(</span><em>volume</em>, <em>template_name=None</em>, <em>mask_threshold=None</em>, <em>mask_self=True</em><span class="sig-paren">)</span><a class="headerlink" href="#brainiak.utils.fmrisim.mask_brain" title="Permalink to this definition">¶</a></dt>
 <dd><p>Mask the simulated volume
-This creates a mask specifying the likelihood (kind of) a voxel is
+This creates a mask specifying the approximate likelihood that a voxel is
 part of the brain. All values are bounded to the range of 0 to 1. An
-appropriate threshold to isolate brain voxels is &gt;0.2</p>
+appropriate threshold to isolate brain voxels is &gt;0.2. Critically,
+the data that should be used to create a template shouldn’t already be
+masked/skull stripped. If it is then it will give in accurate estimates
+of non-brain noise and corrupt estimations of SNR.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -521,15 +581,16 @@ appropriate threshold to isolate brain voxels is &gt;0.2</p>
 <li><strong>volume</strong> (<em>multidimensional array</em>) – Either numpy array of a volume or a tuple describing the dimensions
 of the mask to be created</li>
 <li><strong>template_name</strong> (<em>str</em>) – What is the path to the template to be loaded? If empty then it
-defaults to an MNI152 grey matter mask. This is ignored if mask_self is
-True.</li>
+defaults to an MNI152 grey matter mask. This is ignored if mask_self
+is True.</li>
 <li><strong>mask_threshold</strong> (<em>float</em>) – What is the threshold (0 -&gt; 1) for including a voxel in the mask? If
 None then the program will try and identify the last wide peak in a
 histogram of the template (assumed to be the brain voxels) and takes
 the minima before that peak as the threshold. Won’t work when the
 data is not bimodal.</li>
-<li><strong>mask_self</strong> (<em>bool</em>) – If set to true then it makes a mask from the volume supplied (by
-averaging across time points and changing the range).</li>
+<li><strong>mask_self</strong> (<em>bool</em><em> or </em><em>None</em>) – If set to true then it makes a mask from the volume supplied (by
+averaging across time points and changing the range). If it is set
+to false then it will use the template_name as an input.</li>
 </ul>
 </td>
 </tr>
@@ -546,29 +607,65 @@ the brain. This can be used to contrast the brain and non brain.</li>
 </dd></dl>
 
 <dl class="function">
-<dt id="brainiak.utils.fmrisim.plot_brain">
-<code class="descclassname">brainiak.utils.fmrisim.</code><code class="descname">plot_brain</code><span class="sig-paren">(</span><em>fig</em>, <em>brain</em>, <em>mask=None</em>, <em>percentile=99</em><span class="sig-paren">)</span><a class="headerlink" href="#brainiak.utils.fmrisim.plot_brain" title="Permalink to this definition">¶</a></dt>
-<dd><p>Display the brain that has been generated with a given threshold
-Will display the voxels above the given percentile and then a shadow of
-all voxels in the mask</p>
+<dt id="brainiak.utils.fmrisim.compute_signal_change">
+<code class="descclassname">brainiak.utils.fmrisim.</code><code class="descname">compute_signal_change</code><span class="sig-paren">(</span><em>signal_function</em>, <em>noise_function</em>, <em>noise_dict</em>, <em>magnitude</em>, <em>method='PSC'</em><span class="sig-paren">)</span><a class="headerlink" href="#brainiak.utils.fmrisim.compute_signal_change" title="Permalink to this definition">¶</a></dt>
+<dd><p>Rescale the signal to be a given magnitude, based on a specified
+metric (e.g. percent signal change). Metrics are heavily inspired by
+Welvaert &amp; Rosseel (2013). The rescaling is based on the maximal
+activity in the timecourse. Importantly, all values within the
+signal_function are scaled to have a min of -1 or max of 1, meaning that
+the voxel value will be the same as the magnitude.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>fig</strong> (<em>matplotlib object</em>) – The figure to be displayed, generated from matplotlib. import
-matplotlib.pyplot as plt; fig = plt.figure()</li>
-<li><strong>brain</strong> (<em>3d array</em>) – This is a 3d array with the neural data</li>
-<li><strong>mask</strong> (<em>3d array</em>) – A binary mask describing the location that you want to specify as</li>
-<li><strong>percentile</strong> (<em>float</em>) – What percentage of voxels will be included? Based on the values
-supplied</li>
+<li><strong>signal_function</strong> (<em>timepoint by voxel array</em>) – The signal time course to be altered. This can have
+multiple time courses specified as different columns in this
+array. Conceivably you could use the output of
+generate_stimfunction as the input but the temporal variance
+will be incorrect. Critically, different values across voxels are
+considered relative to each other, not independently. E.g., if the
+voxel has a peak signal twice as high as another voxel’s, then this
+means that the signal after these transformations will still be
+twice as high (according to the metric) in the first voxel relative
+to the second</li>
+<li><strong>noise_function</strong> (<em>timepoint by voxel numpy array</em>) – The time course of noise (a voxel created from generate_noise)
+for each voxel specified in signal_function. This is necessary
+for computing the mean evoked activity and the noise variability</li>
+<li><strong>noise_dict</strong> (<em>dict</em>) – A dictionary specifying the types of noise in this experiment. The
+noise types interact in important ways. First, all noise types
+ending with sigma (e.g. motion sigma) are mixed together in
+_generate_temporal_noise. The sigma values describe the proportion of
+mixing of these elements. However critically, SFNR is the
+parameter that describes how much noise these components contribute
+to the brain. If you set the noise dict to matched then it will
+fit the parameters to match the participant as best as possible.</li>
+<li><strong>magnitude</strong> (<em>list of floats</em>) – This specifies the size, in terms of the metric choosen below,
+of the signal being generated. This can be a single number,
+and thus apply to all signal timecourses, or it can be array and
+thus different for each voxel.</li>
+<li><strong>method</strong> (<em>str</em>) – Select the procedure used to calculate the signal magnitude,
+some of which are based on the definitions outlined in Welvaert &amp;
+Rosseel (2013):
+- ‘SFNR’: Change proportional to the temporal variability,
+as represented by the (desired) SFNR
+- ‘CNR_Amp/Noise-SD’: Signal magnitude relative to the temporal
+noise
+- ‘CNR_Amp2/Noise-Var_dB’: Same as above but converted to decibels
+- ‘CNR_Signal-SD/Noise-SD’: Standard deviation in signal
+relative to standard deviation in noise
+- ‘CNR_Signal-Var/Noise-Var_dB’: Same as above but converted to
+decibels
+- ‘PSC’: Calculate the percent signal change based on the
+average activity of the noise (mean / 100 * magnitude)</li>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>ax</strong> – Object with the information to be plotted</p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>signal_function_scaled</strong> – The new signal volume with the appropriately set signal change</p>
 </td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">matplotlib object</p>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">4d numpy array</p>
 </td>
 </tr>
 </tbody>
@@ -578,6 +675,128 @@ supplied</li>
 </div>
 <div class="section" id="module-brainiak.utils.utils">
 <span id="brainiak-utils-utils-module"></span><h2>brainiak.utils.utils module<a class="headerlink" href="#module-brainiak.utils.utils" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="brainiak.utils.utils.from_tri_2_sym">
+<code class="descclassname">brainiak.utils.utils.</code><code class="descname">from_tri_2_sym</code><span class="sig-paren">(</span><em>tri</em>, <em>dim</em><span class="sig-paren">)</span><a class="headerlink" href="#brainiak.utils.utils.from_tri_2_sym" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="docutils">
+<dt>convert a upper triangular matrix in 1D format</dt>
+<dd>to 2D symmetric matrix</dd>
+</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>tri</strong> (<em>1D array</em>) – Contains elements of upper triangular matrix</li>
+<li><strong>dim</strong> (<em>int</em>) – The dimension of target matrix.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>symm</strong> – Symmetric matrix in shape=[dim, dim]</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">2D array</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="brainiak.utils.utils.from_sym_2_tri">
+<code class="descclassname">brainiak.utils.utils.</code><code class="descname">from_sym_2_tri</code><span class="sig-paren">(</span><em>symm</em><span class="sig-paren">)</span><a class="headerlink" href="#brainiak.utils.utils.from_sym_2_tri" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="docutils">
+<dt>convert a 2D symmetric matrix to an upper</dt>
+<dd>triangular matrix in 1D format</dd>
+</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>symm</strong> (<em>2D array</em>) – Symmetric matrix</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><strong>tri</strong> – Contains elements of upper triangular matrix</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">1D array</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="brainiak.utils.utils.sumexp_stable">
+<code class="descclassname">brainiak.utils.utils.</code><code class="descname">sumexp_stable</code><span class="sig-paren">(</span><em>data</em><span class="sig-paren">)</span><a class="headerlink" href="#brainiak.utils.utils.sumexp_stable" title="Permalink to this definition">¶</a></dt>
+<dd><p>Compute the sum of exponents for a list of samples</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>data</strong> (<em>array</em><em>, </em><em>shape=</em><em>[</em><em>features</em><em>, </em><em>samples</em><em>]</em>) – A data array containing samples.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><ul class="simple">
+<li><strong>result_sum</strong> (<em>array, shape=[samples,]</em>) – The sum of exponents for each sample divided by the exponent
+of the maximum feature value in the sample.</li>
+<li><strong>max_value</strong> (<em>array, shape=[samples,]</em>) – The maximum feature value for each sample.</li>
+<li><strong>result_exp</strong> (<em>array, shape=[features, samples]</em>) – The exponent of each element in each sample divided by the exponent
+of the maximum feature value in the sample.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">This function is more stable than computing the sum(exp(v)).
+It useful for computing the softmax_i(v)=exp(v_i)/sum(exp(v)) function.</p>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="brainiak.utils.utils.concatenate_not_none">
+<code class="descclassname">brainiak.utils.utils.</code><code class="descname">concatenate_not_none</code><span class="sig-paren">(</span><em>l</em>, <em>axis=0</em><span class="sig-paren">)</span><a class="headerlink" href="#brainiak.utils.utils.concatenate_not_none" title="Permalink to this definition">¶</a></dt>
+<dd><p>Construct a numpy array by stacking not-None arrays in a list</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>data</strong> (<em>list of arrays</em>) – The list of arrays to be concatenated. Arrays have same shape in all
+but one dimension or are None, in which case they are ignored.</li>
+<li><strong>axis</strong> (<em>int</em><em>, </em><em>default = 0</em>) – Axis for the concatenation</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>data_stacked</strong> – The resulting concatenated array.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">array</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="brainiak.utils.utils.cov2corr">
+<code class="descclassname">brainiak.utils.utils.</code><code class="descname">cov2corr</code><span class="sig-paren">(</span><em>cov</em><span class="sig-paren">)</span><a class="headerlink" href="#brainiak.utils.utils.cov2corr" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="docutils">
+<dt>Calculate the correlation matrix based on a</dt>
+<dd>covariance matrix</dd>
+</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>cov</strong> (<em>2D array</em>) – </td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><strong>corr</strong> – correlation converted from the covarince matrix</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">2D array</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
 <dl class="class">
 <dt id="brainiak.utils.utils.ReadDesign">
 <em class="property">class </em><code class="descclassname">brainiak.utils.utils.</code><code class="descname">ReadDesign</code><span class="sig-paren">(</span><em>fname=None</em>, <em>include_orth=True</em>, <em>include_pols=True</em><span class="sig-paren">)</span><a class="headerlink" href="#brainiak.utils.utils.ReadDesign" title="Permalink to this definition">¶</a></dt>
@@ -663,159 +882,8 @@ values &gt; 0 for stimulus conditions</p>
 </dd></dl>
 
 <dl class="function">
-<dt id="brainiak.utils.utils.center_mass_exp">
-<code class="descclassname">brainiak.utils.utils.</code><code class="descname">center_mass_exp</code><span class="sig-paren">(</span><em>interval</em>, <em>scale=1.0</em><span class="sig-paren">)</span><a class="headerlink" href="#brainiak.utils.utils.center_mass_exp" title="Permalink to this definition">¶</a></dt>
-<dd><dl class="docutils">
-<dt>Calculate the center of mass of negative exponential distribution</dt>
-<dd>p(x) = exp(-x / scale) / scale
-in the interval of (interval_left, interval_right).
-scale is the same scale parameter as scipy.stats.expon.pdf</dd>
-</dl>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>interval</strong> (<em>size 2 tuple</em><em>, </em><em>float</em>) – interval must be in the form of (interval_left, interval_right),
-where interval_left/interval_right is the starting/end point of the
-interval in which the center of mass is calculated for exponential
-distribution.
-Note that interval_left must be non-negative, since exponential is
-not supported in the negative domain, and interval_right must be
-bigger than interval_left (thus positive) to form a well-defined
-interval.</li>
-<li><strong>scale</strong> (<em>float</em><em>, </em><em>positive</em>) – The scale parameter of the exponential distribution. See above.</li>
-</ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>m</strong> – The center of mass in the interval of (interval_left,
-interval_right) for exponential distribution.</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">float</p>
-</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-<dl class="function">
-<dt id="brainiak.utils.utils.concatenate_not_none">
-<code class="descclassname">brainiak.utils.utils.</code><code class="descname">concatenate_not_none</code><span class="sig-paren">(</span><em>l</em>, <em>axis=0</em><span class="sig-paren">)</span><a class="headerlink" href="#brainiak.utils.utils.concatenate_not_none" title="Permalink to this definition">¶</a></dt>
-<dd><p>Construct a numpy array by stacking not-None arrays in a list</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>data</strong> (<em>list of arrays</em>) – The list of arrays to be concatenated. Arrays have same shape in all
-but one dimension or are None, in which case they are ignored.</li>
-<li><strong>axis</strong> (<em>int</em><em>, </em><em>default = 0</em>) – Axis for the concatenation</li>
-</ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>data_stacked</strong> – The resulting concatenated array.</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">array</p>
-</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-<dl class="function">
-<dt id="brainiak.utils.utils.cov2corr">
-<code class="descclassname">brainiak.utils.utils.</code><code class="descname">cov2corr</code><span class="sig-paren">(</span><em>cov</em><span class="sig-paren">)</span><a class="headerlink" href="#brainiak.utils.utils.cov2corr" title="Permalink to this definition">¶</a></dt>
-<dd><dl class="docutils">
-<dt>Calculate the correlation matrix based on a</dt>
-<dd>covariance matrix</dd>
-</dl>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>cov</strong> (<em>2D array</em>) – </td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><strong>corr</strong> – correlation converted from the covarince matrix</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">2D array</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-<dl class="function">
-<dt id="brainiak.utils.utils.ecdf">
-<code class="descclassname">brainiak.utils.utils.</code><code class="descname">ecdf</code><span class="sig-paren">(</span><em>x</em><span class="sig-paren">)</span><a class="headerlink" href="#brainiak.utils.utils.ecdf" title="Permalink to this definition">¶</a></dt>
-<dd><p>Empirical cumulative distribution function</p>
-<p>Given a 1D array of values, returns a function f(q) that outputs the
-fraction of values less than or equal to q.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>x</strong> (<em>1D array</em>) – values for which to compute CDF</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><strong>ecdf_fun</strong> – function that returns the value of the CDF at a given point</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">Callable[[float], float]</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-<dl class="function">
-<dt id="brainiak.utils.utils.from_sym_2_tri">
-<code class="descclassname">brainiak.utils.utils.</code><code class="descname">from_sym_2_tri</code><span class="sig-paren">(</span><em>symm</em><span class="sig-paren">)</span><a class="headerlink" href="#brainiak.utils.utils.from_sym_2_tri" title="Permalink to this definition">¶</a></dt>
-<dd><dl class="docutils">
-<dt>convert a 2D symmetric matrix to an upper</dt>
-<dd>triangular matrix in 1D format</dd>
-</dl>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>symm</strong> (<em>2D array</em>) – Symmetric matrix</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><strong>tri</strong> – Contains elements of upper triangular matrix</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">1D array</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-<dl class="function">
-<dt id="brainiak.utils.utils.from_tri_2_sym">
-<code class="descclassname">brainiak.utils.utils.</code><code class="descname">from_tri_2_sym</code><span class="sig-paren">(</span><em>tri</em>, <em>dim</em><span class="sig-paren">)</span><a class="headerlink" href="#brainiak.utils.utils.from_tri_2_sym" title="Permalink to this definition">¶</a></dt>
-<dd><dl class="docutils">
-<dt>convert a upper triangular matrix in 1D format</dt>
-<dd>to 2D symmetric matrix</dd>
-</dl>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>tri</strong> (<em>1D array</em>) – Contains elements of upper triangular matrix</li>
-<li><strong>dim</strong> (<em>int</em>) – The dimension of target matrix.</li>
-</ul>
-</td>
-</tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>symm</strong> – Symmetric matrix in shape=[dim, dim]</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">2D array</p>
-</td>
-</tr>
-</tbody>
-</table>
-</dd></dl>
-
-<dl class="function">
 <dt id="brainiak.utils.utils.gen_design">
-<code class="descclassname">brainiak.utils.utils.</code><code class="descname">gen_design</code><span class="sig-paren">(</span><em>stimtime_files</em>, <em>scan_duration</em>, <em>TR</em>, <em>style='FSL'</em>, <em>temp_res=0.01</em>, <em>hrf_para={'undershoot_dispersion': 0.9</em>, <em>'undershoot_delay': 12</em>, <em>'response_dispersion': 0.9</em>, <em>'undershoot_scale': 0.035</em>, <em>'response_delay': 6}</em><span class="sig-paren">)</span><a class="headerlink" href="#brainiak.utils.utils.gen_design" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">brainiak.utils.utils.</code><code class="descname">gen_design</code><span class="sig-paren">(</span><em>stimtime_files</em>, <em>scan_duration</em>, <em>TR</em>, <em>style='FSL'</em>, <em>temp_res=0.01</em>, <em>hrf_para={'undershoot_scale': 0.035</em>, <em>'undershoot_delay': 12</em>, <em>'undershoot_dispersion': 0.9</em>, <em>'response_delay': 6</em>, <em>'response_dispersion': 0.9}</em><span class="sig-paren">)</span><a class="headerlink" href="#brainiak.utils.utils.gen_design" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="docutils">
 <dt>Generate design matrix based on a list of names of stimulus</dt>
 <dd>timing files. The function will read each file, and generate
@@ -900,33 +968,53 @@ one experiment condition, in the order in stimtime_files</p>
 </dd></dl>
 
 <dl class="function">
-<dt id="brainiak.utils.utils.p_from_null">
-<code class="descclassname">brainiak.utils.utils.</code><code class="descname">p_from_null</code><span class="sig-paren">(</span><em>X</em>, <em>two_sided=False</em><span class="sig-paren">)</span><a class="headerlink" href="#brainiak.utils.utils.p_from_null" title="Permalink to this definition">¶</a></dt>
-<dd><p>Compute p value of true result from null distribution</p>
-<p>Given an array containing both a real result and a set of null results,
-computes the fraction of null results larger than the real result (or,
-if two_sided=True, the fraction of null results more extreme than the real
-result in either the positive or negative direction).</p>
-<p>Note that all real results are compared to a pooled null distribution,
-which is the max/min over all null results, providing multiple
-comparisons correction.</p>
+<dt id="brainiak.utils.utils.usable_cpu_count">
+<code class="descclassname">brainiak.utils.utils.</code><code class="descname">usable_cpu_count</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#brainiak.utils.utils.usable_cpu_count" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get number of CPUs usable by the current process.</p>
+<p>Takes into consideration cpusets restrictions.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"></td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">int</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="brainiak.utils.utils.center_mass_exp">
+<code class="descclassname">brainiak.utils.utils.</code><code class="descname">center_mass_exp</code><span class="sig-paren">(</span><em>interval</em>, <em>scale=1.0</em><span class="sig-paren">)</span><a class="headerlink" href="#brainiak.utils.utils.center_mass_exp" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="docutils">
+<dt>Calculate the center of mass of negative exponential distribution</dt>
+<dd>p(x) = exp(-x / scale) / scale
+in the interval of (interval_left, interval_right).
+scale is the same scale parameter as scipy.stats.expon.pdf</dd>
+</dl>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>X</strong> (<em>ndarray with arbitrary number of dimensions</em>) – The last dimension of X should contain the real result in X[…, 0]
-and the null results in X[…, 1:]</li>
-<li><strong>two_sided</strong> (<em>bool</em><em>, </em><em>default:False</em>) – Whether the p value should be one-sided (testing only for being
-above the null) or two-sided (testing for both significantly positive
-and significantly negative values)</li>
+<li><strong>interval</strong> (<em>size 2 tuple</em><em>, </em><em>float</em>) – interval must be in the form of (interval_left, interval_right),
+where interval_left/interval_right is the starting/end point of the
+interval in which the center of mass is calculated for exponential
+distribution.
+Note that interval_left must be non-negative, since exponential is
+not supported in the negative domain, and interval_right must be
+bigger than interval_left (thus positive) to form a well-defined
+interval.</li>
+<li><strong>scale</strong> (<em>float</em><em>, </em><em>positive</em>) – The scale parameter of the exponential distribution. See above.</li>
 </ul>
 </td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>p</strong> – p values for each true X value under the null distribution</p>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>m</strong> – The center of mass in the interval of (interval_left,
+interval_right) for exponential distribution.</p>
 </td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">ndarray the same shape as X, without the last dimension</p>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">float</p>
 </td>
 </tr>
 </tbody>
@@ -969,45 +1057,61 @@ random permutations generator.</li>
 </dd></dl>
 
 <dl class="function">
-<dt id="brainiak.utils.utils.sumexp_stable">
-<code class="descclassname">brainiak.utils.utils.</code><code class="descname">sumexp_stable</code><span class="sig-paren">(</span><em>data</em><span class="sig-paren">)</span><a class="headerlink" href="#brainiak.utils.utils.sumexp_stable" title="Permalink to this definition">¶</a></dt>
-<dd><p>Compute the sum of exponents for a list of samples</p>
+<dt id="brainiak.utils.utils.ecdf">
+<code class="descclassname">brainiak.utils.utils.</code><code class="descname">ecdf</code><span class="sig-paren">(</span><em>x</em><span class="sig-paren">)</span><a class="headerlink" href="#brainiak.utils.utils.ecdf" title="Permalink to this definition">¶</a></dt>
+<dd><p>Empirical cumulative distribution function</p>
+<p>Given a 1D array of values, returns a function f(q) that outputs the
+fraction of values less than or equal to q.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>data</strong> (<em>array</em><em>, </em><em>shape=</em><em>[</em><em>features</em><em>, </em><em>samples</em><em>]</em>) – A data array containing samples.</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>x</strong> (<em>1D array</em>) – values for which to compute CDF</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><ul class="simple">
-<li><strong>result_sum</strong> (<em>array, shape=[samples,]</em>) – The sum of exponents for each sample divided by the exponent
-of the maximum feature value in the sample.</li>
-<li><strong>max_value</strong> (<em>array, shape=[samples,]</em>) – The maximum feature value for each sample.</li>
-<li><strong>result_exp</strong> (<em>array, shape=[features, samples]</em>) – The exponent of each element in each sample divided by the exponent
-of the maximum feature value in the sample.</li>
-</ul>
-</td>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><strong>ecdf_fun</strong> – function that returns the value of the CDF at a given point</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">Callable[[float], float]</td>
 </tr>
 </tbody>
 </table>
-<div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">This function is more stable than computing the sum(exp(v)).
-It useful for computing the softmax_i(v)=exp(v_i)/sum(exp(v)) function.</p>
-</div>
 </dd></dl>
 
 <dl class="function">
-<dt id="brainiak.utils.utils.usable_cpu_count">
-<code class="descclassname">brainiak.utils.utils.</code><code class="descname">usable_cpu_count</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#brainiak.utils.utils.usable_cpu_count" title="Permalink to this definition">¶</a></dt>
-<dd><p>Get number of CPUs usable by the current process.</p>
-<p>Takes into consideration cpusets restrictions.</p>
+<dt id="brainiak.utils.utils.p_from_null">
+<code class="descclassname">brainiak.utils.utils.</code><code class="descname">p_from_null</code><span class="sig-paren">(</span><em>X</em>, <em>two_sided=False</em>, <em>max_null_input=None</em>, <em>min_null_input=None</em><span class="sig-paren">)</span><a class="headerlink" href="#brainiak.utils.utils.p_from_null" title="Permalink to this definition">¶</a></dt>
+<dd><p>Compute p value of true result from null distribution</p>
+<p>Given an array containing both a real result and a set of null results,
+computes the fraction of null results larger than the real result (or,
+if two_sided=True, the fraction of null results more extreme than the real
+result in either the positive or negative direction).</p>
+<p>Note that all real results are compared to a pooled null distribution,
+which is the max/min over all null results, providing multiple
+comparisons correction.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"></td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>X</strong> (<em>ndarray with arbitrary number of dimensions</em>) – The last dimension of X should contain the real result in X[…, 0]
+and the null results in X[…, 1:]
+If max_null_input and min_null_input are provided,
+X should contain only the real result</li>
+<li><strong>two_sided</strong> (<em>bool</em><em>, </em><em>default:False</em>) – Whether the p value should be one-sided (testing only for being
+above the null) or two-sided (testing for both significantly positive
+and significantly negative values)</li>
+<li><strong>max_null_input</strong> (ndarray with num_perm (see <a class="reference internal" href="brainiak.html#module-brainiak.isfc" title="brainiak.isfc"><code class="xref py py-obj docutils literal"><span class="pre">brainiak.isfc</span></code></a>) entries) – By default this array is derived from the X input array,
+which can be very large and takes up huge memory space.
+To save memory, the function which calls p_from_null
+should provide this array as input.</li>
+<li><strong>min_null_input</strong> (ndarray with num_perm (see <a class="reference internal" href="brainiak.html#module-brainiak.isfc" title="brainiak.isfc"><code class="xref py py-obj docutils literal"><span class="pre">brainiak.isfc</span></code></a>) entries) – See max_null_input</li>
+</ul>
+</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">int</td>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>p</strong> – p values for each true X value under the null distribution</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">ndarray the same shape as X, without the last dimension</p>
+</td>
 </tr>
 </tbody>
 </table>
@@ -1060,7 +1164,7 @@ It useful for computing the softmax_i(v)=exp(v_i)/sum(exp(v)) function.</p>
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'./',
-            VERSION:'0.7.1',
+            VERSION:'0.8',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
             HAS_SOURCE:  true,
