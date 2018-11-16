@@ -1,3 +1,17 @@
+- id: baldassano2018-1 
+  title: "Representation of real-world event schemas during narrative perception"
+  date: 2018-09-24
+  authors:
+     - Christopher Baldassano
+     - Uri Hasson
+     - Kenneth A. Norman
+  journal: Journal of Neuroscience
+  issue: 0251-18
+  year: 2018
+  links:
+     paper: "https://doi.org/10.1523/JNEUROSCI.0251-18.2018"
+     code: "https://doi.org/10.24433/CO.a27d1d90-d227-4600-b876-051a801c7c20.v3"
+
 - id: wang2015-1
   title: "Full correlation matrix analysis (FCMA): An unbiased method for task-related functional connectivity"
   date: 2015-05-22
