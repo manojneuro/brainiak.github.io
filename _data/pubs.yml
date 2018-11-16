@@ -12,6 +12,35 @@
      paper: "https://doi.org/10.1523/JNEUROSCI.0251-18.2018"
      code: "https://doi.org/10.24433/CO.a27d1d90-d227-4600-b876-051a801c7c20.v3"
 
+- id: Manning2018
+  title: "A probabilistic approach to discovering dynamic full-brain functional connectivity patterns"
+  date: 2018-10-15
+  authors:
+     - Jeremy R. Manning
+     - Xia Zhu
+     - Theodore L. Willke
+     - Rajesh Ranganath
+     - Kimberly Stachenfeld
+     - Uri Hasson
+     - David M.Blei
+     - Kenneth A. Norman
+  journal: NeuroImage
+  year: 2018
+  links:
+     paper: "https://doi.org/10.1016/j.neuroimage.2018.01.071"
+
+- id: Heusser2018
+  title: "How is experience transformed into memory?"
+  date: 2018-09-07
+  authors:
+     - Andrew C. Heusser
+     - Paxton C. Fitzpatrick
+     - Jeremy R. Manning
+  journal: bioRxiv preprint
+  year: 2018
+  links:
+     paper: "https://doi.org/10.1101/409987"
+
 - id: wang2015-1
   title: "Full correlation matrix analysis (FCMA): An unbiased method for task-related functional connectivity"
   date: 2015-05-22
