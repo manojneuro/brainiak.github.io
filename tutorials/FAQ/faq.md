@@ -25,9 +25,6 @@ This FAQ page is a work in progress and is being continuously updated.
 	<https://gitter.im/brainiak/brainiak>`_ and get feedback on your contributions fit to BrainIAK.
 	
 
-#. The datasets used for the tutorials are quite large. Is there a lite version that I can download?
-	We are in the process of creating a small dataset, just for tutorial use. 
-
 #. Where can I find citations of the methods used in BrainIAK?
 	Go to `Publications <http://brainiak.org/pubs/>`_.
 	
