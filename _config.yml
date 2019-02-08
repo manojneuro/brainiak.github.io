@@ -41,3 +41,5 @@ whitelist:
 social:
   - title: github
     url: https://github.com/brainiak/brainiak
+
+theme: jekyll-theme-midnight
