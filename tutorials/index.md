@@ -52,4 +52,4 @@ Getting Started: To get started with the tutorials you will need to complete the
 - [Running on Clusters](/tutorials/Running on Clusters)
 
 <br/>
--[FAQ](/tutorials/FAQ/faq.rst)
+-[FAQ](/tutorials/FAQ/faq.md)
