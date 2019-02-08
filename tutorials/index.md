@@ -34,6 +34,7 @@ analysis.
 
 
 Getting Started: To get started with the tutorials you will need to complete the following steps.
+- Install Anaconda
 - Install BrainIAK
 - Download the tutorials from Github
 - Download the data. If you wish to download the data for selective tutorials, please use the list below:
@@ -45,6 +46,8 @@ Getting Started: To get started with the tutorials you will need to complete the
 	- f. Tutorial 11 uses the "Raiders" dataset.
 	- g. Tutorial 12 uses the "Sherlock" dataset.
 	- h. Tutorial 13 does not require data to be downloaded.
+- Launch Jupyter from Anaconda
+- Start using the tutorials
 
 <br/>
 [Resources](https://github.com/NEU480/organization/wiki/resources): We have compiled a list of useful resources that cover the basics of GitHUB, Python, fMRI, and Machine Learning.
